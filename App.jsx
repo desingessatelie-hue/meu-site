@@ -13,40 +13,59 @@ export default function App() {
     return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   };
 
-  const categorias = [
-    {
-      titulo: "Festas e Lembrancinhas",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
-      produtos: [
-        { nome: "Topo de Bolo" },
-        { nome: "Caixa Personalizada" }
-      ]
-    },
-    {
-      titulo: "Cartonagem",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
-      produtos: [
-        { nome: "Caixa Livro" },
-        { nome: "Álbum Artesanal" }
-      ]
-    },
-    {
-      titulo: "Papelaria Artesanal",
-        imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/cate_KitDigital.jpg"
-      produtos: [
-        { nome: "Agenda" },
-        { nome: "Caderno" }
-      ]
-    },
-    {
-      titulo: "Kit Digital",
-        imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
-      produtos: [
-        { nome: "Kit Scrapbook" },
-        { nome: "Papéis Digitais" }
-      ]
-    }
-  ];
+const categorias = [
+  {
+    titulo: "Festas e Lembrancinhas",
+    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg",
+    subcategorias: [
+      {
+        titulo: "Topo de Bolo",
+        produtos: [
+          {
+            nome: "Topo de Bolo Floral",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_3.jpg"
+          },
+          {
+            nome: "Topo de Bolo Casamento",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_4.jpg"
+          }
+           {
+            nome: "Topo de Bolo Personalizado",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_2.jpg"
+          }
+          {
+            nome: "Topo de Bolo Infantil",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_5.jpg"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    titulo: "Cartonagem",
+    produtos: [
+      { nome: "Caixa Livro" },
+      { nome: "Álbum Artesanal" }
+    ]
+  },
+
+  {
+    titulo: "Papelaria Artesanal",
+    produtos: [
+      { nome: "Agenda" },
+      { nome: "Caderno" }
+    ]
+  },
+
+  {
+    titulo: "Kit Digital",
+    produtos: [
+      { nome: "Kit Scrapbook" },
+      { nome: "Papéis Digitais" }
+    ]
+  }
+];
 
   const categoriaSelecionada = categorias.find(c => c.titulo === categoriaAtiva);
 
