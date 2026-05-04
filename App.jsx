@@ -23,19 +23,19 @@ const categorias = [
         produtos: [
           {
             nome: "Topo de Bolo Floral",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_3.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.jpg"
           },
           {
             nome: "Topo de Bolo Casamento",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_4.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.jpg"
           }
            {
             nome: "Topo de Bolo Personalizado",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_2.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.jpg"
           }
           {
             nome: "Topo de Bolo Infantil",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_5.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.jpg"
           }
         ]
       }
