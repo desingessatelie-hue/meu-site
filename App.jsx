@@ -4,7 +4,8 @@
 import React, { useState } from "react";
 
 export default function App() {
-  const [categoriaAtiva, setCategoriaAtiva] = useState(null);
+ // const [categoriaAtiva, setCategoriaAtiva] = useState(null);
+  const [subcategoriaAtiva, setSubcategoriaAtiva] = useState(null);
 
   const numeroWhatsApp = "5547996588988";
 
@@ -112,79 +113,70 @@ const categorias = [
     }
   };
 
-  return (
-    <div style={estilos.container}>
-      <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli </h1>
+ return (
+  <div style={estilos.container}>
+    <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
 
-      {!categoriaAtiva && (
+    {/* CATEGORIAS */}
+    {!categoriaAtiva && (
+      <div style={estilos.grid}>
+        {categorias.map((cat, i) => (
+          <div key={i} style={estilos.card}>
+            <img 
+              src={cat.imagem} 
+              style={{ width: "100%", borderRadius: "12px", marginBottom: "10px" }} 
+            />
+            <h2>{cat.titulo}</h2>
+            <button onClick={() => setCategoriaAtiva(cat.titulo)}>
+              Ver opções
+            </button>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {/* SUBCATEGORIAS */}
+    {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
+      <div>
+        <button onClick={() => setCategoriaAtiva(null)}>← Voltar</button>
+        <h2>{categoriaSelecionada.titulo}</h2>
+
         <div style={estilos.grid}>
-          {categorias.map((cat, i) => (
+          {categoriaSelecionada.subcategorias.map((sub, i) => (
             <div key={i} style={estilos.card}>
-              <img 
-                src={cat.imagem} 
-                style={{ width: "100%", borderRadius: "12px", marginBottom: "10px" }} 
-              />
-              <h2>{cat.titulo}</h2>
-              <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
+              <h3>{sub.titulo}</h3>
+              <button onClick={() => setSubcategoriaAtiva(sub.titulo)}>
                 Ver produtos
               </button>
             </div>
           ))}
         </div>
-      )}
+      </div>
+    )}
 
-      {categoriaSelecionada && !subcategoriaAtiva &&(
-        <div>
-          <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
-            ← Voltar
-          </button>
+    {/* PRODUTOS */}
+    {subcategoriaSelecionada && (
+      <div>
+        <button onClick={() => setSubcategoriaAtiva(null)}>← Voltar</button>
+        <h2>{subcategoriaSelecionada.titulo}</h2>
 
-          <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
-            {categoriaSelecionada.titulo}
-          </h2>
-
-          <div style={estilos.grid}>
-            {categoriaSelecionada.produtos.map((prod, i) => (
-              <div key={i} style={estilos.card}>
-                <p>{prod.nome}</p>
-                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-                  <button style={estilos.botao}>Comprar no WhatsApp</button>
-                </a>
-              </div>
-            ))}
-          </div>
+        <div style={estilos.grid}>
+          {subcategoriaSelecionada.produtos.map((prod, i) => (
+            <div key={i} style={estilos.card}>
+              <img 
+                src={prod.imagem} 
+                style={{ width: "100%", borderRadius: "12px" }} 
+              />
+              <p>{prod.nome}</p>
+              <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                <button>Comprar</button>
+              </a>
+            </div>
+          ))}
         </div>
-      )}
-      {subcategoriaSelecionada && (
-  <div>
-    <button onClick={() => setSubcategoriaAtiva(null)}>
-      ← Voltar
-    </button>
+      </div>
+    )}
 
-    <h2>{subcategoriaSelecionada.titulo}</h2>
-
-    <div style={{ display: "grid", gap: "20px" }}>
-      {subcategoriaSelecionada.produtos.map((prod, i) => (
-        <div key={i} style={{
-          background: "#fff",
-          padding: "15px",
-          borderRadius: "10px"
-        }}>
-          <img 
-            src={prod.imagem} 
-            style={{ width: "100%", borderRadius: "10px" }} 
-          />
-
-          <p>{prod.nome}</p>
-
-          <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-            <button>Comprar</button>
-          </a>
-        </div>
-      ))}
-    </div>
   </div>
-)}
-    </div>
-  );
+);
 }
