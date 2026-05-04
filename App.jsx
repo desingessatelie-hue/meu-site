@@ -1,3 +1,6 @@
+// 🌟 VERSÃO PREMIUM ELEGANTE (NEUTRA)
+// Atualize apenas o arquivo src/App.jsx com este código
+
 import React, { useState } from "react";
 
 export default function App() {
@@ -43,38 +46,43 @@ export default function App() {
 
   const categoriaSelecionada = categorias.find(c => c.titulo === categoriaAtiva);
 
-  return (
-    <div style={{ padding: 20, fontFamily: "serif" }}>
-      <h1>Ateliê Pequenos Encantos by Eli</h1>
-
-      {!categoriaAtiva && (
-        <div>
-          {categorias.map((cat, i) => (
-            <div key={i} style={{ marginBottom: 20 }}>
-              <h2>{cat.titulo}</h2>
-              <button onClick={() => setCategoriaAtiva(cat.titulo)}>
-                Ver produtos
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {categoriaSelecionada && (
-        <div>
-          <button onClick={() => setCategoriaAtiva(null)}>Voltar</button>
-          <h2>{categoriaSelecionada.titulo}</h2>
-
-          {categoriaSelecionada.produtos.map((prod, i) => (
-            <div key={i} style={{ marginBottom: 10 }}>
-              <p>{prod.nome}</p>
-              <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-                <button>WhatsApp</button>
-              </a>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+  const estilos = {
+    container: {
+      backgroundColor: "#f7f5f2",
+      minHeight: "100vh",
+      padding: "40px 20px",
+      fontFamily: "'Playfair Display', serif",
+      color: "#3a3a3a"
+    },
+    titulo: {
+      textAlign: "center",
+      fontSize: "32px",
+      marginBottom: "40px"
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+      gap: "20px"
+    },
+    card: {
+      backgroundColor: "#ffffff",
+      borderRadius: "16px",
+      padding: "20px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+      textAlign: "center"
+    },
+    botao: {
+      marginTop: "10px",
+      padding: "10px 16px",
+      border: "none",
+      borderRadius: "8px",
+      backgroundColor: "#d8c7b1",
+      color: "#fff",
+      cursor: "pointer"
+    },
+    voltar: {
+      marginBottom: "20px",
+      cursor: "pointer",
+      background: "none",
+      border: "none",
+      colo
