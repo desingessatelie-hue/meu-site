@@ -16,6 +16,7 @@ export default function App() {
   const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
       produtos: [
         { nome: "Topo de Bolo" },
         { nome: "Caixa Personalizada" }
@@ -23,6 +24,7 @@ export default function App() {
     },
     {
       titulo: "Cartonagem",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
       produtos: [
         { nome: "Caixa Livro" },
         { nome: "Álbum Artesanal" }
@@ -30,6 +32,7 @@ export default function App() {
     },
     {
       titulo: "Papelaria Artesanal",
+        imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/cate_KitDigital.jpg"
       produtos: [
         { nome: "Agenda" },
         { nome: "Caderno" }
@@ -37,6 +40,7 @@ export default function App() {
     },
     {
       titulo: "Kit Digital",
+        imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg"
       produtos: [
         { nome: "Kit Scrapbook" },
         { nome: "Papéis Digitais" }
