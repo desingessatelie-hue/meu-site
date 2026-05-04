@@ -85,4 +85,49 @@ export default function App() {
       cursor: "pointer",
       background: "none",
       border: "none",
-      colo
+      color: "#777"
+    }
+  };
+
+  return (
+    <div style={estilos.container}>
+      <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
+
+      {!categoriaAtiva && (
+        <div style={estilos.grid}>
+          {categorias.map((cat, i) => (
+            <div key={i} style={estilos.card}>
+              <h2>{cat.titulo}</h2>
+              <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
+                Ver produtos
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {categoriaSelecionada && (
+        <div>
+          <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+            ← Voltar
+          </button>
+
+          <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
+            {categoriaSelecionada.titulo}
+          </h2>
+
+          <div style={estilos.grid}>
+            {categoriaSelecionada.produtos.map((prod, i) => (
+              <div key={i} style={estilos.card}>
+                <p>{prod.nome}</p>
+                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                  <button style={estilos.botao}>Comprar no WhatsApp</button>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
