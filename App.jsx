@@ -101,6 +101,10 @@ export default function App() {
         <div style={estilos.grid}>
           {categorias.map((cat, i) => (
             <div key={i} style={estilos.card}>
+              <img 
+                src={cat.imagem} 
+                style={{ width: "100%", borderRadius: "12px", marginBottom: "10px" }} 
+              />
               <h2>{cat.titulo}</h2>
               <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
                 Ver produtos
