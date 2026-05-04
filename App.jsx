@@ -103,7 +103,8 @@ const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva)
     },
     titulo: {
       textAlign: "center",
-      fontSize: "32px",
+      fontSize: "38px",
+      letterSpacing: "1px",
       marginBottom: "40px"
     },
     grid: {
@@ -114,7 +115,8 @@ const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva)
     card: {
       backgroundColor: "#ffffff",
       borderRadius: "16px",
-      padding: "20px",
+      padding: "25px",
+      lineHeight: "1.5",
       boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
       textAlign: "center"
     },
@@ -151,7 +153,7 @@ const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva)
             />
             <h2>{cat.titulo}</h2>
             <button onClick={() => setCategoriaAtiva(cat.titulo)}>
-              Ver opções
+              Ver coleção
             </button>
           </div>
         ))}
@@ -188,11 +190,28 @@ const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva)
             <div key={i} style={estilos.card}>
               <img 
                 src={prod.imagem} 
-                style={{ width: "100%", borderRadius: "12px" }} 
+                  style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "12px"
+                    }} 
               />
               <p>{prod.nome}</p>
               <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-                <button>Comprar</button>
+                <button style={{
+                      marginTop: "10px",
+                      padding: "12px",
+                      width: "100%",
+                      border: "none",
+                      borderRadius: "10px",
+                      background: "#c8a96a",
+                      color: "#fff",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}>
+                      Comprar no WhatsApp
+                    </button>
               </a>
             </div>
           ))}
