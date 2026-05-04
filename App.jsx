@@ -114,7 +114,7 @@ const categorias = [
 
   return (
     <div style={estilos.container}>
-      <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
+      <h1 style={estilos.titulo}>Ateliê 123 Pequenos Encantos by Eli </h1>
 
       {!categoriaAtiva && (
         <div style={estilos.grid}>
