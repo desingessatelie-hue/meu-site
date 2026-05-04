@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 
 export default function App() {
- // const [categoriaAtiva, setCategoriaAtiva] = useState(null);
+  const [categoriaAtiva, setCategoriaAtiva] = useState(null);
   const [subcategoriaAtiva, setSubcategoriaAtiva] = useState(null);
 
   const numeroWhatsApp = "5547996588988";
