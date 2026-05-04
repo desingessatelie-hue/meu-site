@@ -28,11 +28,11 @@ const categorias = [
           {
             nome: "Topo de Bolo Casamento",
             imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.jpg"
-          }
+          },
            {
             nome: "Topo de Bolo Personalizado",
             imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.jpg"
-          }
+          },
           {
             nome: "Topo de Bolo Infantil",
             imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.jpg"
