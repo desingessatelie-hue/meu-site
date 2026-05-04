@@ -6,12 +6,6 @@ import React, { useState } from "react";
 export default function App() {
   const [categoriaAtiva, setCategoriaAtiva] = useState(null);
   const [subcategoriaAtiva, setSubcategoriaAtiva] = useState(null);
-  const categoriaSelecionada = categorias.find(
- (cat) => cat.titulo === categoriaAtiva
-);
-  const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
-  (sub) => sub.titulo === subcategoriaAtiva
-);
 
   const numeroWhatsApp = "5547996588988";
 
@@ -74,8 +68,10 @@ const categorias = [
   }
 ];
 
-  const categoriaSelecionada = categorias.find(c => c.titulo === categoriaAtiva);
-
+const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva);
+  const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
+    (sub) => sub.titulo === subcategoriaAtiva
+  );
   const estilos = {
     container: {
       backgroundColor: "#f7f5f2",
