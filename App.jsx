@@ -17,26 +17,47 @@ export default function App() {
 const categorias = [
   {
     titulo: "Festas e Lembrancinhas",
-    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.jpg",
+    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.png",
     subcategorias: [
       {
         titulo: "Topo de Bolo",
         produtos: [
           {
             nome: "Topo de Bolo Floral",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
           },
           {
             nome: "Topo de Bolo Casamento",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
           },
            {
             nome: "Topo de Bolo Personalizado",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
           },
           {
             nome: "Topo de Bolo Infantil",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.jpg"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
+          }
+        ]
+      }
+        {
+        titulo: "Topo de Brigadeiro e CupCake",
+        produtos: [
+          {
+            nome: "Batismo ",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
+          },
+          {
+            nome: "Infantil",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
+          },
+           {
+            nome: "Personalizado",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+          },
+          {
+            nome: "??",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
           }
         ]
       }
