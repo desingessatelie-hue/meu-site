@@ -10,7 +10,7 @@ export default function App() {
   (cat) => cat.titulo === categoriaAtiva
 );
 
-const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
+//const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
 const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(  
   (sub) => sub.titulo === subcategoriaAtiva
 );
