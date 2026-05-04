@@ -114,7 +114,7 @@ const categorias = [
 
   return (
     <div style={estilos.container}>
-      <h1 style={estilos.titulo}>Ateliê 123 Pequenos Encantos by Eli </h1>
+      <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli </h1>
 
       {!categoriaAtiva && (
         <div style={estilos.grid}>
@@ -133,7 +133,7 @@ const categorias = [
         </div>
       )}
 
-      {categoriaSelecionada && (
+      {categoriaSelecionada && !subcategoriaAtiva &&(
         <div>
           <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
             ← Voltar
@@ -155,6 +155,36 @@ const categorias = [
           </div>
         </div>
       )}
+      {subcategoriaSelecionada && (
+  <div>
+    <button onClick={() => setSubcategoriaAtiva(null)}>
+      ← Voltar
+    </button>
+
+    <h2>{subcategoriaSelecionada.titulo}</h2>
+
+    <div style={{ display: "grid", gap: "20px" }}>
+      {subcategoriaSelecionada.produtos.map((prod, i) => (
+        <div key={i} style={{
+          background: "#fff",
+          padding: "15px",
+          borderRadius: "10px"
+        }}>
+          <img 
+            src={prod.imagem} 
+            style={{ width: "100%", borderRadius: "10px" }} 
+          />
+
+          <p>{prod.nome}</p>
+
+          <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+            <button>Comprar</button>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
     </div>
   );
 }
