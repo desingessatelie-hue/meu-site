@@ -39,7 +39,7 @@ const categorias = [
           }
         ]
       }
-    ]
+    ]  //sub categoria
   },
 
   {
