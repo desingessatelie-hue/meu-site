@@ -11,6 +11,7 @@ export default function App() {
 );
 
 const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
+const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(  
   (sub) => sub.titulo === subcategoriaAtiva
 );
 
