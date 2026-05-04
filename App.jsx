@@ -39,8 +39,8 @@ const categorias = [
             imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
           }
         ]
-      }
-        {
+      },
+      {
         titulo: "Topo de Brigadeiro e CupCake",
         produtos: [
           {
