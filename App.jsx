@@ -203,7 +203,7 @@ export default function App() {
             justifyContent: "center",
             alignItems: "center",
             marginBottom: "40px"
-          }
+          },
       overlay: {
           background: "rgba(255,255,255,0.15)", // mais claro
           backdropFilter: "blur(8px)", // efeito vidro premium
