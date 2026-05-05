@@ -88,7 +88,7 @@ export default function App() {
               nome: "Caixa Bau",
               preco: "A partir de R$ 2,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
-            }
+            },
             {
               nome: "Caixa Alca",
               preco: "A partir de R$ 2,50",
