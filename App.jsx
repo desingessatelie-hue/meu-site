@@ -19,9 +19,6 @@ export default function App() {
       subcategorias: [
         {
           titulo: "Topo de Bolo",
-                <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px" }}>
-                      Os valores podem variar conforme tamanho, material e personalização.
-                </p>,
           produtos: [
             {
               nome: "Topo de Bolo Floral",
