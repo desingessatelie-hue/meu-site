@@ -277,7 +277,7 @@ return (
   <div style={estilos.container}>
 
     {/* BANNER */}
-{!categoriaAtiva && !subcategoriaAtiva && (
+{!categoriaAtiva && (
   <div style={{ position: "relative", width: "100%", marginBottom: "40px" }}>
 
     <img 
@@ -307,14 +307,6 @@ return (
       <h1>Ateliê Pequenos Encantos by Eli</h1>
 
       <p>Papelaria artesanal e personalizados feitos com carinho</p>
-
-      <button
-        onClick={() => {
-          document.getElementById("produtos").scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        Ver produtos
-      </button>
 
     </div>
   </div>
