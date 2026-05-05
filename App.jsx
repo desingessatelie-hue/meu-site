@@ -285,7 +285,7 @@ return (
 
       {/* IMAGEM */}
       <img 
-        src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg"
+        src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png"
         style={{
           width: "100%",
           maxHeight: "500px",
