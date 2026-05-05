@@ -208,12 +208,14 @@ export default function App() {
         justifyContent: "center"
       },
       overlay: {
-        background: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2))",
-        padding: "30px",
-        borderRadius: "20px",
-        textAlign: "center",
-        color: "#fff",
-        backdropFilter: "blur(2px)" // 🔥 efeito vidro leve
+          background: "rgba(255,255,255,0.15)", // mais claro
+          backdropFilter: "blur(8px)", // efeito vidro premium
+          padding: "40px",
+          borderRadius: "20px",
+          textAlign: "center",
+          color: "#3a3a3a",
+          maxWidth: "600px",
+          boxShadow: "0 8px 30px rgba(0,0,0,0.1)"
       },
     grid: {
       display: "grid",
@@ -278,16 +280,53 @@ export default function App() {
     <div style={estilos.container}>
       <div style={estilos.banner}>
         <div style={estilos.overlay}>
-          <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
-          <p style={estilos.subtitulo}>
-            Papelaria artesanal e personalizados feitos com carinho 💛
-          </p>
+         <h1 style={{
+                fontSize: "36px",
+                fontWeight: "600",
+                marginBottom: "10px",
+                color: "#5a3e36",
+                letterSpacing: "1px"
+              }}>
+                Ateliê Pequenos Encantos by Eli
+              </h1>
+         <p style={{
+              fontSize: "16px",
+              color: "#6b4c42",
+              marginBottom: "10px"
+            }}>
+              Papelaria artesanal e personalizados feitos com carinho
+            </p>
+            
+            <p style={{
+              fontSize: "14px",
+              color: "#a67c6b"
+            }}>
+              ✨ Cada detalhe pensado especialmente para você
+            </p>
+           <button
+             onClick={() => {
+                    document.getElementById("produtos").scrollIntoView({ behavior: "smooth" });
+                  }}
+              style={{
+                marginTop: "20px",
+                padding: "12px 24px",
+                border: "none",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, #c8a96a, #b8955a)",
+                color: "#fff",
+                fontWeight: "bold",
+                cursor: "pointer",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
+              }}
+            >
+              Ver produtos
+            </button>
         </div>
       </div>
 
       {/* CATEGORIAS */}
       {!categoriaAtiva && (
-        <div style={estilos.grid}>
+        <div id="produtos" style={estilos.grid}>
           {categorias.map((cat, i) => (
             <div
                   style={estilos.card}
@@ -387,7 +426,7 @@ export default function App() {
                     fontSize: "16px",
                     marginTop: "5px"
                   }}>
-                    {prod.preco}
+                     💰 {prod.preco}
                   </p>
                 )}
 
