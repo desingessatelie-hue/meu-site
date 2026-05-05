@@ -285,7 +285,7 @@ export default function App() {
               borderRadius: "20px"
             }}
           />
-        </div>
+        
         <div style={estilos.overlay}>
          <h1 style={{
                 fontSize: "36px",
