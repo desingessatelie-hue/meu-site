@@ -70,14 +70,39 @@ export default function App() {
       ]
     },
 
-    {
-      titulo: "Cartonagem",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
-      produtos: [
-        { nome: "Caixa Livro" },
-        { nome: "Álbum Artesanal" }
-      ]
-    },
+   {
+        titulo: "Cartonagem",
+        imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
+        subcategorias: [
+          {
+            titulo: "Caixas",
+            produtos: [
+              { nome: "Caixa Livro", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+              { nome: "Caixa Organizadora", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            ]
+          },
+          {
+            titulo: "Álbuns",
+            produtos: [
+              { nome: "Álbum Artesanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+              { nome: "Álbum Fotográfico", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            ]
+          },
+          {
+            titulo: "Cestas",
+            produtos: [
+              { nome: "Cesta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            ]
+          },
+          {
+            titulo: "Kit Escritório",
+            produtos: [
+              { nome: "Porta Lápis", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+              { nome: "Organizador de Mesa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            ]
+          }
+        ]
+      },
 
     {
       titulo: "Papelaria Artesanal",
@@ -90,7 +115,7 @@ export default function App() {
 
     {
       titulo: "Kit Digital",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/cate_KitDigital.png",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
       produtos: [
         { nome: "Kit Scrapbook" },
         { nome: "Papéis Digitais" }
