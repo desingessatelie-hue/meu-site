@@ -142,7 +142,7 @@ botao: {
   fontWeight: "bold",
   cursor: "pointer",
   letterSpacing: "0.5px"
-  }
+  },
  voltar: {
   marginBottom: "20px",
   cursor: "pointer",
