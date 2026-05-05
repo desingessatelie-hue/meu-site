@@ -272,7 +272,51 @@ export default function App() {
         boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
       }
   };
+const Breadcrumb = () => {
+  return (
+    <div style={{
+      marginBottom: "20px",
+      fontSize: "14px",
+      color: "#888",
+      textAlign: "center"
+    }}>
+      
+      <span 
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          setCategoriaAtiva(null);
+          setSubcategoriaAtiva(null);
+        }}
+      >
+        Home
+      </span>
 
+      {categoriaSelecionada && (
+        <>
+          {" > "}
+          <span 
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setSubcategoriaAtiva(null);
+            }}
+          >
+            {categoriaSelecionada.titulo}
+          </span>
+        </>
+      )}
+
+      {subcategoriaSelecionada && (
+        <>
+          {" > "}
+          <span style={{ color: "#5a3e36", fontWeight: "500" }}>
+            {subcategoriaSelecionada.titulo}
+          </span>
+        </>
+      )}
+
+    </div>
+  );
+};
 return (
   <div style={estilos.container}>
 
@@ -352,7 +396,7 @@ return (
     >
       ← Voltar
     </button>
-
+<Breadcrumb />
     {/* MINI HEADER */}
     <h2 style={{
       textAlign: "center",
@@ -407,7 +451,7 @@ return (
   >
     ← Voltar
   </button>
-
+<Breadcrumb />
   {/* MINI HEADER */}
   <h2 style={{
     textAlign: "center",
@@ -472,7 +516,7 @@ return (
           >
             ← Voltar
           </button>
-
+<Breadcrumb />
    
 
             <h2 style={{
