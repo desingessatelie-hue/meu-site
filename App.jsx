@@ -81,7 +81,7 @@ export default function App() {
 
     {
       titulo: "Kit Digital",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_KitDigital.png",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/cate_KitDigital.png",
       produtos: [
         { nome: "Kit Scrapbook" },
         { nome: "Papéis Digitais" }
