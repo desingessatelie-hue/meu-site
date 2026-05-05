@@ -273,63 +273,91 @@ export default function App() {
       }
   };
 
-  return (
-    <div style={estilos.container}>
-     <div style={estilos.banner}>
-          <img 
-            src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg"
-            style={{
-              width: "100%",
-              maxHeight: "500px",
-              objectFit: "contain",
-              borderRadius: "20px"
-            }}
-          />
-        
-        <div style={estilos.overlay}>
-         <h1 style={{
-                fontSize: "36px",
-                fontWeight: "600",
-                marginBottom: "10px",
-                color: "#5a3e36",
-                letterSpacing: "1px"
-              }}>
-                Ateliê Pequenos Encantos by Eli
-              </h1>
-         <p style={{
-              fontSize: "16px",
-              color: "#6b4c42",
-              marginBottom: "10px"
-            }}>
-              Papelaria artesanal e personalizados feitos com carinho
-            </p>
-            
-            <p style={{
-              fontSize: "14px",
-              color: "#a67c6b"
-            }}>
-              ✨ Cada detalhe pensado especialmente para você
-            </p>
-           <button
-             onClick={() => {
-                    document.getElementById("produtos").scrollIntoView({ behavior: "smooth" });
-                  }}
-              style={{
-                marginTop: "20px",
-                padding: "12px 24px",
-                border: "none",
-                borderRadius: "12px",
-                background: "linear-gradient(135deg, #c8a96a, #b8955a)",
-                color: "#fff",
-                fontWeight: "bold",
-                cursor: "pointer",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
-              }}
-            >
-              Ver produtos
-            </button>
-        </div>
+return (
+  <div style={estilos.container}>
+
+    {/* BANNER */}
+    <div style={{
+      position: "relative",
+      width: "100%",
+      marginBottom: "40px"
+    }}>
+
+      {/* IMAGEM */}
+      <img 
+        src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg"
+        style={{
+          width: "100%",
+          maxHeight: "500px",
+          objectFit: "cover",
+          borderRadius: "20px"
+        }}
+      />
+
+      {/* OVERLAY (em cima da imagem) */}
+      <div style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        background: "rgba(255,255,255,0.15)",
+        backdropFilter: "blur(8px)",
+        padding: "40px",
+        borderRadius: "20px",
+        textAlign: "center",
+        color: "#3a3a3a",
+        width: "80%",
+        maxWidth: "600px",
+        boxShadow: "0 8px 30px rgba(0,0,0,0.1)"
+      }}>
+
+        <h1 style={{
+          fontSize: "36px",
+          fontWeight: "600",
+          marginBottom: "10px",
+          color: "#5a3e36",
+          letterSpacing: "1px"
+        }}>
+          Ateliê Pequenos Encantos by Eli
+        </h1>
+
+        <p style={{
+          fontSize: "16px",
+          color: "#6b4c42",
+          marginBottom: "10px"
+        }}>
+          Papelaria artesanal e personalizados feitos com carinho
+        </p>
+
+        <p style={{
+          fontSize: "14px",
+          color: "#a67c6b"
+        }}>
+          ✨ Cada detalhe pensado especialmente para você
+        </p>
+
+        <button
+          onClick={() => {
+            document.getElementById("produtos").scrollIntoView({ behavior: "smooth" });
+          }}
+          style={{
+            marginTop: "20px",
+            padding: "12px 24px",
+            border: "none",
+            borderRadius: "12px",
+            background: "linear-gradient(135deg, #c8a96a, #b8955a)",
+            color: "#fff",
+            fontWeight: "bold",
+            cursor: "pointer",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
+          }}
+        >
+          Ver produtos
+        </button>
+
       </div>
+    </div>
+
 
       {/* CATEGORIAS */}
       {!categoriaAtiva && (
