@@ -218,7 +218,8 @@ const estilos = {
     height: "220px",
     objectFit: "cover",
     borderRadius: "14px",
-    transition: "0.4s"
+    transition: "0.4s",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
   },
 botao: {
   marginTop: "12px",
@@ -347,17 +348,19 @@ voltar: {
                     e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.05)";
                   }}
                 >
-           
-                <img 
-                    src={prod.imagem} 
-                    style={estilos.imagem}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                    }}
-                  />
+           <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                    <img 
+                      src={prod.imagem} 
+                      style={estilos.imagem}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.08)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                      }}
+                    />
+                  </div>
+             
                 <p>{prod.nome}</p>
                 <p style={{ fontWeight: "bold", color: "#c8a96a" }}>
                   {prod.preco}
