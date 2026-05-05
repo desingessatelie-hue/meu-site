@@ -375,13 +375,18 @@ export default function App() {
                     }}
                   />
                 </div>
-
+                
                 <p style={{ fontWeight: "600", marginTop: "10px" }}>
                   {prod.nome}
                 </p>
-
+                
                 {prod.preco && (
-                  <p style={{ fontWeight: "bold", color: "#c8a96a" }}>
+                  <p style={{
+                    fontWeight: "bold",
+                    color: "#c8a96a",
+                    fontSize: "16px",
+                    marginTop: "5px"
+                  }}>
                     {prod.preco}
                   </p>
                 )}
