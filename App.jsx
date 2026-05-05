@@ -196,6 +196,24 @@ export default function App() {
       fontSize: "40px",
       marginBottom: "50px"
     },
+      banner: {
+        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "300px",
+        borderRadius: "20px",
+        marginBottom: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      overlay: {
+        backgroundColor: "rgba(0,0,0,0.4)",
+        padding: "30px",
+        borderRadius: "20px",
+        textAlign: "center",
+        color: "#fff"
+      },
     grid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
@@ -235,24 +253,7 @@ export default function App() {
       background: "#fff",
       cursor: "pointer"
     },
-    banner: {
-        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "300px",
-        borderRadius: "20px",
-        marginBottom: "40px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      },
-      overlay: {
-        backgroundColor: "rgba(0,0,0,0.4)",
-        padding: "30px",
-        borderRadius: "20px",
-        textAlign: "center",
-        color: "#fff"
-      },
+  
       subtitulo: {
         marginTop: "10px",
         fontSize: "16px"
