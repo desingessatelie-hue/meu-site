@@ -131,17 +131,17 @@ const estilos = {
     borderRadius: "14px",
     transition: "0.4s"
   },
-  botao: {
-    marginTop: "12px",
-    padding: "12px",
-    width: "100%",
-    border: "none",
-    borderRadius: "12px",
-    background: "#c8a96a",
-    color: "#fff",
-    fontWeight: "bold",
-    cursor: "pointer",
-    transition: "0.3s"
+botao: {
+  marginTop: "12px",
+  padding: "12px",
+  width: "100%",
+  border: "none",
+  borderRadius: "12px",
+  background: "linear-gradient(135deg, #c8a96a, #b8955a)",
+  color: "#fff",
+  fontWeight: "bold",
+  cursor: "pointer",
+  letterSpacing: "0.5px"
   }
 };
   return (
@@ -153,7 +153,7 @@ const estilos = {
         <div style={estilos.grid}>
           {categorias.map((cat, i) => (
             <div key={i} style={estilos.card}>
-              <img src={cat.imagem} style={{ width: "100%", borderRadius: "12px" }} />
+              <img src={cat.imagem} style={estilos.imagem} />
               <h2>{cat.titulo}</h2>
               <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
                 Ver coleção
@@ -193,15 +193,23 @@ const estilos = {
               <div key={i} style={estilos.card}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
+                    e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.1)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.05)";
                   }}
                 >
            
                 <img 
                     src={prod.imagem} 
                     style={estilos.imagem}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
                   />
                 <p>{prod.nome}</p>
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
