@@ -196,17 +196,14 @@ export default function App() {
       fontSize: "40px",
       marginBottom: "50px"
     },
-      banner: {
-        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-         height: "clamp(180px, 30vw, 320px)", // 🔥 responsivo automático
-        borderRadius: "20px",
-        marginBottom: "40px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      },
+          banner: {
+            width: "100%",
+            height: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "40px"
+          }
       overlay: {
           background: "rgba(255,255,255,0.15)", // mais claro
           backdropFilter: "blur(8px)", // efeito vidro premium
@@ -278,7 +275,17 @@ export default function App() {
 
   return (
     <div style={estilos.container}>
-      <div style={estilos.banner}>
+     <div style={estilos.banner}>
+          <img 
+            src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg"
+            style={{
+              width: "100%",
+              maxHeight: "500px",
+              objectFit: "contain",
+              borderRadius: "20px"
+            }}
+          />
+        </div>
         <div style={estilos.overlay}>
          <h1 style={{
                 fontSize: "36px",
