@@ -200,7 +200,7 @@ export default function App() {
         backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "300px",
+         height: "clamp(180px, 30vw, 320px)", // 🔥 responsivo automático
         borderRadius: "20px",
         marginBottom: "40px",
         display: "flex",
@@ -208,11 +208,12 @@ export default function App() {
         justifyContent: "center"
       },
       overlay: {
-        backgroundColor: "rgba(0,0,0,0.4)",
+        background: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2))",
         padding: "30px",
         borderRadius: "20px",
         textAlign: "center",
-        color: "#fff"
+        color: "#fff",
+        backdropFilter: "blur(2px)" // 🔥 efeito vidro leve
       },
     grid: {
       display: "grid",
@@ -224,7 +225,7 @@ export default function App() {
       borderRadius: "18px",
       padding: "20px",
       textAlign: "center",
-      boxShadow: "0 8px 25px rgba(0,0,0,0.05)",
+      boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
       transition: "0.3s"
     },
     imagem: {
@@ -234,17 +235,18 @@ export default function App() {
       borderRadius: "14px",
       transition: "0.4s"
     },
-    botao: {
-      marginTop: "12px",
-      padding: "12px",
-      width: "100%",
-      border: "none",
-      borderRadius: "12px",
-      background: "linear-gradient(135deg, #c8a96a, #b8955a)",
-      color: "#fff",
-      fontWeight: "bold",
-      cursor: "pointer"
-    },
+   botao: {
+        marginTop: "12px",
+        padding: "12px",
+        width: "100%",
+        border: "none",
+        borderRadius: "12px",
+        background: "linear-gradient(135deg, #c8a96a, #b8955a)",
+        color: "#fff",
+        fontWeight: "bold",
+        cursor: "pointer",
+        transition: "0.3s"
+      },
     voltar: {
       marginBottom: "25px",
       padding: "8px 14px",
@@ -287,7 +289,17 @@ export default function App() {
       {!categoriaAtiva && (
         <div style={estilos.grid}>
           {categorias.map((cat, i) => (
-            <div key={i} style={estilos.card}>
+            <div
+                  style={estilos.card}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-8px)";
+                    e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
+                  }}
+                >
               <img src={cat.imagem} style={estilos.imagem} />
               <h2>{cat.titulo}</h2>
               <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
@@ -313,8 +325,9 @@ export default function App() {
 
           <h2>{categoriaSelecionada.titulo}</h2>
                       
-            <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px", color: "#777" }}>
-              💛 Produtos personalizados sob encomenda. Valores variam conforme tamanho, material e acabamento. 
+            <p style={{ textAlign: "center", marginBottom: "25px", fontSize: "14px", color: "#777" }}>
+               💛 Produtos personalizados sob encomenda.  
+            Cada peça é única e feita especialmente para você.
             </p>
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias.map((sub, i) => (
@@ -324,6 +337,8 @@ export default function App() {
                 <button
                   style={estilos.botao}
                   onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
                 >
                   Ver produtos
                 </button>
