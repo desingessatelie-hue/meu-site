@@ -84,6 +84,7 @@ export default function App() {
           },
           {
             titulo: "Álbuns",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
             produtos: [
               { nome: "Álbum Artesanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
               { nome: "Álbum Fotográfico", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -91,12 +92,14 @@ export default function App() {
           },
           {
             titulo: "Cestas",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
             produtos: [
               { nome: "Cesta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
             ]
           },
           {
             titulo: "Kit Escritório",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
             produtos: [
               { nome: "Porta Lápis", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
               { nome: "Organizador de Mesa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -105,14 +108,65 @@ export default function App() {
         ]
       },
 
+{
+  titulo: "Papelaria Artesanal",
+  imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Papelaria.png",
+  subcategorias: [
     {
-      titulo: "Papelaria Artesanal",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Papelaria.png",
+      titulo: "Agendas",
       produtos: [
-        { nome: "Agenda" },
-        { nome: "Caderno" }
+        { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+        { nome: "Agenda Permanente", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
       ]
     },
+    {
+      titulo: "Planners",
+      produtos: [
+        { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+        { nome: "Planner Semanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Cadernos",
+      produtos: [
+        { nome: "Caderno Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+        { nome: "Caderno Escolar", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Blocos A6",
+      produtos: [
+        { nome: "Bloco de Notas A6", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Canetas Personalizadas",
+      produtos: [
+        { nome: "Caneta Decorada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+        { nome: "Caneta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Kits Bebê",
+      produtos: [
+        { nome: "Kit Bebê Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Kits Lembrancinhas",
+      produtos: [
+        { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    },
+    {
+      titulo: "Datas Comemorativas",
+      produtos: [
+        { nome: "Lembrancinha Dia das Mães", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+        { nome: "Lembrancinha Natal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+      ]
+    }
+  ]
+},
 
     {
       titulo: "Kit Digital",
