@@ -207,7 +207,7 @@ voltar: {
             Valores variam conforme tamanho, material e acabamento.
               </p>
           
-              <div style={estilos.grid}>
+              
 
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias.map((sub, i) => (
