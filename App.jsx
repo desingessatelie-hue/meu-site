@@ -65,6 +65,37 @@ export default function App() {
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
             }
           ]
+        },
+        {
+          titulo: "Caixas de lembrancinhas",
+          produtos: [
+            {
+              nome: "Caixa Milk",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro02.png"
+            },
+            {
+              nome: "Caixa Sushi",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro03.png"
+            },
+            {
+              nome: "Centro de Mesa",
+              preco: "A partir de R$ 3,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro01.png"
+            },
+            {
+              nome: "Caixa Bau",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
+            }
+            {
+              nome: "Caixa Alca",
+              preco: "A partir de R$ 2,50",
+
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
+            }
+          ]
         }
       ]
     },
@@ -492,6 +523,13 @@ return (
                      💰 {prod.preco}
                   </p>
                 )}
+               <p style={{
+                fontSize: "13px",
+                color: "#999",
+                marginTop: "4px"
+              }}>
+                Feito sob medida para você 💛
+              </p>
 
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
                   <button style={estilos.botao}>
@@ -544,6 +582,13 @@ return (
                       {prod.preco}
                     </p>
                 )}
+              <p style={{
+                fontSize: "13px",
+                color: "#999",
+                marginTop: "4px"
+              }}>
+                Feito sob medida para você 💛
+              </p>
 
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
                   <button style={estilos.botao}>
