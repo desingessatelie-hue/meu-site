@@ -14,13 +14,14 @@ export default function App() {
   const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
-      <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px" }}>
-        Os valores podem variar conforme tamanho, material e personalização.
-      </p>  
+ 
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.png",
       subcategorias: [
         {
           titulo: "Topo de Bolo",
+                <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px" }}>
+                      Os valores podem variar conforme tamanho, material e personalização.
+                </p>,
           produtos: [
             {
               nome: "Topo de Bolo Floral",
