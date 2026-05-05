@@ -155,7 +155,7 @@ const estilos = {
             <div key={i} style={estilos.card}>
               <img src={cat.imagem} style={{ width: "100%", borderRadius: "12px" }} />
               <h2>{cat.titulo}</h2>
-              <button onClick={() => setCategoriaAtiva(cat.titulo)}>
+              <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
                 Ver coleção
               </button>
             </div>
@@ -166,7 +166,7 @@ const estilos = {
       {/* SUBCATEGORIAS */}
       {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
         <div>
-          <button onClick={() => setCategoriaAtiva(null)}>← Voltar</button>
+          <button style={estilos.botao} onClick={() => setCategoriaAtiva(null)}>← Voltar</button>
           <h2>{categoriaSelecionada.titulo}</h2>
 
           <div style={estilos.grid}>
