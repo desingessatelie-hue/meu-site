@@ -190,8 +190,19 @@ const estilos = {
 
           <div style={estilos.grid}>
             {subcategoriaSelecionada.produtos.map((prod, i) => (
-              <div key={i} style={estilos.card}>
-                <img src={prod.imagem} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "12px" }} />
+              <div key={i} style={estilos.card}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-8px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+           
+                <img 
+                    src={prod.imagem} 
+                    style={estilos.imagem}
+                  />
                 <p>{prod.nome}</p>
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
                   <button>Comprar no WhatsApp</button>
