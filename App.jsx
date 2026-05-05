@@ -276,7 +276,7 @@ voltar: {
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "#fff";
                   }}
-                  onClick={() => setCategoriaAtiva(null)}>
+                  onClick={() => setSubcategoriaAtiva(null)}>
                     ← Voltar
                   </button>
           <h2>{subcategoriaSelecionada.titulo}</h2>
@@ -327,7 +327,7 @@ voltar: {
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "#fff";
                   }}
-                  onClick={() => setCategoriaAtiva(null)}>
+                  onClick={() => setSubcategoriaAtiva(null)}>
                     ← Voltar
                   </button>
           <h2>{categoriaSelecionada.titulo}</h2>
