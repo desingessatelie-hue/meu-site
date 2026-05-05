@@ -143,13 +143,17 @@ botao: {
   cursor: "pointer",
   letterSpacing: "0.5px"
   },
- voltar: {
-  marginBottom: "20px",
+voltar: {
+  marginBottom: "25px",
+  padding: "8px 14px",
+  borderRadius: "8px",
+  border: "1px solid #ddd",
+  background: "#fff",
   cursor: "pointer",
-  background: "none",
-  border: "none",
-  color: "#777"
-} 
+  color: "#555",
+  fontSize: "14px",
+  transition: "0.3s"
+}
 };
   return (
     <div style={estilos.container}>
@@ -173,7 +177,14 @@ botao: {
       {/* SUBCATEGORIAS */}
       {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
         <div>
-          <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+          <button   style={estilos.voltar}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#f0ece6";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#fff";
+                  }}
+                  onClick={() => setCategoriaAtiva(null)}}>
                     ← Voltar
                   </button>
           <h2>{categoriaSelecionada.titulo}</h2>
@@ -194,7 +205,14 @@ botao: {
       {/* PRODUTOS COM SUBCATEGORIA */}
       {subcategoriaSelecionada && (
         <div>
-           <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+       <button   style={estilos.voltar}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#f0ece6";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#fff";
+                  }}
+                  onClick={() => setCategoriaAtiva(null)}}>
                     ← Voltar
                   </button>
           <h2>{subcategoriaSelecionada.titulo}</h2>
@@ -235,7 +253,14 @@ botao: {
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
         <div>
-           <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+         <button   style={estilos.voltar}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#f0ece6";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#fff";
+                  }}
+                  onClick={() => setCategoriaAtiva(null)}}>
                     ← Voltar
                   </button>
           <h2>{categoriaSelecionada.titulo}</h2>
