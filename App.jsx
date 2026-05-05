@@ -45,19 +45,19 @@ const categorias = [
         produtos: [
           {
             nome: "Batismo ",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro02.png"
           },
           {
             nome: "Infantil",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro02.png"
           },
            {
             nome: "Personalizado",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro01.png"
           },
           {
-            nome: "??",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
+            nome: "Cupcake",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
           }
         ]
       }
@@ -66,6 +66,7 @@ const categorias = [
 
   {
     titulo: "Cartonagem",
+     imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
     produtos: [
       { nome: "Caixa Livro" },
       { nome: "Álbum Artesanal" }
@@ -74,6 +75,7 @@ const categorias = [
 
   {
     titulo: "Papelaria Artesanal",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Papelaria.png",
     produtos: [
       { nome: "Agenda" },
       { nome: "Caderno" }
@@ -82,6 +84,7 @@ const categorias = [
 
   {
     titulo: "Kit Digital",
+    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_KitDigital.png".
     produtos: [
       { nome: "Kit Scrapbook" },
       { nome: "Papéis Digitais" }
