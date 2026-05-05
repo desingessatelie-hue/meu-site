@@ -234,9 +234,9 @@ export default function App() {
       border: "1px solid #ddd",
       background: "#fff",
       cursor: "pointer"
-    }
+    },
     banner: {
-        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg')",
+        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "300px",
