@@ -200,6 +200,17 @@ voltar: {
                     ← Voltar
                   </button>
           <h2>{categoriaSelecionada.titulo}</h2>
+            <p style={{ 
+                textAlign: "center", 
+                marginBottom: "20px", 
+                fontSize: "14px",
+                color: "#777"
+              }}>
+                 💛 Produtos personalizados sob encomenda.  
+            Valores variam conforme tamanho, material e acabamento.
+              </p>
+          
+              <div style={estilos.grid}>
 
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias.map((sub, i) => (
