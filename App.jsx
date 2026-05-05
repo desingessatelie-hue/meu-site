@@ -293,7 +293,7 @@ const Breadcrumb = () => {
 
       {categoriaSelecionada && (
         <>
-          {" > "}
+          {" • "}
           <span 
             style={{ cursor: "pointer" }}
             onClick={() => {
@@ -307,7 +307,7 @@ const Breadcrumb = () => {
 
       {subcategoriaSelecionada && (
         <>
-          {" > "}
+         {" • "}
           <span style={{ color: "#5a3e36", fontWeight: "500" }}>
             {subcategoriaSelecionada.titulo}
           </span>
