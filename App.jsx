@@ -235,11 +235,52 @@ export default function App() {
       background: "#fff",
       cursor: "pointer"
     }
+    banner: {
+        backgroundImage: "url('https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "300px",
+        borderRadius: "20px",
+        marginBottom: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      overlay: {
+        backgroundColor: "rgba(0,0,0,0.4)",
+        padding: "30px",
+        borderRadius: "20px",
+        textAlign: "center",
+        color: "#fff"
+      },
+      subtitulo: {
+        marginTop: "10px",
+        fontSize: "16px"
+      },
+        whatsapp: {
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        backgroundColor: "#25D366",
+        color: "#fff",
+        fontSize: "26px",
+        padding: "14px 16px",
+        borderRadius: "50%",
+        textDecoration: "none",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
+      }
   };
 
   return (
     <div style={estilos.container}>
-      <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
+      <div style={estilos.banner}>
+        <div style={estilos.overlay}>
+          <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
+          <p style={estilos.subtitulo}>
+            Papelaria artesanal e personalizados feitos com carinho 💛
+          </p>
+        </div>
+      </div>
 
       {/* CATEGORIAS */}
       {!categoriaAtiva && (
@@ -270,7 +311,10 @@ export default function App() {
           </button>
 
           <h2>{categoriaSelecionada.titulo}</h2>
-
+                      
+            <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px", color: "#777" }}>
+              💛 Produtos personalizados sob encomenda. Valores variam conforme tamanho, material e acabamento. 
+            </p>
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias.map((sub, i) => (
               <div key={i} style={estilos.card}>
@@ -355,12 +399,18 @@ export default function App() {
           <div style={estilos.grid}>
             {categoriaSelecionada.produtos.map((prod, i) => (
               <div key={i} style={estilos.card}>
-                <p>{prod.nome}</p>
+                <p style={{ fontWeight: "600", marginTop: "10px" }}>
+                    {prod.nome}
+                  </p>
 
                 {prod.preco && (
-                  <p style={{ fontWeight: "bold", color: "#c8a96a" }}>
-                    {prod.preco}
-                  </p>
+                 <p style={{ 
+                      fontWeight: "bold", 
+                      color: "#c8a96a",
+                      fontSize: "15px"
+                    }}>
+                      {prod.preco}
+                    </p>
                 )}
 
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
@@ -373,6 +423,13 @@ export default function App() {
           </div>
         </div>
       )}
+      <a
+          href="https://wa.me/5547996588988"
+          target="_blank"
+          style={estilos.whatsapp}
+        >
+          💬
+        </a>
     </div>
   );
 }
