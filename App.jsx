@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 
 export default function App() {
   const [categoriaAtiva, setCategoriaAtiva] = useState(null);
@@ -14,6 +14,9 @@ export default function App() {
   const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
+      <p style={{ textAlign: "center", marginBottom: "20px", fontSize: "14px" }}>
+        Os valores podem variar conforme tamanho, material e personalização.
+      </p>  
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.png",
       subcategorias: [
         {
@@ -21,18 +24,22 @@ export default function App() {
           produtos: [
             {
               nome: "Topo de Bolo Floral",
+              preco: "A partir de R$ 30,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
             },
             {
               nome: "Topo de Bolo Casamento",
+              preco: "A partir de R$ 30,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
             },
             {
               nome: "Topo de Bolo Personalizado",
+              preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
             },
             {
               nome: "Topo de Bolo Infantil",
+              preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
             }
           ]
@@ -42,18 +49,22 @@ export default function App() {
           produtos: [
             {
               nome: "Batismo",
+              preco: "A partir de R$ 1,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro02.png"
             },
             {
               nome: "Infantil",
+              preco: "A partir de R$ 0,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro03.png"
             },
             {
               nome: "Personalizado",
+              preco: "A partir de R$ 0,70",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro01.png"
             },
             {
               nome: "Cupcake",
+              preco: "A partir de R$ 1,75",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
             }
           ]
@@ -241,6 +252,9 @@ voltar: {
                     }}
                   />
                 <p>{prod.nome}</p>
+                <p style={{ fontWeight: "bold", color: "#c8a96a" }}>
+                  {prod.preco}
+                </p>
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
                   <button style={estilos.botao} >Comprar no WhatsApp</button>
                 </a>
@@ -272,6 +286,9 @@ voltar: {
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
                   <button style={estilos.botao}>Comprar</button>
                 </a>
+                <p style={{ fontWeight: "bold", color: "#c8a96a" }}>
+                  {prod.preco}
+                </p>
               </div>
             ))}
           </div>
