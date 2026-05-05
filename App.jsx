@@ -339,51 +339,67 @@ return (
       )}
 
       {/* SUBCATEGORIAS */}
- <div style={{ marginTop: "20px" }}>
-  <button
-    style={estilos.voltar}
-    onClick={() => {
-      setCategoriaAtiva(null);
-      setSubcategoriaAtiva(null);
-    }}
-  >
-    ← Voltar
-  </button>
+{/* SUBCATEGORIAS */}
+{categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
+  <div style={{ marginTop: "20px" }}>
 
-  {/* MINI HEADER */}
-  <h2 style={{
-    textAlign: "center",
-    marginBottom: "20px",
-    fontSize: "26px",
-    color: "#5a3e36"
-  }}>
-    {categoriaSelecionada.titulo}
-  </h2>
-                      
-            <p style={{ textAlign: "center", marginBottom: "25px", fontSize: "14px", color: "#777" }}>
-               💛 Produtos personalizados sob encomenda.  
-            Cada peça é única e feita especialmente para você.
-            </p>
-          <div style={estilos.grid}>
-            {categoriaSelecionada.subcategorias.map((sub, i) => (
-              <div key={i} style={estilos.card}>
-                {sub.imagem && <img src={sub.imagem} style={estilos.imagem} />}
-                <h3>{sub.titulo}</h3>
-                <button
-                  style={estilos.botao}
-                  onClick={() => setSubcategoriaAtiva(sub.titulo)}
-                    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
-                    onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-                >
-                  Ver produtos
-                </button>
-              </div>
-            ))}
-          </div>
+    <button
+      style={estilos.voltar}
+      onClick={() => {
+        setCategoriaAtiva(null);
+        setSubcategoriaAtiva(null);
+      }}
+    >
+      ← Voltar
+    </button>
+
+    {/* MINI HEADER */}
+    <h2 style={{
+      textAlign: "center",
+      marginBottom: "20px",
+      fontSize: "26px",
+      color: "#5a3e36"
+    }}>
+      {categoriaSelecionada.titulo}
+    </h2>
+
+    <p style={{ 
+      textAlign: "center", 
+      marginBottom: "25px", 
+      fontSize: "14px", 
+      color: "#777" 
+    }}>
+      💛 Produtos personalizados sob encomenda.  
+      Cada peça é única e feita especialmente para você.
+    </p>
+
+    <div style={estilos.grid}>
+      {categoriaSelecionada.subcategorias.map((sub, i) => (
+        <div key={i} style={estilos.card}>
+          
+          {sub.imagem && (
+            <img src={sub.imagem} style={estilos.imagem} />
+          )}
+
+          <h3>{sub.titulo}</h3>
+
+          <button
+            style={estilos.botao}
+            onClick={() => setSubcategoriaAtiva(sub.titulo)}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+          >
+            Ver produtos
+          </button>
+
         </div>
-      )}
+      ))}
+    </div>
 
+  </div>
+)}
       {/* PRODUTOS */}
+    {subcategoriaSelecionada && (
      <div style={{ marginTop: "20px" }}>
   <button
     style={estilos.voltar}
@@ -446,7 +462,7 @@ return (
 
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
-        <div>
+       <div style={{ marginTop: "20px" }}>
           <button
             style={estilos.voltar}
             onClick={() => {
@@ -457,7 +473,16 @@ return (
             ← Voltar
           </button>
 
-          <h2>{categoriaSelecionada.titulo}</h2>
+   
+
+            <h2 style={{
+              textAlign: "center",
+              marginBottom: "20px",
+              fontSize: "26px",
+              color: "#5a3e36"
+            }}>
+              {categoriaSelecionada.titulo}
+            </h2>
 
           <div style={estilos.grid}>
             {categoriaSelecionada.produtos.map((prod, i) => (
