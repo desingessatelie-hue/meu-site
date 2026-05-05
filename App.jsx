@@ -76,6 +76,7 @@ export default function App() {
         subcategorias: [
           {
             titulo: "Caixas",
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
             produtos: [
               { nome: "Caixa Livro", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
               { nome: "Caixa Organizadora", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -236,12 +237,30 @@ voltar: {
 
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias.map((sub, i) => (
-              <div key={i} style={estilos.card}>
-                <h3>{sub.titulo}</h3>
-                <button style={estilos.botao} onClick={() => setSubcategoriaAtiva(sub.titulo)}>
-                  Ver produtos
-                </button>
-              </div>
+             <div key={i} style={estilos.card}>
+    
+                    {sub.imagem && (
+                      <img 
+                        src={sub.imagem}
+                        style={{
+                          width: "100%",
+                          height: "180px",
+                          objectFit: "cover",
+                          borderRadius: "12px",
+                          marginBottom: "10px"
+                        }}
+                      />
+                    )}
+                
+                    <h3>{sub.titulo}</h3>
+                
+                    <button 
+                      style={estilos.botao}
+                      onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    >
+                      Ver produtos
+                    </button>
+                  </div>
             ))}
           </div>
         </div>
