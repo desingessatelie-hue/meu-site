@@ -173,7 +173,7 @@ botao: {
             {categoriaSelecionada.subcategorias.map((sub, i) => (
               <div key={i} style={estilos.card}>
                 <h3>{sub.titulo}</h3>
-                <button onClick={() => setSubcategoriaAtiva(sub.titulo)}>
+                <button style={estilos.botao} onClick={() => setSubcategoriaAtiva(sub.titulo)}>
                   Ver produtos
                 </button>
               </div>
@@ -213,7 +213,7 @@ botao: {
                   />
                 <p>{prod.nome}</p>
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-                  <button>Comprar no WhatsApp</button>
+                  <button style={estilos.botao} >Comprar no WhatsApp</button>
                 </a>
               </div>
             ))}
@@ -232,7 +232,7 @@ botao: {
               <div key={i} style={estilos.card}>
                 <p>{prod.nome}</p>
                 <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
-                  <button>Comprar</button>
+                  <button style={estilos.botao}>Comprar</button>
                 </a>
               </div>
             ))}
