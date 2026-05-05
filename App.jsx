@@ -281,7 +281,7 @@ return (
   <div style={{ position: "relative", width: "100%", marginBottom: "40px" }}>
 
     <img 
-      src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.jpg"
+      src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png"
       style={{
         width: "100%",
         maxHeight: "500px",
@@ -311,7 +311,14 @@ return (
     </div>
   </div>
 )}
-
+<h2 style={{
+  textAlign: "center",
+  marginBottom: "20px",
+  fontSize: "26px",
+  color: "#5a3e36"
+}}>
+  {categoriaSelecionada?.titulo || subcategoriaSelecionada?.titulo}
+</h2>
 
       {/* CATEGORIAS */}
       {!categoriaAtiva && (
@@ -340,7 +347,7 @@ return (
 
       {/* SUBCATEGORIAS */}
       {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <button
             style={estilos.voltar}
             onClick={() => {
@@ -378,7 +385,7 @@ return (
 
       {/* PRODUTOS */}
       {subcategoriaSelecionada && (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <button
             style={estilos.voltar}
             onClick={() => setSubcategoriaAtiva(null)}
