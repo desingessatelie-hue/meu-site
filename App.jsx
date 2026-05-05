@@ -143,6 +143,13 @@ botao: {
   cursor: "pointer",
   letterSpacing: "0.5px"
   }
+ voltar: {
+  marginBottom: "20px",
+  cursor: "pointer",
+  background: "none",
+  border: "none",
+  color: "#777"
+} 
 };
   return (
     <div style={estilos.container}>
@@ -166,7 +173,9 @@ botao: {
       {/* SUBCATEGORIAS */}
       {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
         <div>
-          <button style={estilos.botao} onClick={() => setCategoriaAtiva(null)}>← Voltar</button>
+          <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+                    ← Voltar
+                  </button>
           <h2>{categoriaSelecionada.titulo}</h2>
 
           <div style={estilos.grid}>
@@ -185,7 +194,9 @@ botao: {
       {/* PRODUTOS COM SUBCATEGORIA */}
       {subcategoriaSelecionada && (
         <div>
-          <button onClick={() => setSubcategoriaAtiva(null)}>← Voltar</button>
+           <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+                    ← Voltar
+                  </button>
           <h2>{subcategoriaSelecionada.titulo}</h2>
 
           <div style={estilos.grid}>
@@ -224,7 +235,9 @@ botao: {
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
         <div>
-          <button onClick={() => setCategoriaAtiva(null)}>← Voltar</button>
+           <button style={estilos.voltar} onClick={() => setCategoriaAtiva(null)}>
+                    ← Voltar
+                  </button>
           <h2>{categoriaSelecionada.titulo}</h2>
 
           <div style={estilos.grid}>
