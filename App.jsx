@@ -49,7 +49,7 @@ const categorias = [
           },
           {
             nome: "Infantil",
-            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro02.png"
+            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro03.png"
           },
            {
             nome: "Personalizado",
@@ -84,7 +84,7 @@ const categorias = [
 
   {
     titulo: "Kit Digital",
-    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_KitDigital.png".
+    imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_KitDigital.png",
     produtos: [
       { nome: "Kit Scrapbook" },
       { nome: "Papéis Digitais" }
