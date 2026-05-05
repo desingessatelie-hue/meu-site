@@ -97,33 +97,53 @@ export default function App() {
     (sub) => sub.titulo === subcategoriaAtiva
   );
 
-  const estilos = {
-    container: {
-      backgroundColor: "#f7f5f2",
-      minHeight: "100vh",
-      padding: "40px 20px",
-      fontFamily: "'Playfair Display', serif",
-      color: "#3a3a3a"
-    },
-    titulo: {
-      textAlign: "center",
-      fontSize: "38px",
-      marginBottom: "40px"
-    },
-    grid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-      gap: "20px"
-    },
-    card: {
-      backgroundColor: "#fff",
-      borderRadius: "16px",
-      padding: "25px",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-      textAlign: "center"
-    }
-  };
-
+const estilos = {
+  container: {
+    backgroundColor: "#f7f5f2",
+    minHeight: "100vh",
+    padding: "50px 20px",
+    fontFamily: "'Playfair Display', serif",
+    color: "#3a3a3a"
+  },
+  titulo: {
+    textAlign: "center",
+    fontSize: "40px",
+    marginBottom: "50px",
+    letterSpacing: "1px"
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+    gap: "30px"
+  },
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: "18px",
+    padding: "20px",
+    textAlign: "center",
+    boxShadow: "0 8px 25px rgba(0,0,0,0.05)",
+    transition: "0.3s"
+  },
+  imagem: {
+    width: "100%",
+    height: "220px",
+    objectFit: "cover",
+    borderRadius: "14px",
+    transition: "0.4s"
+  },
+  botao: {
+    marginTop: "12px",
+    padding: "12px",
+    width: "100%",
+    border: "none",
+    borderRadius: "12px",
+    background: "#c8a96a",
+    color: "#fff",
+    fontWeight: "bold",
+    cursor: "pointer",
+    transition: "0.3s"
+  }
+};
   return (
     <div style={estilos.container}>
       <h1 style={estilos.titulo}>Ateliê Pequenos Encantos by Eli</h1>
