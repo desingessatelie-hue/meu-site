@@ -311,14 +311,7 @@ return (
     </div>
   </div>
 )}
-<h2 style={{
-  textAlign: "center",
-  marginBottom: "20px",
-  fontSize: "26px",
-  color: "#5a3e36"
-}}>
-  {categoriaSelecionada?.titulo || subcategoriaSelecionada?.titulo}
-</h2>
+
 
       {/* CATEGORIAS */}
       {!categoriaAtiva && (
@@ -346,19 +339,26 @@ return (
       )}
 
       {/* SUBCATEGORIAS */}
-      {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
-        <div style={{ marginTop: "20px" }}>
-          <button
-            style={estilos.voltar}
-            onClick={() => {
-              setCategoriaAtiva(null);
-              setSubcategoriaAtiva(null);
-            }}
-          >
-            ← Voltar
-          </button>
+ <div style={{ marginTop: "20px" }}>
+  <button
+    style={estilos.voltar}
+    onClick={() => {
+      setCategoriaAtiva(null);
+      setSubcategoriaAtiva(null);
+    }}
+  >
+    ← Voltar
+  </button>
 
-          <h2>{categoriaSelecionada.titulo}</h2>
+  {/* MINI HEADER */}
+  <h2 style={{
+    textAlign: "center",
+    marginBottom: "20px",
+    fontSize: "26px",
+    color: "#5a3e36"
+  }}>
+    {categoriaSelecionada.titulo}
+  </h2>
                       
             <p style={{ textAlign: "center", marginBottom: "25px", fontSize: "14px", color: "#777" }}>
                💛 Produtos personalizados sob encomenda.  
@@ -384,16 +384,23 @@ return (
       )}
 
       {/* PRODUTOS */}
-      {subcategoriaSelecionada && (
-        <div style={{ marginTop: "20px" }}>
-          <button
-            style={estilos.voltar}
-            onClick={() => setSubcategoriaAtiva(null)}
-          >
-            ← Voltar
-          </button>
+     <div style={{ marginTop: "20px" }}>
+  <button
+    style={estilos.voltar}
+    onClick={() => setSubcategoriaAtiva(null)}
+  >
+    ← Voltar
+  </button>
 
-          <h2>{subcategoriaSelecionada.titulo}</h2>
+  {/* MINI HEADER */}
+  <h2 style={{
+    textAlign: "center",
+    marginBottom: "20px",
+    fontSize: "26px",
+    color: "#5a3e36"
+  }}>
+    {subcategoriaSelecionada.titulo}
+  </h2>
 
           <div style={estilos.grid}>
             {subcategoriaSelecionada.produtos.map((prod, i) => (
