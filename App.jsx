@@ -107,7 +107,7 @@ export default function App() {
         {
           titulo: "Páscoa",
           grupo: "datas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa.png",
           produtos: [
             {
               nome: "Caixa Milk",
@@ -145,10 +145,28 @@ export default function App() {
   
           ]
         },
-                 {
+      {
           titulo: "Namorados",
           grupo: "datas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Namorados.png",
+          produtos: [
+            {
+              nome: "Caixa Milk",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caixa Sushi",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+  
+          ]
+        },
+        {
+          titulo: "Festa Juninas",
+          grupo: "datas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Festa_junina.png",
           produtos: [
             {
               nome: "Caixa Milk",
