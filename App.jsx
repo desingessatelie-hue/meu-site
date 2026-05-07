@@ -18,6 +18,7 @@ export default function App() {
       subcategorias: [
         {
           titulo: "Topo de Bolo",
+           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Bolo.png"
           produtos: [
             {
               nome: "Topo de Bolo Floral",
@@ -43,6 +44,7 @@ export default function App() {
         },
         {
           titulo: "Topo de Brigadeiro e CupCake",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro.png"
           produtos: [
             {
               nome: "Batismo",
@@ -68,6 +70,7 @@ export default function App() {
         },
         {
           titulo: "Caixas de lembrancinhas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Caixas.png"
           produtos: [
             {
               nome: "Caixa Milk",
