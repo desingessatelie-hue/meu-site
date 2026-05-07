@@ -125,22 +125,22 @@ export default function App() {
          {
           titulo: "Dia das Mães",
           grupo: "datas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/data_com/Mae-logo.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-logo.png",
           produtos: [
             {
               nome: "Caixa com Sabonete",
               preco: "R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/data_com/Mae-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-01.png"
             },
            {
               nome: "Caixa com Sabonete 2",
               preco: "R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/data_com/Mae-02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-02.png"
             },
             {
               nome: "Buque com Baton",
               preco: "A partir de R$ 6,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/data_com/Mae-03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-03.png"
             }
   
           ]
