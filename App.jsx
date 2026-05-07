@@ -359,7 +359,7 @@ return (
       src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png"
       style={{
         width: "100%",
-        maxHeight: "500px",
+        height: window.innerWidth < 768 ? "220px" : "500px",
         objectFit: "cover",
         borderRadius: "20px"
       }}
@@ -372,11 +372,12 @@ return (
       transform: "translate(-50%, -50%)",
       background: "rgba(255,255,255,0.15)",
       backdropFilter: "blur(8px)",
-      padding: "40px",
+      padding: window.innerWidth < 768 ? "20px" : "40px",
       borderRadius: "20px",
       textAlign: "center",
-      width: "80%",
-      maxWidth: "600px"
+      width: window.innerWidth < 768 ? "90%" : "80%",
+      maxWidth: "600px",
+      marginBottom: "50px"
     }}>
 
       <h1>Ateliê Pequenos Encantos by Eli</h1>
