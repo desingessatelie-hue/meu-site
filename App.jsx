@@ -403,7 +403,20 @@ return (
                     e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
                   }}
                 >
-              <img src={cat.imagem} style={estilos.imagem} />
+              <img
+                  src={cat.imagem}
+                  style={{
+                    ...estilos.imagem,
+                    cursor: "pointer"
+                  }}
+                  onClick={() => setCategoriaAtiva(cat.titulo)}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.03)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
               <h2>{cat.titulo}</h2>
               <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
                 Ver coleção
@@ -413,7 +426,7 @@ return (
         </div>
       )}
 
-      {/* SUBCATEGORIAS */}
+
 {/* SUBCATEGORIAS */}
 {categoriaSelecionada && !subcategoriaAtiva && categoriaSelecionada.subcategorias && (
   <div style={{ marginTop: "20px" }}>
@@ -453,7 +466,20 @@ return (
         <div key={i} style={estilos.card}>
           
           {sub.imagem && (
-            <img src={sub.imagem} style={estilos.imagem} />
+            <img
+              src={sub.imagem}
+              style={{
+                ...estilos.imagem,
+                cursor: "pointer"
+              }}
+              onClick={() => setSubcategoriaAtiva(sub.titulo)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.03)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            />
           )}
 
           <h3>{sub.titulo}</h3>
