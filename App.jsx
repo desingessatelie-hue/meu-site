@@ -14,10 +14,12 @@ export default function App() {
   const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
+      
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.png",
       subcategorias: [
         {
           titulo: "Topo de Bolo",
+          grupo: "festas",
            imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Bolo.png",
           produtos: [
             {
@@ -44,6 +46,7 @@ export default function App() {
         },
         {
           titulo: "Topo de Brigadeiro e CupCake",
+          grupo: "festas",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Brigadeiro.png",
           produtos: [
             {
@@ -70,6 +73,7 @@ export default function App() {
         },
         {
           titulo: "Caixas de lembrancinhas",
+          grupo: "festas",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Caixas.png",
           produtos: [
             {
@@ -98,6 +102,60 @@ export default function App() {
 
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Cupcake01.png"
             }
+          ]
+        },
+        {
+          titulo: "Páscoa",
+          grupo: "datas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Caixa Milk",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caixa Sushi",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+  
+          ]
+        },
+         {
+          titulo: "Dia das Mães",
+          grupo: "datas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Caixa Milk",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caixa Sushi",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+  
+          ]
+        },
+                 {
+          titulo: "Namorados",
+          grupo: "datas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Caixa Milk",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caixa Sushi",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+  
           ]
         }
       ]
@@ -444,7 +502,9 @@ return (
     >
       ← Voltar
     </button>
-<Breadcrumb />
+
+    <Breadcrumb />
+
     {/* MINI HEADER */}
     <h2 style={{
       textAlign: "center",
@@ -455,54 +515,165 @@ return (
       {categoriaSelecionada.titulo}
     </h2>
 
-    <p style={{ 
-      textAlign: "center", 
-      marginBottom: "25px", 
-      fontSize: "14px", 
-      color: "#777" 
+    <p style={{
+      textAlign: "center",
+      marginBottom: "25px",
+      fontSize: "14px",
+      color: "#777"
     }}>
-      💛 Produtos personalizados sob encomenda.  
+      💛 Produtos personalizados sob encomenda.
       Cada peça é única e feita especialmente para você.
     </p>
 
-    <div style={estilos.grid}>
-      {categoriaSelecionada.subcategorias.map((sub, i) => (
-        <div key={i} style={estilos.card}>
-          
-          {sub.imagem && (
-            <img
-              src={sub.imagem}
-              style={{
-                ...estilos.imagem,
-                cursor: "pointer"
-              }}
-              onClick={() => setSubcategoriaAtiva(sub.titulo)}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.03)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            />
-          )}
+    {/* ===================================== */}
+    {/* FESTAS E LEMBRANCINHAS */}
+    {/* ===================================== */}
 
-          <h3>{sub.titulo}</h3>
+    {categoriaSelecionada.titulo === "Festas e Lembrancinhas" ? (
 
-          <button
-            style={estilos.botao}
-            onClick={() => setSubcategoriaAtiva(sub.titulo)}
-            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
-            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-          >
-            Ver produtos
-          </button>
+      <>
 
+        {/* FESTAS */}
+        <h2 style={{
+          marginTop: "20px",
+          marginBottom: "20px",
+          color: "#5a3e36",
+          textAlign: "center",
+          fontSize: "24px"
+        }}>
+          ✨ Festas Personalizadas
+        </h2>
+
+        <div style={estilos.grid}>
+          {categoriaSelecionada.subcategorias
+            .filter(sub => sub.grupo === "festas")
+            .map((sub, i) => (
+              <div key={i} style={estilos.card}>
+
+                {sub.imagem && (
+                  <img
+                    src={sub.imagem}
+                    style={{
+                      ...estilos.imagem,
+                      cursor: "pointer"
+                    }}
+                    onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.03)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
+                  />
+                )}
+
+                <h3>{sub.titulo}</h3>
+
+                <button
+                  style={estilos.botao}
+                  onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                >
+                  Ver produtos
+                </button>
+
+              </div>
+          ))}
         </div>
-      ))}
-    </div>
+
+        {/* DATAS */}
+        <h2 style={{
+          marginTop: "50px",
+          marginBottom: "20px",
+          color: "#5a3e36",
+          textAlign: "center",
+          fontSize: "24px"
+        }}>
+          🎄 Datas Comemorativas
+        </h2>
+
+        <div style={estilos.grid}>
+          {categoriaSelecionada.subcategorias
+            .filter(sub => sub.grupo === "datas")
+            .map((sub, i) => (
+              <div key={i} style={estilos.card}>
+
+                {sub.imagem && (
+                  <img
+                    src={sub.imagem}
+                    style={{
+                      ...estilos.imagem,
+                      cursor: "pointer"
+                    }}
+                    onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.03)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
+                  />
+                )}
+
+                <h3>{sub.titulo}</h3>
+
+                <button
+                  style={estilos.botao}
+                  onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                >
+                  Ver produtos
+                </button>
+
+              </div>
+          ))}
+        </div>
+
+      </>
+
+    ) : (
+
+      /* OUTRAS CATEGORIAS */
+      <div style={estilos.grid}>
+        {categoriaSelecionada.subcategorias.map((sub, i) => (
+          <div key={i} style={estilos.card}>
+
+            {sub.imagem && (
+              <img
+                src={sub.imagem}
+                style={{
+                  ...estilos.imagem,
+                  cursor: "pointer"
+                }}
+                onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.03)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              />
+            )}
+
+            <h3>{sub.titulo}</h3>
+
+            <button
+              style={estilos.botao}
+              onClick={() => setSubcategoriaAtiva(sub.titulo)}
+            >
+              Ver produtos
+            </button>
+
+          </div>
+        ))}
+      </div>
+
+    )}
 
   </div>
 )}
+
+
+
+    
       {/* PRODUTOS */}
     {subcategoriaSelecionada && (
      <div style={{ marginTop: "20px" }}>
