@@ -1074,7 +1074,7 @@ return (
       </>
 
     ) : (
-
+<>
       /* OUTRAS SUBCATEGORIAS */
       <div style={estilos.grid}>
         {subcategoriaSelecionada.produtos.map((prod, i) => (
@@ -1173,6 +1173,7 @@ return (
             </button>
           
           </div>
+  </>
     )}
 
   </div>
