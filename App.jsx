@@ -16,6 +16,7 @@ const voltarAoTopo = () => {
     behavior: "smooth"
   });
 };
+
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const categorias = [
     {
