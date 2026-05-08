@@ -113,6 +113,7 @@ export default function App() {
               nome: "Caixa Envelope 3 Bis",
               preco: "A partir de R$ 6,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_Envelope_3biz.png"
+              
             },
             {
               nome: "Caixa Envelope 4 Bis",
