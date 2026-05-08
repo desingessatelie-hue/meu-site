@@ -1204,7 +1204,7 @@ return (
           </div>
         </div>
       )}
-      )}
+     
 
     {/* BOTÃO GLOBAL */}
     <div style={{
@@ -1240,7 +1240,7 @@ return (
     </div>
 
   </div>
-)}
+
     )}
 
 
