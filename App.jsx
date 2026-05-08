@@ -561,10 +561,10 @@ return (
       transform: "translate(-50%, -50%)",
       background: "rgba(255,255,255,0.15)",
       backdropFilter: "blur(8px)",
-      padding: window.innerWidth < 768 ? "20px" : "40px",
+      padding: isMobile ? "20px" : "40px",
       borderRadius: "20px",
       textAlign: "center",
-      width: window.innerWidth < 768 ? "90%" : "80%",
+      width :isMobile ? "90%" : "80%",
       maxWidth: "600px",
       marginBottom: "50px"
     }}>
@@ -582,6 +582,7 @@ return (
       {!categoriaAtiva && (
         <div id="produtos" style={estilos.grid}>
           {categorias.map((cat, i) => (
+          <div key={i}
             <div
                   style={estilos.card}
                   onMouseEnter={(e) => {
@@ -818,10 +819,7 @@ return (
           </div>
         ))}
       </div>
-</>
-    )}
 
-  </div>
 )}
 
 
