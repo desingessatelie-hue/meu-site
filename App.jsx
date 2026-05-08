@@ -1141,7 +1141,7 @@ return (
         ))}
         
       </div>
-    {/* Botão de voltar do rodape */}
+           {/* Botão de voltar do rodape */}
           <div style={{
             display: "flex",
             justifyContent: "center",
@@ -1169,7 +1169,7 @@ return (
                 });
               }}
             >
-              ← Voltar para categorias
+              ← Voltar para coleção
             </button>
           
           </div>
