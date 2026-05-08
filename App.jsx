@@ -1148,8 +1148,9 @@ return (
     )}
 
   </div>
+    </>
 )}
-
+)}
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
        <div style={{ marginTop: "20px" }}>
@@ -1208,7 +1209,7 @@ return (
           </div>
 
         </div>
-    
+  
       )}
      
 
