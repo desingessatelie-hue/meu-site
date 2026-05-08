@@ -1241,10 +1241,6 @@ return (
 
   </div>
 
-    )}
-
-
-
   
       <a
           href="https://wa.me/5547996588988"
