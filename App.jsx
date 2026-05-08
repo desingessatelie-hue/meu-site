@@ -111,7 +111,7 @@ export default function App() {
           produtos: [
             {
               nome: "Caixa Envelope 3 Bis",
-              tipo: "doces"
+              tipo: "doces",
               preco: "A partir de R$ 6,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Envelope_3biz.png"
               
