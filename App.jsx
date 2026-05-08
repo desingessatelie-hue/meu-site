@@ -1095,56 +1095,58 @@ return (
             }}
           >
 
-            <div style={{ overflow: "hidden", borderRadius: "14px" }}>
-              <img
-                src={prod.imagem}
-                alt={prod.nome}
-                style={estilos.imagem}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.08)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              />
-            </div>  {/*1*/}
+                                  <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                                    <img
+                                      src={prod.imagem}
+                                      alt={prod.nome}
+                                      style={estilos.imagem}
+                                      onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = "scale(1.08)";
+                                      }}
+                                      onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = "scale(1)";
+                                      }}
+                                    />
+                                  </div>  {/*1*/}
 
-            <p style={{
-              fontWeight: "600",
-              marginTop: "10px"
-            }}>
-              {prod.nome}
-            </p>
+                        <p style={{
+                          fontWeight: "600",
+                          marginTop: "10px"
+                        }}>
+                          {prod.nome}
+                        </p>
 
-            {prod.preco && (
-              <p style={{
-                fontWeight: "bold",
-                color: "#c8a96a",
-                fontSize: "16px",
-                marginTop: "5px"
-              }}>
-                💰 {prod.preco}
-              </p>
-            )}
+                        {prod.preco && (
+                          <p style={{
+                            fontWeight: "bold",
+                            color: "#c8a96a",
+                            fontSize: "16px",
+                            marginTop: "5px"
+                          }}>
+                            💰 {prod.preco}
+                          </p>
+                        )}
 
-            <p style={{
-              fontSize: "13px",
-              color: "#999",
-              marginTop: "4px"
-            }}>
-              Feito sob medida para você 💛
-            </p>
+                        <p style={{
+                          fontSize: "13px",
+                          color: "#999",
+                          marginTop: "4px"
+                        }}>
+                          Feito sob medida para você 💛
+                        </p>
+            
+                        <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer" >
+                          <button style={estilos.botao}>
+                            Solicitar orçamento
+                          </button>
+                        </a>
 
-            <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer" >
-              <button style={estilos.botao}>
-                Solicitar orçamento
-              </button>
-            </a>
-
-          </div> {/*2*/}
+          </div> 
         
         ))}
-        </div> {/*3*/}
+
+        
+        </div> 
 
 
 </>
