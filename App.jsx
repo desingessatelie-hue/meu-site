@@ -10,6 +10,12 @@ export default function App() {
     const mensagem = `Olá! Tenho interesse no produto: ${produto} do Ateliê Pequenos Encantos by Eli.`;
     return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   };
+const voltarAoTopo = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 
   const categorias = [
     {
@@ -409,6 +415,21 @@ export default function App() {
           maxWidth: "600px",
           boxShadow: "0 8px 30px rgba(0,0,0,0.1)"
       },
+    topo: {
+              position: "fixed",
+              bottom: "90px",
+              right: "20px",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              background: "#c8a96a",
+              color: "#fff",
+              border: "none",
+              fontSize: "22px",
+              cursor: "pointer",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+              zIndex: 999
+            },
     grid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
@@ -469,6 +490,7 @@ export default function App() {
         boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
       }
   };
+
 const Breadcrumb = () => {
   return (
     <div style={{
@@ -576,7 +598,11 @@ return (
                     ...estilos.imagem,
                     cursor: "pointer"
                   }}
-                  onClick={() => setCategoriaAtiva(cat.titulo)}
+                  onClick={() => {
+                        setCategoriaAtiva(cat.titulo);
+                        voltarAoTopo();
+                      }}
+                
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(1.03)";
                   }}
@@ -585,7 +611,10 @@ return (
                   }}
                 />
               <h2>{cat.titulo}</h2>
-              <button style={estilos.botao} onClick={() => setCategoriaAtiva(cat.titulo)}>
+              <button style={estilos.botao} onClick={() => {
+                                                                  setCategoriaAtiva(cat.titulo);
+                                                                  voltarAoTopo();
+                                                                }}>
                 Ver coleção
               </button>
             </div>
@@ -662,7 +691,10 @@ return (
                       ...estilos.imagem,
                       cursor: "pointer"
                     }}
-                    onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    onClick={() => {
+                                        setSubcategoriaAtiva(sub.titulo);
+                                        voltarAoTopo();
+                                      }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = "scale(1.03)";
                     }}
@@ -676,8 +708,11 @@ return (
 
                 <button
                   style={estilos.botao}
-                  onClick={() => setSubcategoriaAtiva(sub.titulo)}
-                >
+                 onClick={() => {
+                                          setSubcategoriaAtiva(sub.titulo);
+                                          voltarAoTopo();
+                                        }}
+                                                        >
                   Ver produtos
                 </button>
 
@@ -709,7 +744,10 @@ return (
                       ...estilos.imagem,
                       cursor: "pointer"
                     }}
-                    onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                    onClick={() => {
+                                        setSubcategoriaAtiva(sub.titulo);
+                                        voltarAoTopo();
+                                      }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = "scale(1.03)";
                     }}
@@ -723,7 +761,10 @@ return (
 
                 <button
                   style={estilos.botao}
-                  onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                  onClick={() => {
+                                          setSubcategoriaAtiva(sub.titulo);
+                                          voltarAoTopo();
+                                        }}
                 >
                   Ver produtos
                 </button>
@@ -748,7 +789,10 @@ return (
                   ...estilos.imagem,
                   cursor: "pointer"
                 }}
-                onClick={() => setSubcategoriaAtiva(sub.titulo)}
+                onClick={() => {
+                                    setSubcategoriaAtiva(sub.titulo);
+                                    voltarAoTopo();
+                                  }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.03)";
                 }}
@@ -762,7 +806,10 @@ return (
 
             <button
               style={estilos.botao}
-              onClick={() => setSubcategoriaAtiva(sub.titulo)}
+              onClick={() => {
+                                  setSubcategoriaAtiva(sub.titulo);
+                                  voltarAoTopo();
+                                }}
             >
               Ver produtos
             </button>
@@ -785,7 +832,10 @@ return (
 
     <button
       style={estilos.voltar}
-      onClick={() => setSubcategoriaAtiva(null)}
+      onClick={() => {
+                setSubcategoriaAtiva(null);
+                voltarAoTopo();
+              }}
     >
       ← Voltar
     </button>
@@ -1160,6 +1210,12 @@ return (
         >
           💬
         </a>
+    <button
+        style={estilos.topo}
+        onClick={voltarAoTopo}
+      >
+        ↑
+      </button>
     </div>
   );
 }
