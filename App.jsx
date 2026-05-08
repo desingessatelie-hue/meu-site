@@ -537,6 +537,8 @@ const Breadcrumb = () => {
     </div>
   );
 };
+
+};
 return (
   <div style={estilos.container}>
 
