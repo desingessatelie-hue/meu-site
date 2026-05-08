@@ -516,6 +516,7 @@ const Breadcrumb = () => {
           <span 
             style={{ cursor: "pointer" }}
             onClick={() => {
+              setCategoriaAtiva(null);
               setSubcategoriaAtiva(null);
             }}
           >
@@ -833,6 +834,7 @@ return (
     <button
       style={estilos.voltar}
       onClick={() => {
+                setCategoriaAtiva(null);
                 setSubcategoriaAtiva(null);
                 voltarAoTopo();
               }}
@@ -899,6 +901,7 @@ return (
                 <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                   <img
                     src={prod.imagem}
+                    alt={prod.nome}
                     style={estilos.imagem}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = "scale(1.08)";
@@ -935,7 +938,7 @@ return (
                   Feito sob medida para você 💛
                 </p>
 
-                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer">
                   <button style={estilos.botao}>
                     Solicitar orçamento
                   </button>
@@ -968,6 +971,7 @@ return (
                 <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                   <img
                     src={prod.imagem}
+                    alt={prod.nome}
                     style={estilos.imagem}
                   />
                 </div>
@@ -998,7 +1002,7 @@ return (
                   Feito sob medida para você 💛
                 </p>
 
-                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer">
                   <button style={estilos.botao}>
                     Solicitar orçamento
                   </button>
@@ -1031,6 +1035,7 @@ return (
                 <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                   <img
                     src={prod.imagem}
+                    alt={prod.nome}
                     style={estilos.imagem}
                   />
                 </div>
@@ -1061,7 +1066,7 @@ return (
                   Feito sob medida para você 💛
                 </p>
 
-                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer">
                   <button style={estilos.botao}>
                     Solicitar orçamento
                   </button>
@@ -1075,7 +1080,7 @@ return (
 
     ) : (
 <>
-      /* OUTRAS SUBCATEGORIAS */
+  {/* OUTRAS SUBCATEGORIAS  */}
       <div style={estilos.grid}>
         {subcategoriaSelecionada.produtos.map((prod, i) => (
           <div
@@ -1094,6 +1099,7 @@ return (
             <div style={{ overflow: "hidden", borderRadius: "14px" }}>
               <img
                 src={prod.imagem}
+                alt={prod.nome}
                 style={estilos.imagem}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.08)";
@@ -1130,7 +1136,7 @@ return (
               Feito sob medida para você 💛
             </p>
 
-            <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+            <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer" >
               <button style={estilos.botao}>
                 Solicitar orçamento
               </button>
@@ -1194,7 +1200,7 @@ return (
                 Feito sob medida para você 💛
               </p>
 
-                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank">
+                <a href={gerarLinkWhatsApp(prod.nome)} target="_blank" rel="noopener noreferrer">
                   <button style={estilos.botao}>
                     Solicitar orçamento
                   </button>
@@ -1226,7 +1232,9 @@ return (
           boxShadow: "0 6px 18px rgba(0,0,0,0.12)"
         }}
         onClick={() => {
+          setCategoriaAtiva(null);
           setSubcategoriaAtiva(null);
+          
 
           window.scrollTo({
             top: 0,
@@ -1245,6 +1253,7 @@ return (
       <a
           href="https://wa.me/5547996588988"
           target="_blank"
+          rel="noopener noreferrer"
           style={estilos.whatsapp}
         >
           💬
