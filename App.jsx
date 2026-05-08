@@ -582,8 +582,9 @@ return (
       {!categoriaAtiva && (
         <div id="produtos" style={estilos.grid}>
           {categorias.map((cat, i) => (
-          <div key={i}
+          
             <div
+                   key={i}
                   style={estilos.card}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
