@@ -344,10 +344,12 @@ export default function App() {
     },
     imagem: {
       width: "100%",
-      height: "220px",
+      aspectRatio: "4 / 5",
+      height: "auto",
       objectFit: "cover",
       borderRadius: "14px",
-      transition: "0.4s"
+      transition: "0.4s",
+      boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
     },
    botao: {
         marginTop: "12px",
