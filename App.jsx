@@ -764,8 +764,7 @@ return (
 
                 <button
                   style={estilos.botao}
-                  onClick={() => {
-                                          setSubcategoriaAtiva(sub.titulo);
+                  onClick={() => {setSubcategoriaAtiva(sub.titulo);
                                           voltarAoTopo();
                                         }}
                 >
@@ -776,6 +775,7 @@ return (
           ))}
         </div>
 
+      
       </>
 
     ) : (
@@ -820,7 +820,7 @@ return (
           </div>
         ))}
       </div>
-
+</>
 )}
 
 
