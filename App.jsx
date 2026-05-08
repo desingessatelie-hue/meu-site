@@ -538,7 +538,6 @@ const Breadcrumb = () => {
   );
 };
 
-};
 return (
   <div style={estilos.container}>
 
@@ -823,6 +822,8 @@ return (
         ))}
       </div>
 </>
+    )}
+  </div>
 )}
 
 
@@ -1153,6 +1154,8 @@ return (
 
 </>
   )}
+  </div>
+)}
 
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
@@ -1249,8 +1252,6 @@ return (
         ← Voltar para coleção
       </button>
 
-    </div>
-  
       <a
           href="https://wa.me/5547996588988"
           target="_blank"
@@ -1266,5 +1267,6 @@ return (
         ↑
       </button>
     </div>
+  </div>
   );
 }
