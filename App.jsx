@@ -776,8 +776,8 @@ return (
       </>
 
     ) : (
-
-      /* OUTRAS CATEGORIAS */
+<>
+    {/* OUTRAS CATEGORIAS */}
       <div style={estilos.grid}>
         {categoriaSelecionada.subcategorias.map((sub, i) => (
           <div key={i} style={estilos.card}>
@@ -817,7 +817,7 @@ return (
           </div>
         ))}
       </div>
-
+</>
     )}
 
   </div>
