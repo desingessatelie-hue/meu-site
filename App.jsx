@@ -1107,7 +1107,7 @@ return (
                   e.currentTarget.style.transform = "scale(1)";
                 }}
               />
-            </div>
+            </div>  {/*1*/}
 
             <p style={{
               fontWeight: "600",
@@ -1141,16 +1141,15 @@ return (
               </button>
             </a>
 
-          </div>
+          </div> {/*2*/}
         
         ))}
-        </div>
-    )}
+        </div> {/*3*/}
 
-  </div>
-    </>
-)}
-)}
+
+</>
+  )}
+
       {/* PRODUTOS DIRETOS */}
       {categoriaSelecionada && !categoriaSelecionada.subcategorias && (
        <div style={{ marginTop: "20px" }}>
@@ -1247,9 +1246,6 @@ return (
       </button>
 
     </div>
-
- 
-
   
       <a
           href="https://wa.me/5547996588988"
