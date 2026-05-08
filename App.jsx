@@ -158,7 +158,43 @@ export default function App() {
               preco: "A partir de R$ 7,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
             },
+             {
+              nome: "Bloquinho Esperança A6",
+              tipo: "papelaria",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
+             {
+              nome: "Bloquinho Esperança A6",
+              tipo: "papelaria",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
+             {
+              nome: "Bloquinho Esperança A6",
+              tipo: "papelaria",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
             {
+              nome: "Kit bloquinho 01",
+              tipo: "kits",
+              preco: "A partir de R$ 15,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
+            {
+              nome: "Kit bloquinho 01",
+              tipo: "kits",
+              preco: "A partir de R$ 15,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
+            {
+              nome: "Kit bloquinho 01",
+              tipo: "kits",
+              preco: "A partir de R$ 15,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+            },
+           {
               nome: "Kit bloquinho 01",
               tipo: "kits",
               preco: "A partir de R$ 15,50",
