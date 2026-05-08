@@ -112,38 +112,38 @@ export default function App() {
             {
               nome: "Caixa Envelope 3 Bis",
               preco: "A partir de R$ 6,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_Envelope_3biz.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Envelope_3biz.png"
               
             },
             {
               nome: "Caixa Envelope 4 Bis",
               preco: "A partir de R$ 8,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_Envelope_4biz.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Envelope_4biz.png"
             },
               {
               nome: "Caixa com tampa 4 Bis",
               preco: "A partir de R$ 9,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_Tampa_4biz.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Tampa_4biz.png"
             },
                         {
               nome: "Caixa Luz",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_luz.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_luz.png"
             },
                         {
               nome: "Caixa Talento",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caixa_Talento.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Talento.png"
             },
                         {
               nome: "Card Bombom",
               preco: "A partir de R$ 3,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Card_bombom.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_bombom.png"
             },
                         {
               nome: "Card Coelho",
               preco: "A partir de R$ 3,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Card_Coelho.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
             }
           ]
         },
