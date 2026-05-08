@@ -16,7 +16,7 @@ const voltarAoTopo = () => {
     behavior: "smooth"
   });
 };
-
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
@@ -548,7 +548,7 @@ return (
       src="https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/banner.png"
       style={{
         width: "100%",
-        height: window.innerWidth < 768 ? "220px" : "500px",
+        height: isMobile ? "220px" : "500px",
         objectFit: "cover",
         borderRadius: "20px"
       }}
@@ -778,7 +778,7 @@ return (
 
     ) : (
 <>
-    {/* OUTRAS CATEGORIAS */}
+    {/* OUTRAS CATEGORIAS 2*/}
       <div style={estilos.grid}>
         {categoriaSelecionada.subcategorias.map((sub, i) => (
           <div key={i} style={estilos.card}>
@@ -1079,8 +1079,8 @@ return (
       </>
 
     ) : (
-
-  {/* OUTRAS SUBCATEGORIAS  */}
+<>
+  {/* OUTRAS SUBCATEGORIAS  1*/}
       <div style={estilos.grid}>
         {subcategoriaSelecionada.produtos.map((prod, i) => (
           <div
