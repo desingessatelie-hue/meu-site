@@ -143,6 +143,7 @@ export const categorias = [
               nome: "Boobie Goode",
               tipo: "papelaria",
               preco: "A partir de R$ 7,50",
+               descricao: "Tamanho A6 com 20 desenhos diferentes, ideal para lembranças de aniversário",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Boobie_goode_slim.png"
             },
              {
@@ -154,14 +155,14 @@ export const categorias = [
              {
               nome: "Bloquinho Coelho A7",
               tipo: "papelaria",
-              preco: "A partir de R$ 8,00",
+              preco: "A partir de R$ 10,00",
               imagem: "/main/imagens/festa/datas_com/Pascoa/Bloquinho_a7_vr.png",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Bloquinho_a7_vr.png"
             },
              {
               nome: "Caderneta A6 ",
               tipo: "papelaria",
-              preco: "A partir de R$ 7,50",
+              preco: "A partir de R$ 8,50",
               imagem: "/imagens/festa/datas_com/Pascoa/Caderneta_A6.png",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caderneta_A6.png"
             },
@@ -210,14 +211,14 @@ export const categorias = [
               nome: "Kit Caixa Coelho 01",
               tipo: "kits",
               preco: "A partir de R$ 45,50",
-              descricao: "Caderneta A6, Caixa de bis e Caixa personalizada no tela.",
+              descricao: "Caderneta A6, Caixa de bis e Caixa cartonada e personalizada no tema.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_01.png"
             },
             {
               nome: "Kit Caixa Coelho 02",
               tipo: "kits",
-              preco: "A partir de R$ 55,50",
-              descricao: "Caderneta A6,Chocolate, Caixa de bis e Caixa personalizada no tela.",
+              preco: "A partir de R$ 55,00",
+              descricao: "Caderneta A6,Chocolate, Caixa de bis e Caixa cartonada e personalizada no tema.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_02.png"
             },
            {
@@ -225,7 +226,7 @@ export const categorias = [
               tipo: "kits",
               preco: "A partir de R$ 39,00",
               descricao: "Bloquinho A7, Chocolate, Saboneta Natura e Caixa Personalizada.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Kit_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_03.png"
             }
           ]
         },
@@ -266,11 +267,47 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp02.png"
             },
             {
-              nome: "Topo de Bolo Dia das Mães (3)",
+              nome: "Topo de Bolo Dia das Mães Plaquinha Amor (3)",
               tipo: "topo",
               preco: "A partir de R$ 15,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp03.png"
-            }
+            },
+              {
+              nome: "Topo de Bolo Dia das Mães (4)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp04.png"
+            },
+              { 
+              nome: "Topo de Bolo Dia das Mães (5)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp05.png"
+             },
+              {
+              nome: "Topo de Bolo Nome Mãe (6)",
+              tipo: "topo",
+              preco: "A partir de R$ 10,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp06.png"
+             },
+              {
+              nome: "Topo de Bolo Dia das Mães Leque de Coração (7)",
+              tipo: "topo",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp07.png"
+              },
+                { 
+              nome: "Topo de Bolo Dia das Mães Coração (8)",
+              tipo: "topo",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp08.png"
+               },
+                  { 
+              nome: "Topo de Bolo Dia das Mães (9)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp09.png"
+               }
 
           ]
         },
@@ -308,6 +345,45 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             }
   
+          ]
+        },
+        {
+          titulo: "Dia das Mulheres",
+          grupo: "datas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Lembrancinha Flor com Chocolate",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 4,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Card Mulher Forte",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 2,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Lembrancinha com Adesivo",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 3,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Kit Mulher Especial",
+              tipo: "Kits",
+              preco: "A partir de R$ 18,00",
+              descricao: "Inclui lembrancinha, bloquinho e caneta personalizada.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Kit Celebração Feminina",
+              tipo: "Kits",
+              preco: "A partir de R$ 25,00",
+              descricao: "Inclui card personalizado, adesivos temáticos e embalagem especial.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
           ]
         }
       ]
