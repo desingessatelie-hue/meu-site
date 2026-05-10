@@ -217,19 +217,19 @@ export const categorias = [
               nome: "Topo de Bolo Dia das Mães (1)",
               tipo: "topo",
               preco: "A partir de R$ 15,00",
-              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp01.png"
             },
             {
               nome: "Topo de Bolo Dia das Mães (2)",
               tipo: "topo",
               preco: "A partir de R$ 15,00",
-              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp02.png"
             },
             {
               nome: "Topo de Bolo Dia das Mães (3)",
               tipo: "topo",
               preco: "A partir de R$ 15,00",
-              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-Tp03.png"
             }
 
           ]
