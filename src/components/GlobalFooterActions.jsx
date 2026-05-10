@@ -4,7 +4,8 @@ export function GlobalFooterActions({
   estilos,
   whatsappNumber,
   onBackToCollection,
-  onScrollTop
+  onScrollTop,
+  showBackButton = false
 }) {
   return (
     <div
@@ -14,22 +15,24 @@ export function GlobalFooterActions({
         marginTop: "50px"
       }}
     >
-      <button
-        style={{
-          padding: "14px 28px",
-          borderRadius: "14px",
-          border: "none",
-          background: "linear-gradient(135deg, #c8a96a, #b8955a)",
-          color: "#fff",
-          fontWeight: "bold",
-          fontSize: "15px",
-          cursor: "pointer",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.12)"
-        }}
-        onClick={onBackToCollection}
-      >
-        ← Voltar para coleção
-      </button>
+      {showBackButton && (
+        <button
+          style={{
+            padding: "14px 28px",
+            borderRadius: "14px",
+            border: "none",
+            background: "linear-gradient(135deg, #c8a96a, #b8955a)",
+            color: "#fff",
+            fontWeight: "bold",
+            fontSize: "15px",
+            cursor: "pointer",
+            boxShadow: "0 6px 18px rgba(0,0,0,0.12)"
+          }}
+          onClick={onBackToCollection}
+        >
+          ← Voltar
+        </button>
+      )}
 
       <a
         href={`https://wa.me/${whatsappNumber}`}

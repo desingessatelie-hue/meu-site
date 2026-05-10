@@ -26,6 +26,20 @@ export default function App() {
     setSubcategoriaAtiva(null);
   };
 
+  const voltarParaSubcategoria = () => {
+    setSubcategoriaAtiva(null);
+    voltarAoTopo();
+  };
+
+  const handleFooterBack = () => {
+    if (subcategoriaAtiva) {
+      voltarParaSubcategoria();
+    } else {
+      resetNavigation();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <div style={estilos.container}>
       {!categoriaAtiva && <AppBanner isMobile={isMobile} />}
@@ -63,10 +77,7 @@ export default function App() {
           estilos={estilos}
           gerarLinkWhatsApp={gerarLinkWhatsApp}
           onResetNavigation={resetNavigation}
-          onBack={() => {
-            resetNavigation();
-            voltarAoTopo();
-          }}
+          onBack={voltarParaSubcategoria}
         />
       )}
 
@@ -83,10 +94,8 @@ export default function App() {
       <GlobalFooterActions
         estilos={estilos}
         whatsappNumber={WHATSAPP_NUMBER}
-        onBackToCollection={() => {
-          resetNavigation();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
+        showBackButton={Boolean(categoriaSelecionada)}
+        onBackToCollection={handleFooterBack}
         onScrollTop={voltarAoTopo}
       />
     </div>
