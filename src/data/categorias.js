@@ -196,20 +196,42 @@ export const categorias = [
           produtos: [
             {
               nome: "Caixa com Sabonete",
+              tipo: "Presentes",
               preco: "R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-01.png"
             },
            {
               nome: "Caixa com Sabonete 2",
+              tipo: "Presentes",
               preco: "R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-02.png"
             },
             {
               nome: "Buque com Baton",
+              tipo: "Presentes",
               preco: "A partir de R$ 6,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae-03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mae/Mae-03.png"
+            },
+
+            {
+              nome: "Topo de Bolo Dia das Mães (1)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp01.png"
+            },
+            {
+              nome: "Topo de Bolo Dia das Mães (2)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp02.png"
+            },
+            {
+              nome: "Topo de Bolo Dia das Mães (3)",
+              tipo: "topo",
+              preco: "A partir de R$ 15,00",
+              imagem: "/imagens/festa/datas_com/Mae/Mae-Tp03.png"
             }
-  
+
           ]
         },
       {
