@@ -140,52 +140,92 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
             },
             {
-              nome: "Bloquinho Esperança A6",
+              nome: "Boobie Goode",
               tipo: "papelaria",
               preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Boobie_goode_slim.png"
             },
              {
-              nome: "Bloquinho Esperança A6",
+              nome: "Bloquinho Esperança A7",
               tipo: "papelaria",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              preco: "A partir de R$ 8,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Bloquinho_a7_ho.png"
             },
              {
-              nome: "Bloquinho Esperança A6",
+              nome: "Bloquinho Coelho A7",
               tipo: "papelaria",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              preco: "A partir de R$ 8,00",
+              imagem: "/main/imagens/festa/datas_com/Pascoa/Bloquinho_a7_vr.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Bloquinho_a7_vr.png"
             },
              {
-              nome: "Bloquinho Esperança A6",
+              nome: "Caderneta A6 ",
               tipo: "papelaria",
               preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              imagem: "/imagens/festa/datas_com/Pascoa/Caderneta_A6.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caderneta_A6.png"
+            },
+             {
+              nome: "Lápis Personalizado Azul",
+              tipo: "papelaria",
+              preco: "A partir de R$ 7,50",
+              imagem: "/imagens/festa/datas_com/Pascoa/Lapis_02.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Lapis_02.png"
+            },
+              { nome: "Lápis Personalizado Vermelho",
+              tipo: "papelaria",
+              preco: "A partir de R$ 7,50",
+              imagem: "/imagens/festa/datas_com/Pascoa/Lapis_02.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Lapis_03.png"
             },
             {
-              nome: "Kit bloquinho 01",
-              tipo: "kits",
-              preco: "A partir de R$ 15,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              nome: "Grampo de Coelho Mini",
+              tipo: "papelaria",
+              preco: "A partir de R$ 4,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Grampo_pascoa.png"
             },
             {
-              nome: "Kit bloquinho 01",
+              nome: "Kit Lembrancinha Coelho 01",
               tipo: "kits",
-              preco: "A partir de R$ 15,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
-            },
-            {
-              nome: "Kit bloquinho 01",
-              tipo: "kits",
-              preco: "A partir de R$ 15,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              preco: "A partir de R$ 12,50",
+              descricao: "Bombom, Lápis decorada e tag coelho.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Kit_04.png"
             },
            {
-              nome: "Kit bloquinho 01",
+              nome: "Kit Lembrancinha Coelho 02",
               tipo: "kits",
-              preco: "A partir de R$ 15,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Card_Coelho.png"
+              preco: "A partir de R$ 45,50",
+              descricao: "Caderneta A6, Bombom.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Kit_03.png"
+            },
+            {
+              nome: "Kit Lembrancinha Coelho 03",
+              tipo: "kits",
+              preco: "A partir de R$ 18,00",
+              descricao: "Caderneta A6, Chocolate, Lápis decorada e tag coelho.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Kit_01.png"
+            },
+
+            {
+              nome: "Kit Caixa Coelho 01",
+              tipo: "kits",
+              preco: "A partir de R$ 45,50",
+              descricao: "Caderneta A6, Caixa de bis e Caixa personalizada no tela.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_01.png"
+            },
+            {
+              nome: "Kit Caixa Coelho 02",
+              tipo: "kits",
+              preco: "A partir de R$ 55,50",
+              descricao: "Caderneta A6,Chocolate, Caixa de bis e Caixa personalizada no tela.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_02.png"
+            },
+           {
+              nome: "Kit Caixa Coelho 03",
+              tipo: "kits",
+              preco: "A partir de R$ 39,00",
+              descricao: "Bloquinho A7, Chocolate, Saboneta Natura e Caixa Personalizada.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Kit_01.png"
             }
           ]
         },
