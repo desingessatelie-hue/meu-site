@@ -57,8 +57,8 @@ export default function App() {
   ];
 
   const renderLancamentos = () => (
-    <section style={{ marginBottom: "40px" }}>
-      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+    <section style={estilos.lancamentosSection}>
+      <div style={estilos.sectionHeader}>
         <p
           style={{
             fontSize: "14px",
@@ -101,16 +101,17 @@ export default function App() {
         {produtosLancamentos.map((prod, i) => (
           <div
             key={i}
-            style={estilos.card}
+            style={estilos.lancamentoCard}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+              e.currentTarget.style.boxShadow = "0 22px 48px rgba(0,0,0,0.12)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
+              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
             }}
           >
+            <span style={estilos.lancamentoBadge}>{prod.tipo}</span>
             <div style={{ overflow: "hidden", borderRadius: "14px" }}>
               <img
                 src={prod.imagem}
@@ -118,14 +119,16 @@ export default function App() {
                 style={estilos.imagem}
               />
             </div>
-            <p style={{ fontWeight: 600, marginTop: "12px" }}>{prod.nome}</p>
+            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px" }}>
+              {prod.nome}
+            </p>
             {prod.descricao && (
               <p
                 style={{
                   color: "#8b6b61",
                   fontSize: "14px",
-                  margin: "8px 0 0 0",
-                  lineHeight: 1.5
+                  margin: "10px 0 0 0",
+                  lineHeight: 1.6
                 }}
               >
                 {prod.descricao}
@@ -190,14 +193,21 @@ export default function App() {
       {!categoriaAtiva && renderLancamentos()}
 
       {!categoriaAtiva && (
-        <CategoryHomeGrid
-          categorias={categorias}
-          estilos={estilos}
-          onSelectCategory={(titulo) => {
-            setCategoriaAtiva(titulo);
-            voltarAoTopo();
-          }}
-        />
+        <section style={{ marginTop: "50px" }}>
+          <div style={estilos.sectionHeader}>
+            <p style={estilos.sectionTag}>Categorias</p>
+            <h2 style={estilos.sectionTitle}>Escolha a coleção perfeita</h2>
+          </div>
+
+          <CategoryHomeGrid
+            categorias={categorias}
+            estilos={estilos}
+            onSelectCategory={(titulo) => {
+              setCategoriaAtiva(titulo);
+              voltarAoTopo();
+            }}
+          />
+        </section>
       )}
 
       {categoriaSelecionada &&

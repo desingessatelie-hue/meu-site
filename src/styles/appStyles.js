@@ -90,6 +90,48 @@ export const estilos = {
     marginTop: "10px",
     fontSize: "16px"
   },
+  lancamentosSection: {
+    background: "linear-gradient(180deg, #fffaf3 0%, #f7f3ee 100%)",
+    padding: "30px",
+    borderRadius: "30px",
+    boxShadow: "0 18px 45px rgba(0,0,0,0.08)",
+    marginBottom: "40px"
+  },
+  lancamentoCard: {
+    backgroundColor: "#fff",
+    borderRadius: "24px",
+    padding: "24px",
+    textAlign: "left",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+    border: "1px solid rgba(200,169,106,0.22)",
+    transition: "0.3s"
+  },
+  lancamentoBadge: {
+    display: "inline-block",
+    padding: "6px 12px",
+    borderRadius: "999px",
+    background: "#f4e6d6",
+    color: "#8b6b61",
+    fontSize: "13px",
+    fontWeight: "700",
+    marginBottom: "12px"
+  },
+  sectionHeader: {
+    textAlign: "center",
+    marginBottom: "30px"
+  },
+  sectionTag: {
+    fontSize: "14px",
+    color: "#8b6b61",
+    textTransform: "uppercase",
+    letterSpacing: "1.5px",
+    marginBottom: "8px"
+  },
+  sectionTitle: {
+    fontSize: "34px",
+    color: "#5a3e36",
+    marginBottom: "8px"
+  },
   whatsapp: {
     position: "fixed",
     bottom: "20px",
