@@ -433,7 +433,7 @@ export const categorias = [
       subcategorias: [
         {
           titulo: "Agendas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Agendas.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas.png",
           produtos: [
             { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
             { nome: "Agenda Permanente", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -441,7 +441,7 @@ export const categorias = [
         },
         {
           titulo: "Planners",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Planners.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Planner.png",
           produtos: [
             { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
             { nome: "Planner Semanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -479,8 +479,9 @@ export const categorias = [
         },
         {
           titulo: "Kits Presentes",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png",
           produtos: [
-            { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png" }
           ]
         },
         {
@@ -489,7 +490,7 @@ export const categorias = [
           produtos: [
           
             {
-              nome: "Flores 01",
+              nome: "Buquê de Flores 01",
               descricao: "Buquê de flores de papel tamanho 15 x 20",
               tipo: "Flores",
               preco: "A partir de R$ 25,00",
@@ -542,28 +543,29 @@ export const categorias = [
               descricao: "Borboletas feitas de papel laminado, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Borboletas/Borboleta-02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
             {
               nome: "Borboletas douradas Grandes",
               descricao: "Borboletas feitas de papel laminado, Kit com 5 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Borboletas/Borboleta-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+
             },
             {
               nome: "Borboletas Impressas Simples",
               descricao: "Borboletas feitas de papel Fotografico, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Borboletas/Borboleta-03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
             {
               nome: "Borboletas  Impressas Duplas",
               descricao: "Borboletas feitas de papel laminado menores, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 20,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Borboletas/Borboleta-04.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             }
           ]
         }
