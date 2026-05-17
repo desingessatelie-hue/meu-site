@@ -11,21 +11,169 @@ export const categorias = [
           produtos: [
             {
               nome: "Topo de Bolo Floral",
+              tipo: "Flores",
+              descricao: "Um topo delicado e sofisticado, perfeito para transformar qualquer bolo em uma verdadeira obra de arte! 💖 Com flores em camadas 3D, detalhes delicados e acabamento elegante, ele traz leveza e encanto para a decoração.. Indicado para Bolos de 23 até 30 cm",
               preco: "A partir de R$ 30,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_bolos/Tp_flor_01.png"
+            },
+             {
+              nome: "Topo de Bolo Floral1",
+              tipo: "Flores",
+              descricao: "Topo com flores artesanais em papel, Romantico. Indicado para Bolos de 15 até 23cm",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_bolos/Tp_flor_01.png"
+            },
+             {
+              nome: "Topo de Bolo Floral2",
+              tipo: "Flores",
+              descricao: "Um modelo elegante e sofisticado, com flores artesanais, borboletas douradas e detalhes delicados que deixam o bolo ainda mais encantador. Indicado para Bolos de 23 ate 30 cm",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/topo_bolos/Tp_flor_02.png"
             },
             {
               nome: "Topo de Bolo Casamento",
+              tipo: "Painel",
+              descricao: "Topo elegante em formato painel para casamentos e festas românticas.",
+              preco: "A partir de R$ 30,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
+            },
+             {
+              nome: "Topo de Bolo Casamento1",
+              tipo: "Painel",
+              descricao: "Topo elegante em formato painel para casamentos e festas românticas.",
+              preco: "A partir de R$ 30,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
+            },
+             {
+              nome: "Topo de Bolo Casamento2",
+              tipo: "Painel",
+              descricao: "Topo elegante em formato painel para casamentos e festas românticas.",
               preco: "A partir de R$ 30,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_4.png"
             },
             {
               nome: "Topo de Bolo Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
               preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
             },
             {
-              nome: "Topo de Bolo Infantil",
+              nome: "Topo de Bolo Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+            {
+              nome: "Topo de Bolo Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+            {
+              nome: "Topo de Bolo Personagens",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                        {
+              nome: "Topo de Bolo Personagens1",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                        {
+              nome: "Topo de Bolo Personagens2",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+             {
+              nome: "Topo de Bolo Religioso",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                         {
+              nome: "Topo de Bolo Religioso",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                         {
+              nome: "Topo de Bolo Religioso1",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                         {
+              nome: "Topo de Bolo Religioso",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+             {
+              nome: "Topo de Bolo Camadas",
+              tipo: "Camadas",
+              descricao: "Topo com camadas decoradas para bolos especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                         {
+              nome: "Topo de Bolo Camadas1",
+              tipo: "Camadas",
+              descricao: "Topo com camadas decoradas para bolos especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+                         {
+              nome: "Topo de Bolo Camadas2",
+              tipo: "Camadas",
+              descricao: "Topo com camadas decoradas para bolos especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+              {
+              nome: "Topo de Bolo Camadas1",
+              tipo: "Camadas",
+              descricao: "Topo com camadas decoradas para bolos especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+              {
+              nome: "Topo de Bolo Camadas2",
+              tipo: "Camadas",
+              descricao: "Topo com camadas decoradas para bolos especiais.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_2.png"
+            },
+            {
+              nome: "Topo de Bolo Infantil Mês Aniversário",
+              tipo: "Mês aniversário",
+              descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
+            },
+             {
+              nome: "Topo de Bolo Infantil Mês Aniversário1",
+              tipo: "Mês aniversário",
+              descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
+            },
+             {
+              nome: "Topo de Bolo Infantil Mês Aniversário2",
+              tipo: "Mês aniversário",
+              descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
               preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_5.png"
             }
@@ -543,14 +691,14 @@ export const categorias = [
               descricao: "Borboletas feitas de papel laminado, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-02.png"
             },
             {
               nome: "Borboletas douradas Grandes",
               descricao: "Borboletas feitas de papel laminado, Kit com 5 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-01.png"
 
             },
             {
@@ -558,14 +706,14 @@ export const categorias = [
               descricao: "Borboletas feitas de papel Fotografico, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 10,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-03.png"
             },
             {
               nome: "Borboletas  Impressas Duplas",
               descricao: "Borboletas feitas de papel laminado menores, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 20,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-01.png"
             }
           ]
         }
