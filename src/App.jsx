@@ -21,6 +21,149 @@ export default function App() {
     (sub) => sub.titulo === subcategoriaAtiva
   );
 
+  const produtosLancamentos = [
+    {
+      nome: "Flores 01",
+      descricao: "Flores de papel tamanho 15 x 20",
+      tipo: "Flores",
+      preco: "A partir de R$ 20,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+    },
+    {
+      nome: "Borboletas douradas",
+      descricao: "Borboletas feitas de papel laminado",
+      tipo: "Borboletas",
+      preco: "A partir de R$ 20,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+    },
+    {
+      nome: "Topo de Bolo Floral",
+      descricao: "Topo de bolo decorado em tema floral",
+      tipo: "Topo de bolo",
+      preco: "A partir de R$ 30,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
+    },
+    {
+      nome: "Caixa Envelope 3 Bis",
+      descricao: "Lembrança prática em embalagem personalizada",
+      tipo: "Doces",
+      preco: "A partir de R$ 6,50",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Envelope_3biz.png"
+    }
+  ];
+
+  const renderLancamentos = () => (
+    <section style={{ marginBottom: "40px" }}>
+      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+        <p
+          style={{
+            fontSize: "14px",
+            color: "#8b6b61",
+            textTransform: "uppercase",
+            letterSpacing: "1.5px",
+            marginBottom: "8px"
+          }}
+        >
+          Destaque
+        </p>
+        <h2
+          style={{
+            fontSize: "34px",
+            color: "#5a3e36",
+            marginBottom: "8px"
+          }}
+        >
+          Lançamentos
+        </h2>
+        <p
+          style={{
+            maxWidth: "700px",
+            margin: "0 auto",
+            color: "#7a655a",
+            fontSize: "15px"
+          }}
+        >
+          Novidades artesanais direto da nossa papelaria para você.
+        </p>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          gap: "24px"
+        }}
+      >
+        {produtosLancamentos.map((prod, i) => (
+          <div
+            key={i}
+            style={estilos.card}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
+            }}
+          >
+            <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+              <img
+                src={prod.imagem}
+                alt={prod.nome}
+                style={estilos.imagem}
+              />
+            </div>
+            <p style={{ fontWeight: 600, marginTop: "12px" }}>{prod.nome}</p>
+            {prod.descricao && (
+              <p
+                style={{
+                  color: "#8b6b61",
+                  fontSize: "14px",
+                  margin: "8px 0 0 0",
+                  lineHeight: 1.5
+                }}
+              >
+                {prod.descricao}
+              </p>
+            )}
+            <p
+              style={{
+                fontWeight: "bold",
+                color: "#c8a96a",
+                marginTop: "10px"
+              }}
+            >
+              {prod.preco}
+            </p>
+            <p
+              style={{
+                fontSize: "13px",
+                color: "#999",
+                marginTop: "6px"
+              }}
+            >
+              {prod.tipo}
+            </p>
+            <a
+              href={gerarLinkWhatsApp(prod.nome)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button style={{ ...estilos.botao, marginTop: "14px" }}>
+                Solicitar orçamento
+              </button>
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+
   const resetNavigation = () => {
     setCategoriaAtiva(null);
     setSubcategoriaAtiva(null);
@@ -43,6 +186,8 @@ export default function App() {
   return (
     <div style={estilos.container}>
       {!categoriaAtiva && <AppBanner isMobile={isMobile} />}
+
+      {!categoriaAtiva && renderLancamentos()}
 
       {!categoriaAtiva && (
         <CategoryHomeGrid
