@@ -350,7 +350,7 @@ export const categorias = [
         {
           titulo: "Dia das Mulheres",
           grupo: "datas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mulher.png",
           produtos: [
             {
               nome: "Lembrancinha Flor com Chocolate",
@@ -433,6 +433,7 @@ export const categorias = [
       subcategorias: [
         {
           titulo: "Agendas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Agendas.png",
           produtos: [
             { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
             { nome: "Agenda Permanente", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -440,6 +441,7 @@ export const categorias = [
         },
         {
           titulo: "Planners",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Planner.png",
           produtos: [
             { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
             { nome: "Planner Semanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -447,6 +449,7 @@ export const categorias = [
         },
         {
           titulo: "Cadernos",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
           produtos: [
             { nome: "Caderno Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
             { nome: "Caderno Escolar", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -454,14 +457,16 @@ export const categorias = [
         },
         {
           titulo: "Blocos A6",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
           produtos: [
             { nome: "Bloco de Notas A6", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
           ]
         },
         {
           titulo: "Canetas Personalizadas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Canetas.png",
           produtos: [
-            { nome: "Caneta Decorada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+            { nome: "Caneta Decorada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Canetas.png" },
             { nome: "Caneta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
           ]
         },
@@ -472,16 +477,93 @@ export const categorias = [
           ]
         },
         {
-          titulo: "Kits Lembrancinhas",
+          titulo: "Kits Presentes",
           produtos: [
             { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
           ]
         },
         {
-          titulo: "Datas Comemorativas",
+          titulo: "Jardim de Papel",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Apliques.png",
           produtos: [
-            { nome: "Lembrancinha Dia das Mães", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Lembrancinha Natal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+          
+            {
+              nome: "Flores 01",
+              descricao: "Buquê de flores de papel tamanho 15 x 20",
+              tipo: "Flores",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Buque_flor_01.png"
+            },
+              {
+              nome: "Buquê de Flores 02",
+              descricao: "Buquê de flores de papel tamanho 15 x 15",
+              tipo: "Flores",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Buque_flor_03.png"
+            },
+              {
+              nome: "Flores Pintadas 01",
+              descricao: "Flores de papel com a borda pintada 10 x 10, acompanha folhas douradas, Kit com 2 flores",
+              tipo: "Flores",
+              preco: "A partir de R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Buque_flor_02.png"
+            },
+              {
+              nome: "Cartelas de flores 01",
+              descricao: "Flores de papel aquareladas, Kit com 6 flores",
+              tipo: "Flores",
+              preco: "R$ 18,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cart_Flor-01.png"
+            },
+              {
+              nome: "Cartelas de flores 02",
+              descricao: "Flores de papel aquareladas, Kit com 5 flores",
+              tipo: "Flores",
+              preco: "R$ 18,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cart_Flor-02.png"
+            },
+              {
+              nome: "Cartelas de flores 03",
+              descricao: "Flores de papel aquareladas, Kit com 8 flores",
+              tipo: "Flores",
+              preco: "R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cart_Flor-03.png"
+            },
+             {
+              nome: "Cartelas de flores 04",
+              descricao: "Flores de papel aquareladas, Kit com 8 flores",
+              tipo: "Flores",
+              preco: "R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cart_Flor-04.png"
+            },
+            {
+              nome: "Borboletas douradas pequena",
+              descricao: "Borboletas feitas de papel laminado, Kit com 10 unidades",
+              tipo: "Borboletas",
+              preco: "A partir de R$ 10,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Borboleta-02.png"
+            },
+            {
+              nome: "Borboletas douradas Grandes",
+              descricao: "Borboletas feitas de papel laminado, Kit com 5 unidades",
+              tipo: "Borboletas",
+              preco: "A partir de R$ 10,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Borboletas Impressas Simples",
+              descricao: "Borboletas feitas de papel Fotografico, Kit com 10 unidades",
+              tipo: "Borboletas",
+              preco: "A partir de R$ 10,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Borboleta-03.png"
+            },
+            {
+              nome: "Borboletas  Impressas Duplas",
+              descricao: "Borboletas feitas de papel laminado menores, Kit com 10 unidades",
+              tipo: "Borboletas",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Borboleta-01.png"
+            }
           ]
         }
       ]
