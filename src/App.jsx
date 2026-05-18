@@ -23,28 +23,28 @@ export default function App() {
 
   const produtosLancamentos = [
     {
-      nome: "Flores 01",
-      descricao: "Flores de papel tamanho 15 x 20",
+      nome: "Buquê de flores 01",
+      descricao: "Flores de papel tamanho 18 x 20, Kits com mais de uma unidade preços especiais",
       tipo: "Flores",
-      preco: "A partir de R$ 20,00",
+      preco: "A partir de R$ 25,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
     },
     {
-      nome: "Borboletas douradas",
-      descricao: "Borboletas feitas de papel laminado",
-      tipo: "Borboletas",
-      preco: "A partir de R$ 20,00",
+      nome: "Topos Com flores",
+      descricao: "Topos com flores de papel e detalhes em dourado",
+      tipo: "Topos",
+      preco: "A partir de R$ 35,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Religioso_10.png"
     },
     {
-      nome: "Topo de Bolo Floral",
-      descricao: "Topo de bolo decorado em tema floral",
+      nome: "Topo de Bolo Batismo",
+      descricao: "Topo de bolo Feito em camadas com Pais metalizados e dourados. (18 cm)",
       tipo: "Topo de bolo",
-      preco: "A partir de R$ 30,00",
+      preco: "A partir de R$ 25,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_3.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Religioso_08.png"
     },
     {
       nome: "Caixa Envelope 3 Bis",
@@ -196,7 +196,7 @@ export default function App() {
         <section style={{ marginTop: "50px" }}>
           <div style={estilos.sectionHeader}>
             <p style={estilos.sectionTag}>Categorias</p>
-            <h2 style={estilos.sectionTitle}>Escolha a coleção perfeita</h2>
+            <h2 style={estilos.sectionTitle}>Escolha a Coleção !</h2>
           </div>
 
           <CategoryHomeGrid

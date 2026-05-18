@@ -98,12 +98,12 @@ export const estilos = {
     marginBottom: "40px"
   },
   lancamentoCard: {
-    backgroundColor: "#fff",
+    background: "linear-gradient(180deg, #fff9f0 0%, #f3e4d9 100%)",
     borderRadius: "24px",
     padding: "24px",
     textAlign: "left",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-    border: "1px solid rgba(200,169,106,0.22)",
+    boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
+    border: "1px solid rgba(200,169,106,0.18)",
     transition: "0.3s"
   },
   lancamentoBadge: {

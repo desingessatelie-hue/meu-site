@@ -438,6 +438,83 @@ export function SubcategoriaProductsPanel({
                     </div>
                   ))}
               </div>
+
+              <h2
+                style={{
+                  marginTop: "50px",
+                  marginBottom: "20px",
+                  color: "#5a3e36",
+                  fontSize: "24px",
+                  textAlign: "center"
+                }}
+              >
+                🎁 Pequenos Mimos
+              </h2>
+
+              <div style={estilos.grid}>
+                {subcategoriaSelecionada.produtos
+                  .filter((prod) => prod.tipo === "Pequenos Mimos")
+                  .map((prod, i) => (
+                    <div key={i} style={estilos.card}>
+                      <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                        <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
+                      </div>
+
+                      <p
+                        style={{
+                          fontWeight: "600",
+                          marginTop: "10px"
+                        }}
+                      >
+                        {prod.nome}
+                      </p>
+
+                      {prod.preco && (
+                        <p
+                          style={{
+                            fontWeight: "bold",
+                            color: "#c8a96a",
+                            fontSize: "16px",
+                            marginTop: "5px"
+                          }}
+                        >
+                          💰 {prod.preco}
+                        </p>
+                      )}
+
+                      {prod.descricao && (
+                        <p
+                          style={{
+                            fontSize: "13px",
+                            color: "#666",
+                            marginTop: "6px",
+                            lineHeight: 1.4
+                          }}
+                        >
+                          {prod.descricao}
+                        </p>
+                      )}
+
+                      <p
+                        style={{
+                          fontSize: "13px",
+                          color: "#999",
+                          marginTop: "4px"
+                        }}
+                      >
+                        Feito sob medida para você 💛
+                      </p>
+
+                      <a
+                        href={gerarLinkWhatsApp(prod.nome)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button style={estilos.botao}>Solicitar orçamento</button>
+                      </a>
+                    </div>
+                  ))}
+              </div>
             </>
           )}
 

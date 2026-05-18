@@ -508,37 +508,66 @@ export const categorias = [
           grupo: "datas",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Mulher.png",
           produtos: [
-            {
-              nome: "Lembrancinha Flor com Chocolate",
+             {
+              nome: "Caderneta Wiero",
               tipo: "Lembrancinhas",
-              preco: "A partir de R$ 4,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              preco: "A partir de R$ 8,00",
+              descricao: "Caderneta tamanho A7.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Caderneta_wiroA7.png"
             },
             {
-              nome: "Card Mulher Forte",
+              nome: "Postit",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 8,00",
+              descricao: "Post-it com 50 folhas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Postit.png"
+            },
+            {
+              nome: "Kit Amarador",
               tipo: "Lembrancinhas",
               preco: "A partir de R$ 2,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              descricao: "Kit com 2 Amarrador.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Ammarador.png"
             },
             {
-              nome: "Lembrancinha com Adesivo",
+              nome: "Caixa Esmalte ou Creme de mão",
               tipo: "Lembrancinhas",
-              preco: "A partir de R$ 3,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              preco: "A partir de R$ 10,00",
+              descricao: "Caixa com esmalte ou creme de mão.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Caixa_esmalte.png"
+            },
+            {
+              nome: "Cartão com presilha",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 7,50",
+              descricao: "Cartão com presilha para lembrar de alguém especial.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Card_presilha.png"
+            },
+            {
+              nome: "Cartão Explosão",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 10,50",
+              descricao: "Caixa explosão,com 2 chocolates..",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Cartão_Bombom.png"
+            },
+             {
+              nome: "Mensagem ",
+              tipo: "Kits",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Base.png"
             },
             {
               nome: "Kit Mulher Especial",
               tipo: "Kits",
-              preco: "A partir de R$ 18,00",
-              descricao: "Inclui lembrancinha, bloquinho e caneta personalizada.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              preco: "A partir de R$ 10,00",
+              descricao: "Caixa envelope,com 2 chocolates..",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/CaixaEnvelope_mulher.png"
             },
             {
-              nome: "Kit Celebração Feminina",
+              nome: "Monte seu Kit Mulher",
               tipo: "Kits",
-              preco: "A partir de R$ 25,00",
-              descricao: "Inclui card personalizado, adesivos temáticos e embalagem especial.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              preco: "A partir de R$ 5,00",
+              descricao: "Monte seu Kit personalizado com opções de caixa envelope, chocolates e cartão personalizado.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Kit_dia.png"
             }
           ]
         }
@@ -641,6 +670,24 @@ export const categorias = [
           ]
         },
         {
+          titulo: "Pequenos Mimos",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Pequenos_Mimo.png",
+          produtos: [
+            {
+              nome: "Mini Lembrancinha Artesanal",
+              descricao: "Pequenos mimos feitos à mão para lembranças delicadas.",
+              preco: "A partir de R$ 5,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Kit Mimos em Papel",
+              descricao: "Pequeno conjunto de tags e envelopes personalizados.",
+              preco: "A partir de R$ 12,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+          ]
+        },
+        {
           titulo: "Jardim de Papel",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques.png",
           produtos: [
@@ -717,11 +764,18 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-03.png"
             },
             {
-              nome: "Borboletas  Impressas Duplas",
+              nome: "Borboletas Impressas Duplas",
               descricao: "Borboletas feitas de papel laminado menores, Kit com 10 unidades",
               tipo: "Borboletas",
               preco: "A partir de R$ 20,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-01.png"
+            },
+            {
+              nome: "Pequenos Mimos Artesanais",
+              descricao: "Pequenos mimos feitos à mão para lembrancinhas delicadas.",
+              tipo: "Pequenos Mimos",
+              preco: "A partir de R$ 8,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             }
           ]
         }
