@@ -51,7 +51,7 @@ export default function App() {
       descricao: "Embalagem para sabonete Artezanal, Personalizada com nome ou mensagem",
       tipo: "Personalização",
       preco: "A partir de R$ 1,50",
-      imagem:"https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Iamgens/Papelaria/Personalizacao/Personalizacao_01.png"
+      imagem:"https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizacao/Personalizacao_01.png"
     }
   ];
 

@@ -679,6 +679,30 @@ export const categorias = [
           ]
         },
         {
+          titulo: "Personalizados",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizados.png",
+          produtos: [
+            {
+              nome: "Tag Personalizada",
+              descricao: "Tag personalizada para lembrancinhas e embalagens.",
+              preco: "A partir de R$ 4,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Cartão Customizado",
+              descricao: "Cartão artesanal com nome ou mensagem personalizada.",
+              preco: "A partir de R$ 7,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Envelope Personalizado",
+              descricao: "Envelope artesanal com acabamento personalizado.",
+              preco: "A partir de R$ 5,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            }
+          ]
+        },
+        {
           titulo: "Pequenos Mimos",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Pequenos_Mimo.png",
           produtos: [
