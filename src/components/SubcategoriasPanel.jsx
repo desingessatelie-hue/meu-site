@@ -8,6 +8,19 @@ export function SubcategoriasPanel({
   onBack,
   onSelectSubcategoria
 }) {
+  const grupos = Array.from(
+    new Set(
+      categoriaSelecionada.subcategorias.map((sub) => sub.grupo || "outros")
+    )
+  );
+
+  const tituloGrupo = (grupo) => {
+    if (grupo === "festas") return "✨ Festas Personalizadas";
+    if (grupo === "datas") return "🎄 Datas Comemorativas";
+    if (grupo === "outros") return "Outros";
+    return grupo.charAt(0).toUpperCase() + grupo.slice(1);
+  };
+
   return (
     <div style={{ marginTop: "20px" }}>
       <button style={estilos.voltar} onClick={onBack}>
@@ -43,23 +56,23 @@ export function SubcategoriasPanel({
         especialmente para você.
       </p>
 
-      {categoriaSelecionada.titulo === "Festas e Lembrancinhas" ? (
-        <>
+      {grupos.map((grupo) => (
+        <div key={grupo}>
           <h2
             style={{
-              marginTop: "20px",
+              marginTop: "30px",
               marginBottom: "20px",
               color: "#5a3e36",
               textAlign: "center",
               fontSize: "24px"
             }}
           >
-            ✨ Festas Personalizadas
+            {tituloGrupo(grupo)}
           </h2>
 
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias
-              .filter((sub) => sub.grupo === "festas")
+              .filter((sub) => (sub.grupo || "outros") === grupo)
               .map((sub, i) => (
                 <div key={i} style={estilos.card}>
                   {sub.imagem && (
@@ -91,90 +104,8 @@ export function SubcategoriasPanel({
                 </div>
               ))}
           </div>
-
-          <h2
-            style={{
-              marginTop: "50px",
-              marginBottom: "20px",
-              color: "#5a3e36",
-              textAlign: "center",
-              fontSize: "24px"
-            }}
-          >
-            🎄 Datas Comemorativas
-          </h2>
-
-          <div style={estilos.grid}>
-            {categoriaSelecionada.subcategorias
-              .filter((sub) => sub.grupo === "datas")
-              .map((sub, i) => (
-                <div key={i} style={estilos.card}>
-                  {sub.imagem && (
-                    <img
-                      src={sub.imagem}
-                      alt=""
-                      style={{
-                        ...estilos.imagem,
-                        cursor: "pointer"
-                      }}
-                      onClick={() => onSelectSubcategoria(sub.titulo)}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "scale(1.03)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "scale(1)";
-                      }}
-                    />
-                  )}
-
-                  <h3>{sub.titulo}</h3>
-
-                  <button
-                    style={estilos.botao}
-                    onClick={() => onSelectSubcategoria(sub.titulo)}
-                  >
-                    Ver produtos
-                  </button>
-                </div>
-              ))}
-          </div>
-        </>
-      ) : (
-        <>
-          <div style={estilos.grid}>
-            {categoriaSelecionada.subcategorias.map((sub, i) => (
-              <div key={i} style={estilos.card}>
-                {sub.imagem && (
-                  <img
-                    src={sub.imagem}
-                    alt=""
-                    style={{
-                      ...estilos.imagem,
-                      cursor: "pointer"
-                    }}
-                    onClick={() => onSelectSubcategoria(sub.titulo)}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.03)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                    }}
-                  />
-                )}
-
-                <h3>{sub.titulo}</h3>
-
-                <button
-                  style={estilos.botao}
-                  onClick={() => onSelectSubcategoria(sub.titulo)}
-                >
-                  Ver produtos
-                </button>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+        </div>
+      ))}
     </div>
   );
 }

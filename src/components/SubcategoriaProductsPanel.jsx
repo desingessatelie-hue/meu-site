@@ -1038,7 +1038,7 @@ export function SubcategoriaProductsPanel({
               "Personagens": "🦸 Topos temáticos com personagens sob medida",
               "Religioso": "✝️ Topos com temática religiosa e acabamento refinado",
               "Personalizado": "✨ Personalizado com nome e tema",
-              "Mês aniversário": "🎂 Ideal para aniversários e ocasiões especiais",
+              "Mês aniversário": "🎂 Ideal para aniversários e ocasiões especiais, Monte seu Kit!",
               "Kit + Topo": "💝 Um detalhe único para tornar sua comemoração inesquecível!"
             };
 

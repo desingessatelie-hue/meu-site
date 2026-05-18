@@ -92,17 +92,17 @@ export const estilos = {
   },
   lancamentosSection: {
     background: "linear-gradient(180deg, #fffaf3 0%, #f7f3ee 100%)",
-    padding: "30px",
-    borderRadius: "30px",
-    boxShadow: "0 18px 45px rgba(0,0,0,0.08)",
-    marginBottom: "40px"
+    padding: "24px",
+    borderRadius: "28px",
+    boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
+    marginBottom: "30px"
   },
   lancamentoCard: {
     background: "linear-gradient(180deg, #fff9f0 0%, #f3e4d9 100%)",
-    borderRadius: "24px",
-    padding: "24px",
+    borderRadius: "20px",
+    padding: "20px",
     textAlign: "left",
-    boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
+    boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
     border: "1px solid rgba(200,169,106,0.18)",
     transition: "0.3s"
   },
@@ -131,6 +131,19 @@ export const estilos = {
     fontSize: "34px",
     color: "#5a3e36",
     marginBottom: "8px"
+  },
+  searchInput: {
+    width: "100%",
+    maxWidth: "520px",
+    padding: "14px 18px",
+    borderRadius: "18px",
+    border: "1px solid #dbd1c7",
+    backgroundColor: "#fff",
+    color: "#3a3a3a",
+    fontSize: "16px",
+    outline: "none",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+    transition: "border-color 0.2s ease"
   },
   whatsapp: {
     position: "fixed",

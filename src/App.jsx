@@ -14,6 +14,7 @@ import { GlobalFooterActions } from "./components/GlobalFooterActions.jsx";
 export default function App() {
   const [categoriaAtiva, setCategoriaAtiva] = useState(null);
   const [subcategoriaAtiva, setSubcategoriaAtiva] = useState(null);
+  const [busca, setBusca] = useState("");
   const isMobile = isMobileViewport();
 
   const categoriaSelecionada = categorias.find((c) => c.titulo === categoriaAtiva);
@@ -55,23 +56,159 @@ export default function App() {
     }
   ];
 
+  const categoriasFiltradas = categorias.filter((cat) => {
+    const termo = busca.trim().toLowerCase();
+    if (!termo) return true;
+
+    const tituloMatch = cat.titulo.toLowerCase().includes(termo);
+
+    const produtoMatch = (prod) =>
+      prod.nome?.toLowerCase().includes(termo) ||
+      prod.tipo?.toLowerCase().includes(termo) ||
+      prod.descricao?.toLowerCase().includes(termo);
+
+    const subcategoriaMatch = cat.subcategorias?.some((sub) => {
+      const subMatch = sub.titulo.toLowerCase().includes(termo);
+      const produtoSubMatch = sub.produtos?.some(produtoMatch);
+      return subMatch || produtoSubMatch;
+    });
+
+    const produtosDiretosMatch = cat.produtos?.some(produtoMatch);
+
+    return tituloMatch || subcategoriaMatch || produtosDiretosMatch;
+  });
+
+  const categoriasParaHome = categoriasFiltradas;
+
+  const produtosEncontrados = busca.trim()
+    ? categorias.reduce((acc, cat) => {
+        const categoriaMatch = cat.titulo.toLowerCase().includes(busca.trim().toLowerCase());
+
+        cat.subcategorias?.forEach((sub) => {
+          const subMatch = sub.titulo.toLowerCase().includes(busca.trim().toLowerCase());
+          if (categoriaMatch || subMatch) {
+            sub.produtos?.forEach((prod) =>
+              acc.push({ ...prod, categoria: cat.titulo, subcategoria: sub.titulo })
+            );
+          } else {
+            sub.produtos?.forEach((prod) => {
+              if (
+                prod.nome?.toLowerCase().includes(busca.trim().toLowerCase()) ||
+                prod.tipo?.toLowerCase().includes(busca.trim().toLowerCase()) ||
+                prod.descricao?.toLowerCase().includes(busca.trim().toLowerCase())
+              ) {
+                acc.push({ ...prod, categoria: cat.titulo, subcategoria: sub.titulo });
+              }
+            });
+          }
+        });
+
+        if (cat.produtos) {
+          if (categoriaMatch) {
+            cat.produtos.forEach((prod) => acc.push({ ...prod, categoria: cat.titulo }));
+          } else {
+            cat.produtos.forEach((prod) => {
+              if (
+                prod.nome?.toLowerCase().includes(busca.trim().toLowerCase()) ||
+                prod.tipo?.toLowerCase().includes(busca.trim().toLowerCase()) ||
+                prod.descricao?.toLowerCase().includes(busca.trim().toLowerCase())
+              ) {
+                acc.push({ ...prod, categoria: cat.titulo });
+              }
+            });
+          }
+        }
+
+        return acc;
+      }, [])
+    : [];
+
+  const renderSearchResults = () => (
+    <section style={{ marginTop: "50px" }}>
+      <div style={estilos.sectionHeader}>
+        <p style={estilos.sectionTag}>Resultados da busca</p>
+        <h2 style={estilos.sectionTitle}>Produtos encontrados</h2>
+      </div>
+
+      {produtosEncontrados.length > 0 ? (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "24px"
+          }}
+        >
+          {produtosEncontrados.map((prod, index) => (
+            <div key={`${prod.nome}-${index}`} style={estilos.card}>
+              {prod.imagem && (
+                <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                  <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
+                </div>
+              )}
+              <h3 style={{ marginTop: "16px" }}>{prod.nome}</h3>
+              {prod.descricao && (
+                <p
+                  style={{
+                    color: "#8b6b61",
+                    fontSize: "14px",
+                    margin: "10px 0 0 0",
+                    lineHeight: 1.6
+                  }}
+                >
+                  {prod.descricao}
+                </p>
+              )}
+              {prod.preco && (
+                <p
+                  style={{
+                    fontWeight: "bold",
+                    color: "#c8a96a",
+                    marginTop: "10px"
+                  }}
+                >
+                  {prod.preco}
+                </p>
+              )}
+              <p style={{ fontSize: "13px", color: "#999", marginTop: "6px" }}>
+                {prod.subcategoria ? `${prod.categoria} • ${prod.subcategoria}` : prod.categoria}
+              </p>
+              <a
+                href={gerarLinkWhatsApp(prod.nome)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button style={{ ...estilos.botao, marginTop: "14px" }}>
+                  Solicitar orçamento
+                </button>
+              </a>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p style={{ textAlign: "center", color: "#7a655a", fontSize: "16px" }}>
+          Nenhum produto encontrado para "{busca}".
+        </p>
+      )}
+    </section>
+  );
+
   const renderLancamentos = () => (
     <section style={estilos.lancamentosSection}>
       <div style={estilos.sectionHeader}>
         <p
           style={{
-            fontSize: "14px",
+            fontSize: "13px",
             color: "#8b6b61",
             textTransform: "uppercase",
             letterSpacing: "1.5px",
-            marginBottom: "8px"
+            marginBottom: "6px"
           }}
         >
           Destaque
         </p>
         <h2
           style={{
-            fontSize: "34px",
+            fontSize: "28px",
             color: "#5a3e36",
             marginBottom: "8px"
           }}
@@ -83,7 +220,7 @@ export default function App() {
             maxWidth: "700px",
             margin: "0 auto",
             color: "#7a655a",
-            fontSize: "15px"
+            fontSize: "14px"
           }}
         >
           Novidades artesanais direto da nossa papelaria para você.
@@ -189,24 +326,48 @@ export default function App() {
     <div style={estilos.container}>
       {!categoriaAtiva && <AppBanner isMobile={isMobile} />}
 
-      {!categoriaAtiva && renderLancamentos()}
-
       {!categoriaAtiva && (
-        <section style={{ marginTop: "50px" }}>
-          <div style={estilos.sectionHeader}>
-            <p style={estilos.sectionTag}>Categorias</p>
-            <h2 style={estilos.sectionTitle}>Escolha a Coleção !</h2>
-          </div>
-
-          <CategoryHomeGrid
-            categorias={categorias}
-            estilos={estilos}
-            onSelectCategory={(titulo) => {
-              setCategoriaAtiva(titulo);
-              voltarAoTopo();
-            }}
+        <div style={{ display: "flex", justifyContent: "center", margin: "30px 0 10px 0" }}>
+          <input
+            type="search"
+            placeholder="Buscar coleção, subcategoria ou produto..."
+            value={busca}
+            onChange={(event) => setBusca(event.target.value)}
+            style={estilos.searchInput}
           />
-        </section>
+        </div>
+      )}
+
+      {!categoriaAtiva && busca.trim() ? (
+        renderSearchResults()
+      ) : (
+        <>
+          {!categoriaAtiva && (
+            <section style={{ marginTop: "50px" }}>
+              <div style={estilos.sectionHeader}>
+                <p style={estilos.sectionTag}>Categorias</p>
+                <h2 style={estilos.sectionTitle}>Escolha a Coleção !</h2>
+              </div>
+
+              {categoriasParaHome.length > 0 ? (
+                <CategoryHomeGrid
+                  categorias={categoriasParaHome}
+                  estilos={estilos}
+                  onSelectCategory={(titulo) => {
+                    setCategoriaAtiva(titulo);
+                    voltarAoTopo();
+                  }}
+                />
+              ) : (
+                <p style={{ textAlign: "center", color: "#7a655a", fontSize: "16px" }}>
+                  Nenhuma coleção encontrada para "{busca}".
+                </p>
+              )}
+            </section>
+          )}
+
+          {!categoriaAtiva && renderLancamentos()}
+        </>
       )}
 
       {categoriaSelecionada &&

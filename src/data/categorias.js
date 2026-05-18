@@ -45,76 +45,391 @@ export const categorias = [
               preco: "A partir de R$ 27,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Painel_02.png"
             },
+
+
             {
-              nome: "Topo de Bolo Personalizado",
+              nome: "Baby Frutinha",
               tipo: "Personalizado",
               descricao: "Topo personalizado com nome ou frase em design exclusivo.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_01.png"
             },
             {
-              nome: "Topo de Bolo Personalizado",
+              nome: "Mulher e Girassol",
               tipo: "Personalizado",
               descricao: "Topo personalizado com nome ou frase em design exclusivo.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_02.png"
+            },
+{
+              nome: "Painel Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_03.png"
             },
             {
-              nome: "Topo de Bolo Personalizado",
+              nome: "Menina Policial",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_04.png"
+            },
+            {
+              nome: "Viagem Personalizada",
               tipo: "Personalizado",
               descricao: "Topo personalizado com nome ou frase em design exclusivo.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_05.png"
             },
             {
-              nome: "Topo de Bolo Personagens",
+              nome: "Boteco Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_06.png"
+            },
+            {
+              nome: "Passarinho Personalizado",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_07.png"
+            },
+            {
+              nome: "Bebida",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 27,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_08.png"
+            },
+            {
+              nome: "Donnuts",
+              tipo: "Personalizado",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 17,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_09.png"
+            },
+            
+
+
+            {
+              nome: "Bombeiro",
+              tipo: "Personagens",
+              descricao: "Topo personalizado com nome ou frase em design exclusivo.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_01.png"
+            },
+
+
+            {
+              nome: "Homem Aranha",
               tipo: "Personagens",
               descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_02.png"
             },
                         {
-              nome: "Topo de Bolo Personagens1",
+              nome: "Michey Mouse",
               tipo: "Personagens",
               descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_03.png"
             },
                         {
-              nome: "Topo de Bolo Personagens2",
+              nome: "Sonic",
               tipo: "Personagens",
               descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_04.png"
             },
+                        {
+              nome: "Sonic 2",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_05.png"
+            },
+                        {
+              nome: "Marinheiro",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_06.png"
+            },
+                                    {
+              nome: "Casa da Gaby",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_07.png"
+            },
+                        {
+              nome: "Safari",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_08.png"
+            },
+                                    {
+              nome: "Formatura",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_09.png"
+            },
+                        {
+              nome: "Minnei Rosa",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_10.png"
+            },
+                                    {
+              nome: "Minnei Vermelha",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_11.png"
+            },
+                        {
+              nome: "Alice no Pais das Maravilhas",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_12.png"
+            },
+                        {
+              nome: "Show da Luna",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_13.png"
+            },
+                        {
+              nome: "Moana Baby",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_14.png"
+            },
+                                    {
+              nome: "Stitch",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_15.png"
+            },
+                        {
+              nome: "Stitch 1",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_16.png"
+            },
+                                    {
+              nome: "Stitch e Angel",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_17.png"
+            },
+                        {
+              nome: "Ursa Chá de Bebê",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_18.png"
+            },
+                                    {
+              nome: "Ursa realeza",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_19.png"
+            },
+                        {
+              nome: "Ursa Baby",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_20.png"
+            },
+                                    {
+              nome: "Ursa Florista",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_21.png"
+            },
+                        {
+              nome: "Sereia",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_22.png"
+            },
+                                                {
+              nome: "Fazendinha",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_23.png"
+            },
+                        {
+              nome: "Stitch 3",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_24.png"
+            },
+                                                {
+              nome: "Fazendinha espantalho",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_25.png"
+            },
+                        {
+              nome: "Fazendinha Menino",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_26.png"
+            },
+                                                {
+              nome: "Fazendinha 2",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_27.png"
+            },
+                        {
+              nome: "Busque encantado",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_28.png"
+            },
+                                                {
+              nome: "Marinheira",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_29.png"
+            },
+                        {
+              nome: "Bluey",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_30.png"
+            },
+                                                {
+              nome: "Dinossauro Bolo",
+              tipo: "Personagens",
+              descricao: "Topo infantil com tema personalizado para aniversários de crianças.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_personagens_31.png"
+            },
+
+
+
+
+
              {
-              nome: "Topo de Bolo Religioso",
+              nome: "Topo Crisma em camadas",
               tipo: "Religioso",
               descricao: "Topo com temática religiosa para celebrações especiais.",
-              preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              preco: "A partir de R$ 27,00 (25 até 30cm)",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_01.png"
             },
                          {
-              nome: "Topo de Bolo Religioso",
+              nome: "Topo Crisma",
               tipo: "Religioso",
-              descricao: "Topo com temática religiosa para celebrações especiais.",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_02.png"
             },
                          {
-              nome: "Topo de Bolo Religioso1",
+              nome: "Topo Espirito Santo",
               tipo: "Religioso",
-              descricao: "Topo com temática religiosa para celebrações especiais.",
-              preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 25,00 ",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_03.png"
             },
                          {
-              nome: "Topo de Bolo Religioso",
+              nome: "Topo de Espirito Santo 2",
               tipo: "Religioso",
-              descricao: "Topo com temática religiosa para celebrações especiais.",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_2.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_04.png"
             },
+            {
+              nome: "Cálice",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_07.png"
+            },
+                                     {
+              nome: "Topo de Espirito Santo 3",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.(até 25cm)",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_08.png"
+            },
+              {
+              nome: "Batizado de Espirito Santo ",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_05.png"
+            },
+                                     {
+              nome: "Batizado menina",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_06.png"
+            },
+                                     
+                                     {
+              nome: "Bodas de Ouro",
+              tipo: "Religioso",
+              descricao: "Topo com temática religiosa para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 30,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_09.png"
+            },
+                                     {
+              nome: "Casal de Noivos Floral",
+              tipo: "Religioso",
+              descricao: "Topo com temática de casamento para celebrações especiais.(Bolo de 2 andares com 10 e 15cm)",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_10.png"
+            },
+                                     {
+              nome: "Casal de Noivos Floral 1",
+              tipo: "Religioso",
+              descricao: "Topo com temática de casamento para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_11.png"
+            },
+                                     {
+              nome: "Casal de Noivos Floral 2",
+              tipo: "Religioso",
+              descricao: "Topo com temática de casamento para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_12.png"
+            },
+                                     {
+              nome: "Casal de Noivos",
+              tipo: "Religioso",
+              descricao: "Topo com temática de casamento para celebrações especiais.(25 até 30cm)",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_13.png"
+            },
+
              {
               nome: "Futebol ",
               tipo: "Camadas",
@@ -164,29 +479,47 @@ export const categorias = [
               preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Camadas_07.png"
             },
-            {
-              nome: "Topo de Bolo Infantil Mês Aniversário",
+
+             {
+              nome: "Menina Dino",
               tipo: "Mês aniversário",
               descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
-              preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_5.png"
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Mes_01.png"
             },
              {
-              nome: "Topo de Bolo Infantil Mês Aniversário1",
+              nome: "Menina Abelha",
               tipo: "Mês aniversário",
               descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
-              preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_5.png"
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Mes_02.png"
             },
              {
-              nome: "Topo de Bolo Infantil Mês Aniversário2",
+              nome: "Patinha",
               tipo: "Mês aniversário",
               descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
-              preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Topo_5.png"
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Mes_03.png"
+            },
+             {
+              nome: "Manina Melância ",
+              tipo: "Mês aniversário",
+              descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Mes_04.png"
+            },
+             {
+              nome: "Chefinha",
+              tipo: "Mês aniversário",
+              descricao: "Topo divertido e colorido para comemorar o mês aniversário.",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Mes_05.png"
             }
           ]
         },
+
+
+
         {
           titulo: "Topo de Brigadeiro e CupCake",
           grupo: "festas",
@@ -214,6 +547,8 @@ export const categorias = [
             }
           ]
         },
+
+
         {
           titulo: "Caixas de lembrancinhas",
           grupo: "festas",
@@ -328,6 +663,9 @@ export const categorias = [
             }
           ]
         },
+
+
+
        {
           titulo: "Dia das Mães",
           grupo: "datas",
