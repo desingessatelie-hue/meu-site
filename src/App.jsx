@@ -31,12 +31,12 @@ export default function App() {
         "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
     },
     {
-      nome: "Topos Com flores",
-      descricao: "Topos com flores de papel e detalhes em dourado",
-      tipo: "Topos",
-      preco: "A partir de R$ 35,00",
+      nome: "Pequenos Mimos - Pirulito de coração",
+      descricao: "Um pequeno Mimo para um Grande Momento, Personalizaveis em diversos Temas",
+      tipo: "Pequenos Mimos",
+      preco: "A partir de R$ 1,50",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Religioso_10.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Pirulito_coração.png"
     },
     {
       nome: "Topo de Bolo Batismo",
@@ -44,15 +44,15 @@ export default function App() {
       tipo: "Topo de bolo",
       preco: "A partir de R$ 25,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Religioso_08.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Religioso_08.png"
     },
     {
-      nome: "Caixa Envelope 3 Bis",
-      descricao: "Lembrança prática em embalagem personalizada",
-      tipo: "Doces",
-      preco: "A partir de R$ 6,50",
+      nome: "Personalização de Embalagem",
+      descricao: "Embalagem para sabonete Artezanal, Personalizada com nome ou mensagem",
+      tipo: "Personalização",
+      preco: "A partir de R$ 1,50",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pascoa/Caixa_Envelope_3biz.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Iamgens/Papelaria/Personalizacao/Personalizacao_01.png"
     }
   ];
 

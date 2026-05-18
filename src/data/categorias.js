@@ -674,16 +674,40 @@ export const categorias = [
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Pequenos_Mimo.png",
           produtos: [
             {
-              nome: "Mini Lembrancinha Artesanal",
-              descricao: "Pequenos mimos feitos à mão para lembranças delicadas.",
-              preco: "A partir de R$ 5,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              nome: "Bolsa Batão",
+              descricao: "Cartão em formato de bolsa, com 1 Batão e chocolate",
+              preco: "A partir de R$ 6,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/BolsaBatão.png"
+            },
+                        {
+              nome: "Cartão Luz",
+              descricao: "Cartão com uma vela aromatica",
+              preco: "A partir de R$ 6,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Cartão_Vela.png"
+            },
+                        {
+              nome: "Chaveiro coração",
+              descricao: "Chaveiro de acrilico em formato de coração personalizavel com foto ou mensagem",
+              preco: "A partir de R$ 10,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Chaveiro_coração.png"
+            },
+                        {
+              nome: "Cartão descando",
+              descricao: "Cartão em formato Chinelo, com 2 amaradores.",
+              preco: "A partir de R$ 2,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Chinelo.png"
+            },
+                        {
+              nome: "Pirulito de coração",
+              descricao: "Pirulito para Mimos, personalizaveis em diversos Temas",
+              preco: "A partir de R$ 1,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Pirulito_coração.png"
             },
             {
-              nome: "Kit Mimos em Papel",
-              descricao: "Pequeno conjunto de tags e envelopes personalizados.",
-              preco: "A partir de R$ 12,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              nome: "Card Retrovisor",
+              descricao: "Card para colocar no retrovisor, personalizado, Solicite outros modelos",
+              preco: "A partir de R$ 0,80",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Cartão_retrovisor.png"
             }
           ]
         },
