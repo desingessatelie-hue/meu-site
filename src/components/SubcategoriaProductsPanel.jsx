@@ -743,6 +743,19 @@ export function SubcategoriaProductsPanel({
                         </p>
                       )}
 
+                      {prod.descricao && (
+                        <p
+                          style={{
+                            fontSize: "13px",
+                            color: "#666",
+                            marginTop: "6px",
+                            lineHeight: 1.4
+                          }}
+                        >
+                          {prod.descricao}
+                        </p>
+                      )}
+
                       <p
                         style={{
                           fontSize: "13px",
