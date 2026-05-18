@@ -23,13 +23,30 @@ export function DirectCategoryProductsPanel({
       <h2
         style={{
           textAlign: "center",
-          marginBottom: "20px",
+          marginBottom: "12px",
           fontSize: "26px",
           color: "#5a3e36"
         }}
       >
         {categoriaSelecionada.titulo}
       </h2>
+      {categoriaSelecionada.observacao && (
+        <p
+          style={{
+            textAlign: "center",
+            marginBottom: "20px",
+            color: "#8b6b61",
+            fontSize: "14px",
+            padding: "12px 16px",
+            borderRadius: "16px",
+            backgroundColor: "#fff5e6",
+            border: "1px solid rgba(200,169,106,0.35)",
+            display: "inline-block"
+          }}
+        >
+          🚧 <strong>{categoriaSelecionada.observacao}</strong>
+        </p>
+      )}
 
       <div style={estilos.grid}>
         {categoriaSelecionada.produtos.map((prod, i) => (

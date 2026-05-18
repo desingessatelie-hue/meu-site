@@ -44,6 +44,24 @@ export function SubcategoriasPanel({
         {categoriaSelecionada.titulo}
       </h2>
 
+      {categoriaSelecionada.observacao && (
+        <p
+          style={{
+            textAlign: "center",
+            marginBottom: "15px",
+            color: "#8b6b61",
+            fontSize: "14px",
+            padding: "12px 16px",
+            borderRadius: "16px",
+            backgroundColor: "#fff5e6",
+            border: "1px solid rgba(200,169,106,0.35)",
+            display: "inline-block"
+          }}
+        >
+          🚧 <strong>{categoriaSelecionada.observacao}</strong>
+        </p>
+      )}
+
       <p
         style={{
           textAlign: "center",
@@ -94,6 +112,18 @@ export function SubcategoriasPanel({
                   )}
 
                   <h3>{sub.titulo}</h3>
+                  {sub.descricao && (
+                    <p
+                      style={{
+                        color: "#7a655a",
+                        fontSize: "14px",
+                        margin: "10px 0",
+                        lineHeight: 1.5
+                      }}
+                    >
+                      {sub.descricao}
+                    </p>
+                  )}
 
                   <button
                     style={estilos.botao}

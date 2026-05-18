@@ -592,7 +592,7 @@ export const categorias = [
 
     {
       titulo: "Datas Comemorativas",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Dat_com.png",
       subcategorias: [
 
          {
@@ -889,6 +889,7 @@ export const categorias = [
         {
           titulo: "Dia dos Namorados",
           grupo: "datas",
+          descricao: "💘✨ Novidades em Breve ✨💘",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados.png",
           produtos: [
             {
@@ -903,6 +904,7 @@ export const categorias = [
          {
           titulo: "Festa Juninas",
           grupo: "datas",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Festa_junina.png",
           produtos: [
             {
@@ -923,6 +925,7 @@ export const categorias = [
 
     {
       titulo: "Cartonagem",
+      observacao: "Em Construção",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
       subcategorias: [
         {
@@ -1179,7 +1182,8 @@ export const categorias = [
 
     {
       titulo: "Kit Digital",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+      observacao: "Em Construção",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Digital.png",
       produtos: [
         { nome: "Kit Scrapbook" },
         { nome: "Papéis Digitais" }

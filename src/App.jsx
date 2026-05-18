@@ -229,6 +229,41 @@ export default function App() {
 
       <div
         style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "12px",
+          margin: "24px 0 16px 0"
+        }}
+      >
+        {[
+          { icon: "🚀", label: "Lançamentos quentes" },
+          { icon: "✨", label: "Novidades exclusivas" },
+          { icon: "🔥", label: "Oferta imperdível" }
+        ].map((item, index) => (
+          <span
+            key={index}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 14px",
+              borderRadius: "999px",
+              backgroundColor: "rgba(255, 242, 225, 0.9)",
+              color: "#8b6b61",
+              fontSize: "14px",
+              fontWeight: 600,
+              border: "1px solid rgba(200,169,106,0.25)"
+            }}
+          >
+            <span>{item.icon}</span>
+            {item.label}
+          </span>
+        ))}
+      </div>
+
+      <div
+        style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: "24px"

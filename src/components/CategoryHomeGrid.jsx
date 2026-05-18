@@ -32,6 +32,21 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
             }}
           />
           <h2>{cat.titulo}</h2>
+          {cat.observacao && (
+            <p
+              style={{
+                color: "#8b6b61",
+                fontSize: "14px",
+                margin: "10px 0",
+                padding: "10px 12px",
+                borderRadius: "14px",
+                backgroundColor: "#fff5e6",
+                border: "1px solid rgba(200,169,106,0.3)"
+              }}
+            >
+              🚧 <strong>{cat.observacao}</strong>
+            </p>
+          )}
           <button
             style={estilos.botao}
             onClick={() => onSelectCategory(cat.titulo)}
