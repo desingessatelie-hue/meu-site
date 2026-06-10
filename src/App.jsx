@@ -24,6 +24,30 @@ export default function App() {
 
   const produtosLancamentos = [
     {
+      nome: "Lápis Personalizados",
+      descricao: "🌸 Doce Jardim de Inverno, Lápis hb com ponteira ",
+      tipo: "Lápis",
+      preco: "A partir de R$ 7,50",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_01.png"
+    },
+        {
+      nome: "Buquê de Chocolate - Big ",
+      descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+      tipo: "Caixas Personalizadas ",
+      preco: "A partir de R$ 35,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_04.png"
+    },
+        {
+      nome: "Buquê de Chocolate - Big ",
+      descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+      tipo: "Caixas Personalizadas ",
+      preco: "A partir de R$ 35,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_04.png"
+    },
+    {
       nome: "Buquê de flores 01",
       descricao: "Flores de papel tamanho 18 x 20, Kits com mais de uma unidade preços especiais",
       tipo: "Flores",

@@ -890,15 +890,29 @@ export const categorias = [
         {
           titulo: "Dia dos Namorados",
           grupo: "datas",
-          descricao: "💘✨ Novidades em Breve ✨💘",
+          descricao: "💘✨ Novidades✨💘",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados.png",
           produtos: [
             {
-              nome: "Cartão Coração",
-              tipo: "papelaria",
-              descricao: "Cartão romântico com acabamento artesanal.",
-              preco: "A partir de R$ 9,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              nome: "Buquê de Chocolate - Big ",
+              tipo: "Caixas Personalizadas ",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              preco: "A partir de R$ 80,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_01.png"
+            },
+            {
+              nome: "Buquê de Chocolate - Médio",
+              tipo: "Caixas Personalizadas ",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              preco: "A partir de R$ 50,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_02.png"
+            },
+            {
+              nome: "Buquê de Chocolate - Pequeno",
+              tipo: "Caixas Personalizadas ",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_03.png"
             }
           ]
         },
@@ -996,10 +1010,33 @@ export const categorias = [
         },
         {
           titulo: "Blocos A6",
-          descricao: "📝✨ Em breve novidade!",
+          descricao: "📝✨ Novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6.png",
           produtos: [
-            { nome: "Bloco de Notas A6", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+             {
+              nome: "Caderneta A6 - Tucano",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                                    {
+              nome: "Caderneta A6 - Capirvara",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                     {
+              nome: "Caderneta A6 - Menina Gato",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+            {
+              nome: "Caderneta A6 - Floral Verde",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo  ",
+              preco: "A partir de R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            }
           ]
         },
         {
@@ -1007,7 +1044,7 @@ export const categorias = [
           descricao: "🖊️✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas.png",
           produtos: [
-                        {
+            {
               nome: "Lápis Personalizado Azul",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
               preco: "A partir de R$ 7,50",
