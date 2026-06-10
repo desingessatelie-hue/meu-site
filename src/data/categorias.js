@@ -551,6 +551,7 @@ export const categorias = [
 
         {
           titulo: "Caixas de lembrancinhas",
+          descricao: " 🚧 Em Construção 🚧",
           grupo: "festas",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Caixas.png",
           produtos: [
@@ -968,6 +969,7 @@ export const categorias = [
       subcategorias: [
         {
           titulo: "Agendas",
+          descricao: "📒✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas.png",
           produtos: [
             { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -976,6 +978,7 @@ export const categorias = [
         },
         {
           titulo: "Planners",
+          descricao: "🗓️✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Planner.png",
           produtos: [
             { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -984,6 +987,7 @@ export const categorias = [
         },
         {
           titulo: "Cadernos",
+          descricao: "📚✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Cadernos.png",
           produtos: [
             { nome: "Caderno Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -992,6 +996,7 @@ export const categorias = [
         },
         {
           titulo: "Blocos A6",
+          descricao: "📝✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6.png",
           produtos: [
             { nome: "Bloco de Notas A6", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -999,14 +1004,45 @@ export const categorias = [
         },
         {
           titulo: "Canetas Personalizadas",
+          descricao: "🖊️✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas.png",
           produtos: [
-            { nome: "Caneta Decorada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Canetas.png" },
-            { nome: "Caneta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+                        {
+              nome: "Lápis Personalizado Azul",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                                    {
+              nome: "Lápis Personalizado Lilas",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                                    {
+              nome: "Lápis Personalizado Azul-2",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                                    {
+              nome: "Lápis Personalizado Verde",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            },
+                                    {
+              nome: "Lápis Personalizado Amarelo",
+              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
+              preco: "A partir de R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas_01.png"
+            }
+
           ]
         },
         {
           titulo: "Kits Bebê",
+          descricao: "👶✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_bebe.png",
           produtos: [
             { nome: "Kit Bebê Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -1014,6 +1050,7 @@ export const categorias = [
         },
         {
           titulo: "Kits Presentes",
+          descricao: "🎁✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png",
           produtos: [
             { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png" }
@@ -1021,6 +1058,7 @@ export const categorias = [
         },
         {
           titulo: "Personalizados",
+          descricao: "🎨✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizados.png",
           produtos: [
             {

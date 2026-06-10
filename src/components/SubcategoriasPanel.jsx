@@ -17,7 +17,9 @@ export function SubcategoriasPanel({
   const tituloGrupo = (grupo) => {
     if (grupo === "festas") return "✨ Festas Personalizadas";
     if (grupo === "datas") return "🎄 Datas Comemorativas";
-    if (grupo === "outros") return "Outros";
+    if (grupo === "outros") {
+      return categoriaSelecionada.titulo === "Papelaria Artesanal" ? "" : "Outros";
+    }
     return grupo.charAt(0).toUpperCase() + grupo.slice(1);
   };
 
@@ -76,17 +78,19 @@ export function SubcategoriasPanel({
 
       {grupos.map((grupo) => (
         <div key={grupo}>
-          <h2
-            style={{
-              marginTop: "30px",
-              marginBottom: "20px",
-              color: "#5a3e36",
-              textAlign: "center",
-              fontSize: "24px"
-            }}
-          >
-            {tituloGrupo(grupo)}
-          </h2>
+          {tituloGrupo(grupo) && (
+            <h2
+              style={{
+                marginTop: "30px",
+                marginBottom: "20px",
+                color: "#5a3e36",
+                textAlign: "center",
+                fontSize: "24px"
+              }}
+            >
+              {tituloGrupo(grupo)}
+            </h2>
+          )}
 
           <div style={estilos.grid}>
             {categoriaSelecionada.subcategorias
