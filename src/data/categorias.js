@@ -1157,6 +1157,18 @@ export const categorias = [
               descricao: "Card para colocar no retrovisor, personalizado, Solicite outros modelos",
               preco: "A partir de R$ 0,80",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Cartão_retrovisor.png"
+            },
+            {
+              nome: "Mini Kit Fofo",
+              descricao: "Kit de pequenos mimos artesanais com 3 itens diferentes para lembrancinha ou presente, Podem ser compostos com Marcadores magneticos, clips decorados, Borrachas fofas.",
+              tipo: "Pequenos Mimos",
+              preco: "A partir de R$ 5,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_01.png",
+              imagens: [
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_01.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_02.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_03.png"
+              ]
             }
           ]
         },

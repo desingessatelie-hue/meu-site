@@ -1,5 +1,108 @@
-import React from "react";
+import React, { useState } from "react";
 import { Breadcrumb } from "./Breadcrumb.jsx";
+
+function ProductImageCarousel({ imagens, imagem, alt, estilos }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sources = Array.isArray(imagens) && imagens.length > 0 ? imagens : imagem ? [imagem] : [];
+
+  if (!sources.length) return null;
+
+  const showControls = sources.length > 1;
+
+  return (
+    <div style={{ position: "relative" }}>
+      <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+        <img
+          src={sources[currentIndex]}
+          alt={alt}
+          style={{ ...estilos.imagem, display: "block" }}
+        />
+      </div>
+
+      {showControls && (
+        <>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setCurrentIndex((prev) => (prev - 1 + sources.length) % sources.length);
+            }}
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "10px",
+              transform: "translateY(-50%)",
+              width: "34px",
+              height: "34px",
+              borderRadius: "50%",
+              border: "none",
+              background: "rgba(255,255,255,0.9)",
+              cursor: "pointer",
+              fontSize: "18px",
+              lineHeight: 1,
+              padding: 0
+            }}
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setCurrentIndex((prev) => (prev + 1) % sources.length);
+            }}
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "10px",
+              transform: "translateY(-50%)",
+              width: "34px",
+              height: "34px",
+              borderRadius: "50%",
+              border: "none",
+              background: "rgba(255,255,255,0.9)",
+              cursor: "pointer",
+              fontSize: "18px",
+              lineHeight: 1,
+              padding: 0
+            }}
+          >
+            ›
+          </button>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "8px",
+              marginTop: "12px"
+            }}
+          >
+            {sources.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setCurrentIndex(index);
+                }}
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
+                  border: "none",
+                  background: index === currentIndex ? "#c8a96a" : "#ddd",
+                  cursor: "pointer",
+                  padding: 0
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export function SubcategoriaProductsPanel({
   categoriaSelecionada,
@@ -9,6 +112,15 @@ export function SubcategoriaProductsPanel({
   onResetNavigation,
   onBack
 }) {
+  const renderProductImages = (prod) => (
+    <ProductImageCarousel
+      imagens={prod.imagens}
+      imagem={prod.imagem}
+      alt={prod.nome}
+      estilos={estilos}
+    />
+  );
+
   return (
     <div style={{ marginTop: "20px" }}>
       <button style={estilos.voltar} onClick={onBack}>
@@ -955,19 +1067,7 @@ export function SubcategoriaProductsPanel({
                     "0 10px 30px rgba(0,0,0,0.06)";
                 }}
               >
-                <div style={{ overflow: "hidden", borderRadius: "14px" }}>
-                  <img
-                    src={prod.imagem}
-                    alt={prod.nome}
-                    style={estilos.imagem}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.08)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                    }}
-                  />
-                </div>
+                {renderProductImages(prod)}
 
                 <p
                   style={{
