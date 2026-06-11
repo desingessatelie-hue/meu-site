@@ -21,6 +21,44 @@ export default function App() {
   const subcategoriaSelecionada = categoriaSelecionada?.subcategorias?.find(
     (sub) => sub.titulo === subcategoriaAtiva
   );
+  const [produtoAtivo, setProdutoAtivo] = useState(null);
+
+  const navigateByTipo = (tipo) => {
+    const t = String(tipo || "").toLowerCase().trim();
+    if (t.includes("namor")) {
+      setCategoriaAtiva("Datas Comemorativas");
+      setSubcategoriaAtiva("Dia dos Namorados");
+      return;
+    }
+    if (t.includes("bloco") || t.includes("blocos_a6") || t.includes("blocos a6")) {
+      setCategoriaAtiva("Papelaria Artesanal");
+      setSubcategoriaAtiva("Blocos A6");
+      return;
+    }
+    if (t.includes("flores")) {
+      setCategoriaAtiva("Papelaria Artesanal");
+      setSubcategoriaAtiva("Jardim de Papel");
+      return;
+    }
+    if (t.includes("pequenos")) {
+      setCategoriaAtiva("Papelaria Artesanal");
+      setSubcategoriaAtiva("Pequenos Mimos");
+      return;
+    }
+    if (t.includes("topo")) {
+      setCategoriaAtiva("Festas e Lembrancinhas");
+      setSubcategoriaAtiva("Topo de Bolo");
+      return;
+    }
+    if (t.includes("personaliz")) {
+      setCategoriaAtiva("Papelaria Artesanal");
+      setSubcategoriaAtiva("Personalizados");
+      return;
+    }
+    // fallback
+    setCategoriaAtiva("Papelaria Artesanal");
+    setSubcategoriaAtiva("Canetas Personalizadas");
+  };
 
   const produtosLancamentos = [
     {
@@ -32,9 +70,9 @@ export default function App() {
         "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_01.png"
     },
         {
-      nome: "Buquê de Chocolate - Big ",
+      nome: "Buquê de Chocolates - Dia dos Namorados",
       descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
-      tipo: "Caixas Personalizadas ",
+      tipo: "Namorados",
       preco: "A partir de R$ 35,00",
       imagem:
         "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_04.png"
@@ -42,7 +80,7 @@ export default function App() {
         {
       nome: "🌸 Doce Jardim de Inverno ",
       descricao: "Bloquinho encantador mais lápis floral.",
-      tipo: "Cadernos e blocos",
+      tipo: "Blocos_A6",
       preco: "A partir de R$ 15,00",
       imagem:
         "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png"
@@ -163,7 +201,11 @@ export default function App() {
           }}
         >
           {produtosEncontrados.map((prod, index) => (
-            <div key={`${prod.nome}-${index}`} style={estilos.card}>
+            <div
+              key={`${prod.nome}-${index}`}
+              style={{ ...estilos.card, cursor: "pointer" }}
+              onClick={() => setProdutoAtivo(prod)}
+            >
               {prod.imagem && (
                 <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                   <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
@@ -200,6 +242,7 @@ export default function App() {
                 href={gerarLinkWhatsApp(prod.nome)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 <button style={{ ...estilos.botao, marginTop: "14px" }}>
                   Solicitar orçamento
@@ -306,15 +349,24 @@ export default function App() {
               e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
             }}
           >
-            <span style={estilos.lancamentoBadge}>{prod.tipo}</span>
-            <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+            <span
+              style={{ ...estilos.lancamentoBadge, cursor: "pointer" }}
+              onClick={() => {
+                navigateByTipo(prod.tipo);
+                setProdutoAtivo(null);
+                voltarAoTopo();
+              }}
+            >
+              {prod.tipo}
+            </span>
+            <div style={{ overflow: "hidden", borderRadius: "14px", cursor: "pointer" }} onClick={() => setProdutoAtivo(prod)}>
               <img
                 src={prod.imagem}
                 alt={prod.nome}
                 style={estilos.imagem}
               />
             </div>
-            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px" }}>
+            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px", cursor: "pointer" }} onClick={() => setProdutoAtivo(prod)}>
               {prod.nome}
             </p>
             {prod.descricao && (
@@ -342,7 +394,13 @@ export default function App() {
               style={{
                 fontSize: "13px",
                 color: "#999",
-                marginTop: "6px"
+                marginTop: "6px",
+                cursor: "pointer"
+              }}
+              onClick={() => {
+                navigateByTipo(prod.tipo);
+                setProdutoAtivo(null);
+                voltarAoTopo();
               }}
             >
               {prod.tipo}
@@ -370,6 +428,60 @@ export default function App() {
   const voltarParaSubcategoria = () => {
     setSubcategoriaAtiva(null);
     voltarAoTopo();
+  };
+
+  const renderProdutoDetalhe = () => {
+    if (!produtoAtivo) return null;
+
+    return (
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          backgroundColor: "rgba(0,0,0,0.5)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 1200
+        }}
+        onClick={() => setProdutoAtivo(null)}
+      >
+        <div
+          style={{
+            width: "min(920px, 96%)",
+            background: "#fff",
+            borderRadius: 12,
+            padding: 24,
+            boxShadow: "0 20px 60px rgba(0,0,0,0.2)"
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+            <div style={{ flex: "0 0 320px", overflow: "hidden", borderRadius: 12 }}>
+              <img src={produtoAtivo.imagem} alt={produtoAtivo.nome} style={{ width: "100%" }} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <h2 style={{ marginTop: 0 }}>{produtoAtivo.nome}</h2>
+              {produtoAtivo.descricao && (
+                <p style={{ color: "#7a655a" }}>{produtoAtivo.descricao}</p>
+              )}
+              {produtoAtivo.preco && (
+                <p style={{ fontWeight: 700, color: "#c8a96a" }}>{produtoAtivo.preco}</p>
+              )}
+
+              <div style={{ marginTop: 18, display: "flex", gap: 12 }}>
+                <a href={gerarLinkWhatsApp(produtoAtivo.nome)} target="_blank" rel="noopener noreferrer">
+                  <button style={estilos.botao}>Solicitar orçamento</button>
+                </a>
+                <button style={{ ...estilos.botao, backgroundColor: "#eee", color: "#333" }} onClick={() => setProdutoAtivo(null)}>
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   const handleFooterBack = () => {
@@ -452,6 +564,7 @@ export default function App() {
           gerarLinkWhatsApp={gerarLinkWhatsApp}
           onResetNavigation={resetNavigation}
           onBack={voltarParaSubcategoria}
+          onProdutoClick={(produto) => setProdutoAtivo(produto)}
         />
       )}
 
@@ -462,8 +575,11 @@ export default function App() {
           estilos={estilos}
           gerarLinkWhatsApp={gerarLinkWhatsApp}
           onBack={resetNavigation}
+          onProdutoClick={(produto) => setProdutoAtivo(produto)}
         />
       )}
+
+      {renderProdutoDetalhe()}
 
       <GlobalFooterActions
         estilos={estilos}

@@ -110,7 +110,8 @@ export function SubcategoriaProductsPanel({
   estilos,
   gerarLinkWhatsApp,
   onResetNavigation,
-  onBack
+  onBack,
+  onProdutoClick
 }) {
   const renderProductImages = (prod) => (
     <ProductImageCarousel
@@ -176,7 +177,8 @@ export function SubcategoriaProductsPanel({
               .map((prod, i) => (
                 <div
                   key={i}
-                  style={estilos.card}
+                  style={{ ...estilos.card, cursor: "pointer" }}
+                  onClick={() => onProdutoClick(prod)}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
                     e.currentTarget.style.boxShadow =
@@ -224,15 +226,28 @@ export function SubcategoriaProductsPanel({
                     </p>
                   )}
 
-                  <p
-                    style={{
-                      fontSize: "13px",
-                      color: "#999",
-                      marginTop: "4px"
-                    }}
-                  >
-                    Feito sob medida para você 💛
-                  </p>
+                    {prod.descricao && (
+                      <p
+                        style={{
+                          fontSize: "13px",
+                          color: "#666",
+                          marginTop: "6px",
+                          lineHeight: 1.4
+                        }}
+                      >
+                        {prod.descricao}
+                      </p>
+                    )}
+
+                    <p
+                      style={{
+                        fontSize: "13px",
+                        color: "#999",
+                        marginTop: "4px"
+                      }}
+                    >
+                      Feito sob medida para você 💛
+                    </p>
 
                   <a
                     href={gerarLinkWhatsApp(prod.nome)}
@@ -261,7 +276,11 @@ export function SubcategoriaProductsPanel({
             {subcategoriaSelecionada.produtos
               .filter((prod) => prod.tipo === "papelaria")
               .map((prod, i) => (
-                <div key={i} style={estilos.card}>
+                <div
+                  key={i}
+                  style={{ ...estilos.card, cursor: "pointer" }}
+                  onClick={() => onProdutoClick(prod)}
+                >
                   <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                     <img
                       src={prod.imagem}
@@ -329,7 +348,11 @@ export function SubcategoriaProductsPanel({
             {subcategoriaSelecionada.produtos
               .filter((prod) => prod.tipo === "kits")
               .map((prod, i) => (
-                <div key={i} style={estilos.card}>
+                <div
+                  key={i}
+                  style={{ ...estilos.card, cursor: "pointer" }}
+                  onClick={() => onProdutoClick(prod)}
+                >
                   <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                     <img
                       src={prod.imagem}
@@ -413,7 +436,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "Flores")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
                       </div>
@@ -490,7 +517,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "Borboletas")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
                       </div>
@@ -567,7 +598,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "Pequenos Mimos")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
                       </div>
@@ -644,7 +679,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "Personalizados")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
                       </div>
@@ -726,7 +765,8 @@ export function SubcategoriaProductsPanel({
                   .map((prod, i) => (
                     <div
                       key={i}
-                      style={estilos.card}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = "translateY(-8px)";
                         e.currentTarget.style.boxShadow =
@@ -811,7 +851,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "topo")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img
                           src={prod.imagem}
@@ -884,7 +928,8 @@ export function SubcategoriaProductsPanel({
                   .map((prod, i) => (
                     <div
                       key={i}
-                      style={estilos.card}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = "translateY(-8px)";
                         e.currentTarget.style.boxShadow =
@@ -982,7 +1027,11 @@ export function SubcategoriaProductsPanel({
                 {subcategoriaSelecionada.produtos
                   .filter((prod) => prod.tipo === "Kits")
                   .map((prod, i) => (
-                    <div key={i} style={estilos.card}>
+                    <div
+                      key={i}
+                      style={{ ...estilos.card, cursor: "pointer" }}
+                      onClick={() => onProdutoClick(prod)}
+                    >
                       <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                         <img
                           src={prod.imagem}
@@ -1055,7 +1104,8 @@ export function SubcategoriaProductsPanel({
             {subcategoriaSelecionada.produtos.map((prod, i) => (
               <div
                 key={i}
-                style={estilos.card}
+                style={{ ...estilos.card, cursor: "pointer" }}
+                onClick={() => onProdutoClick(prod)}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-8px)";
                   e.currentTarget.style.boxShadow =
@@ -1088,6 +1138,19 @@ export function SubcategoriaProductsPanel({
                     }}
                   >
                     💰 {prod.preco}
+                  </p>
+                )}
+
+                {prod.descricao && (
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      color: "#666",
+                      marginTop: "6px",
+                      lineHeight: 1.4
+                    }}
+                  >
+                    {prod.descricao}
                   </p>
                 )}
 
@@ -1171,7 +1234,11 @@ export function SubcategoriaProductsPanel({
                   {subcategoriaSelecionada.produtos
                     .filter((prod) => prod.tipo === tipo)
                     .map((prod, i) => (
-                      <div key={i} style={estilos.card}>
+                      <div
+                        key={i}
+                        style={{ ...estilos.card, cursor: "pointer" }}
+                        onClick={() => onProdutoClick(prod)}
+                      >
                         <div style={{ overflow: "hidden", borderRadius: "14px" }}>
                           <img
                             src={prod.imagem}

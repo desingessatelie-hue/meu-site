@@ -30,6 +30,20 @@ export function DirectCategoryProductsPanel({
       >
         {categoriaSelecionada.titulo}
       </h2>
+      {categoriaSelecionada.descricao && (
+        <p
+          style={{
+            textAlign: "center",
+            marginBottom: "12px",
+            color: "#7a655a",
+            fontSize: "14px",
+            maxWidth: "760px",
+            margin: "0 auto 12px auto"
+          }}
+        >
+          {categoriaSelecionada.descricao}
+        </p>
+      )}
       {categoriaSelecionada.observacao && (
         <p
           style={{
@@ -51,19 +65,40 @@ export function DirectCategoryProductsPanel({
       <div style={estilos.grid}>
         {categoriaSelecionada.produtos.map((prod, i) => (
           <div key={i} style={estilos.card}>
+            {prod.imagem && (
+              <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
+              </div>
+            )}
+
             <p style={{ fontWeight: "600", marginTop: "10px" }}>{prod.nome}</p>
+
+            {prod.descricao && (
+              <p
+                style={{
+                  color: "#8b6b61",
+                  fontSize: "14px",
+                  margin: "10px 0 0 0",
+                  lineHeight: 1.6
+                }}
+              >
+                {prod.descricao}
+              </p>
+            )}
 
             {prod.preco && (
               <p
                 style={{
                   fontWeight: "bold",
                   color: "#c8a96a",
-                  fontSize: "15px"
+                  fontSize: "15px",
+                  marginTop: prod.descricao ? "10px" : "6px"
                 }}
               >
                 {prod.preco}
               </p>
             )}
+
             <p
               style={{
                 fontSize: "13px",

@@ -1,7 +1,7 @@
 export const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
-      
+      descricao: "Decore suas festas com nossos topos de bolo personalizados, painéis temáticos e lembrancinhas encantadoras. Transforme cada celebração em um momento inesquecível com nossos produtos artesanais, feitos com amor e atenção aos detalhes. De aniversários a casamentos, temos opções para todas as ocasiões especiais.",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_festa.png",
       subcategorias: [
         {
@@ -593,6 +593,7 @@ export const categorias = [
 
     {
       titulo: "Datas Comemorativas",
+      descricao: " 🎉 Celebre momentos especiais com nossas lembrancinhas e kits personalizados para datas comemorativas! 🎁",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Dat_com.png",
       subcategorias: [
 
@@ -896,23 +897,23 @@ export const categorias = [
             {
               nome: "Buquê de Chocolate - Big ",
               tipo: "Caixas Personalizadas ",
-              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(15 -Ouro Branco).",
               preco: "A partir de R$ 80,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_01.png"
             },
             {
               nome: "Buquê de Chocolate - Médio",
               tipo: "Caixas Personalizadas ",
-              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(6-Ouro Branco).",
               preco: "A partir de R$ 50,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_02.png"
             },
             {
               nome: "Buquê de Chocolate - Pequeno",
               tipo: "Caixas Personalizadas ",
-              descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
+              descricao: "Caixas personalizada com nome, recheada de chocolates(2-Ouro Branco).",
               preco: "A partir de R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png"
             }
           ]
         },
@@ -938,52 +939,16 @@ export const categorias = [
       ]
     },
 
-    {
-      titulo: "Cartonagem",
-      observacao: "Em Construção",
-      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
-      subcategorias: [
-        {
-          titulo: "Caixas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
-          produtos: [
-            { nome: "Caixa Livro", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Caixa Organizadora", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Álbuns",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
-          produtos: [
-            { nome: "Álbum Artesanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Álbum Fotográfico", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Cestas",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
-          produtos: [
-            { nome: "Cesta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Kit Escritório",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
-          produtos: [
-            { nome: "Porta Lápis", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Organizador de Mesa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        }
-      ]
-    },
+ 
 
     {
       titulo: "Papelaria Artesanal",
+      descricao: " 📝✨ Descubra nossa seleção de produtos de papelaria artesanal, perfeitos para inspirar sua criatividade e personalizar seus projetos! 🎨",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Papelaria.png",
       subcategorias: [
         {
           titulo: "Agendas",
-          descricao: "📒✨ Em breve novidade!",
+          descricao: "🚧📒✨ Em breve novidade!🚧",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas.png",
           produtos: [
             { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -992,7 +957,7 @@ export const categorias = [
         },
         {
           titulo: "Planners",
-          descricao: "🗓️✨ Em breve novidade!",
+          descricao: "🚧🗓️✨ Em breve novidade!🚧",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Planner.png",
           produtos: [
             { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -1001,7 +966,7 @@ export const categorias = [
         },
         {
           titulo: "Cadernos",
-          descricao: "📚✨ Em breve novidade!",
+          descricao: "🚧📚✨ Em breve novidade!🚧",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Cadernos.png",
           produtos: [
             { nome: "Caderno Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
@@ -1079,7 +1044,7 @@ export const categorias = [
         },
         {
           titulo: "Kits Bebê",
-          descricao: "👶✨ Em breve novidade!",
+          descricao: "🚧👶✨ Em breve novidade!🚧🚧",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_bebe.png",
           produtos: [
             { nome: "Kit Bebê Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
@@ -1087,7 +1052,7 @@ export const categorias = [
         },
         {
           titulo: "Kits Presentes",
-          descricao: "🎁✨ Em breve novidade!",
+          descricao: "🚧🎁✨ Em breve novidade!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png",
           produtos: [
             { nome: "Kit Lembrancinha Festa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_presente.png" }
@@ -1095,26 +1060,32 @@ export const categorias = [
         },
         {
           titulo: "Personalizados",
-          descricao: "🎨✨ Em breve novidade!",
+          descricao: "🎨✨ Novidades!",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizados.png",
           produtos: [
             {
               nome: "Tag Personalizada",
-              descricao: "Tag personalizada para lembrancinhas e embalagens.",
-              preco: "A partir de R$ 4,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              descricao: "Tag personalizada para lembrancinhas e embalagens. São criadas a partir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você. Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
+              preco: "A partir de R$ 1,50. Cada tag personalizada",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizacao/Personalizacao_01.png"
             },
             {
-              nome: "Cartão Customizado",
-              descricao: "Cartão artesanal com nome ou mensagem personalizada.",
-              preco: "A partir de R$ 7,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              nome: "Etiquetas Personalizadas",
+              descricao: "Etiquetas personalizadas para produtos e embalagens. São criadas a partir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você. Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
+              preco: "A partir de R$ 7,00. A folha A4 com 30 etiquetas 3x3cm",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Const.png"
             },
             {
-              nome: "Envelope Personalizado",
-              descricao: "Envelope artesanal com acabamento personalizado.",
-              preco: "A partir de R$ 5,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              nome: "Criação de Logos Personalizados",
+              descricao: "Criação de Logos personalizados para sua marca, A criação será apartir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você.Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
+              preco: "A partir de R$ 25,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Const.png"
+            },
+           {
+              nome: "Criação de Bloquinhos personalizados",
+              descricao: "Criação de blocos nas medidas e temas personalizados para sua marca ou evento, A criação será apartir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você. Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
+              preco: "A partir de R$ 9,00. Cada bloco personalizado com 50 folhas, 8x12cm, blocado",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Const.png"
             }
           ]
         },
@@ -1124,7 +1095,7 @@ export const categorias = [
           produtos: [
             {
               nome: "Bolsa Batão",
-              descricao: "Cartão em formato de bolsa, com 1 Batão e chocolate",
+              descricao: "Cartão em formato de bolsa, com 1 Baton de chocolate",
               preco: "A partir de R$ 6,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/BolsaBatão.png"
             },
@@ -1174,6 +1145,7 @@ export const categorias = [
         },
         {
           titulo: "Jardim de Papel",
+          descricao: "🌸✨ Flores e Borboletas artesanais! 🌸✨",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques.png",
           produtos: [
           
@@ -1254,14 +1226,47 @@ export const categorias = [
               tipo: "Borboletas",
               preco: "A partir de R$ 20,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Borboleta-01.png"
-            },
-            {
-              nome: "Pequenos Mimos Artesanais",
-              descricao: "Pequenos mimos feitos à mão para lembrancinhas delicadas.",
-              tipo: "Pequenos Mimos",
-              preco: "A partir de R$ 8,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             }
+           
+          ]
+        }
+      ]
+    },
+       {
+      titulo: "Cartonagem",
+      descricao: " 📦✨ Em breve novidades em cartonagem artesanal! Fique atento para descobrir nossas criações exclusivas e personalizadas! 🎨",
+      observacao: "Em Construção",
+      imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Cartonagem.png",
+      subcategorias: [
+        {
+          titulo: "Caixas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            { nome: "Caixa Livro", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+            { nome: "Caixa Organizadora", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+          ]
+        },
+        {
+          titulo: "Álbuns",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            { nome: "Álbum Artesanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+            { nome: "Álbum Fotográfico", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+          ]
+        },
+        {
+          titulo: "Cestas",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            { nome: "Cesta Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+          ]
+        },
+        {
+          titulo: "Kit Escritório",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            { nome: "Porta Lápis", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
+            { nome: "Organizador de Mesa", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
           ]
         }
       ]
@@ -1269,6 +1274,7 @@ export const categorias = [
 
     {
       titulo: "Kit Digital",
+      descricao: " 💻✨ Em breve novidades em kits digitais para scrapbooking e papelaria! Fique atento para descobrir nossos designs exclusivos e personalizáveis! 🎨",
       observacao: "Em Construção",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Digital.png",
       produtos: [

@@ -46,6 +46,21 @@ export function SubcategoriasPanel({
         {categoriaSelecionada.titulo}
       </h2>
 
+      {categoriaSelecionada.descricao && (
+        <p
+          style={{
+            textAlign: "center",
+            marginBottom: "16px",
+            color: "#7a655a",
+            fontSize: "15px",
+            maxWidth: "760px",
+            margin: "0 auto 16px auto"
+          }}
+        >
+          {categoriaSelecionada.descricao}
+        </p>
+      )}
+
       {categoriaSelecionada.observacao && (
         <p
           style={{

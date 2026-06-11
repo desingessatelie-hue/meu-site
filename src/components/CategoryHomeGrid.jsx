@@ -32,6 +32,21 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
             }}
           />
           <h2>{cat.titulo}</h2>
+          {cat.descricao && (
+            <p
+              style={{
+                color: "#7a655a",
+                fontSize: "14px",
+                margin: "8px 0",
+                lineHeight: 1.4,
+                maxWidth: "680px",
+                marginLeft: "auto",
+                marginRight: "auto"
+              }}
+            >
+              {cat.descricao}
+            </p>
+          )}
           {cat.observacao && (
             <p
               style={{
@@ -53,6 +68,7 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
           >
             Ver coleção
           </button>
+          
         </div>
       ))}
     </div>
