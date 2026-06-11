@@ -1077,7 +1077,7 @@ export const categorias = [
             },
             {
               nome: "Criação de Logos Personalizados",
-              descricao: "Criação de Logos personalizados para sua marca, A criação será apartir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você.Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
+              descricao: "Criação de Logos personalizados para sua marca. A criação será apartir de uma breve conversa para entender o que deseja, e a partir disso criar uma arte personalizada para você. Permitimos até 4 alterações apartir do envio da 1ª arte. Solicite um orçamento personalizado.",
               preco: "A partir de R$ 25,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Const.png"
             },
@@ -1095,7 +1095,7 @@ export const categorias = [
           produtos: [
             {
               nome: "Bolsa Batão",
-              descricao: "Cartão em formato de bolsa, com 1 Baton de chocolate",
+              descricao: "Cartão em formato de bolsa, com 1 Baton de chocolate ou um batão labial, ideal para lembrancinhas de dia das mães ou dia dos namorados.",
               preco: "A partir de R$ 6,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/BolsaBatão.png"
             },

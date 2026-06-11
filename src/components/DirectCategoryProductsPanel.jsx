@@ -79,7 +79,11 @@ export function DirectCategoryProductsPanel({
                   color: "#8b6b61",
                   fontSize: "14px",
                   margin: "10px 0 0 0",
-                  lineHeight: 1.6
+                  lineHeight: 1.6,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden"
                 }}
               >
                 {prod.descricao}

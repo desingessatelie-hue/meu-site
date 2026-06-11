@@ -42,6 +42,14 @@ export function GlobalFooterActions({
       >
         💬
       </a>
+      <a
+        href="https://www.instagram.com/ellen_ess"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={estilos.instagram}
+      >
+        📷
+      </a>
       <button style={estilos.topo} onClick={onScrollTop}>
         ↑
       </button>

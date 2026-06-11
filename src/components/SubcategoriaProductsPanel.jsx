@@ -473,7 +473,11 @@ export function SubcategoriaProductsPanel({
                             fontSize: "13px",
                             color: "#666",
                             marginTop: "6px",
-                            lineHeight: 1.4
+                            lineHeight: 1.4,
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden"
                           }}
                         >
                           {prod.descricao}
@@ -554,7 +558,11 @@ export function SubcategoriaProductsPanel({
                             fontSize: "13px",
                             color: "#666",
                             marginTop: "6px",
-                            lineHeight: 1.4
+                            lineHeight: 1.4,
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden"
                           }}
                         >
                           {prod.descricao}
@@ -635,7 +643,11 @@ export function SubcategoriaProductsPanel({
                             fontSize: "13px",
                             color: "#666",
                             marginTop: "6px",
-                            lineHeight: 1.4
+                            lineHeight: 1.4,
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden"
                           }}
                         >
                           {prod.descricao}
@@ -716,7 +728,11 @@ export function SubcategoriaProductsPanel({
                             fontSize: "13px",
                             color: "#666",
                             marginTop: "6px",
-                            lineHeight: 1.4
+                            lineHeight: 1.4,
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden"
                           }}
                         >
                           {prod.descricao}
@@ -1147,7 +1163,11 @@ export function SubcategoriaProductsPanel({
                       fontSize: "13px",
                       color: "#666",
                       marginTop: "6px",
-                      lineHeight: 1.4
+                      lineHeight: 1.4,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden"
                     }}
                   >
                     {prod.descricao}
@@ -1281,7 +1301,11 @@ export function SubcategoriaProductsPanel({
                               fontSize: "13px",
                               color: "#666",
                               marginTop: "6px",
-                              lineHeight: 1.4
+                              lineHeight: 1.4,
+                              display: "-webkit-box",
+                              WebkitLineClamp: 2,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden"
                             }}
                           >
                             {prod.descricao}
@@ -1316,4 +1340,5 @@ export function SubcategoriaProductsPanel({
     </div>
   );
 }
+
 
