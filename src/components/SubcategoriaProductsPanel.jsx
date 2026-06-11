@@ -1037,8 +1037,8 @@ export function SubcategoriaProductsPanel({
               "Painel": "📋 Painel com design personalizado e acabamento de luxo",
               "Personagens": "🦸 Topos temáticos com personagens sob medida",
               "Religioso": "✝️ Topos com temática religiosa e acabamento refinado",
-              "Personalizado": "✨ Personalizado com nome e tema",
-              "Mês aniversário": "🎂 Ideal para aniversários e ocasiões especiais, Monte seu Kit!",
+              "Personalizado": "✨ Personalizado com nome e tema inspirados em fotos ou ideias da sua escolha",
+              "Mês aniversário": "🎂 Ideal para Mês Aniversário,  Monte seu Kit!",
               "Kit + Topo": "💝 Um detalhe único para tornar sua comemoração inesquecível!"
             };
 

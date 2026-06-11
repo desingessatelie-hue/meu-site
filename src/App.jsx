@@ -37,15 +37,15 @@ export default function App() {
       tipo: "Caixas Personalizadas ",
       preco: "A partir de R$ 35,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_04.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_04.png"
     },
         {
-      nome: "Buquê de Chocolate - Big ",
-      descricao: "Caixas personalizada com nome, recheada de chocolates(Ouro Branco).",
-      tipo: "Caixas Personalizadas ",
-      preco: "A partir de R$ 35,00",
+      nome: "🌸 Doce Jardim de Inverno ",
+      descricao: "Bloquinho encantador mais lápis floral.",
+      tipo: "Cadernos e blocos",
+      preco: "A partir de R$ 15,00",
       imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/data_com/Namorados/Namorado_04.png"
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png"
     },
     {
       nome: "Buquê de flores 01",
@@ -158,7 +158,7 @@ export default function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: "24px"
           }}
         >
@@ -289,7 +289,7 @@ export default function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
           gap: "24px"
         }}
       >
