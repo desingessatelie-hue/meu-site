@@ -6,7 +6,8 @@ export function DirectCategoryProductsPanel({
   subcategoriaSelecionada,
   estilos,
   gerarLinkWhatsApp,
-  onBack
+  onBack,
+  onProdutoClick
 }) {
   return (
     <div style={{ marginTop: "20px" }}>
@@ -64,10 +65,32 @@ export function DirectCategoryProductsPanel({
 
       <div style={estilos.grid}>
         {categoriaSelecionada.produtos.map((prod, i) => (
-          <div key={i} style={estilos.card}>
+          <div 
+            key={i} 
+            style={{ ...estilos.card, cursor: "pointer" }}
+            onClick={() => onProdutoClick && onProdutoClick(prod)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
+            }}
+          >
             {prod.imagem && (
               <div style={{ overflow: "hidden", borderRadius: "14px" }}>
-                <img src={prod.imagem} alt={prod.nome} style={estilos.imagem} />
+                <img 
+                  src={prod.imagem} 
+                  alt={prod.nome} 
+                  style={estilos.imagem}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.08)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
               </div>
             )}
 
@@ -117,6 +140,7 @@ export function DirectCategoryProductsPanel({
               href={gerarLinkWhatsApp(prod.nome)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
             >
               <button style={estilos.botao}>Solicitar orçamento</button>
             </a>

@@ -10,6 +10,7 @@ import { SubcategoriasPanel } from "./components/SubcategoriasPanel.jsx";
 import { SubcategoriaProductsPanel } from "./components/SubcategoriaProductsPanel.jsx";
 import { DirectCategoryProductsPanel } from "./components/DirectCategoryProductsPanel.jsx";
 import { GlobalFooterActions } from "./components/GlobalFooterActions.jsx";
+import { ProductModal } from "./components/ProductModal.jsx";
 
 export default function App() {
   const [categoriaAtiva, setCategoriaAtiva] = useState(null);
@@ -766,6 +767,18 @@ export default function App() {
   const renderProdutoDetalhe = () => {
     if (!produtoAtivo) return null;
 
+    // Em mobile, usar o novo ProductModal
+    if (isMobile) {
+      return (
+        <ProductModal
+          produto={produtoAtivo}
+          onClose={() => setProdutoAtivo(null)}
+          gerarLinkWhatsApp={gerarLinkWhatsApp}
+        />
+      );
+    }
+
+    // Em desktop, manter a modal original
     return (
       <div
         style={{

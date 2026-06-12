@@ -14,14 +14,22 @@ export const categorias = [
               tipo: "Flores",
               descricao: "Um topo delicado e sofisticado, perfeito para transformar qualquer bolo em uma verdadeira obra de arte! 💖 Com flores em camadas 3D, detalhes delicados e acabamento elegante, ele traz leveza e encanto para a decoração.. Indicado para Bolos de 23 até 30 cm",
               preco: "A partir de R$ 30,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_01.png",
+              materiais: "Papel 300g premium, flores de papel artesanal, haste de madeira e cola atóxica",
+              tempo_entrega: "5-7 dias úteis",
+              tamanhos: ["15cm", "20cm", "23cm", "28cm", "30cm"],
+              cores: ["#F69AB2", "#FFB6D9", "#C8A96A", "#5a3e36", "#FFFFFF"]
             },
              {
               nome: "Topo de Bolo Floral1",
               tipo: "Flores",
               descricao: "Topo com flores artesanais em papel, Romantico. Indicado para Bolos de 15 até 23cm",
               preco: "A partir de R$ 27,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_02.png",
+              materiais: "Papel 250g, flores de papel handmade, acabamento fosco",
+              tempo_entrega: "5-7 dias úteis",
+              tamanhos: ["15cm", "18cm", "20cm", "23cm"],
+              cores: ["#FFB6D9", "#F69AB2", "#FFFFFF", "#E8D7C3"]
             },
              {
               nome: "Topo de Bolo Floral2",
@@ -52,7 +60,11 @@ export const categorias = [
               tipo: "Personalizado",
               descricao: "Topo personalizado com nome ou frase em design exclusivo.",
               preco: "A partir de R$ 25,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_Personalizado_01.png",
+              materiais: "Papel 300g personalizado, tinta sublimada, haste de madeira",
+              tempo_entrega: "7-10 dias úteis (inclui personalização)",
+              tamanhos: ["20cm", "25cm", "30cm"],
+              cores: ["#FFB6D9", "#F69AB2", "#FFEB3B", "#4CAF50", "#2196F3"]
             },
             {
               nome: "Mulher e Girassol",
@@ -592,7 +604,7 @@ export const categorias = [
     },
 
     {
-      titulo: "Datas Comemorativas",
+      titulo: "Datas Especiais",
       descricao: " 🎉 Celebre momentos especiais com nossas lembrancinhas e kits personalizados para datas comemorativas! 🎁",
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Dat_com.png",
       subcategorias: [
@@ -914,6 +926,22 @@ export const categorias = [
               descricao: "Caixas personalizada com nome, recheada de chocolates(2-Ouro Branco).",
               preco: "A partir de R$ 35,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png"
+            },
+            {
+              nome: "Lapela de Mimos",
+              tipo: "Lapela em Formato de coração  ",
+              descricao: "Caixas personalizada com nome, recheada de chocolates, Bombons ou mimos a escolha do cliente .",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
+              imagens: [
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_03.png"
+              ],
+              materiais: "O lapela é feito de papel cartão resistente, com acabamento em formato de coração, ideal para presentear com pequenos mimos e chocolates.",
+              tempo_entrega: "5-7 dias úteis",
+              tamanhos: ["P (14 x 20cm)", "G (18 x 26cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             }
           ]
         },
@@ -982,7 +1010,11 @@ export const categorias = [
               nome: "Caderneta A6 - Tucano",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
               preco: "A partir de R$ 14,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png",
+              materiais: "Papel 120g branco, capa em papel 300g, encadernação artesanal, fita marcadora",
+              tempo_entrega: "5-7 dias úteis",
+              tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
                                     {
               nome: "Caderneta A6 - Capirvara",
@@ -1013,7 +1045,11 @@ export const categorias = [
               nome: "Lápis Personalizado Azul",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
               preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_01.png",
+              materiais: "Madeira, grafite HB, borracha natural",
+              tempo_entrega: "3-5 dias úteis",
+              tamanhos: ["19cm (tamanho padrão)"],
+              cores: ["#1E88E5", "#E91E63", "#4CAF50", "#FF9800", "#9C27B0"]
             },
                                     {
               nome: "Lápis Personalizado Lilas",
