@@ -928,19 +928,35 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png"
             },
             {
-              nome: "Lapela de Mimos",
+              nome: "Lapela de Mimos P",
               tipo: "Lapela em Formato de coração  ",
               descricao: "Caixas personalizada com nome, recheada de chocolates, Bombons ou mimos a escolha do cliente .",
-              preco: "A partir de R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
+              preco: "A partir de R$ 20,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_08.png",
               imagens: [
-                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
-                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
-                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/PequenosMimos/Clips_03.png"
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_08.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_09.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_10.png"
               ],
               materiais: "O lapela é feito de papel cartão resistente, com acabamento em formato de coração, ideal para presentear com pequenos mimos e chocolates.",
               tempo_entrega: "5-7 dias úteis",
-              tamanhos: ["P (14 x 20cm)", "G (18 x 26cm)"],
+              tamanhos: ["P (14 x 20cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
+            },
+              { 
+              nome: "Lapela de Mimos M",
+              tipo: "Lapela em Formato de coração  ",
+              descricao: "Caixas personalizada com nome, recheada de chocolates, Bombons ou mimos a escolha do cliente .",
+              preco: "A partir de R$ 35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_06.png",
+              imagens: [
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_06.png",
+                "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_07.png"
+                
+              ],
+              materiais: "O lapela é feito de papel cartão resistente, com acabamento em formato de coração, ideal para presentear com pequenos mimos e chocolates.",
+              tempo_entrega: "5-7 dias úteis",
+              tamanhos: ["M (20 x 30cm)"],
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             }
           ]
@@ -975,39 +991,43 @@ export const categorias = [
       imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Cate_Papelaria.png",
       subcategorias: [
         {
-          titulo: "Agendas",
-          descricao: "🚧📒✨ Em breve novidade!🚧",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas.png",
-          produtos: [
-            { nome: "Agenda Personalizada", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Agenda Permanente", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Planners",
-          descricao: "🚧🗓️✨ Em breve novidade!🚧",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Planner.png",
-          produtos: [
-            { nome: "Planner Diário", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Planner Semanal", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Cadernos",
-          descricao: "🚧📚✨ Em breve novidade!🚧",
+          titulo: "Encadernação",
+          descricao: "📒✨ Agendas, planners, cadernos e blocos encadernados artesanalmente — peças únicas feitas com carinho para organizar seu dia a dia.",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Cadernos.png",
           produtos: [
-            { nome: "Caderno Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" },
-            { nome: "Caderno Escolar", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
-          ]
-        },
-        {
-          titulo: "Blocos A6",
-          descricao: "📝✨ Novidade!",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6.png",
-          produtos: [
-             {
+            {
+              nome: "Agenda Personalizada",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Agenda Permanente",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Planner Diário",
+              tipo: "Planners",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Planner Semanal",
+              tipo: "Planners",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caderno Personalizado",
+              tipo: "Cadernos",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Caderno Escolar",
+              tipo: "Cadernos",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
               nome: "Caderneta A6 - Tucano",
+              tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png",
@@ -1016,20 +1036,23 @@ export const categorias = [
               tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
-                                    {
+            {
               nome: "Caderneta A6 - Capirvara",
+              tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_02.png"
             },
-                     {
+            {
               nome: "Caderneta A6 - Menina Gato",
+              tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_03.png"
             },
             {
               nome: "Caderneta A6 - Floral Verde",
+              tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo  ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_04.png"
@@ -1079,11 +1102,45 @@ export const categorias = [
           ]
         },
         {
-          titulo: "Kits Bebê",
+          titulo: "Maternidade",
           descricao: "🚧👶✨ Em breve novidade!🚧🚧",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Kit_bebe.png",
           produtos: [
-            { nome: "Kit Bebê Personalizado", imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png" }
+            {
+              nome: "Caderneta de Vacinação",
+              descricao: "Caderneta de vacinação para bebês",
+              tipo: "Maternidade",
+              preco: "A partir de R$ 80,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+            },
+            {
+              nome: "Capa para Caderneta de Vacinação",
+              descricao: "Capa para caderneta de vacinação para bebês",
+              tipo: "Maternidade",
+              preco: "A partir de R$35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+            },
+            {
+              nome: "Capa para Caderneta de Gestante",
+              descricao: "Capa para caderneta de vacinação para bebês",
+              tipo: "Maternidade",
+              preco: "A partir de R$35,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+            },
+            {
+              nome: "Reforma de Caderneta de Vacinação",
+              descricao: "Capa para caderneta de vacinação para bebês",
+              tipo: "Maternidade",
+              preco: "A partir de R$55,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+            },
+            {
+              nome: "Kit Caderneta de Vacinação",
+              descricao: "Kit com caderneta de vacinação para bebês, Caderneta de vacinação personalizada e porta documentos Tamanho A6",
+              tipo: "Maternidade",
+              preco: "A partir de R$100,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+            }
           ]
         },
         {

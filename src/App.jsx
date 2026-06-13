@@ -25,19 +25,27 @@ export default function App() {
   const [produtoAtivo, setProdutoAtivo] = useState(null);
   const [showSobreModal, setShowSobreModal] = useState(false);
 
+  const abrirProduto = (produto) => {
+    setProdutoAtivo({
+      ...produto,
+      categoria: produto.categoria || categoriaSelecionada?.titulo,
+      subcategoria: produto.subcategoria || subcategoriaSelecionada?.titulo
+    });
+  };
+
   const sobreImage1 = new URL("../imagens/Sobre/Bancada.png", import.meta.url).href;
   const sobreImage2 = new URL("../imagens/Sobre/Ellen.png", import.meta.url).href;
 
   const navigateByTipo = (tipo) => {
     const t = String(tipo || "").toLowerCase().trim();
     if (t.includes("namor")) {
-      setCategoriaAtiva("Datas Comemorativas");
+      setCategoriaAtiva("Datas Especiais");
       setSubcategoriaAtiva("Dia dos Namorados");
       return;
     }
-    if (t.includes("bloco") || t.includes("blocos_a6") || t.includes("blocos a6")) {
+    if (t.includes("bloco") || t.includes("blocos_a6") || t.includes("blocos a6") || t.includes("agenda") || t.includes("planner") || t.includes("caderno")) {
       setCategoriaAtiva("Papelaria Artesanal");
-      setSubcategoriaAtiva("Blocos A6");
+      setSubcategoriaAtiva("Encadernação");
       return;
     }
     if (t.includes("flores")) {
@@ -209,7 +217,7 @@ export default function App() {
             <div
               key={`${prod.nome}-${index}`}
               style={{ ...estilos.card, cursor: "pointer" }}
-              onClick={() => setProdutoAtivo(prod)}
+              onClick={() => abrirProduto(prod)}
             >
               {prod.imagem && (
                 <div style={{ overflow: "hidden", borderRadius: "14px" }}>
@@ -368,14 +376,14 @@ export default function App() {
             >
               {prod.tipo}
             </span>
-            <div style={{ overflow: "hidden", borderRadius: "14px", cursor: "pointer" }} onClick={() => setProdutoAtivo(prod)}>
+            <div style={{ overflow: "hidden", borderRadius: "14px", cursor: "pointer" }} onClick={() => abrirProduto(prod)}>
               <img
                 src={prod.imagem}
                 alt={prod.nome}
                 style={estilos.imagem}
               />
             </div>
-            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px", cursor: "pointer" }} onClick={() => setProdutoAtivo(prod)}>
+            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px", cursor: "pointer" }} onClick={() => abrirProduto(prod)}>
               {prod.nome}
             </p>
             {prod.descricao && (
@@ -767,77 +775,13 @@ export default function App() {
   const renderProdutoDetalhe = () => {
     if (!produtoAtivo) return null;
 
-    // Em mobile, usar o novo ProductModal
-    if (isMobile) {
-      return (
-        <ProductModal
-          produto={produtoAtivo}
-          onClose={() => setProdutoAtivo(null)}
-          gerarLinkWhatsApp={gerarLinkWhatsApp}
-        />
-      );
-    }
-
-    // Em desktop, manter a modal original
     return (
-      <div
-        style={{
-          position: "fixed",
-          inset: 0,
-          backgroundColor: "rgba(0,0,0,0.5)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 1200
-        }}
-        onClick={() => setProdutoAtivo(null)}
-      >
-        <div
-          style={{
-            width: "min(920px, 96%)",
-            background: "#fff",
-            borderRadius: 12,
-            padding: 24,
-            boxShadow: "0 20px 60px rgba(0,0,0,0.2)"
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
-            <div style={{ flex: "0 0 320px", overflow: "hidden", borderRadius: 12 }}>
-              <img src={produtoAtivo.imagem} alt={produtoAtivo.nome} style={{ width: "100%" }} />
-            </div>
-            <div style={{ flex: 1 }}>
-              <h2 style={{ marginTop: 0, fontSize: "28px", color: "#5a3e36" }}>{produtoAtivo.nome}</h2>
-              {produtoAtivo.descricao && (
-                <p style={{ color: "#7a655a", fontSize: "16px", lineHeight: 1.6 }}>{produtoAtivo.descricao}</p>
-              )}
-              {produtoAtivo.preco && (
-                <p style={{ fontWeight: 700, color: "#c8a96a", fontSize: "20px", marginTop: "12px" }}>{produtoAtivo.preco}</p>
-              )}
-
-              <div style={{ marginTop: 18, display: "flex", gap: 12, justifyContent: "center", maxWidth: "100%" }}>
-                <a href={gerarLinkWhatsApp(produtoAtivo.nome)} target="_blank" rel="noopener noreferrer" style={{ flex: 1, maxWidth: "200px" }}>
-                  <button style={{ ...estilos.botao, width: "100%" }}>Solicitar orçamento</button>
-                </a>
-                <button 
-                  style={{ 
-                    ...estilos.botao, 
-                    backgroundColor: "#eee", 
-                    color: "#333",
-                    padding: "10px 16px",
-                    fontSize: "13px",
-                    flex: 1,
-                    maxWidth: "200px"
-                  }} 
-                  onClick={() => setProdutoAtivo(null)}
-                >
-                  Fechar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProductModal
+        produto={produtoAtivo}
+        onClose={() => setProdutoAtivo(null)}
+        gerarLinkWhatsApp={gerarLinkWhatsApp}
+        variant={isMobile ? "mobile" : "desktop"}
+      />
     );
   };
 
@@ -924,7 +868,7 @@ export default function App() {
           gerarLinkWhatsApp={gerarLinkWhatsApp}
           onResetNavigation={resetNavigation}
           onBack={voltarParaSubcategoria}
-          onProdutoClick={(produto) => setProdutoAtivo(produto)}
+          onProdutoClick={abrirProduto}
         />
       )}
 
@@ -935,7 +879,7 @@ export default function App() {
           estilos={estilos}
           gerarLinkWhatsApp={gerarLinkWhatsApp}
           onBack={resetNavigation}
-          onProdutoClick={(produto) => setProdutoAtivo(produto)}
+          onProdutoClick={abrirProduto}
         />
       )}
 

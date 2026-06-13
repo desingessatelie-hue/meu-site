@@ -16,7 +16,7 @@ export function SubcategoriasPanel({
 
   const tituloGrupo = (grupo) => {
     if (grupo === "festas") return "✨ Festas Personalizadas";
-    if (grupo === "datas") return "🎄 Datas Comemorativas";
+    if (grupo === "datas") return "🎄 Datas Especiais";
     if (grupo === "outros") {
       return categoriaSelecionada.titulo === "Papelaria Artesanal" ? "" : "Outros";
     }

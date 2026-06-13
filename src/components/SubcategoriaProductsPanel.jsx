@@ -156,7 +156,7 @@ export function SubcategoriaProductsPanel({
         ✨ Produtos personalizados feitos artesanalmente com carinho
       </p>
 
-      {(subcategoriaSelecionada.titulo === "Páscoa" || subcategoriaSelecionada.titulo === "Dia das Mães" || subcategoriaSelecionada.titulo === "Dia das Mulheres" || subcategoriaSelecionada.titulo === "Jardim de Papel" || subcategoriaSelecionada.titulo === "Topo de Bolo") ? (
+      {(subcategoriaSelecionada.titulo === "Páscoa" || subcategoriaSelecionada.titulo === "Dia das Mães" || subcategoriaSelecionada.titulo === "Dia das Mulheres" || subcategoriaSelecionada.titulo === "Jardim de Papel" || subcategoriaSelecionada.titulo === "Topo de Bolo" || subcategoriaSelecionada.titulo === "Encadernação") ? (
         <>
           {subcategoriaSelecionada.titulo === "Páscoa" && (
             <>
@@ -1326,6 +1326,127 @@ export function SubcategoriaProductsPanel({
                           href={gerarLinkWhatsApp(prod.nome)}
                           target="_blank"
                           rel="noopener noreferrer"
+                        >
+                          <button style={estilos.botao}>Solicitar orçamento</button>
+                        </a>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            );
+          })}
+        </>
+      )}
+
+      {subcategoriaSelecionada.titulo === "Encadernação" && (
+        <>
+          {["Agendas", "Planners", "Cadernos", "Blocos A6"].map((tipo, idx) => {
+            const temProdutos = subcategoriaSelecionada.produtos.some((prod) => prod.tipo === tipo);
+            if (!temProdutos) return null;
+
+            const emojis = {
+              Agendas: "📒",
+              Planners: "🗓️",
+              Cadernos: "📚",
+              "Blocos A6": "📝"
+            };
+
+            const sectionDescriptions = {
+              Agendas: "Agendas personalizadas para organizar seu ano com estilo",
+              Planners: "Planners artesanais para planejar cada dia com carinho",
+              Cadernos: "Cadernos únicos, feitos sob medida para você",
+              "Blocos A6": "Blocos e cadernetas compactas da coleção artesanal"
+            };
+
+            return (
+              <div key={tipo}>
+                <h2
+                  style={{
+                    marginTop: idx === 0 ? "0" : "50px",
+                    marginBottom: "8px",
+                    color: "#5a3e36",
+                    fontSize: "24px",
+                    textAlign: "center"
+                  }}
+                >
+                  {emojis[tipo]} {tipo}
+                </h2>
+                <p
+                  style={{
+                    margin: "0 auto 24px auto",
+                    maxWidth: "640px",
+                    color: "#7a655a",
+                    fontSize: "14px",
+                    textAlign: "center"
+                  }}
+                >
+                  {sectionDescriptions[tipo]}
+                </p>
+
+                <div style={estilos.grid}>
+                  {subcategoriaSelecionada.produtos
+                    .filter((prod) => prod.tipo === tipo)
+                    .map((prod, i) => (
+                      <div
+                        key={i}
+                        style={{ ...estilos.card, cursor: "pointer" }}
+                        onClick={() => onProdutoClick(prod)}
+                      >
+                        <div style={{ overflow: "hidden", borderRadius: "14px" }}>
+                          <img
+                            src={prod.imagem}
+                            alt={prod.nome}
+                            style={estilos.imagem}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = "scale(1.08)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "scale(1)";
+                            }}
+                          />
+                        </div>
+
+                        <p style={{ fontWeight: "600", marginTop: "10px" }}>{prod.nome}</p>
+
+                        {prod.preco && (
+                          <p
+                            style={{
+                              fontWeight: "bold",
+                              color: "#c8a96a",
+                              fontSize: "16px",
+                              marginTop: "5px"
+                            }}
+                          >
+                            💰 {prod.preco}
+                          </p>
+                        )}
+
+                        {prod.descricao && (
+                          <p
+                            style={{
+                              fontSize: "13px",
+                              color: "#666",
+                              marginTop: "6px",
+                              lineHeight: 1.4,
+                              display: "-webkit-box",
+                              WebkitLineClamp: 2,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden"
+                            }}
+                          >
+                            {prod.descricao}
+                          </p>
+                        )}
+
+                        <p style={{ fontSize: "13px", color: "#999", marginTop: "4px" }}>
+                          Feito sob medida para você 💛
+                        </p>
+
+                        <a
+                          href={gerarLinkWhatsApp(prod.nome)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <button style={estilos.botao}>Solicitar orçamento</button>
                         </a>
