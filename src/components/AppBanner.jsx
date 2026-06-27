@@ -11,7 +11,7 @@ export function AppBanner({ isMobile }) {
         alt=""
         style={{
           width: "100%",
-          height: isMobile ? "220px" : "500px",
+          height: isMobile ? "110px" : "250px",
           objectFit: "cover",
           borderRadius: "20px"
         }}
@@ -25,7 +25,7 @@ export function AppBanner({ isMobile }) {
           transform: "translate(-50%, -50%)",
           background: "rgba(255,255,255,0.15)",
           backdropFilter: "blur(8px)",
-          padding: isMobile ? "20px" : "40px",
+          padding: isMobile ? "10px" : "20px",
           borderRadius: "20px",
           textAlign: "center",
           width: isMobile ? "90%" : "80%",

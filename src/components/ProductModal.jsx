@@ -117,6 +117,17 @@ function ProductDetails({ produto }) {
       ? `${produto.categoria} • ${produto.subcategoria}`
       : produto.categoria || null;
 
+  const colecao = produto.colecao || produto.subcategoria || null;
+  const tamanhosLista = Array.isArray(produto.tamanhos) ? produto.tamanhos : [];
+  const tamanhoUnico = typeof produto.tamanho === "string" ? produto.tamanho : null;
+  const composicao =
+    produto.composicao ||
+    produto["composição"] ||
+    produto.kit_composicao ||
+    produto.kitComposicao ||
+    produto.conteudo_kit ||
+    null;
+
   return (
     <div style={{ padding: "0 8px" }}>
       {contexto && (
@@ -176,32 +187,58 @@ function ProductDetails({ produto }) {
         </p>
       )}
 
-      {produto.descricao && (
-        <p
-          style={{
-            fontSize: "15px",
-            color: "#666",
-            lineHeight: 1.6,
-            marginBottom: "14px"
-          }}
-        >
-          {produto.descricao}
-        </p>
+      {colecao && (
+        <div style={{ marginBottom: "14px" }}>
+          <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
+            🗂️ Coleção
+          </p>
+          <p style={{ fontSize: "14px", color: "#666", marginLeft: "4px", lineHeight: 1.5 }}>
+            {colecao}
+          </p>
+        </div>
       )}
 
-      <p
-        style={{
-          fontSize: "14px",
-          color: "#8b6b61",
-          marginBottom: "18px",
-          padding: "10px 12px",
-          backgroundColor: "#f9f7f4",
-          borderRadius: "10px",
-          borderLeft: "3px solid #c8a96a"
-        }}
-      >
-        ✨ Feito sob medida para você! Este produto é personalizado de acordo com suas preferências.
-      </p>
+      {(tamanhoUnico || tamanhosLista.length > 0) && (
+        <div style={{ marginBottom: "14px" }}>
+          <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
+            📏 Tamanho
+          </p>
+          {tamanhoUnico && tamanhosLista.length === 0 && (
+            <p style={{ fontSize: "14px", color: "#666", marginLeft: "4px", marginBottom: tamanhosLista.length > 0 ? "8px" : 0 }}>
+              {tamanhoUnico}
+            </p>
+          )}
+          {tamanhosLista.length > 0 && (
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              {tamanhosLista.map((tamanho, idx) => (
+                <span
+                  key={idx}
+                  style={{
+                    padding: "6px 12px",
+                    backgroundColor: "#f0e8de",
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    color: "#5a3e36"
+                  }}
+                >
+                  {tamanho}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {composicao && (
+        <div style={{ marginBottom: "14px" }}>
+          <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
+            🧩 Composição
+          </p>
+          <p style={{ fontSize: "14px", color: "#666", marginLeft: "4px", lineHeight: 1.5 }}>
+            {composicao}
+          </p>
+        </div>
+      )}
 
       {produto.materiais && (
         <div style={{ marginBottom: "14px" }}>
@@ -222,30 +259,6 @@ function ProductDetails({ produto }) {
           <p style={{ fontSize: "14px", color: "#666", marginLeft: "4px" }}>
             {produto.tempo_entrega}
           </p>
-        </div>
-      )}
-
-      {produto.tamanhos?.length > 0 && (
-        <div style={{ marginBottom: "14px" }}>
-          <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
-            📏 Tamanhos disponíveis
-          </p>
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            {produto.tamanhos.map((tamanho, idx) => (
-              <span
-                key={idx}
-                style={{
-                  padding: "6px 12px",
-                  backgroundColor: "#f0e8de",
-                  borderRadius: "8px",
-                  fontSize: "13px",
-                  color: "#5a3e36"
-                }}
-              >
-                {tamanho}
-              </span>
-            ))}
-          </div>
         </div>
       )}
 
@@ -272,6 +285,20 @@ function ProductDetails({ produto }) {
           </div>
         </div>
       )}
+
+      <p
+        style={{
+          fontSize: "14px",
+          color: "#8b6b61",
+          marginBottom: "18px",
+          padding: "10px 12px",
+          backgroundColor: "#f9f7f4",
+          borderRadius: "10px",
+          borderLeft: "3px solid #c8a96a"
+        }}
+      >
+        ✨ Feito sob medida para você! Este produto é personalizado de acordo com suas preferências.
+      </p>
     </div>
   );
 }
@@ -426,23 +453,39 @@ export function ProductModal({ produto, onClose, gerarLinkWhatsApp, variant = "m
       <div
         style={{
           width: "100%",
+          height: "100dvh",
           backgroundColor: "#fff",
-          borderTopLeftRadius: "28px",
-          borderTopRightRadius: "28px",
-          padding: "20px 16px 24px 16px",
-          maxHeight: "90vh",
-          overflowY: "auto",
-          boxShadow: "0 -4px 20px rgba(0,0,0,0.15)"
+          borderTopLeftRadius: "20px",
+          borderTopRightRadius: "20px",
+          boxShadow: "0 -4px 20px rgba(0,0,0,0.15)",
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden"
         }}
         onClick={(e) => e.stopPropagation()}
       >
         <div
           style={{
             display: "flex",
-            justifyContent: "flex-end",
-            marginBottom: "16px"
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "12px 16px",
+            borderBottom: "1px solid rgba(0,0,0,0.06)",
+            backgroundColor: "#fff",
+            position: "sticky",
+            top: 0,
+            zIndex: 2
           }}
         >
+          <div
+            style={{
+              width: "42px",
+              height: "5px",
+              borderRadius: "999px",
+              backgroundColor: "#ddd",
+              marginLeft: "8px"
+            }}
+          />
           <button
             onClick={onClose}
             style={{
@@ -460,21 +503,36 @@ export function ProductModal({ produto, onClose, gerarLinkWhatsApp, variant = "m
           </button>
         </div>
 
-        <ProductImageCarousel
-          imagens={produto.imagens}
-          imagem={produto.imagem}
-          alt={produto.nome}
-        />
+        <div
+          style={{
+            flex: 1,
+            overflowY: "auto",
+            padding: "14px 16px 12px 16px"
+          }}
+        >
+          <ProductImageCarousel
+            imagens={produto.imagens}
+            imagem={produto.imagem}
+            alt={produto.nome}
+          />
 
-        <ProductDetails produto={produto} />
+          <ProductDetails produto={produto} />
+          <div style={{ height: "8px" }} />
+        </div>
 
-        <ModalActions
-          produto={produto}
-          onClose={onClose}
-          gerarLinkWhatsApp={gerarLinkWhatsApp}
-        />
-
-        <div style={{ height: "20px" }} />
+        <div
+          style={{
+            padding: "12px 16px calc(12px + env(safe-area-inset-bottom)) 16px",
+            borderTop: "1px solid rgba(0,0,0,0.08)",
+            backgroundColor: "#fff"
+          }}
+        >
+          <ModalActions
+            produto={produto}
+            onClose={onClose}
+            gerarLinkWhatsApp={gerarLinkWhatsApp}
+          />
+        </div>
       </div>
     </div>
   );

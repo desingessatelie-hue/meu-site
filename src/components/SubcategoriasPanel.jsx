@@ -8,6 +8,40 @@ export function SubcategoriasPanel({
   onBack,
   onSelectSubcategoria
 }) {
+  const descricoesPadrao = {
+    "Topo de Bolo": "Topos personalizados para deixar sua festa ainda mais especial.",
+    "Topo de Brigadeiro e CupCake": "Mini topos criativos para docinhos e cupcakes temáticos.",
+    "Caixas de lembrancinhas": "Caixas personalizadas para presentear com charme e carinho.",
+    "Dia das Mulheres": "Lembranças personalizadas para homenagear mulheres especiais.",
+    "Dia das Mães": "Presentes afetivos e personalizados para celebrar as mães.",
+    "Páscoa": "Coleção temática com doces, papelaria e kits personalizados.",
+    "Dia dos Namorados": "Kits românticos e personalizados para surpreender quem você ama.",
+    "Férias Escolares": "Itens criativos para divertir e presentear durante as férias.",
+    "Festa Juninas": "Lembrancinhas e caixinhas temáticas para festas juninas.",
+    "Dia dos Pais": "Presentes personalizados para tornar a data dos pais inesquecível.",
+    "Dia das Crianças": "Coleção divertida e personalizada para encantar os pequenos.",
+    "Dia dos Professores": "Mimos e kits para agradecer com carinho aos professores.",
+    Halloween: "Produtos temáticos de Halloween para festas e lembranças criativas.",
+    "Black Friday": "Coleção especial para campanhas, promoções e kits de ação.",
+    Natal: "Peças natalinas personalizadas para presentear e decorar com encanto.",
+    Encadernação: "Agendas, cadernos e planners artesanais feitos sob medida.",
+    "Canetas Personalizadas": "Canetas e lápis personalizados para presentear e encantar.",
+    Maternidade: "Itens delicados e personalizados para momentos da maternidade.",
+    "Kits Presentes": "Combinações especiais de produtos para presentear em qualquer ocasião.",
+    Personalizados: "Criações exclusivas feitas do jeitinho que você imaginar.",
+    "Pequenos Mimos": "Lembranças criativas em formato compacto e cheio de carinho.",
+    "Jardim de Papel": "Flores e peças em papel com acabamento artesanal encantador.",
+    Caixas: "Caixas em cartonagem com acabamento elegante e personalizado.",
+    "Álbuns": "Álbuns artesanais para guardar memórias com estilo e afeto.",
+    Cestas: "Cestas personalizadas para presentear em datas especiais.",
+    "Kit Escritório": "Itens coordenados para organizar e decorar seu espaço de trabalho."
+  };
+
+  const obterDescricaoColecao = (sub) =>
+    sub.descricao ||
+    descricoesPadrao[sub.titulo] ||
+    `Coleção ${sub.titulo} com opções personalizadas feitas sob encomenda.`;
+
   const grupos = Array.from(
     new Set(
       categoriaSelecionada.subcategorias.map((sub) => sub.grupo || "outros")
@@ -111,7 +145,14 @@ export function SubcategoriasPanel({
             {categoriaSelecionada.subcategorias
               .filter((sub) => (sub.grupo || "outros") === grupo)
               .map((sub, i) => (
-                <div key={i} style={estilos.card}>
+                <div
+                  key={i}
+                  style={{
+                    ...estilos.card,
+                    display: "flex",
+                    flexDirection: "column"
+                  }}
+                >
                   {sub.imagem && (
                     <img
                       src={sub.imagem}
@@ -131,21 +172,21 @@ export function SubcategoriasPanel({
                   )}
 
                   <h3>{sub.titulo}</h3>
-                  {sub.descricao && (
-                    <p
-                      style={{
-                        color: "#7a655a",
-                        fontSize: "14px",
-                        margin: "10px 0",
-                        lineHeight: 1.5
-                      }}
-                    >
-                      {sub.descricao}
-                    </p>
-                  )}
+                  <p
+                    style={{
+                      color: "#7a655a",
+                      fontSize: "14px",
+                      margin: "10px 0",
+                      lineHeight: 1.5
+                    }}
+                  >
+                    {obterDescricaoColecao(sub)}
+                  </p>
+
+                  <div style={{ flex: 1 }} />
 
                   <button
-                    style={estilos.botao}
+                    style={{ ...estilos.botao, marginTop: "auto" }}
                     onClick={() => onSelectSubcategoria(sub.titulo)}
                   >
                     Ver produtos

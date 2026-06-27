@@ -26,10 +26,40 @@ export default function App() {
   const [showSobreModal, setShowSobreModal] = useState(false);
 
   const abrirProduto = (produto) => {
+    const colecao =
+      produto.colecao ||
+      produto.subcategoria ||
+      subcategoriaSelecionada?.titulo ||
+      categoriaSelecionada?.titulo ||
+      null;
+
+    const tamanhos =
+      Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0
+        ? produto.tamanhos
+        : produto.tamanho
+        ? [produto.tamanho]
+        : [];
+
+    const tamanho = produto.tamanho || null;
+
+    const composicao =
+      produto.composicao ||
+      produto["composição"] ||
+      produto.kit_composicao ||
+      produto.kitComposicao ||
+      produto.conteudo_kit ||
+      (String(produto.tipo || "").toLowerCase().includes("kit")
+        ? "Composição personalizada sob consulta."
+        : null);
+
     setProdutoAtivo({
       ...produto,
       categoria: produto.categoria || categoriaSelecionada?.titulo,
-      subcategoria: produto.subcategoria || subcategoriaSelecionada?.titulo
+      subcategoria: produto.subcategoria || subcategoriaSelecionada?.titulo,
+      colecao,
+      tamanho,
+      tamanhos,
+      composicao
     });
   };
 

@@ -619,7 +619,13 @@ export const categorias = [
               tipo: "Lembrancinhas",
               preco: "A partir de R$ 8,00",
               descricao: "Caderneta tamanho A7.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Caderneta_wiroA7.png"
+                imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Mulheres/Caderneta_wiroA7.png",
+                colecao: "Dia das Mulheres",
+                composicao: "Caderneta A7 personalizada para lembrancinha.",
+                materiais: "Capa em papel 300g, miolo em papel offset, encadernação em wire-o.",
+                tempo_entrega: "4-6 dias úteis",
+                tamanhos: ["A7"],
+                cores: ["#F69AB2", "#FFB6D9", "#FFD700", "#C8A96A"]
             },
             {
               nome: "Postit",
@@ -834,7 +840,13 @@ export const categorias = [
               tipo: "papelaria",
               preco: "A partir de R$ 8,50",
               imagem: "/imagens/datas_com/Pascoa/Caderneta_A6.png",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caderneta_A6.png"
+                imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caderneta_A6.png",
+                colecao: "Páscoa",
+                composicao: "Caderneta personalizada para lembrancinha de Páscoa.",
+                materiais: "Capa em papel 300g e miolo em papel offset.",
+                tempo_entrega: "4-6 dias úteis",
+                tamanhos: ["A6"],
+                cores: ["#F6E27F", "#FFB6D9", "#87CEEB", "#90EE90"]
             },
              {
               nome: "Lápis Personalizado Azul",
@@ -911,21 +923,27 @@ export const categorias = [
               tipo: "Caixas Personalizadas ",
               descricao: "Caixas personalizada com nome, recheada de chocolates(15 -Ouro Branco).",
               preco: "A partir de R$ 80,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_01.png",
+              colecao: "Dia dos Namorados",
+              composicao: "Caixa personalizada + 15 bombons Ouro Branco."
             },
             {
               nome: "Buquê de Chocolate - Médio",
               tipo: "Caixas Personalizadas ",
               descricao: "Caixas personalizada com nome, recheada de chocolates(6-Ouro Branco).",
               preco: "A partir de R$ 50,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_02.png",
+              colecao: "Dia dos Namorados",
+              composicao: "Caixa personalizada + 6 bombons Ouro Branco."
             },
             {
               nome: "Buquê de Chocolate - Pequeno",
               tipo: "Caixas Personalizadas ",
               descricao: "Caixas personalizada com nome, recheada de chocolates(2-Ouro Branco).",
               preco: "A partir de R$ 35,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Namorados/Namorado_03.png",
+              colecao: "Dia dos Namorados",
+              composicao: "Caixa personalizada + 2 bombons Ouro Branco."
             },
             {
               nome: "Lapela de Mimos P",
@@ -941,6 +959,8 @@ export const categorias = [
               materiais: "O lapela é feito de papel cartão resistente, com acabamento em formato de coração, ideal para presentear com pequenos mimos e chocolates.",
               tempo_entrega: "5-7 dias úteis",
               tamanhos: ["P (14 x 20cm)"],
+              colecao: "Dia dos Namorados",
+              composicao: "Lapela em formato coração + bombons/chocolates ou mimos escolhidos pelo cliente.",
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
               { 
@@ -957,11 +977,30 @@ export const categorias = [
               materiais: "O lapela é feito de papel cartão resistente, com acabamento em formato de coração, ideal para presentear com pequenos mimos e chocolates.",
               tempo_entrega: "5-7 dias úteis",
               tamanhos: ["M (20 x 30cm)"],
+              colecao: "Dia dos Namorados",
+              composicao: "Lapela em formato coração + bombons/chocolates ou mimos escolhidos pelo cliente.",
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             }
           ]
         },
-         {
+        {
+          titulo: "Férias Escolares",
+          grupo: "datas",
+          descricao: "🏖️📚 Coleção especial para presentear e divertir nas férias.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Kit Férias Criativas",
+              tipo: "Kits",
+              preco: "A partir de R$ 25,00",
+              descricao: "Kit personalizado com itens de papelaria para férias escolares.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Férias Escolares",
+              composicao: "Combinação de itens de papelaria personalizada (bloquinho, lápis e adesivos, conforme disponibilidade)."
+            }
+          ]
+        },
+        {
           titulo: "Festa Juninas",
           grupo: "datas",
           descricao: "🎉🔥 Novidades em Breve 🔥🎉",
@@ -970,14 +1009,119 @@ export const categorias = [
             {
               nome: "Caixa Milk",
               preco: "A partir de R$ 2,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Festa Juninas",
+              composicao: "Caixa temática em papel para doces e mimos juninos."
             },
             {
               nome: "Caixa Sushi",
               preco: "A partir de R$ 2,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Festa Juninas",
+              composicao: "Caixa temática em papel para doces e lembrancinhas juninas."
             }
-  
+          ]
+        },
+        {
+          titulo: "Dia dos Pais",
+          grupo: "datas",
+          descricao: "💙🎁 Presentes personalizados para homenagear os pais.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pais.png",
+          produtos: [
+            {
+              nome: "Caixa Presente Dia dos Pais",
+              tipo: "Presentes",
+              preco: "A partir de R$ 22,00",
+              descricao: "Caixa personalizada para mimos e mensagens especiais.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Dia dos Pais",
+              composicao: "Caixa personalizada para incluir cartão e mimos selecionados pelo cliente."
+            }
+          ]
+        },
+        {
+          titulo: "Dia das Crianças",
+          grupo: "datas",
+          descricao: "🧸🎈 Itens temáticos para encantar os pequenos.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Criancas.png",
+          produtos: [
+            {
+              nome: "Lembrancinha Dia das Crianças",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 8,50",
+              descricao: "Lembrancinha personalizada com tema infantil.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Dia das Crianças",
+              composicao: "Lembrancinha temática infantil com embalagem personalizada."
+            }
+          ]
+        },
+        {
+          titulo: "Dia dos Professores",
+          grupo: "datas",
+          descricao: "🍎✏️ Uma coleção para agradecer quem ensina com carinho.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Professores.png",
+          produtos: [
+            {
+              nome: "Kit Professor Especial",
+              tipo: "Kits",
+              preco: "A partir de R$ 16,00",
+              descricao: "Kit personalizado para homenagear professores.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Dia dos Professores",
+              composicao: "Kit com lembrança personalizada e cartão de agradecimento."
+            }
+          ]
+        },
+        {
+          titulo: "Halloween",
+          grupo: "datas",
+          descricao: "🎃👻 Papelaria e lembrancinhas em clima de Halloween.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Halloween.png",
+          produtos: [
+            {
+              nome: "Caixa Halloween",
+              tipo: "Lembrancinhas",
+              preco: "A partir de R$ 9,00",
+              descricao: "Caixinha temática para doces e mimos.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Halloween",
+              composicao: "Caixinha temática para doces e mimos personalizados."
+            }
+          ]
+        },
+        {
+          titulo: "Black Friday",
+          grupo: "datas",
+          descricao: "🖤🛍️ Seleção especial para ações promocionais e kits de campanha.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Kit Promo Black Friday",
+              tipo: "Kits",
+              preco: "A partir de R$ 19,90",
+              descricao: "Kit promocional para ações especiais de Black Friday.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Black Friday",
+              composicao: "Kit promocional com itens personalizados para campanha sazonal."
+            }
+          ]
+        },
+        {
+          titulo: "Natal",
+          grupo: "datas",
+          descricao: "🎄✨ Coleção natalina com opções para presentes e lembranças.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          produtos: [
+            {
+              nome: "Caixa Presente Natalina",
+              tipo: "Presentes",
+              preco: "A partir de R$ 14,00",
+              descricao: "Caixa personalizada para presentear no Natal.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Natal",
+              composicao: "Caixa natalina personalizada para doces, mimos e mensagem especial."
+            }
           ]
         }
       ]
@@ -996,12 +1140,32 @@ export const categorias = [
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Cadernos.png",
           produtos: [
             {
-              nome: "Agenda Personalizada",
+              nome: "Agenda Personalizada Datada A5 ",
               tipo: "Agendas",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
             {
-              nome: "Agenda Permanente",
+              nome: "Agenda Personalizada Permanente A5",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+                        {
+              nome: "Agenda Personalizada Datada A6",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Agenda Personalizada Permanente A6",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+                        {
+              nome: "Agenda Personalizada Datada 19x24)",
+              tipo: "Agendas",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Agenda Personalizada Permanente (19x24)",
               tipo: "Agendas",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
@@ -1015,6 +1179,21 @@ export const categorias = [
               tipo: "Planners",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
+             {
+              nome: "Planner Financeiro ",
+              tipo: "Planners",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Plannejador A4",
+              tipo: "Planners",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
+            {
+              nome: "Plannejador A5",
+              tipo: "Planners",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
             {
               nome: "Caderno Personalizado",
               tipo: "Cadernos",
@@ -1025,14 +1204,21 @@ export const categorias = [
               tipo: "Cadernos",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
+             {
+              nome: "Caderno Quadriculado",
+              tipo: "Cadernos",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+            },
             {
               nome: "Caderneta A6 - Tucano",
               tipo: "Blocos A6",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
+              descricao: "Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou apontador fofo ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png",
-              materiais: "Papel 120g branco, capa em papel 300g, encadernação artesanal, fita marcadora",
+              materiais: "Miolo: Papel 90g ou 75g branco/colorido, capa em papel 180g, encadernação artesanal(Costura ou Grampeada)",
               tempo_entrega: "5-7 dias úteis",
+              colecao: "Doce Jardim de Inverno",
+              composicao: "Caderneta personalizada + lápis com ponteira ou borrachas fofas ou apontador fofo.",
               tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
@@ -1041,21 +1227,39 @@ export const categorias = [
               tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo",
               preco: "A partir de R$ 14,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_02.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_02.png",
+              materiais: "Miolo: Papel 90g ou 75g branco/colorido, capa em papel 180g, encadernação artesanal(Costura ou Grampeada)",
+              tempo_entrega: "5-7 dias úteis",
+              colecao: "Doce Jardim de Inverno",
+              composicao: "Caderneta personalizada + lápis com ponteira ou borrachas fofas ou apontador fofo.",
+              tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
               nome: "Caderneta A6 - Menina Gato",
               tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
               preco: "A partir de R$ 14,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_03.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_03.png",
+              materiais: "Miolo: Papel 90g ou 75g branco/colorido, capa em papel 180g, encadernação artesanal(Costura ou Grampeada)",
+              tempo_entrega: "5-7 dias úteis",
+              colecao: "Doce Jardim de Inverno",
+              composicao: "Caderneta personalizada + lápis com ponteira ou borrachas fofas ou apontador fofo.",
+              tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
               nome: "Caderneta A6 - Floral Verde",
               tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo  ",
               preco: "A partir de R$ 14,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_04.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_04.png",
+              materiais: "Miolo: Papel 90g ou 75g branco/colorido, capa em papel 180g, encadernação artesanal(Costura ou Grampeada)",
+              tempo_entrega: "5-7 dias úteis",
+              colecao: "Doce Jardim de Inverno",
+              composicao: "Caderneta personalizada + lápis com ponteira ou borrachas fofas ou apontador fofo.",
+              tamanhos: ["A6 (10.5 x 14.8cm)", "A5 (14.8 x 21cm)"],
+              cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             }
           ]
         },
@@ -1111,7 +1315,13 @@ export const categorias = [
               descricao: "Caderneta de vacinação para bebês",
               tipo: "Maternidade",
               preco: "A partir de R$ 80,00",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Apliques/Buque_flor_01.png",
+              colecao: "Maternidade",
+              composicao: "Caderneta personalizada para vacinas + capa protetora.",
+              materiais: "Capa dura com acabamento laminado e miolo em papel offset.",
+              tempo_entrega: "7-10 dias úteis",
+              tamanhos: ["A6"],
+              cores: ["#87CEEB", "#FFB6D9", "#90EE90", "#FFD700"]
             },
             {
               nome: "Capa para Caderneta de Vacinação",
