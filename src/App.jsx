@@ -461,7 +461,7 @@ export default function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
           gap: "40px",
           alignItems: "center",
           marginTop: "30px"

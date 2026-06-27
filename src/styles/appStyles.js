@@ -42,7 +42,21 @@ export const estilos = {
     fontSize: "22px",
     cursor: "pointer",
     boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-    zIndex: 999
+    zIndex: 999,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    lineHeight: 1,
+    padding: 0
+  },
+  iconeCircular: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+    lineHeight: 1,
+    fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif'
   },
   grid: {
     display: "grid",
@@ -148,28 +162,26 @@ export const estilos = {
     boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
     transition: "border-color 0.2s ease"
   },
-  whatsapp: {
+  socialButton: {
     position: "fixed",
     bottom: "20px",
-    right: "20px",
-    backgroundColor: "#128C7E",
-    color: "#fff",
-    fontSize: "26px",
-    padding: "14px 16px",
+    width: "56px",
+    height: "56px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: "50%",
     textDecoration: "none",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
+    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+    lineHeight: 1,
+    color: "#fff"
+  },
+  whatsapp: {
+    backgroundColor: "#128C7E",
+    right: "20px"
   },
   instagram: {
-    position: "fixed",
-    bottom: "20px",
-    right: "80px",
     background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
-    color: "#fff",
-    fontSize: "26px",
-    padding: "14px 16px",
-    borderRadius: "50%",
-    textDecoration: "none",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
+    right: "80px"
   }
 };

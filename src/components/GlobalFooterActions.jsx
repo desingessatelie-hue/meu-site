@@ -1,5 +1,8 @@
 import React from "react";
 
+const whatsappIcon = new URL("../../imagens/social/whatsapp.png", import.meta.url).href;
+const instagramIcon = new URL("../../imagens/social/instagram.png", import.meta.url).href;
+
 export function GlobalFooterActions({
   estilos,
   whatsappNumber,
@@ -38,17 +41,35 @@ export function GlobalFooterActions({
         href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
-        style={estilos.whatsapp}
+        style={{ ...estilos.socialButton, ...estilos.whatsapp }}
       >
-        💬
+        <img
+          src={whatsappIcon}
+          alt="WhatsApp"
+          style={{
+            width: "24px",
+            height: "24px",
+            objectFit: "contain",
+            display: "block"
+          }}
+        />
       </a>
       <a
         href="https://www.instagram.com/ellen_ess"
         target="_blank"
         rel="noopener noreferrer"
-        style={estilos.instagram}
+        style={{ ...estilos.socialButton, ...estilos.instagram }}
       >
-        📷
+        <img
+          src={instagramIcon}
+          alt="Instagram"
+          style={{
+            width: "24px",
+            height: "24px",
+            objectFit: "contain",
+            display: "block"
+          }}
+        />
       </a>
       <button style={estilos.topo} onClick={onScrollTop}>
         ↑
