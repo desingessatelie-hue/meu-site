@@ -462,8 +462,8 @@ export default function App() {
         style={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          gap: "40px",
-          alignItems: "center",
+          gap: isMobile ? "24px" : "40px",
+          alignItems: isMobile ? "start" : "center",
           marginTop: "30px"
         }}
       >
@@ -495,7 +495,7 @@ export default function App() {
           <div
             style={{
               background: "#fff",
-              padding: "30px",
+              padding: isMobile ? "22px" : "30px",
               borderRadius: "18px",
               boxShadow: "0 8px 20px rgba(0,0,0,0.06)"
             }}
