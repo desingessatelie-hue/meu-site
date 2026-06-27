@@ -6,7 +6,7 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
       {categorias.map((cat, i) => (
         <div
           key={i}
-          style={estilos.card}
+          style={{ ...estilos.card, display: "flex", flexDirection: "column" }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = "translateY(-8px)";
             e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
@@ -47,6 +47,7 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
               {cat.descricao}
             </p>
           )}
+          <div style={{ flex: 1 }} />
           {cat.observacao && (
             <p
               style={{
@@ -63,7 +64,7 @@ export function CategoryHomeGrid({ categorias, estilos, onSelectCategory }) {
             </p>
           )}
           <button
-            style={estilos.botao}
+            style={{ ...estilos.botao, marginTop: "auto" }}
             onClick={() => onSelectCategory(cat.titulo)}
           >
             Ver coleção

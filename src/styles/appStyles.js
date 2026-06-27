@@ -95,6 +95,7 @@ export const estilos = {
     padding: "24px",
     borderRadius: "28px",
     boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
+    marginTop: "60px",
     marginBottom: "30px"
   },
   lancamentoCard: {
@@ -102,6 +103,8 @@ export const estilos = {
     borderRadius: "20px",
     padding: "20px",
     textAlign: "left",
+    display: "flex",
+    flexDirection: "column",
     boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
     border: "1px solid rgba(200,169,106,0.18)",
     transition: "0.3s"

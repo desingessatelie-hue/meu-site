@@ -255,13 +255,14 @@ export default function App() {
               <p style={{ fontSize: "13px", color: "#999", marginTop: "6px" }}>
                 {prod.subcategoria ? `${prod.categoria} • ${prod.subcategoria}` : prod.categoria}
               </p>
+            <div style={{ flex: 1 }} />
               <a
                 href={gerarLinkWhatsApp(prod.nome)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <button style={{ ...estilos.botao, marginTop: "14px" }}>
+                <button style={{ ...estilos.botao, marginTop: "auto" }}>
                   Solicitar orçamento
                 </button>
               </a>
@@ -356,7 +357,7 @@ export default function App() {
         {produtosLancamentos.map((prod, i) => (
           <div
             key={i}
-            style={estilos.lancamentoCard}
+            style={{ ...estilos.lancamentoCard, display: "flex", flexDirection: "column" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
               e.currentTarget.style.boxShadow = "0 22px 48px rgba(0,0,0,0.12)";
@@ -422,20 +423,21 @@ export default function App() {
             >
               {prod.tipo}
             </p>
+            <div style={{ flex: 1 }} />
             <a
               href={gerarLinkWhatsApp(prod.nome)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
             >
-              <button style={{ ...estilos.botao, marginTop: "14px" }}>
+              <button style={{ ...estilos.botao, marginTop: "auto" }}>
                 Solicitar orçamento
               </button>
             </a>
           </div>
         ))}
       </div>
-    </section>
+  </section>
   );
 
   const renderSobre = () => (
