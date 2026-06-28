@@ -23,7 +23,7 @@ export const categorias = [
              {
               nome: "Topo de Bolo Floral1",
               tipo: "Flores",
-              descricao: "Topo com flores artesanais em papel, Romantico. Indicado para Bolos de 15 até 23cm",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Criancas.png",
               preco: "A partir de R$ 27,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_02.png",
               materiais: "Papel 250g, flores de papel handmade, acabamento fosco",
@@ -832,14 +832,12 @@ export const categorias = [
               nome: "Bloquinho Coelho A7",
               tipo: "papelaria",
               preco: "A partir de R$ 10,00",
-              imagem: "/main/imagens/datas_com/Pascoa/Bloquinho_a7_vr.png",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Bloquinho_a7_vr.png"
             },
              {
               nome: "Caderneta A6 ",
               tipo: "papelaria",
               preco: "A partir de R$ 8,50",
-              imagem: "/imagens/datas_com/Pascoa/Caderneta_A6.png",
                 imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Caderneta_A6.png",
                 colecao: "Páscoa",
                 composicao: "Caderneta personalizada para lembrancinha de Páscoa.",
@@ -852,13 +850,11 @@ export const categorias = [
               nome: "Lápis Personalizado Azul",
               tipo: "papelaria",
               preco: "A partir de R$ 7,50",
-              imagem: "/imagens/datas_com/Pascoa/Lapis_02.png",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Lapis_02.png"
             },
               { nome: "Lápis Personalizado Vermelho",
               tipo: "papelaria",
               preco: "A partir de R$ 7,50",
-              imagem: "/imagens/datas_com/Pascoa/Lapis_02.png",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Lapis_03.png"
             },
             {
@@ -987,7 +983,7 @@ export const categorias = [
           titulo: "Férias Escolares",
           grupo: "datas",
           descricao: "🏖️📚 Coleção especial para presentear e divertir nas férias.",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias.png",
           produtos: [
             {
               nome: "Kit Férias Criativas",
@@ -1025,8 +1021,8 @@ export const categorias = [
         {
           titulo: "Dia dos Pais",
           grupo: "datas",
-          descricao: "💙🎁 Presentes personalizados para homenagear os pais.",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Pais.png",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 💙🎁 Presentes personalizados para homenagear os pais.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pais.png",
           produtos: [
             {
               nome: "Caixa Presente Dia dos Pais",
@@ -1042,8 +1038,8 @@ export const categorias = [
         {
           titulo: "Dia das Crianças",
           grupo: "datas",
-          descricao: "🧸🎈 Itens temáticos para encantar os pequenos.",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Criancas.png",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 🧸🎈 Itens temáticos para encantar os pequenos.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Criancas.png",
           produtos: [
             {
               nome: "Lembrancinha Dia das Crianças",
@@ -1059,24 +1055,84 @@ export const categorias = [
         {
           titulo: "Dia dos Professores",
           grupo: "datas",
-          descricao: "🍎✏️ Uma coleção para agradecer quem ensina com carinho.",
-          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Professores.png",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 🍎✏️ Uma coleção para agradecer quem ensina com carinho.",
+          imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor.png",
           produtos: [
             {
-              nome: "Kit Professor Especial",
-              tipo: "Kits",
-              preco: "A partir de R$ 16,00",
-              descricao: "Kit personalizado para homenagear professores.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              nome: "Agenda A5",
+              tipo: "Agenda",
+              descricao: "Agenda personalizada tamanho A5 para organização diária.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Agenda_A5.png",
               colecao: "Dia dos Professores",
-              composicao: "Kit com lembrança personalizada e cartão de agradecimento."
+              composicao: "Agenda personalizada com capa temática para professores.",
+              tamanhos: ["A5"]
+            },
+            {
+              nome: "Agenda Big",
+              tipo: "Agenda",
+              descricao: "Agenda personalizada em formato grande para planejamento completo.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Agenda_Big.png",
+              colecao: "Dia dos Professores",
+              composicao: "Agenda personalizada com capa temática para professores.",
+              tamanhos: ["Big"]
+            },
+            {
+              nome: "Planejamento A5",
+              tipo: "Planejamento",
+              descricao: "Caderno de planejamento pedagógico tamanho A5.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planejamento_A5.png",
+              colecao: "Dia dos Professores",
+              composicao: "Miolo de planejamento + capa personalizada.",
+              tamanhos: ["A5"]
+            },
+            {
+              nome: "Planejamento Big",
+              tipo: "Planejamento",
+              descricao: "Caderno de planejamento em formato grande.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planejamento_Big.png",
+              colecao: "Dia dos Professores",
+              composicao: "Miolo de planejamento + capa personalizada.",
+              tamanhos: ["Big"]
+            },
+            {
+              nome: "Planner",
+              tipo: "Planner",
+              descricao: "Planner personalizado para rotina acadêmica e pessoal.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planner_professor.png",
+              colecao: "Dia dos Professores",
+              composicao: "Planner com divisórias e páginas de organização."
+            },
+            {
+              nome: "Organizador Semanal",
+              tipo: "Organizador",
+              descricao: "Organizador semanal para planejamento de aulas e tarefas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Organizador_S_A5.png",
+              colecao: "Dia dos Professores",
+              composicao: "Folhas de planejamento semanal com capa personalizada.",
+              tamanhos: ["A5"]
+            },
+            {
+              nome: "Caderno",
+              tipo: "Caderno",
+              descricao: "Caderno personalizado para notas e planejamento do professor.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Caderno.png",
+              colecao: "Dia dos Professores",
+              composicao: "Caderno com capa personalizada e miolo pautado."
+            },
+            {
+              nome: "Lápis",
+              tipo: "Papelaria",
+              descricao: "Lápis e marcador personalizados para presentear professores.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Lapis_marcador.png",
+              colecao: "Dia dos Professores",
+              composicao: "Lápis e marcador com acabamento personalizado."
             }
           ]
         },
         {
           titulo: "Halloween",
           grupo: "datas",
-          descricao: "🎃👻 Papelaria e lembrancinhas em clima de Halloween.",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 🎃👻 Papelaria e lembrancinhas em clima de Halloween.",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/datas_com/Halloween.png",
           produtos: [
             {
@@ -1093,7 +1149,7 @@ export const categorias = [
         {
           titulo: "Black Friday",
           grupo: "datas",
-          descricao: "🖤🛍️ Seleção especial para ações promocionais e kits de campanha.",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 🖤🛍️ Seleção especial para ações promocionais e kits de campanha.",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
           produtos: [
             {
@@ -1110,7 +1166,7 @@ export const categorias = [
         {
           titulo: "Natal",
           grupo: "datas",
-          descricao: "🎄✨ Coleção natalina com opções para presentes e lembranças.",
+          descricao: "🎉🔥 Novidades em Breve 🔥🎉 🎄✨ Coleção natalina com opções para presentes e lembranças.",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
           produtos: [
             {
