@@ -1290,7 +1290,7 @@ export const categorias = [
                   tema: "Roblox - Paisagem",
                   informacoesImportantes: "Cenário de paisagem com elementos do jogo Roblox.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_1%20Paisagem.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_1Paisagem.png"
                   ]
                 },
                 
@@ -1337,10 +1337,10 @@ export const categorias = [
                   ]
                 },
                 {
-                  tema: "Roblox - Arena II+",
+                  tema: "Roblox - Arena III",
                   informacoesImportantes: "Cenário de arena avançada com desafios complexos.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_8ArenaII+.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_8ArenaIII.png"
                   ]
                 }
               ]
