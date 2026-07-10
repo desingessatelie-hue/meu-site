@@ -15,7 +15,7 @@ function ThemeImageLibrary({ imagens, tema }) {
       <div
         style={{
           width: "100%",
-          aspectRatio: "4 / 3",
+          minHeight: "260px",
           borderRadius: "12px",
           border: "1px dashed #e7d5b5",
           backgroundColor: "#fff",
@@ -42,8 +42,9 @@ function ThemeImageLibrary({ imagens, tema }) {
           alt={`Tema ${tema} - imagem ${imagemAtual + 1}`}
           style={{
             width: "100%",
-            aspectRatio: "4 / 3",
-            objectFit: "cover",
+            height: "clamp(240px, 34vw, 360px)",
+            objectFit: "contain",
+            backgroundColor: "#fff",
             borderRadius: "12px",
             border: "1px solid #efe2cd",
             display: "block"

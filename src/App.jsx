@@ -441,10 +441,10 @@ export default function App() {
 
         if (!temaNome) return null;
 
-        const imagensTema = [
-          ...(Array.isArray(origem.imagens) ? origem.imagens : []),
-          ...imagensProduto
-        ].filter(Boolean);
+        const imagensTema =
+          Array.isArray(origem.imagens) && origem.imagens.length > 0
+            ? origem.imagens.filter(Boolean)
+            : imagensProduto;
 
         const imagensUnicas = [];
         imagensTema.forEach((imagem) => {

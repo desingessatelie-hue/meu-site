@@ -986,69 +986,81 @@ export const categorias = [
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias.png",
           produtos: [
             {
-              nome: "Livro de colorir Boobie Goode A6",
-              tipo: "Livro de Colorir",
-              preco: "A partir de R$ 25,00",
+              nome: "1- Livro de colorir Boobie Goode A6",
+              tipo: "Livro",
+              preco: "A partir de R$ 15,00",
               descricao: "Livro de colorir com 40 desenhos diferentes.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png",
               colecao: "Férias Escolares",
               composicao: "Combinação de itens de papelaria personalizada (bloquinho, lápis e adesivos, conforme disponibilidade).",
               temasBiblioteca: [
                 {
-                  tema: "Boobie Goode Cute",
+                  tema: "Boobie Goode Bosque",
                   informacoesImportantes: "Estilo fofo com traços simples para colorir com lápis de cor.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Boobie_goode_slim.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
                   ]
                 },
                 {
-                  tema: "Boobie Goode Fashion",
+                  tema: "Boobie Goode Praia",
                   informacoesImportantes: "Tema voltado para looks e acessórios.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
                   ]
                 },
                 {
                   tema: "Boobie Goode Fofurinhas",
                   informacoesImportantes: "Elementos de bichinhos, doces e objetos divertidos.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
                   ]
                 }
               ]
             },
             {
               nome: "Livro Paper dolls, para Colorir A5",
-              tipo: "Livro de Colorir",
+              tipo: "Livro",
               preco: "A partir de R$ 45,00",
               descricao: "Livro temático para férias escolares. Contem 6 temas diferentes para colorir, ideal para momentos de lazer.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_1.jpeg",
               colecao: "Férias Escolares",
               composicao: "Livro com ilustrações para colorir, ideal para momentos de lazer durante as férias.",
               temasBiblioteca: [
                 {
-                  tema: "Praia de Ferias",
-                  informacoesImportantes: "Cenarios de praia com personagens paper dolls."
+                  tema: "Frutinhas",
+                  informacoesImportantes: "Temas Morango, Banana, Cereja, Uva, Melancia, Limão, Salada de frutas.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_1.jpeg"
+                  ]
                 },
                 {
-                  tema: "Piquenique no Parque",
-                  informacoesImportantes: "Itens de picnic e natureza para colorir."
+                  tema: "Hello Kitty",
+                  informacoesImportantes: "Soninho, Cozinha, Bosque, piscina, passeio, Park de diversção, Fashion",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_2.jpeg"
+                  ]
                 },
                 {
-                  tema: "Dia de Compras",
-                  informacoesImportantes: "Lojinhas, bolsas e vitrines divertidas."
+                  tema: "Roblox",
+                  informacoesImportantes: "1 - Paisagem, 2 - Portal, 3 - Ilhas, 4 - Arena, 5 - Quarto, 6 - Castelo, 7 - Arena II",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_3.jpeg"
+                  ]
                 },
                 {
-                  tema: "Cinema com Amigos",
-                  informacoesImportantes: "Cenario com cadeiras, pipoca e bilheteria."
+                  tema: "Futebol",
+                  informacoesImportantes: "1- Vestiário, 2 - Treino, 3 - Campinho, 4 - Concentração,5 - Placar, 6 - Escolinha, 7 - Podium",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_4.jpeg"
+                  ]
                 },
                 {
-                  tema: "Festa do Pijama",
-                  informacoesImportantes: "Acessorios de quarto e itens de festa."
+                  tema: "Carros ",
+                  informacoesImportantes: "Carros e pistas para colorir."
                 },
                 {
-                  tema: "Parque de Diversoes",
-                  informacoesImportantes: "Brinquedos e barracas para colorir."
+                  tema: "Sonic",
+                  informacoesImportantes: "Sonic e seus amigos em aventuras rápidas."
                 }
               ]
             }, 
