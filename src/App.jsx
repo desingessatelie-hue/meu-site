@@ -16,6 +16,7 @@ import { BookThemesPage } from "./components/BookThemesPage.jsx";
 const BOOK_THEMES_ROUTE = "#/temas-livros";
 const HOME_ROUTE = "#/";
 const BOOK_THEMES_DEEP_STATE_KEY = "bookThemesDeepStateV1";
+const BOOK_THEMES_RETURN_MARKER = "bt_return";
 
 const sanitizeBookTheme = (name) =>
   String(name || "")
@@ -39,7 +40,7 @@ const sameText = (a, b) =>
 
 const parseHomeStateFromHash = (hash) => {
   if (!String(hash || "").startsWith(HOME_ROUTE)) {
-    return { categoria: null, subcategoria: null, produto: null };
+    return { categoria: null, subcategoria: null, produto: null, fromThemes: false };
   }
 
   const query = String(hash || "").split("?")[1] || "";
@@ -48,8 +49,16 @@ const parseHomeStateFromHash = (hash) => {
   return {
     categoria: params.get("categoria") || null,
     subcategoria: params.get("subcategoria") || null,
-    produto: params.get("produto") || null
+    produto: null,
+    fromThemes: params.get(BOOK_THEMES_RETURN_MARKER) === "1"
   };
+};
+
+const buildHomeHash = ({ categoria, subcategoria }) => {
+  const params = new URLSearchParams();
+  if (categoria) params.set("categoria", categoria);
+  if (subcategoria) params.set("subcategoria", subcategoria);
+  return params.toString() ? `${HOME_ROUTE}?${params.toString()}` : HOME_ROUTE;
 };
 
 const parseBookThemesStateFromHash = (hash) => {
@@ -157,6 +166,7 @@ export default function App() {
 
     if (categoriaAtiva) params.set("categoria", categoriaAtiva);
     if (subcategoriaAtiva) params.set("subcategoria", subcategoriaAtiva);
+    params.set(BOOK_THEMES_RETURN_MARKER, "1");
 
     const homeHash = params.toString() ? `${HOME_ROUTE}?${params.toString()}` : HOME_ROUTE;
 
@@ -221,7 +231,23 @@ export default function App() {
       }
 
       const restoredState = parseHomeStateFromHash(window.location.hash || HOME_ROUTE);
-      const deepState = restoredState.produto ? null : consumeBookThemesDeepState();
+      const deepState = restoredState.fromThemes ? consumeBookThemesDeepState() : null;
+
+      if (!restoredState.fromThemes) {
+        try {
+          sessionStorage.removeItem(BOOK_THEMES_DEEP_STATE_KEY);
+        } catch {
+          // Ignore storage cleanup errors.
+        }
+      }
+
+      if (restoredState.fromThemes) {
+        const cleanHash = buildHomeHash({
+          categoria: restoredState.categoria,
+          subcategoria: restoredState.subcategoria
+        });
+        window.history.replaceState(null, "", cleanHash || HOME_ROUTE);
+      }
 
       const mergedState = {
         categoria: restoredState.categoria || deepState?.categoria || null,
@@ -252,6 +278,20 @@ export default function App() {
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
+
+  useEffect(() => {
+    if (currentView !== "home") return;
+
+    const targetHash = buildHomeHash({
+      categoria: categoriaAtiva,
+      subcategoria: subcategoriaAtiva
+    });
+
+    const currentHash = window.location.hash || HOME_ROUTE;
+    if (currentHash === targetHash) return;
+
+    window.history.replaceState(null, "", targetHash);
+  }, [currentView, categoriaAtiva, subcategoriaAtiva]);
 
   const abrirProduto = (produto) => {
     setProdutoAtivo(
@@ -358,6 +398,29 @@ export default function App() {
       tipo: "Personalização",
       preco: "A partir de R$ 1,50",
       imagem:"https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizacao/Personalizacao_01.png"
+    }
+  ];
+
+  const produtosPromocao = [
+    {
+      nome: "Kit Paper Dolls A5 - Meninas",
+      descricao: "Oferta especial para férias:A Partir da segunda unidade apenas 4,50 cada ",
+      tipo: "Promocao",
+      preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
+      imagens: [
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Oferta_01.png"
+      ]
+    },
+    {
+      nome: "Livro de Colorir Boobie Goode A6",
+      descricao: "Promocao da semana com desenhos fofos e criativos.",
+      tipo: "Promocao",
+      preco: "A partir de R$ 15,00",
+      imagem:
+        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png"
     }
   ];
 
@@ -761,6 +824,111 @@ export default function App() {
         ))}
       </div>
   </section>
+  );
+
+  const renderPromocoes = () => (
+    <section style={{ marginTop: "56px" }}>
+      <div style={estilos.sectionHeader}>
+        <p style={estilos.sectionTag}>Promoções</p>
+        <h2 style={estilos.sectionTitle}>Aproveite as ofertas</h2>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "20px"
+        }}
+      >
+        {produtosPromocao.map((prod, index) => (
+          <div
+            key={`${prod.nome}-${index}`}
+            style={{
+              ...estilos.card,
+              cursor: "pointer",
+              background: "linear-gradient(180deg, #fffaf3 0%, #fff 100%)",
+              border: "1px solid rgba(200,169,106,0.28)"
+            }}
+            onClick={() => abrirProduto(prod)}
+          >
+            {prod.imagem && (
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: "6px"
+                }}
+              >
+                <div
+                  style={{
+                    width: "72%",
+                    maxWidth: "220px",
+                    minWidth: "140px",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(200,169,106,0.22)",
+                    backgroundColor: "#fff"
+                  }}
+                >
+                  <img
+                    src={prod.imagem}
+                    alt={prod.nome}
+                    style={{
+                      width: "100%",
+                      height: "170px",
+                      objectFit: "contain",
+                      display: "block"
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+
+            <h3 style={{ marginTop: "16px" }}>{prod.nome}</h3>
+
+            {prod.descricao && (
+              <p
+                style={{
+                  color: "#8b6b61",
+                  fontSize: "14px",
+                  margin: "10px 0 0 0",
+                  lineHeight: 1.6
+                }}
+              >
+                {prod.descricao}
+              </p>
+            )}
+
+            {prod.preco && (
+              <p
+                style={{
+                  fontWeight: "bold",
+                  color: "#c8a96a",
+                  marginTop: "10px"
+                }}
+              >
+                {prod.preco}
+              </p>
+            )}
+
+            <div style={{ flex: 1 }} />
+
+            <a
+              href={gerarLinkWhatsApp(prod.nome)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button style={{ ...estilos.botao, marginTop: "auto" }}>
+                Solicitar promoção
+              </button>
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 
   const renderSobre = () => (
@@ -1173,6 +1341,8 @@ export default function App() {
               )}
             </section>
           )}
+
+          {!categoriaAtiva && renderPromocoes()}
 
           {!categoriaAtiva && renderLancamentos()}
 
