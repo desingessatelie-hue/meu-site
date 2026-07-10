@@ -1287,6 +1287,14 @@ export const categorias = [
                   ]
                 },
                 {
+                  tema: "Roblox - Paisagem",
+                  informacoesImportantes: "Cenário de paisagem com elementos do jogo Roblox.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_1%20Paisagem.png"
+                  ]
+                },
+                
+                {
                   tema: "Roblox - Portal",
                   informacoesImportantes: "Cenário de portal com visual de aventura.",
                   imagens: [
@@ -1294,10 +1302,45 @@ export const categorias = [
                   ]
                 },
                 {
+                  tema: "Roblox - Ilhas",
+                  informacoesImportantes: "Cenário de aventura com desafios e obstáculos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_3Ilhas.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena",
+                  informacoesImportantes: "Cenário de arena para batalhas e desafios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_4Arena.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Quarto",
+                  informacoesImportantes: "Cenário de quarto com decoração temática.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_5Quarto.png"
+                  ]
+                },
+                 {
                   tema: "Roblox - Castelo",
                   informacoesImportantes: "Cenário de castelo para montar com os personagens.",
                   imagens: [
                     "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_6Castelo.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena II",
+                  informacoesImportantes: "Cenário de arena avançada com desafios complexos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_7ArenaII.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena II+",
+                  informacoesImportantes: "Cenário de arena avançada com desafios complexos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_8ArenaII+.png"
                   ]
                 }
               ]
