@@ -303,7 +303,13 @@ function ProductDetails({ produto }) {
   );
 }
 
-function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact }) {
+function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTemasHref }) {
+  const isBookProduct =
+    String(produto?.tipo || "").toLowerCase().includes("livro") ||
+    String(produto?.nome || "").toLowerCase().includes("livro");
+
+  const showBookThemesButton = Boolean(livrosTemasHref) && isBookProduct;
+
   return (
     <div
       style={{
@@ -352,11 +358,41 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact }) {
       >
         Fechar
       </button>
+
+      {showBookThemesButton && (
+        <a
+          href={livrosTemasHref}
+          style={{ flex: compact ? 1 : "0 0 auto", textDecoration: "none" }}
+        >
+          <button
+            style={{
+              width: "100%",
+              minWidth: compact ? undefined : "160px",
+              padding: "14px 16px",
+              backgroundColor: "#fff7eb",
+              color: "#8b6b61",
+              border: "1px solid #e7d5b5",
+              borderRadius: "12px",
+              fontSize: "15px",
+              fontWeight: "600",
+              cursor: "pointer"
+            }}
+          >
+            Ver temas dos livros
+          </button>
+        </a>
+      )}
     </div>
   );
 }
 
-export function ProductModal({ produto, onClose, gerarLinkWhatsApp, variant = "mobile" }) {
+export function ProductModal({
+  produto,
+  onClose,
+  gerarLinkWhatsApp,
+  variant = "mobile",
+  livrosTemasHref
+}) {
   if (!produto) return null;
 
   const isDesktop = variant === "desktop";
@@ -427,6 +463,7 @@ export function ProductModal({ produto, onClose, gerarLinkWhatsApp, variant = "m
                 onClose={onClose}
                 gerarLinkWhatsApp={gerarLinkWhatsApp}
                 compact
+                livrosTemasHref={livrosTemasHref}
               />
             </div>
           </div>
@@ -531,6 +568,7 @@ export function ProductModal({ produto, onClose, gerarLinkWhatsApp, variant = "m
             produto={produto}
             onClose={onClose}
             gerarLinkWhatsApp={gerarLinkWhatsApp}
+            livrosTemasHref={livrosTemasHref}
           />
         </div>
       </div>

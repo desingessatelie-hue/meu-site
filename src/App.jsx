@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { categorias } from "./data/categorias.js";
 import { estilos } from "./styles/appStyles.js";
 import { gerarLinkWhatsApp, WHATSAPP_NUMBER } from "./utils/whatsapp.js";
@@ -11,8 +11,61 @@ import { SubcategoriaProductsPanel } from "./components/SubcategoriaProductsPane
 import { DirectCategoryProductsPanel } from "./components/DirectCategoryProductsPanel.jsx";
 import { GlobalFooterActions } from "./components/GlobalFooterActions.jsx";
 import { ProductModal } from "./components/ProductModal.jsx";
+import { BookThemesPage } from "./components/BookThemesPage.jsx";
+
+const BOOK_THEMES_ROUTE = "#/temas-livros";
+const HOME_ROUTE = "#/";
+
+const sanitizeBookTheme = (name) =>
+  String(name || "")
+    .replace(/^livro\s*/i, "")
+    .replace(/^kit\s*/i, "")
+    .replace(/\bA[56]\b/gi, "")
+    .replace(/[,-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const getBookImportantInfo = (produto) =>
+  produto?.informacoesImportantes ||
+  produto?.informacoes_importantes ||
+  produto?.infoImportante ||
+  produto?.observacoes ||
+  produto?.descricao ||
+  null;
+
+const sameText = (a, b) =>
+  String(a || "").trim().toLowerCase() === String(b || "").trim().toLowerCase();
+
+const parseHomeStateFromHash = (hash) => {
+  if (!String(hash || "").startsWith(HOME_ROUTE)) {
+    return { categoria: null, subcategoria: null, produto: null };
+  }
+
+  const query = String(hash || "").split("?")[1] || "";
+  const params = new URLSearchParams(query);
+
+  return {
+    categoria: params.get("categoria") || null,
+    subcategoria: params.get("subcategoria") || null,
+    produto: params.get("produto") || null
+  };
+};
+
+const parseBookThemesStateFromHash = (hash) => {
+  const query = String(hash || "").split("?")[1] || "";
+  const params = new URLSearchParams(query);
+
+  return {
+    from: params.get("from") || null,
+    produto: params.get("produto") || null
+  };
+};
+
+const getCurrentView = () =>
+  window.location.hash.startsWith(BOOK_THEMES_ROUTE) ? "book-themes" : "home";
 
 export default function App() {
+  const [currentView, setCurrentView] = useState(getCurrentView);
   const [categoriaAtiva, setCategoriaAtiva] = useState(null);
   const [subcategoriaAtiva, setSubcategoriaAtiva] = useState(null);
   const [busca, setBusca] = useState("");
@@ -25,13 +78,9 @@ export default function App() {
   const [produtoAtivo, setProdutoAtivo] = useState(null);
   const [showSobreModal, setShowSobreModal] = useState(false);
 
-  const abrirProduto = (produto) => {
+  const hydrateProdutoAtivo = (produto, fallbackCategoria = null, fallbackSubcategoria = null) => {
     const colecao =
-      produto.colecao ||
-      produto.subcategoria ||
-      subcategoriaSelecionada?.titulo ||
-      categoriaSelecionada?.titulo ||
-      null;
+      produto.colecao || produto.subcategoria || fallbackSubcategoria || fallbackCategoria || null;
 
     const tamanhos =
       Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0
@@ -52,15 +101,126 @@ export default function App() {
         ? "Composição personalizada sob consulta."
         : null);
 
-    setProdutoAtivo({
+    return {
       ...produto,
-      categoria: produto.categoria || categoriaSelecionada?.titulo,
-      subcategoria: produto.subcategoria || subcategoriaSelecionada?.titulo,
+      categoria: produto.categoria || fallbackCategoria || null,
+      subcategoria: produto.subcategoria || fallbackSubcategoria || null,
       colecao,
       tamanho,
       tamanhos,
       composicao
-    });
+    };
+  };
+
+  const findProdutoByRouteState = ({ categoria, subcategoria, produto }) => {
+    if (!produto) return null;
+
+    const categoriasBase = categoria
+      ? categorias.filter((cat) => sameText(cat.titulo, categoria))
+      : categorias;
+
+    for (const cat of categoriasBase) {
+      const subcategoriasBase = subcategoria
+        ? (cat.subcategorias || []).filter((sub) => sameText(sub.titulo, subcategoria))
+        : cat.subcategorias || [];
+
+      for (const sub of subcategoriasBase) {
+        const encontrado = (sub.produtos || []).find((item) => sameText(item.nome, produto));
+        if (encontrado) {
+          return { ...encontrado, categoria: cat.titulo, subcategoria: sub.titulo };
+        }
+      }
+
+      if (cat.produtos?.length) {
+        const encontradoDireto = cat.produtos.find((item) => sameText(item.nome, produto));
+        if (encontradoDireto) {
+          return { ...encontradoDireto, categoria: cat.titulo };
+        }
+      }
+
+      if (!subcategoria && cat.subcategorias?.length) {
+        for (const sub of cat.subcategorias) {
+          const encontradoEmSub = (sub.produtos || []).find((item) => sameText(item.nome, produto));
+          if (encontradoEmSub) {
+            return { ...encontradoEmSub, categoria: cat.titulo, subcategoria: sub.titulo };
+          }
+        }
+      }
+    }
+
+    return null;
+  };
+
+  const buildBookThemesHref = (produto) => {
+    const params = new URLSearchParams();
+
+    if (categoriaAtiva) params.set("categoria", categoriaAtiva);
+    if (subcategoriaAtiva) params.set("subcategoria", subcategoriaAtiva);
+    if (produtoAtivo?.nome) params.set("produto", produtoAtivo.nome);
+
+    const homeHash = params.toString() ? `${HOME_ROUTE}?${params.toString()}` : HOME_ROUTE;
+
+    const routeParams = new URLSearchParams();
+    routeParams.set("from", homeHash);
+
+    const nomeProdutoTema = produto?.nome || produtoAtivo?.nome;
+    if (nomeProdutoTema) {
+      routeParams.set("produto", nomeProdutoTema);
+    }
+
+    return `${BOOK_THEMES_ROUTE}?${routeParams.toString()}`;
+  };
+
+  const handleBookThemesBack = () => {
+    const hash = window.location.hash || "";
+    const query = hash.includes("?") ? hash.split("?")[1] : "";
+    const from = new URLSearchParams(query).get("from");
+    window.location.hash = from || HOME_ROUTE;
+  };
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const view = getCurrentView();
+      setCurrentView(view);
+
+      if (view === "book-themes") {
+        setProdutoAtivo(null);
+        return;
+      }
+
+      const restoredState = parseHomeStateFromHash(window.location.hash || HOME_ROUTE);
+      const produtoRestaurado = findProdutoByRouteState(restoredState);
+
+      const categoriaRestaurada = restoredState.categoria || produtoRestaurado?.categoria || null;
+      const subcategoriaRestaurada =
+        restoredState.subcategoria || produtoRestaurado?.subcategoria || null;
+
+      setCategoriaAtiva(categoriaRestaurada);
+      setSubcategoriaAtiva(subcategoriaRestaurada);
+      setProdutoAtivo(
+        produtoRestaurado
+          ? hydrateProdutoAtivo(
+              produtoRestaurado,
+              categoriaRestaurada,
+              subcategoriaRestaurada
+            )
+          : null
+      );
+    };
+
+    onHashChange();
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  const abrirProduto = (produto) => {
+    setProdutoAtivo(
+      hydrateProdutoAtivo(
+        produto,
+        categoriaSelecionada?.titulo || null,
+        subcategoriaSelecionada?.titulo || null
+      )
+    );
   };
 
   const sobreImage1 = new URL("../imagens/Sobre/Bancada.png", import.meta.url).href;
@@ -227,6 +387,99 @@ export default function App() {
         return acc;
       }, [])
     : [];
+
+  const produtosLivros = categorias
+    .flatMap((cat) => [
+      ...(cat.subcategorias || []).flatMap((sub) =>
+        (sub.produtos || []).map((produto) => ({
+          ...produto,
+          categoria: cat.titulo,
+          subcategoria: sub.titulo
+        }))
+      ),
+      ...(cat.produtos || []).map((produto) => ({ ...produto, categoria: cat.titulo }))
+    ])
+    .filter((produto) => {
+      const tipo = String(produto.tipo || "").toLowerCase();
+      const nome = String(produto.nome || "").toLowerCase();
+      return tipo.includes("livro") || nome.includes("livro");
+    });
+
+  const catalogoTemasLivros = [];
+  const produtoTemaMap = new Map();
+
+  produtosLivros.forEach((produto) => {
+    const produtoNome = String(produto.nome || "").trim();
+    if (!produtoNome) return;
+
+    const produtoKey = produtoNome.toLowerCase();
+    if (produtoTemaMap.has(produtoKey)) return;
+
+    const imagensProduto = [
+      ...(Array.isArray(produto.imagens) ? produto.imagens : []),
+      ...(produto.imagem ? [produto.imagem] : [])
+    ].filter(Boolean);
+
+    const temasOrigem =
+      Array.isArray(produto.temasBiblioteca) && produto.temasBiblioteca.length > 0
+        ? produto.temasBiblioteca
+        : [
+            {
+              tema: sanitizeBookTheme(produto.nome) || produtoNome,
+              informacoesImportantes: getBookImportantInfo(produto),
+              imagens: imagensProduto
+            }
+          ];
+
+    const temasNormalizados = temasOrigem
+      .map((temaItem, idx) => {
+        const origem = typeof temaItem === "string" ? { tema: temaItem } : temaItem || {};
+        const temaNome =
+          sanitizeBookTheme(origem.tema || origem.nome) ||
+          sanitizeBookTheme(produto.nome) ||
+          produtoNome;
+
+        if (!temaNome) return null;
+
+        const imagensTema = [
+          ...(Array.isArray(origem.imagens) ? origem.imagens : []),
+          ...imagensProduto
+        ].filter(Boolean);
+
+        const imagensUnicas = [];
+        imagensTema.forEach((imagem) => {
+          if (!imagensUnicas.includes(imagem)) {
+            imagensUnicas.push(imagem);
+          }
+        });
+
+        return {
+          codigo: String(idx + 1).padStart(3, "0"),
+          tema: temaNome,
+          informacoesImportantes:
+            origem.informacoesImportantes ||
+            origem.informacoes_importantes ||
+            origem.observacoes ||
+            getBookImportantInfo(produto),
+          imagens: imagensUnicas
+        };
+      })
+      .filter(Boolean);
+
+    const produtoTemas = {
+      produtoNome,
+      temas: temasNormalizados
+    };
+
+    produtoTemaMap.set(produtoKey, produtoTemas);
+    catalogoTemasLivros.push(produtoTemas);
+  });
+
+  const bookThemesState = parseBookThemesStateFromHash(window.location.hash || "");
+  const produtoTemasSelecionado =
+    catalogoTemasLivros.find((item) => sameText(item.produtoNome, bookThemesState.produto)) ||
+    catalogoTemasLivros[0] ||
+    null;
 
   const renderSearchResults = () => (
     <section style={{ marginTop: "50px" }}>
@@ -813,6 +1066,7 @@ export default function App() {
         onClose={() => setProdutoAtivo(null)}
         gerarLinkWhatsApp={gerarLinkWhatsApp}
         variant={isMobile ? "mobile" : "desktop"}
+        livrosTemasHref={buildBookThemesHref(produtoAtivo)}
       />
     );
   };
@@ -825,6 +1079,16 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  if (currentView === "book-themes") {
+    return (
+      <BookThemesPage
+        temas={produtoTemasSelecionado?.temas || []}
+        produtoNome={produtoTemasSelecionado?.produtoNome || ""}
+        onBack={handleBookThemesBack}
+      />
+    );
+  }
 
   return (
     <div style={estilos.container}>

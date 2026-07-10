@@ -986,14 +986,121 @@ export const categorias = [
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias.png",
           produtos: [
             {
-              nome: "Kit Férias Criativas",
-              tipo: "Kits",
+              nome: "Livro de colorir Boobie Goode A6",
+              tipo: "Livro de Colorir",
               preco: "A partir de R$ 25,00",
-              descricao: "Kit personalizado com itens de papelaria para férias escolares.",
+              descricao: "Livro de colorir com 40 desenhos diferentes.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
               colecao: "Férias Escolares",
-              composicao: "Combinação de itens de papelaria personalizada (bloquinho, lápis e adesivos, conforme disponibilidade)."
-            }
+              composicao: "Combinação de itens de papelaria personalizada (bloquinho, lápis e adesivos, conforme disponibilidade).",
+              temasBiblioteca: [
+                {
+                  tema: "Boobie Goode Cute",
+                  informacoesImportantes: "Estilo fofo com traços simples para colorir com lápis de cor.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Pascoa/Boobie_goode_slim.png"
+                  ]
+                },
+                {
+                  tema: "Boobie Goode Fashion",
+                  informacoesImportantes: "Tema voltado para looks e acessórios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                  ]
+                },
+                {
+                  tema: "Boobie Goode Fofurinhas",
+                  informacoesImportantes: "Elementos de bichinhos, doces e objetos divertidos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                  ]
+                }
+              ]
+            },
+            {
+              nome: "Livro Paper dolls, para Colorir A5",
+              tipo: "Livro de Colorir",
+              preco: "A partir de R$ 45,00",
+              descricao: "Livro temático para férias escolares. Contem 6 temas diferentes para colorir, ideal para momentos de lazer.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Férias Escolares",
+              composicao: "Livro com ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              temasBiblioteca: [
+                {
+                  tema: "Praia de Ferias",
+                  informacoesImportantes: "Cenarios de praia com personagens paper dolls."
+                },
+                {
+                  tema: "Piquenique no Parque",
+                  informacoesImportantes: "Itens de picnic e natureza para colorir."
+                },
+                {
+                  tema: "Dia de Compras",
+                  informacoesImportantes: "Lojinhas, bolsas e vitrines divertidas."
+                },
+                {
+                  tema: "Cinema com Amigos",
+                  informacoesImportantes: "Cenario com cadeiras, pipoca e bilheteria."
+                },
+                {
+                  tema: "Festa do Pijama",
+                  informacoesImportantes: "Acessorios de quarto e itens de festa."
+                },
+                {
+                  tema: "Parque de Diversoes",
+                  informacoesImportantes: "Brinquedos e barracas para colorir."
+                }
+              ]
+            }, 
+             {
+              nome: "Livro Paper dolls, Coloridos A5",
+              tipo: "Livro de Colorir",
+              preco: "A partir de R$ 45,00",
+              descricao: "Livro temático para férias escolares.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Férias Escolares",
+              composicao: "Livro com ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              temasBiblioteca: [
+                {
+                  tema: "Look Casual",
+                  informacoesImportantes: "Referencias de roupas do dia a dia.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                  ]
+                },
+                {
+                  tema: "Look Festa",
+                  informacoesImportantes: "Vestidos e combinacoes para ocasioes especiais."
+                },
+                {
+                  tema: "Look Inverno",
+                  informacoesImportantes: "Casacos, botas e acessorios de frio."
+                }
+              ]
+            },
+             {
+              nome: "Kit Paper dolls, para colorir A5",
+              tipo: "Livro de Colorir",
+              preco: "A partir de R$ 45,00",
+              descricao: "Kit, de ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              colecao: "Férias Escolares",
+              composicao: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
+              temasBiblioteca: [
+                {
+                  tema: "Casa e Quarto",
+                  informacoesImportantes: "Inclui cenario interno com moveis e objetos."
+                },
+                {
+                  tema: "Passeio no Jardim",
+                  informacoesImportantes: "Inclui cenario externo com flores e bancos."
+                },
+                {
+                  tema: "Troca de Roupinhas",
+                  informacoesImportantes: "Conjunto com pecas para combinar estilos das bonecas."
+                }
+              ]
+            },
           ]
         },
         {
@@ -1063,7 +1170,7 @@ export const categorias = [
               tipo: "Agenda",
               descricao: "Agenda personalizada tamanho A5 para organização diária.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Agenda_A5.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Agenda personalizada com capa temática para professores.",
               tamanhos: ["A5"]
             },
@@ -1072,16 +1179,16 @@ export const categorias = [
               tipo: "Agenda",
               descricao: "Agenda personalizada em formato grande para planejamento completo.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Agenda_Big.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Agenda personalizada com capa temática para professores.",
-              tamanhos: ["Big"]
+              tamanhos: ["19 x 24 cm (Big)"]
             },
             {
               nome: "Planejamento A5",
               tipo: "Planejamento",
               descricao: "Caderno de planejamento pedagógico tamanho A5.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planejamento_A5.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Miolo de planejamento + capa personalizada.",
               tamanhos: ["A5"]
             },
@@ -1090,16 +1197,16 @@ export const categorias = [
               tipo: "Planejamento",
               descricao: "Caderno de planejamento em formato grande.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planejamento_Big.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Miolo de planejamento + capa personalizada.",
-              tamanhos: ["Big"]
+              tamanhos: ["19 x 24 cm (Big)"]
             },
             {
               nome: "Planner",
               tipo: "Planner",
               descricao: "Planner personalizado para rotina acadêmica e pessoal.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Planner_professor.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Planner com divisórias e páginas de organização."
             },
             {
@@ -1107,7 +1214,7 @@ export const categorias = [
               tipo: "Organizador",
               descricao: "Organizador semanal para planejamento de aulas e tarefas.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Organizador_S_A5.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Folhas de planejamento semanal com capa personalizada.",
               tamanhos: ["A5"]
             },
@@ -1116,7 +1223,7 @@ export const categorias = [
               tipo: "Caderno",
               descricao: "Caderno personalizado para notas e planejamento do professor.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Caderno.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Caderno com capa personalizada e miolo pautado."
             },
             {
@@ -1124,7 +1231,7 @@ export const categorias = [
               tipo: "Papelaria",
               descricao: "Lápis e marcador personalizados para presentear professores.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Professor/Lapis_marcador.png",
-              colecao: "Dia dos Professores",
+              colecao: "Encanto floral",
               composicao: "Lápis e marcador com acabamento personalizado."
             }
           ]
@@ -1279,7 +1386,7 @@ export const categorias = [
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
-              nome: "Caderneta A6 - Capirvara",
+              nome: "Caderneta A6 - Capivara",
               tipo: "Blocos A6",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo",
               preco: "A partir de R$ 14,50",
