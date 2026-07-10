@@ -15,6 +15,7 @@ import { BookThemesPage } from "./components/BookThemesPage.jsx";
 
 const BOOK_THEMES_ROUTE = "#/temas-livros";
 const HOME_ROUTE = "#/";
+const BOOK_THEMES_DEEP_STATE_KEY = "bookThemesDeepStateV1";
 
 const sanitizeBookTheme = (name) =>
   String(name || "")
@@ -156,7 +157,6 @@ export default function App() {
 
     if (categoriaAtiva) params.set("categoria", categoriaAtiva);
     if (subcategoriaAtiva) params.set("subcategoria", subcategoriaAtiva);
-    if (produtoAtivo?.nome) params.set("produto", produtoAtivo.nome);
 
     const homeHash = params.toString() ? `${HOME_ROUTE}?${params.toString()}` : HOME_ROUTE;
 
@@ -164,6 +164,20 @@ export default function App() {
     routeParams.set("from", homeHash);
 
     const nomeProdutoTema = produto?.nome || produtoAtivo?.nome;
+
+    try {
+      sessionStorage.setItem(
+        BOOK_THEMES_DEEP_STATE_KEY,
+        JSON.stringify({
+          categoria: categoriaAtiva || null,
+          subcategoria: subcategoriaAtiva || null,
+          produto: nomeProdutoTema || null
+        })
+      );
+    } catch {
+      // Ignore storage errors and keep route navigation functional.
+    }
+
     if (nomeProdutoTema) {
       routeParams.set("produto", nomeProdutoTema);
     }
@@ -179,6 +193,24 @@ export default function App() {
   };
 
   useEffect(() => {
+    const consumeBookThemesDeepState = () => {
+      try {
+        const raw = sessionStorage.getItem(BOOK_THEMES_DEEP_STATE_KEY);
+        if (!raw) return null;
+
+        sessionStorage.removeItem(BOOK_THEMES_DEEP_STATE_KEY);
+        const parsed = JSON.parse(raw);
+
+        return {
+          categoria: parsed?.categoria || null,
+          subcategoria: parsed?.subcategoria || null,
+          produto: parsed?.produto || null
+        };
+      } catch {
+        return null;
+      }
+    };
+
     const onHashChange = () => {
       const view = getCurrentView();
       setCurrentView(view);
@@ -189,11 +221,19 @@ export default function App() {
       }
 
       const restoredState = parseHomeStateFromHash(window.location.hash || HOME_ROUTE);
-      const produtoRestaurado = findProdutoByRouteState(restoredState);
+      const deepState = restoredState.produto ? null : consumeBookThemesDeepState();
 
-      const categoriaRestaurada = restoredState.categoria || produtoRestaurado?.categoria || null;
+      const mergedState = {
+        categoria: restoredState.categoria || deepState?.categoria || null,
+        subcategoria: restoredState.subcategoria || deepState?.subcategoria || null,
+        produto: restoredState.produto || deepState?.produto || null
+      };
+
+      const produtoRestaurado = findProdutoByRouteState(mergedState);
+
+      const categoriaRestaurada = mergedState.categoria || produtoRestaurado?.categoria || null;
       const subcategoriaRestaurada =
-        restoredState.subcategoria || produtoRestaurado?.subcategoria || null;
+        mergedState.subcategoria || produtoRestaurado?.subcategoria || null;
 
       setCategoriaAtiva(categoriaRestaurada);
       setSubcategoriaAtiva(subcategoriaRestaurada);

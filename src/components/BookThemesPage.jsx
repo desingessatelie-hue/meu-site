@@ -221,7 +221,7 @@ export function BookThemesPage({ temas, produtoNome, onBack }) {
                       </p>
                       {item.informacoesImportantes && (
                         <p style={{ margin: 0, color: "#7a655a", fontSize: "13px", lineHeight: 1.5 }}>
-                          Informacoes importantes: {item.informacoesImportantes}
+                          Informações importantes: {item.informacoesImportantes}
                         </p>
                       )}
                     </article>

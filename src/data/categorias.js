@@ -990,7 +990,7 @@ export const categorias = [
               tipo: "Livro",
               preco: "A partir de R$ 15,00",
               descricao: "Livro de colorir com 40 desenhos diferentes.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png",
               colecao: "Férias Escolares",
               composicao: "Combinação de itens de papelaria personalizada (bloquinho, lápis e adesivos, conforme disponibilidade).",
               temasBiblioteca: [
@@ -998,33 +998,33 @@ export const categorias = [
                   tema: "Boobie Goode Bosque",
                   informacoesImportantes: "Estilo fofo com traços simples para colorir com lápis de cor.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png"
                   ]
                 },
                 {
                   tema: "Boobie Goode Praia",
                   informacoesImportantes: "Tema voltado para looks e acessórios.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png"
                   ]
                 },
                 {
                   tema: "Boobie Goode Fofurinhas",
                   informacoesImportantes: "Elementos de bichinhos, doces e objetos divertidos.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie_goods/Boobie_01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png"
                   ]
                 }
               ]
             },
             {
-              nome: "Livro Paper dolls, para Colorir A5",
+              nome: "2 -Livro Paper dolls, Coloridos  A5",
               tipo: "Livro",
               preco: "A partir de R$ 45,00",
               descricao: "Livro temático para férias escolares. Contem 6 temas diferentes para colorir, ideal para momentos de lazer.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_1.jpeg",
               colecao: "Férias Escolares",
-              composicao: "Livro com ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              composicao: "Livro com ilustrações, para recortar e colar, ideal para momentos de lazer durante as férias.",
               temasBiblioteca: [
                 {
                   tema: "Frutinhas",
@@ -1065,51 +1065,123 @@ export const categorias = [
               ]
             }, 
              {
-              nome: "Livro Paper dolls, Coloridos A5",
+              nome: "3-Livro Paper dolls, Para colorir e recortar A5",
               tipo: "Livro de Colorir",
               preco: "A partir de R$ 45,00",
               descricao: "Livro temático para férias escolares.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_1.jpeg",
               colecao: "Férias Escolares",
-              composicao: "Livro com ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              composicao: "Livro com ilustrações para colorir, recortar e montar, ideal para momentos de lazer durante as férias.",
               temasBiblioteca: [
                 {
-                  tema: "Look Casual",
-                  informacoesImportantes: "Referencias de roupas do dia a dia.",
+                  tema: "Frutinhas",
+                  informacoesImportantes: "Temas Morango, Banana, Cereja, Uva, Melancia, Limão, Salada de frutas.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_1.jpeg"
                   ]
                 },
                 {
-                  tema: "Look Festa",
-                  informacoesImportantes: "Vestidos e combinacoes para ocasioes especiais."
+                  tema: "Hello Kitty",
+                  informacoesImportantes: "Soninho, Cozinha, Bosque, piscina, passeio, Park de diversção, Fashion",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_2.jpeg"
+                  ]
                 },
                 {
-                  tema: "Look Inverno",
-                  informacoesImportantes: "Casacos, botas e acessorios de frio."
+                  tema: "Roblox",
+                  informacoesImportantes: "1 - Paisagem, 2 - Portal, 3 - Ilhas, 4 - Arena, 5 - Quarto, 6 - Castelo, 7 - Arena II",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_3.jpeg"
+                  ]
+                },
+                {
+                  tema: "Futebol",
+                  informacoesImportantes: "1- Vestiário, 2 - Treino, 3 - Campinho, 4 - Concentração,5 - Placar, 6 - Escolinha, 7 - Podium",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_4.jpeg"
+                  ]
+                },
+                {
+                  tema: "Carros ",
+                  informacoesImportantes: "Carros e pistas para colorir."
+                },
+                {
+                  tema: "Sonic",
+                  informacoesImportantes: "Sonic e seus amigos em aventuras rápidas."
                 }
               ]
             },
              {
-              nome: "Kit Paper dolls, para colorir A5",
+              nome: "4-Kit Paper dolls, para colorir A5",
               tipo: "Livro de Colorir",
-              preco: "A partir de R$ 45,00",
+              preco: "A partir de R$ 5,00",
               descricao: "Kit, de ilustrações para colorir, ideal para momentos de lazer durante as férias.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
               colecao: "Férias Escolares",
               composicao: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
               temasBiblioteca: [
-                {
-                  tema: "Casa e Quarto",
-                  informacoesImportantes: "Inclui cenario interno com moveis e objetos."
+                   {
+                  tema: "Frutinhas - Morango",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_1Morango.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Banana",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_3Banana.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Cereja",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_5Cereja.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Uva",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_2Uva.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Melancia",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_4Melancia.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Limão",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_6Limao.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Salada de frutas",
+                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_7Salada.jpeg"
+                  ]
+                },
+                    {
+                  tema: "Frutinhas - Fashion",
+                  informacoesImportantes: "Desfile de moda com as bonecas vestindo diferentes estilos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_8Fashio.jpeg"
+                  ]
                 },
                 {
-                  tema: "Passeio no Jardim",
-                  informacoesImportantes: "Inclui cenario externo com flores e bancos."
-                },
-                {
-                  tema: "Troca de Roupinhas",
-                  informacoesImportantes: "Conjunto com pecas para combinar estilos das bonecas."
+                  tema: "Hello Kitty - Soninho",
+                  informacoesImportantes: "Soninho, Cozinha, Bosque, piscina, passeio, Park de diversção, Fashion",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_2.jpeg"
+                  ]
                 }
               ]
             },
