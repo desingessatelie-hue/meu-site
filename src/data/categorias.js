@@ -1112,79 +1112,197 @@ export const categorias = [
               ]
             },
              {
-              nome: "4-Kit Paper dolls, para colorir A5",
+              nome: "4-Kit Paper dolls, A5 - Meninas",
               tipo: "Livro de Colorir",
               preco: "A partir de R$ 5,00",
-              descricao: "Kit, de ilustrações para colorir, ideal para momentos de lazer durante as férias.",
+              descricao: "Kit, de ilustrações para Cortar e Colar, ideal para momentos de lazer durante as férias.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
               colecao: "Férias Escolares",
-              composicao: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
+              composicao: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
               temasBiblioteca: [
                    {
                   tema: "Frutinhas - Morango",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_1Morango.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_1Morango.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Banana",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_3Banana.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_3banana.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Cereja",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_5Cereja.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_5cereja.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Uva",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_2Uva.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_2Uva.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Melancia",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_4Melancia.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_4Melancia.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Limão",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_6Limao.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_6limao.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Salada de frutas",
-                  informacoesImportantes: "Kit com ilustrações para colorir, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_7Salada.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_7Salada.png"
                   ]
                 },
                     {
                   tema: "Frutinhas - Fashion",
                   informacoesImportantes: "Desfile de moda com as bonecas vestindo diferentes estilos.",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_8Fashio.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Frutinha_8Fashio.png"
                   ]
                 },
                 {
                   tema: "Hello Kitty - Soninho",
-                  informacoesImportantes: "Soninho, Cozinha, Bosque, piscina, passeio, Park de diversção, Fashion",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
                   imagens: [
-                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_2.jpeg"
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_1Soninho.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Cozinha",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_2Cozinha.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Bosque",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_3Bosque.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Piscina",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_4piscina.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Passeio",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_5passeio.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Park de diversão",
+                  informacoesImportantes: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_6Park.png"
+                  ]
+                },
+                {
+                  tema: "Hello Kitty - Fashion",
+                  informacoesImportantes: "Desfile com Suas dolls na passarela, com diferentes estilos de roupas e acessórios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Hello_7Fashion.png"
                   ]
                 }
               ]
             },
+            {
+              nome: "5 Kit Paper dolls, A5 - Meninos",
+              tipo: "Livro de Colorir",
+              preco: "A partir de R$ 5,00",
+              descricao: "Kit com ilustrações para cortar e colar, com temas de aventura para meninos.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/43.png",
+              colecao: "Férias Escolares",
+              composicao: "Kit com ilustrações para cortar e colar, 2 cenários e seus elementos com personagens e acessórios.",
+              temasBiblioteca: [
+                {
+                  tema: "Futebol - Vestiario",
+                  informacoesImportantes: "Tema com cenário de vestiário e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_1Vestiario.png"
+                  ]
+                },
+                                {
+                  tema: "Futebol - Treino",
+                  informacoesImportantes: "Tema com cenário de treino e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_2Treino.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Campinho",
+                  informacoesImportantes: "Tema com campo de futebol e personagens para montar.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_3Campinho.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Concentração",
+                  informacoesImportantes: "Tema com cenário de concentração e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_4Concentracao.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Placar",
+                  informacoesImportantes: "Tema com cenário de placar e torcida.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_5Placar.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Escolinha",
+                  informacoesImportantes: "Tema com cenário de escolinha de futebol e acessórios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_6Escolinha.png"
+                  ]
+
+                },
+                {
+                  tema: "Futebol - Podium",
+                  informacoesImportantes: "Tema final com celebração e pódio.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Futebol_7Podium.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Portal",
+                  informacoesImportantes: "Cenário de portal com visual de aventura.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_2Portal.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Castelo",
+                  informacoesImportantes: "Cenário de castelo para montar com os personagens.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Roblox_6Castelo.png"
+                  ]
+                }
+              ]
+            },
+            
           ]
         },
         {
