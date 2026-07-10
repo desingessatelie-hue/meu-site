@@ -1306,7 +1306,7 @@ export const categorias = [
                 mostrarTemas: true,
               preco: "A partir de R$ 5,00",
               descricao: "Kit, de ilustrações para Pintar, Cortar e Colar, ideal para momentos de lazer durante as férias.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/54.png",
               colecao: "Férias Escolares",
               composicao: "Kit com ilustrações para Pintar, Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
               temasBibliotecas: [
@@ -1429,9 +1429,11 @@ export const categorias = [
                 }
               ]
             },
-            {
-              nome: "5 Kit Paper dolls, A5 - Meninos",
-              tipo: "Livro de Colorir",
+
+
+  {
+              nome: "6 Kit Paper dolls, Meninos",
+              tipo: "Livro Cortar e colar",
               mostrarTemas: true,
               preco: "A partir de R$ 5,00",
               descricao: "Kit com ilustrações para cortar e colar, com temas de aventura para meninos.",
@@ -1558,7 +1560,138 @@ export const categorias = [
                 }
               ]
             },
-            
+
+
+            {
+              nome: "8 Kit Paper dolls + Boobie Goodies, Meninos",
+              tipo: "Livro de Colorir",
+              mostrarTemas: true,
+              preco: "A partir de R$ 5,00",
+              descricao: "Kit com ilustrações para cortar e colar, com temas de aventura para meninos.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/64.png",
+              colecao: "Férias Escolares",
+              composicao: "Kit com ilustrações para cortar e colar, 2 cenários e seus elementos com personagens e acessórios.",
+              temasBibliotecas: [
+                {
+                  nome: "MeninosPB - Futebol",
+                  temasBiblioteca: [
+                {
+                  tema: "Futebol - Vestiario",
+                  informacoesImportantes: "Tema com cenário de vestiário e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/1-PB_futebol.png"
+                  ]
+                },
+                                {
+                  tema: "Futebol - Treino",
+                  informacoesImportantes: "Tema com cenário de treino e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/2-PB_futebol.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Campinho",
+                  informacoesImportantes: "Tema com campo de futebol e personagens para montar.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/3-PB_futebol.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Concentração",
+                  informacoesImportantes: "Tema com cenário de concentração e acessórios de treino.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/4-PB_futebol.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Placar",
+                  informacoesImportantes: "Tema com cenário de placar e torcida.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/5-PB_futebol.png"
+                  ]
+                },
+                {
+                  tema: "Futebol - Escolinha",
+                  informacoesImportantes: "Tema com cenário de escolinha de futebol e acessórios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/6-PB_futebol.png"
+                  ]
+
+                },
+                {
+                  tema: "Futebol - Podium",
+                  informacoesImportantes: "Tema final com celebração e pódio.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/7-PB_futebol.png"
+                  ]
+                }
+                  ]
+                },
+                {
+                  nome: "MeninosPB - Roblox",
+                  temasBiblioteca: [
+                {
+                  tema: "Roblox - Paisagem",
+                  informacoesImportantes: "Cenário de paisagem com elementos do jogo Roblox.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/1-PB_roblox.png"
+                  ]
+                },
+                
+                {
+                  tema: "Roblox - Portal",
+                  informacoesImportantes: "Cenário de portal com visual de aventura.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/2-PB_roblox.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Ilhas",
+                  informacoesImportantes: "Cenário de aventura com desafios e obstáculos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/3-PB_roblox.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena",
+                  informacoesImportantes: "Cenário de arena para batalhas e desafios.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/4-PB_roblox.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Quarto",
+                  informacoesImportantes: "Cenário de quarto com decoração temática.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/5-PB_roblox.png"
+                  ]
+                },
+                 {
+                  tema: "Roblox - Castelo",
+                  informacoesImportantes: "Cenário de castelo para montar com os personagens.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/6-PB_roblox.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena II",
+                  informacoesImportantes: "Cenário de arena avançada com desafios complexos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/7-PB_roblox.png"
+                  ]
+                },
+                {
+                  tema: "Roblox - Arena III",
+                  informacoesImportantes: "Cenário de arena avançada com desafios complexos.",
+                  imagens: [
+                    "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/8-PB_roblox.png"
+                  ]
+                }
+                  ]
+                }
+              ]
+            },
+           
           ]
         },
         {
