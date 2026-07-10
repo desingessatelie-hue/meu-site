@@ -27,6 +27,16 @@ const sanitizeBookTheme = (name) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const normalizeThemeProductId = (value) =>
+  String(value || "")
+    .replace(/^\d+\s*[-.)]?\s*/g, "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    .trim();
+
 const getBookImportantInfo = (produto) =>
   produto?.informacoesImportantes ||
   produto?.informacoes_importantes ||
@@ -67,7 +77,9 @@ const parseBookThemesStateFromHash = (hash) => {
 
   return {
     from: params.get("from") || null,
-    produto: params.get("produto") || null
+    produto: params.get("produto") || null,
+    produtoId: params.get("produtoId") || null,
+    biblioteca: params.get("biblioteca") || null
   };
 };
 
@@ -87,6 +99,7 @@ export default function App() {
   );
   const [produtoAtivo, setProdutoAtivo] = useState(null);
   const [showSobreModal, setShowSobreModal] = useState(false);
+  const [promocaoSlideByProduto, setPromocaoSlideByProduto] = useState({});
 
   const hydrateProdutoAtivo = (produto, fallbackCategoria = null, fallbackSubcategoria = null) => {
     const colecao =
@@ -161,7 +174,7 @@ export default function App() {
     return null;
   };
 
-  const buildBookThemesHref = (produto) => {
+  const buildBookThemesHref = (produto, bibliotecaNome = null, produtoDestino = null) => {
     const params = new URLSearchParams();
 
     if (categoriaAtiva) params.set("categoria", categoriaAtiva);
@@ -173,7 +186,9 @@ export default function App() {
     const routeParams = new URLSearchParams();
     routeParams.set("from", homeHash);
 
-    const nomeProdutoTema = produto?.nome || produtoAtivo?.nome;
+    const produtoBase = produtoDestino || produto || produtoAtivo;
+    const nomeProdutoTema = produtoBase?.nome || null;
+    const produtoTemaId = normalizeThemeProductId(produtoBase?.temaProdutoId || nomeProdutoTema);
 
     try {
       sessionStorage.setItem(
@@ -181,7 +196,8 @@ export default function App() {
         JSON.stringify({
           categoria: categoriaAtiva || null,
           subcategoria: subcategoriaAtiva || null,
-          produto: nomeProdutoTema || null
+          produto: nomeProdutoTema || null,
+          produtoId: produtoTemaId || null
         })
       );
     } catch {
@@ -191,15 +207,122 @@ export default function App() {
     if (nomeProdutoTema) {
       routeParams.set("produto", nomeProdutoTema);
     }
+    if (produtoTemaId) {
+      routeParams.set("produtoId", produtoTemaId);
+    }
+
+    if (bibliotecaNome) {
+      routeParams.set("biblioteca", bibliotecaNome);
+    }
 
     return `${BOOK_THEMES_ROUTE}?${routeParams.toString()}`;
   };
 
+  const buildBookThemesLinks = (produto) => {
+    if (!produto) return [];
+
+    if (Array.isArray(produto.temasLinks) && produto.temasLinks.length > 0) {
+      const produtosCatalogo = categorias
+        .flatMap((cat) => [
+          ...(cat.subcategorias || []).flatMap((sub) =>
+            (sub.produtos || []).map((item) => ({
+              ...item,
+              categoria: cat.titulo,
+              subcategoria: sub.titulo
+            }))
+          ),
+          ...(cat.produtos || []).map((item) => ({ ...item, categoria: cat.titulo }))
+        ]);
+
+      const links = [];
+
+      produto.temasLinks.forEach((item, index) => {
+        const nomeProduto = String(item?.produto || "").trim();
+        const produtoId = String(item?.produtoId || item?.temaProdutoId || "").trim();
+        const bibliotecaNome = String(item?.biblioteca || item?.nomeBiblioteca || "").trim();
+
+        const produtoDestino =
+          produtosCatalogo.find((entry) =>
+            produtoId
+              ? sameText(
+                  normalizeThemeProductId(entry?.temaProdutoId || entry?.nome),
+                  normalizeThemeProductId(produtoId)
+                )
+              : sameText(entry?.nome, nomeProduto)
+          ) || null;
+
+        const produtoLink = {
+          nome: nomeProduto || produtoDestino?.nome || null,
+          temaProdutoId: produtoId || produtoDestino?.temaProdutoId || null
+        };
+
+        if (bibliotecaNome) {
+          links.push({
+            label: `Ver temas: ${bibliotecaNome}`,
+            href: buildBookThemesHref(produto, bibliotecaNome, produtoLink)
+          });
+          return;
+        }
+
+        const bibliotecasDestino =
+          Array.isArray(produtoDestino?.temasBibliotecas) && produtoDestino.temasBibliotecas.length > 0
+            ? produtoDestino.temasBibliotecas
+            : [];
+
+        if (bibliotecasDestino.length > 0) {
+          bibliotecasDestino.forEach((biblioteca, bibliotecaIndex) => {
+            const nomeBiblioteca = String(biblioteca?.nome || "").trim();
+            if (!nomeBiblioteca) return;
+
+            links.push({
+              label: `Ver temas: ${nomeBiblioteca}`,
+              href: buildBookThemesHref(produto, nomeBiblioteca, produtoLink)
+            });
+          });
+          return;
+        }
+
+        const labelBase =
+          String(item?.label || "").trim() ||
+          String(item?.nome || "").trim() ||
+          nomeProduto ||
+          `Biblioteca ${index + 1}`;
+
+        links.push({
+          label: labelBase.startsWith("Ver temas") ? labelBase : `Ver temas: ${labelBase}`,
+          href: buildBookThemesHref(produto, null, produtoLink)
+        });
+      });
+
+      return links.filter(Boolean);
+    }
+
+    const bibliotecas =
+      Array.isArray(produto.temasBibliotecas) && produto.temasBibliotecas.length > 0
+        ? produto.temasBibliotecas
+        : [{ nome: "Temas", temasBiblioteca: produto.temasBiblioteca }];
+
+    return bibliotecas
+      .map((biblioteca, index) => {
+        const nomeBiblioteca = String(biblioteca?.nome || `Biblioteca ${index + 1}`).trim();
+        if (!nomeBiblioteca) return null;
+
+        return {
+          label: `Ver temas: ${nomeBiblioteca}`,
+          href: buildBookThemesHref(produto, nomeBiblioteca)
+        };
+      })
+      .filter(Boolean);
+  };
+
   const handleBookThemesBack = () => {
-    const hash = window.location.hash || "";
-    const query = hash.includes("?") ? hash.split("?")[1] : "";
-    const from = new URLSearchParams(query).get("from");
-    window.location.hash = from || HOME_ROUTE;
+    try {
+      sessionStorage.removeItem(BOOK_THEMES_DEEP_STATE_KEY);
+    } catch {
+      // Ignore storage cleanup errors.
+    }
+
+    window.location.hash = HOME_ROUTE;
   };
 
   useEffect(() => {
@@ -214,7 +337,8 @@ export default function App() {
         return {
           categoria: parsed?.categoria || null,
           subcategoria: parsed?.subcategoria || null,
-          produto: parsed?.produto || null
+          produto: parsed?.produto || null,
+          produtoId: parsed?.produtoId || null
         };
       } catch {
         return null;
@@ -252,7 +376,8 @@ export default function App() {
       const mergedState = {
         categoria: restoredState.categoria || deepState?.categoria || null,
         subcategoria: restoredState.subcategoria || deepState?.subcategoria || null,
-        produto: restoredState.produto || deepState?.produto || null
+        produto: restoredState.produto || deepState?.produto || null,
+        produtoId: deepState?.produtoId || null
       };
 
       const produtoRestaurado = findProdutoByRouteState(mergedState);
@@ -403,9 +528,22 @@ export default function App() {
 
   const produtosPromocao = [
     {
-      nome: "Kit Paper Dolls A5 - Meninas",
-      descricao: "Oferta especial para férias:A Partir da segunda unidade apenas 4,50 cada ",
+      nome: "Kit Paper Dolls A5 ",
+      descricao: "Oferta especial para férias:  A Partir da segunda unidade apenas 4,50 cada ",
       tipo: "Promocao",
+      mostrarTemas: true,
+      temasLinks: [
+        {
+          nome: "Kit Meninas",
+          produto: "4-Kit Paper dolls, A5 - Meninas",
+          produtoId: "4-kit-paper-dolls-a5-meninas"
+        },
+        {
+          nome: "Kit Meninos",
+          produto: "5 Kit Paper dolls, A5 - Meninos",
+          produtoId: "5-kit-paper-dolls-a5-meninos"
+        }
+      ],
       preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
       imagem:
         "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
@@ -508,6 +646,8 @@ export default function App() {
       return tipo.includes("livro") || nome.includes("livro");
     });
 
+  const bookThemesState = parseBookThemesStateFromHash(window.location.hash || "");
+
   const catalogoTemasLivros = [];
   const produtoTemaMap = new Map();
 
@@ -515,17 +655,53 @@ export default function App() {
     const produtoNome = String(produto.nome || "").trim();
     if (!produtoNome) return;
 
-    const produtoKey = produtoNome.toLowerCase();
-    if (produtoTemaMap.has(produtoKey)) return;
+    const produtoTemaId = normalizeThemeProductId(produto.temaProdutoId || produtoNome);
+    if (!produtoTemaId || produtoTemaMap.has(produtoTemaId)) return;
 
     const imagensProduto = [
       ...(Array.isArray(produto.imagens) ? produto.imagens : []),
       ...(produto.imagem ? [produto.imagem] : [])
     ].filter(Boolean);
 
+    const temasFonteProduto = produtosLivros.find((item) => {
+      if (item === produto) return false;
+
+      const itemTemaId = normalizeThemeProductId(item.temaProdutoId || item.nome);
+
+      if (produto.temasFonteProdutoId) {
+        return sameText(itemTemaId, normalizeThemeProductId(produto.temasFonteProdutoId));
+      }
+
+      if (produto.temasFonteProduto) {
+        return sameText(item.nome, produto.temasFonteProduto);
+      }
+
+      return false;
+    });
+
+    const bibliotecasOrigem =
+      Array.isArray(produto.temasBibliotecas) && produto.temasBibliotecas.length > 0
+        ? produto.temasBibliotecas
+        : [
+            {
+              nome: "Temas",
+              temasBiblioteca: Array.isArray(produto.temasBiblioteca)
+                ? produto.temasBiblioteca
+                : []
+            }
+          ];
+
+    const bibliotecaSelecionada =
+      bibliotecasOrigem.find((biblioteca) => sameText(biblioteca?.nome, bookThemesState.biblioteca)) ||
+      bibliotecasOrigem[0];
+
     const temasOrigem =
-      Array.isArray(produto.temasBiblioteca) && produto.temasBiblioteca.length > 0
-        ? produto.temasBiblioteca
+      Array.isArray(bibliotecaSelecionada?.temasBiblioteca) &&
+      bibliotecaSelecionada.temasBiblioteca.length > 0
+        ? bibliotecaSelecionada.temasBiblioteca
+        : Array.isArray(temasFonteProduto?.temasBiblioteca) &&
+          temasFonteProduto.temasBiblioteca.length > 0
+        ? temasFonteProduto.temasBiblioteca
         : [
             {
               tema: sanitizeBookTheme(produto.nome) || produtoNome,
@@ -569,17 +745,32 @@ export default function App() {
       })
       .filter(Boolean);
 
+    const temasExibidos = Array.isArray(produto.temasExibidos)
+      ? produto.temasExibidos.map((item) => String(item || "").trim().toLowerCase())
+      : null;
+
+    const temasFiltrados = temasExibidos?.length
+      ? temasNormalizados.filter((tema) => {
+          const codigo = String(tema.codigo || "").trim().toLowerCase();
+          const nomeTema = String(tema.tema || "").trim().toLowerCase();
+          return temasExibidos.includes(codigo) || temasExibidos.includes(nomeTema);
+        })
+      : temasNormalizados;
+
     const produtoTemas = {
       produtoNome,
-      temas: temasNormalizados
+      produtoTemaId,
+      bibliotecaNome: bibliotecaSelecionada?.nome || "Temas",
+      temas: temasFiltrados
     };
 
-    produtoTemaMap.set(produtoKey, produtoTemas);
+    produtoTemaMap.set(produtoTemaId, produtoTemas);
     catalogoTemasLivros.push(produtoTemas);
   });
 
-  const bookThemesState = parseBookThemesStateFromHash(window.location.hash || "");
+  const produtoTemaIdSelecionado = normalizeThemeProductId(bookThemesState.produtoId);
   const produtoTemasSelecionado =
+    (produtoTemaIdSelecionado && produtoTemaMap.get(produtoTemaIdSelecionado)) ||
     catalogoTemasLivros.find((item) => sameText(item.produtoNome, bookThemesState.produto)) ||
     catalogoTemasLivros[0] ||
     null;
@@ -841,6 +1032,19 @@ export default function App() {
         }}
       >
         {produtosPromocao.map((prod, index) => (
+          (() => {
+            const imagensPromo =
+              Array.isArray(prod.imagens) && prod.imagens.length > 0
+                ? prod.imagens.filter(Boolean)
+                : prod.imagem
+                ? [prod.imagem]
+                : [];
+            const totalImagens = imagensPromo.length;
+            const slideAtualRaw = promocaoSlideByProduto[prod.nome] || 0;
+            const slideAtual = totalImagens > 0 ? slideAtualRaw % totalImagens : 0;
+            const imagemAtual = totalImagens > 0 ? imagensPromo[slideAtual] : null;
+
+            return (
           <div
             key={`${prod.nome}-${index}`}
             style={{
@@ -851,7 +1055,7 @@ export default function App() {
             }}
             onClick={() => abrirProduto(prod)}
           >
-            {prod.imagem && (
+            {imagemAtual && (
               <div
                 style={{
                   width: "100%",
@@ -863,6 +1067,7 @@ export default function App() {
               >
                 <div
                   style={{
+                    position: "relative",
                     width: "72%",
                     maxWidth: "220px",
                     minWidth: "140px",
@@ -873,7 +1078,7 @@ export default function App() {
                   }}
                 >
                   <img
-                    src={prod.imagem}
+                    src={imagemAtual}
                     alt={prod.nome}
                     style={{
                       width: "100%",
@@ -882,8 +1087,73 @@ export default function App() {
                       display: "block"
                     }}
                   />
+
+                  {totalImagens > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setPromocaoSlideByProduto((prev) => ({
+                            ...prev,
+                            [prod.nome]: (slideAtual - 1 + totalImagens) % totalImagens
+                          }));
+                        }}
+                        style={{
+                          position: "absolute",
+                          left: "6px",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          width: "28px",
+                          height: "28px",
+                          borderRadius: "50%",
+                          border: "none",
+                          backgroundColor: "rgba(255,255,255,0.92)",
+                          cursor: "pointer",
+                          color: "#5a3e36",
+                          fontSize: "16px",
+                          lineHeight: 1
+                        }}
+                      >
+                        ‹
+                      </button>
+                      <button
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setPromocaoSlideByProduto((prev) => ({
+                            ...prev,
+                            [prod.nome]: (slideAtual + 1) % totalImagens
+                          }));
+                        }}
+                        style={{
+                          position: "absolute",
+                          right: "6px",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          width: "28px",
+                          height: "28px",
+                          borderRadius: "50%",
+                          border: "none",
+                          backgroundColor: "rgba(255,255,255,0.92)",
+                          cursor: "pointer",
+                          color: "#5a3e36",
+                          fontSize: "16px",
+                          lineHeight: 1
+                        }}
+                      >
+                        ›
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
+            )}
+
+            {totalImagens > 1 && (
+              <p style={{ margin: "0 0 8px 0", fontSize: "12px", color: "#8b6b61", textAlign: "center" }}>
+                Imagem {slideAtual + 1} de {totalImagens}
+              </p>
             )}
 
             <h3 style={{ marginTop: "16px" }}>{prod.nome}</h3>
@@ -926,6 +1196,8 @@ export default function App() {
               </button>
             </a>
           </div>
+            );
+          })()
         ))}
       </div>
     </section>
@@ -1274,7 +1546,7 @@ export default function App() {
         onClose={() => setProdutoAtivo(null)}
         gerarLinkWhatsApp={gerarLinkWhatsApp}
         variant={isMobile ? "mobile" : "desktop"}
-        livrosTemasHref={buildBookThemesHref(produtoAtivo)}
+        livrosTemasLinks={buildBookThemesLinks(produtoAtivo)}
       />
     );
   };
@@ -1293,6 +1565,7 @@ export default function App() {
       <BookThemesPage
         temas={produtoTemasSelecionado?.temas || []}
         produtoNome={produtoTemasSelecionado?.produtoNome || ""}
+        bibliotecaNome={produtoTemasSelecionado?.bibliotecaNome || "Temas"}
         onBack={handleBookThemesBack}
       />
     );

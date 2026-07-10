@@ -106,7 +106,7 @@ function ThemeImageLibrary({ imagens, tema }) {
   );
 }
 
-export function BookThemesPage({ temas, produtoNome, onBack }) {
+export function BookThemesPage({ temas, produtoNome, bibliotecaNome, onBack }) {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const totalPaginas = Math.max(1, Math.ceil((temas?.length || 0) / ITEMS_PER_PAGE));
   const inicio = (paginaAtual - 1) * ITEMS_PER_PAGE;
@@ -184,6 +184,11 @@ export function BookThemesPage({ temas, produtoNome, onBack }) {
             {produtoNome && (
               <p style={{ margin: "8px 0 0", color: "#5a3e36", fontSize: "16px", fontWeight: 700 }}>
                 Produto: {produtoNome}
+              </p>
+            )}
+            {bibliotecaNome && (
+              <p style={{ margin: "6px 0 0", color: "#8b6b61", fontSize: "14px", fontWeight: 700 }}>
+                Biblioteca: {bibliotecaNome}
               </p>
             )}
             <p style={{ margin: "10px 0 0", color: "#7a655a", fontSize: "14px" }}>

@@ -303,17 +303,24 @@ function ProductDetails({ produto }) {
   );
 }
 
-function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTemasHref }) {
+function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTemasLinks }) {
   const isBookProduct =
     String(produto?.tipo || "").toLowerCase().includes("livro") ||
     String(produto?.nome || "").toLowerCase().includes("livro");
 
-  const showBookThemesButton = Boolean(livrosTemasHref) && isBookProduct;
+  const forceShowBookThemes = Boolean(produto?.mostrarTemas);
+
+  const themeLinks = Array.isArray(livrosTemasLinks)
+    ? livrosTemasLinks.filter((item) => item?.href)
+    : [];
+
+  const showBookThemesButton = themeLinks.length > 0 && (isBookProduct || forceShowBookThemes);
 
   return (
     <div
       style={{
         display: "flex",
+        alignItems: "flex-start",
         gap: "10px",
         marginTop: compact ? "20px" : "24px",
         padding: compact ? 0 : "0 8px"
@@ -344,8 +351,7 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
       <button
         onClick={onClose}
         style={{
-          flex: compact ? 1 : "0 0 auto",
-          minWidth: compact ? undefined : "120px",
+          flex: 1,
           padding: "14px 16px",
           backgroundColor: "#f5f5f5",
           color: "#333",
@@ -360,27 +366,32 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
       </button>
 
       {showBookThemesButton && (
-        <a
-          href={livrosTemasHref}
-          style={{ flex: compact ? 1 : "0 0 auto", textDecoration: "none" }}
-        >
-          <button
-            style={{
-              width: "100%",
-              minWidth: compact ? undefined : "160px",
-              padding: "14px 16px",
-              backgroundColor: "#fff7eb",
-              color: "#8b6b61",
-              border: "1px solid #e7d5b5",
-              borderRadius: "12px",
-              fontSize: "15px",
-              fontWeight: "600",
-              cursor: "pointer"
-            }}
-          >
-            Ver temas dos livros
-          </button>
-        </a>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", flex: compact ? 1 : "0 1 auto" }}>
+          {themeLinks.map((link, index) => (
+            <a
+              key={`${link.href}-${index}`}
+              href={link.href}
+              style={{ textDecoration: "none", flex: compact ? 1 : "0 1 auto" }}
+            >
+              <button
+                style={{
+                  width: "100%",
+                  minWidth: compact ? undefined : "160px",
+                  padding: "14px 16px",
+                  backgroundColor: "#fff7eb",
+                  color: "#8b6b61",
+                  border: "1px solid #e7d5b5",
+                  borderRadius: "12px",
+                  fontSize: "15px",
+                  fontWeight: "600",
+                  cursor: "pointer"
+                }}
+              >
+                {link.label || `Ver temas ${index + 1}`}
+              </button>
+            </a>
+          ))}
+        </div>
       )}
     </div>
   );
@@ -391,7 +402,7 @@ export function ProductModal({
   onClose,
   gerarLinkWhatsApp,
   variant = "mobile",
-  livrosTemasHref
+  livrosTemasLinks
 }) {
   if (!produto) return null;
 
@@ -463,7 +474,7 @@ export function ProductModal({
                 onClose={onClose}
                 gerarLinkWhatsApp={gerarLinkWhatsApp}
                 compact
-                livrosTemasHref={livrosTemasHref}
+                livrosTemasLinks={livrosTemasLinks}
               />
             </div>
           </div>
@@ -568,7 +579,7 @@ export function ProductModal({
             produto={produto}
             onClose={onClose}
             gerarLinkWhatsApp={gerarLinkWhatsApp}
-            livrosTemasHref={livrosTemasHref}
+            livrosTemasLinks={livrosTemasLinks}
           />
         </div>
       </div>
