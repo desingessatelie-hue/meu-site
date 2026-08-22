@@ -110,15 +110,32 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [bibliotecaAtiva, setBibliotecaAtiva] = useState(bibliotecaNome || "");
 
+  const normalizarBibliotecaNome = (valor) =>
+    String(valor || "")
+      .trim()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .toLowerCase();
+
+  const produtoExibicao = "Agendas e Planner";
+
   const bibliotecasDisponiveis =
     Array.isArray(bibliotecas) && bibliotecas.length > 0
       ? bibliotecas
       : [{ nome: bibliotecaNome || "Temas", temasBiblioteca: Array.isArray(temas) ? temas : [] }];
 
   const bibliotecaSelecionada =
-    bibliotecasDisponiveis.find((biblioteca) => String(biblioteca?.nome || "").trim() === bibliotecaAtiva) ||
-    bibliotecasDisponiveis.find((biblioteca) => String(biblioteca?.nome || "").trim() === bibliotecaNome) ||
+    bibliotecasDisponiveis.find(
+      (biblioteca) =>
+        normalizarBibliotecaNome(biblioteca?.nome) === normalizarBibliotecaNome(bibliotecaAtiva)
+    ) ||
+    bibliotecasDisponiveis.find(
+      (biblioteca) => normalizarBibliotecaNome(biblioteca?.nome) === normalizarBibliotecaNome(bibliotecaNome)
+    ) ||
     bibliotecasDisponiveis[0];
+
+  const bibliotecaExibicao = String(bibliotecaSelecionada?.nome || bibliotecaAtiva || bibliotecaNome || "Temas").trim();
 
   const temasAtivos = Array.isArray(bibliotecaSelecionada?.temasBiblioteca)
     ? bibliotecaSelecionada.temasBiblioteca
@@ -195,23 +212,19 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas
                 fontWeight: 700
               }}
             >
-              Catálogo de livros
+              Catálogo de Agendas
             </p>
             <h1 style={{ margin: "10px 0 0", color: "#5a3e36", fontSize: "30px" }}>
-              Temas disponíveis
+              Coleção 2027
             </h1>
-            {produtoNome && (
-              <p style={{ margin: "8px 0 0", color: "#5a3e36", fontSize: "16px", fontWeight: 700 }}>
-                Produto: {produtoNome}
-              </p>
-            )}
-            {bibliotecaNome && (
-              <p style={{ margin: "6px 0 0", color: "#8b6b61", fontSize: "14px", fontWeight: 700 }}>
-                Biblioteca: {bibliotecaNome}
-              </p>
-            )}
+            <p style={{ margin: "8px 0 0", color: "#5a3e36", fontSize: "16px", fontWeight: 700 }}>
+              Produto: {produtoExibicao}
+            </p>
+            <p style={{ margin: "6px 0 0", color: "#8b6b61", fontSize: "14px", fontWeight: 700 }}>
+              Biblioteca: {bibliotecaExibicao || "Temas"}
+            </p>
             <p style={{ margin: "10px 0 0", color: "#7a655a", fontSize: "14px" }}>
-              Biblioteca de imagens por página com código, tema e informações importantes.
+              Anote o código do seu modelo e entre em contato pelo WhatsApp
             </p>
 
             {bibliotecasDisponiveis.length > 1 && (
