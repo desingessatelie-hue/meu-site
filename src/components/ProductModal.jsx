@@ -240,6 +240,17 @@ function ProductDetails({ produto }) {
         </div>
       )}
 
+      {(produto.informacoesImportantes || produto.informacoes_importantes) && (
+        <div style={{ marginBottom: "14px" }}>
+          <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
+            ⚠️ Informações importantes
+          </p>
+          <p style={{ fontSize: "14px", color: "#666", marginLeft: "4px", lineHeight: 1.5, whiteSpace: "pre-line" }}>
+            {produto.informacoesImportantes || produto.informacoes_importantes}
+          </p>
+        </div>
+      )}
+
       {produto.materiais && (
         <div style={{ marginBottom: "14px" }}>
           <p style={{ fontSize: "14px", fontWeight: "600", color: "#5a3e36", marginBottom: "6px" }}>
@@ -372,10 +383,9 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
 
       {showBookThemesButton && (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", flex: compact ? 1 : "0 1 auto" }}>
-          {themeLinks.map((link, index) => (
+          {themeLinks[0] && (
             <a
-              key={`${link.href}-${index}`}
-              href={link.href}
+              href={themeLinks[0].href}
               style={{ textDecoration: "none", flex: compact ? 1 : "0 1 auto" }}
             >
               <button
@@ -392,10 +402,10 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
                   cursor: "pointer"
                 }}
               >
-                {link.label || `Ver temas ${index + 1}`}
+                Modelos
               </button>
             </a>
-          ))}
+          )}
         </div>
       )}
     </div>

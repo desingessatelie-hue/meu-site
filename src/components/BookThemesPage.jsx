@@ -289,15 +289,12 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas
                     >
                       <ThemeImageLibrary imagens={item.imagens} tema={item.tema} />
 
-                      <p style={{ margin: "0 0 8px", color: "#8b6b61", fontSize: "12px", fontWeight: 700 }}>
-                        Codigo: {item.codigo}
-                      </p>
                       <p style={{ margin: "0 0 8px", color: "#5a3e36", fontSize: "16px", fontWeight: 700 }}>
                         Tema: {item.tema}
                       </p>
                       {item.informacoesImportantes && (
-                        <p style={{ margin: 0, color: "#7a655a", fontSize: "13px", lineHeight: 1.5 }}>
-                          Informações importantes: {item.informacoesImportantes}
+                        <p style={{ margin: 0, color: "#7a655a", fontSize: "13px", lineHeight: 1.5, whiteSpace: "pre-line" }}>
+                          <strong style={{ color: "#5a3e36" }}>Informações importantes:</strong> {item.informacoesImportantes}
                         </p>
                       )}
                     </article>

@@ -10,7 +10,16 @@ const agendaThemesImports = {
   Infantil: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Infantil/*", {
     eager: true,
     import: "default"
+  }),
+  Religioso: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Religioso/*", {
+    eager: true,
+    import: "default"
+  }),
+  Candy: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Candy/*", {  
+    eager: true,  
+    import: "default"
   })
+
 };
 
 const criarBibliotecaAgendas = (nomeCategoria, importsMap) => ({
@@ -32,7 +41,9 @@ const criarBibliotecaAgendas = (nomeCategoria, importsMap) => ({
 const bibliotecasModelosAgendas = [
   criarBibliotecaAgendas("Feminino", agendaThemesImports.Feminino),
   criarBibliotecaAgendas("Masculino", agendaThemesImports.Masculino),
-  criarBibliotecaAgendas("Infantil", agendaThemesImports.Infantil)
+  criarBibliotecaAgendas("Infantil", agendaThemesImports.Infantil),
+  criarBibliotecaAgendas("Religioso", agendaThemesImports.Religioso),
+  criarBibliotecaAgendas("Candy", agendaThemesImports.Candy)
 ];
 
 export const categorias = [
@@ -1934,36 +1945,59 @@ export const categorias = [
               nome: "Agenda Personalizada Datada A5 ",
               tipo: "Agendas",
               mostrarTemas: true,
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.png",
+              preco: "A partir de R$ 70,00",
+              descricao: "Agendas personalizadas com datas, para organização diária, com capa e miolo customizáveis.",
+              informacoesImportantes: "Na compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente A5",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              mostrarTemas: true,
+              preco: "A partir de R$ 70,00",
+              descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
+              informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_2.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
             },
                         {
               nome: "Agenda Personalizada Datada A6",
               tipo: "Agendas",
+              mostrarTemas: true,
+              preco: "A partir de R$ 50,00",
+              descricao: "Agendas personalizadas, para organização diária, com capa e miolo Clean.",
+              informacoesImportantes: "Na compra do Kit Agenda por R$ 60,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente A6",
               tipo: "Agendas",
+              mostrarTemas: true,
+              preco: "A partir de R$ 50,00",
+              descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
+              informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
               temasBibliotecas: bibliotecasModelosAgendas
             },
                         {
               nome: "Agenda Personalizada Datada 19x24)",
               tipo: "Agendas",
+              mostrarTemas: true,
+               preco: "A partir de R$ 100,00",
+              descricao: "Agendas personalizadas, para organização diária, com capa e miolo Clean.",
+              informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente (19x24)",
               tipo: "Agendas",
+              mostrarTemas: true,
+               preco: "A partir de R$ 100,00",
+              descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
+              informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
               temasBibliotecas: bibliotecasModelosAgendas
             },

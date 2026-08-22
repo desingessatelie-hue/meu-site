@@ -316,13 +316,26 @@ export default function App() {
   };
 
   const handleBookThemesBack = () => {
+    const bookState = parseBookThemesStateFromHash(window.location.hash || "");
+    const returnHash = bookState?.from || null;
+
     try {
       sessionStorage.removeItem(BOOK_THEMES_DEEP_STATE_KEY);
     } catch {
       // Ignore storage cleanup errors.
     }
 
-    window.location.hash = HOME_ROUTE;
+    if (returnHash && String(returnHash).startsWith(HOME_ROUTE)) {
+      window.location.hash = returnHash;
+      return;
+    }
+
+    setCategoriaAtiva("Papelaria Artesanal");
+    setSubcategoriaAtiva("Encadernação");
+    window.location.hash = buildHomeHash({
+      categoria: "Papelaria Artesanal",
+      subcategoria: "Encadernação"
+    });
   };
 
   useEffect(() => {
@@ -643,7 +656,13 @@ export default function App() {
     .filter((produto) => {
       const tipo = String(produto.tipo || "").toLowerCase();
       const nome = String(produto.nome || "").toLowerCase();
-      return tipo.includes("livro") || nome.includes("livro");
+      const temBibliotecaTema =
+        Array.isArray(produto.temasBibliotecas) && produto.temasBibliotecas.length > 0 ||
+        Array.isArray(produto.temasBiblioteca) && produto.temasBiblioteca.length > 0 ||
+        Boolean(produto.mostrarTemas) ||
+        Array.isArray(produto.temasLinks) && produto.temasLinks.length > 0;
+
+      return tipo.includes("livro") || nome.includes("livro") || temBibliotecaTema;
     });
 
   const bookThemesState = parseBookThemesStateFromHash(window.location.hash || "");
