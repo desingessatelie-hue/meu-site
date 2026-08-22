@@ -1,3 +1,40 @@
+const agendaThemesImports = {
+  Feminino: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Feminino/*", {
+    eager: true,
+    import: "default"
+  }),
+  Masculino: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Masculino/*", {
+    eager: true,
+    import: "default"
+  }),
+  Infantil: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Infantil/*", {
+    eager: true,
+    import: "default"
+  })
+};
+
+const criarBibliotecaAgendas = (nomeCategoria, importsMap) => ({
+  nome: nomeCategoria,
+  temasBiblioteca: Object.entries(importsMap)
+    .map(([caminho, url]) => {
+      const nomeArquivo = caminho.split("/").pop() || "tema";
+      const tema = nomeArquivo.replace(/\.[^/.]+$/, "");
+
+      return {
+        tema,
+        informacoesImportantes: "Modelo disponível para personalização.",
+        imagens: [url]
+      };
+    })
+    .sort((a, b) => a.tema.localeCompare(b.tema, "pt-BR", { numeric: true }))
+});
+
+const bibliotecasModelosAgendas = [
+  criarBibliotecaAgendas("Feminino", agendaThemesImports.Feminino),
+  criarBibliotecaAgendas("Masculino", agendaThemesImports.Masculino),
+  criarBibliotecaAgendas("Infantil", agendaThemesImports.Infantil)
+];
+
 export const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
@@ -1896,32 +1933,39 @@ export const categorias = [
             {
               nome: "Agenda Personalizada Datada A5 ",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              mostrarTemas: true,
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.png,
+              temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente A5",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              temasBibliotecas: bibliotecasModelosAgendas
             },
                         {
               nome: "Agenda Personalizada Datada A6",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente A6",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              temasBibliotecas: bibliotecasModelosAgendas
             },
                         {
               nome: "Agenda Personalizada Datada 19x24)",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Agenda Personalizada Permanente (19x24)",
               tipo: "Agendas",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              temasBibliotecas: bibliotecasModelosAgendas
             },
             {
               nome: "Planner Diário",

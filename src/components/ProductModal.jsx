@@ -309,12 +309,17 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
     String(produto?.nome || "").toLowerCase().includes("livro");
 
   const forceShowBookThemes = Boolean(produto?.mostrarTemas);
+  const hasThemeLibraryData =
+    Array.isArray(produto?.temasBibliotecas) && produto.temasBibliotecas.length > 0
+      ? true
+      : Array.isArray(produto?.temasBiblioteca) && produto.temasBiblioteca.length > 0;
 
   const themeLinks = Array.isArray(livrosTemasLinks)
     ? livrosTemasLinks.filter((item) => item?.href)
     : [];
 
-  const showBookThemesButton = themeLinks.length > 0 && (isBookProduct || forceShowBookThemes);
+  const showBookThemesButton =
+    themeLinks.length > 0 && (isBookProduct || forceShowBookThemes || hasThemeLibraryData);
 
   return (
     <div

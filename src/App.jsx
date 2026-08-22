@@ -761,6 +761,12 @@ export default function App() {
       produtoNome,
       produtoTemaId,
       bibliotecaNome: bibliotecaSelecionada?.nome || "Temas",
+      bibliotecas: bibliotecasOrigem.map((biblioteca) => ({
+        nome: String(biblioteca?.nome || "").trim() || "Temas",
+        temasBiblioteca: Array.isArray(biblioteca?.temasBiblioteca)
+          ? biblioteca.temasBiblioteca
+          : []
+      })),
       temas: temasFiltrados
     };
 
@@ -1566,6 +1572,7 @@ export default function App() {
         temas={produtoTemasSelecionado?.temas || []}
         produtoNome={produtoTemasSelecionado?.produtoNome || ""}
         bibliotecaNome={produtoTemasSelecionado?.bibliotecaNome || "Temas"}
+        bibliotecas={produtoTemasSelecionado?.bibliotecas || []}
         onBack={handleBookThemesBack}
       />
     );

@@ -106,15 +106,34 @@ function ThemeImageLibrary({ imagens, tema }) {
   );
 }
 
-export function BookThemesPage({ temas, produtoNome, bibliotecaNome, onBack }) {
+export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas = [], onBack }) {
   const [paginaAtual, setPaginaAtual] = useState(1);
-  const totalPaginas = Math.max(1, Math.ceil((temas?.length || 0) / ITEMS_PER_PAGE));
+  const [bibliotecaAtiva, setBibliotecaAtiva] = useState(bibliotecaNome || "");
+
+  const bibliotecasDisponiveis =
+    Array.isArray(bibliotecas) && bibliotecas.length > 0
+      ? bibliotecas
+      : [{ nome: bibliotecaNome || "Temas", temasBiblioteca: Array.isArray(temas) ? temas : [] }];
+
+  const bibliotecaSelecionada =
+    bibliotecasDisponiveis.find((biblioteca) => String(biblioteca?.nome || "").trim() === bibliotecaAtiva) ||
+    bibliotecasDisponiveis.find((biblioteca) => String(biblioteca?.nome || "").trim() === bibliotecaNome) ||
+    bibliotecasDisponiveis[0];
+
+  const temasAtivos = Array.isArray(bibliotecaSelecionada?.temasBiblioteca)
+    ? bibliotecaSelecionada.temasBiblioteca
+    : Array.isArray(temas)
+      ? temas
+      : [];
+
+  const totalPaginas = Math.max(1, Math.ceil((temasAtivos?.length || 0) / ITEMS_PER_PAGE));
   const inicio = (paginaAtual - 1) * ITEMS_PER_PAGE;
-  const temasPagina = (temas || []).slice(inicio, inicio + ITEMS_PER_PAGE);
+  const temasPagina = (temasAtivos || []).slice(inicio, inicio + ITEMS_PER_PAGE);
 
   useEffect(() => {
+    setBibliotecaAtiva(bibliotecaNome || bibliotecasDisponiveis[0]?.nome || "");
     setPaginaAtual(1);
-  }, [temas]);
+  }, [bibliotecaNome, bibliotecasDisponiveis]);
 
   useEffect(() => {
     if (paginaAtual > totalPaginas) {
@@ -194,6 +213,45 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, onBack }) {
             <p style={{ margin: "10px 0 0", color: "#7a655a", fontSize: "14px" }}>
               Biblioteca de imagens por página com código, tema e informações importantes.
             </p>
+
+            {bibliotecasDisponiveis.length > 1 && (
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  flexWrap: "wrap",
+                  marginTop: "18px"
+                }}
+              >
+                {bibliotecasDisponiveis.map((biblioteca) => {
+                  const nomeBiblioteca = String(biblioteca?.nome || "").trim();
+                  const ativa = String(bibliotecaSelecionada?.nome || "").trim() === nomeBiblioteca;
+
+                  return (
+                    <button
+                      key={nomeBiblioteca}
+                      type="button"
+                      onClick={() => {
+                        setBibliotecaAtiva(nomeBiblioteca);
+                        setPaginaAtual(1);
+                      }}
+                      style={{
+                        padding: "10px 16px",
+                        borderRadius: "999px",
+                        border: ativa ? "1px solid #c8a96a" : "1px solid #eadfc2",
+                        backgroundColor: ativa ? "#fff7eb" : "#fff",
+                        color: ativa ? "#5a3e36" : "#8b6b61",
+                        fontWeight: 700,
+                        cursor: "pointer",
+                        boxShadow: ativa ? "0 6px 18px rgba(200,169,106,0.22)" : "none"
+                      }}
+                    >
+                      {nomeBiblioteca}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div style={{ padding: "22px 24px 30px" }}>
