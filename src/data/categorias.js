@@ -1934,7 +1934,7 @@ export const categorias = [
               nome: "Agenda Personalizada Datada A5 ",
               tipo: "Agendas",
               mostrarTemas: true,
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.png,
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.png",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
