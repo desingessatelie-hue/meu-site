@@ -4,7 +4,17 @@ const ITEMS_PER_PAGE = 6;
 
 function ThemeImageLibrary({ imagens, tema }) {
   const [imagemAtual, setImagemAtual] = useState(0);
-  const totalImagens = Array.isArray(imagens) ? imagens.length : 0;
+  const imagensNormalizadas = Array.isArray(imagens)
+    ? imagens
+        .map((imagem) => {
+          if (typeof imagem === "string") {
+            return { nome: "Produto", url: imagem };
+          }
+          return imagem && imagem.url ? imagem : null;
+        })
+        .filter(Boolean)
+    : [];
+  const totalImagens = imagensNormalizadas.length;
 
   useEffect(() => {
     setImagemAtual(0);
@@ -32,13 +42,19 @@ function ThemeImageLibrary({ imagens, tema }) {
     );
   }
 
-  const imagem = imagens[imagemAtual];
+  const imagemAtualAtual = imagensNormalizadas[imagemAtual];
 
   return (
     <div style={{ marginBottom: "12px" }}>
+      {imagemAtualAtual?.nome && (
+        <p style={{ margin: "0 0 8px", color: "#5a3e36", fontSize: "12px", fontWeight: 700 }}>
+          Produto: {imagemAtualAtual.nome}
+        </p>
+      )}
+
       <div style={{ position: "relative" }}>
         <img
-          src={imagem}
+          src={imagemAtualAtual?.url}
           alt={`Tema ${tema} - imagem ${imagemAtual + 1}`}
           style={{
             width: "100%",
@@ -324,7 +340,7 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas
                       fontWeight: 600
                     }}
                   >
-                    Pagina anterior
+                    ««
                   </button>
 
                   <p style={{ margin: 0, color: "#7a655a", fontSize: "13px", fontWeight: 600 }}>
@@ -345,7 +361,7 @@ export function BookThemesPage({ temas, produtoNome, bibliotecaNome, bibliotecas
                       fontWeight: 600
                     }}
                   >
-                    Proxima pagina
+                    »»
                   </button>
                 </div>
               </>

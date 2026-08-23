@@ -332,6 +332,10 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
   const showBookThemesButton =
     themeLinks.length > 0 && (isBookProduct || forceShowBookThemes || hasThemeLibraryData);
 
+  const isCompactMobile = Boolean(compact);
+  const whatsappLabel = isCompactMobile ? "WhatsApp" : "💬 Solicitar via WhatsApp";
+  const modelosLabel = isCompactMobile ? "Modelos" : "Modelos";
+
   return (
     <div
       style={{
@@ -351,31 +355,33 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
         <button
           style={{
             width: "100%",
-            padding: "14px 16px",
+            padding: isCompactMobile ? "10px 8px" : "14px 16px",
             backgroundColor: "#128C7E",
             color: "#fff",
             border: "none",
             borderRadius: "12px",
-            fontSize: "16px",
+            fontSize: isCompactMobile ? "12px" : "16px",
             fontWeight: "600",
-            cursor: "pointer"
+            cursor: "pointer",
+            whiteSpace: "nowrap"
           }}
         >
-          💬 Solicitar via WhatsApp
+          {whatsappLabel}
         </button>
       </a>
       <button
         onClick={onClose}
         style={{
           flex: 1,
-          padding: "14px 16px",
+          padding: isCompactMobile ? "10px 8px" : "14px 16px",
           backgroundColor: "#f5f5f5",
           color: "#333",
           border: "1px solid #ddd",
           borderRadius: "12px",
-          fontSize: "16px",
+          fontSize: isCompactMobile ? "12px" : "16px",
           fontWeight: "600",
-          cursor: "pointer"
+          cursor: "pointer",
+          whiteSpace: "nowrap"
         }}
       >
         Fechar
@@ -392,17 +398,18 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
                 style={{
                   width: "100%",
                   minWidth: compact ? undefined : "160px",
-                  padding: "14px 16px",
+                  padding: isCompactMobile ? "10px 8px" : "14px 16px",
                   backgroundColor: "#fff7eb",
                   color: "#8b6b61",
                   border: "1px solid #e7d5b5",
                   borderRadius: "12px",
-                  fontSize: "15px",
+                  fontSize: isCompactMobile ? "12px" : "15px",
                   fontWeight: "600",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  whiteSpace: "nowrap"
                 }}
               >
-                Modelos
+                {modelosLabel}
               </button>
             </a>
           )}
@@ -594,6 +601,7 @@ export function ProductModal({
             produto={produto}
             onClose={onClose}
             gerarLinkWhatsApp={gerarLinkWhatsApp}
+            compact
             livrosTemasLinks={livrosTemasLinks}
           />
         </div>

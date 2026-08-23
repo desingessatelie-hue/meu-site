@@ -539,23 +539,30 @@ export default function App() {
     }
   ];
 
+  const temaBibliotecasKitColorido =
+    categorias
+      .flatMap((cat) => cat.subcategorias || [])
+      .flatMap((sub) => sub.produtos || [])
+      .find((produto) => String(produto.nome || "").includes("4-Kit Paper dolls, A5 Colorido"))
+      ?.temasBibliotecas || [];
+
+  const temaBibliotecasKitPB =
+    categorias
+      .flatMap((cat) => cat.subcategorias || [])
+      .flatMap((sub) => sub.produtos || [])
+      .find((produto) =>
+        String(produto.nome || "").includes("5-Kit Paper dolls + Boobie goodies, A5 PB")
+      )?.temasBibliotecas || [];
+
   const produtosPromocao = [
     {
       nome: "Kit Paper Dolls A5 ",
       descricao: "Oferta especial para férias:  A Partir da segunda unidade apenas 4,50 cada ",
       tipo: "Promocao",
       mostrarTemas: true,
-      temasLinks: [
-        {
-          nome: "Kit Meninas",
-          produto: "4-Kit Paper dolls, A5 - Meninas",
-          produtoId: "4-kit-paper-dolls-a5-meninas"
-        },
-        {
-          nome: "Kit Meninos",
-          produto: "5 Kit Paper dolls, A5 - Meninos",
-          produtoId: "5-kit-paper-dolls-a5-meninos"
-        }
+      temasBibliotecas: [
+        ...temaBibliotecasKitColorido,
+        ...temaBibliotecasKitPB
       ],
       preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
       imagem:

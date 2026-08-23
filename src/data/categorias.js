@@ -55,25 +55,131 @@ const normalizarTemaArquivo = (nomeArquivo) => {
     .trim();
 };
 
+const gerarNomeProduto = (caminho) => {
+  const nomeArquivo = caminho.split("/").pop() || "produto";
+  const nomeSemExtensao = nomeArquivo.replace(/\.[^/.]+$/, "");
+
+  return normalizarTemaArquivo(nomeSemExtensao) || nomeSemExtensao || "Produto";
+};
+
 const criarBibliotecaPorImports = ({
   nome,
   importsMap,
-  textoPadrao = "Modelo disponível para personalização."
-}) => ({
-  nome,
-  temasBiblioteca: Object.entries(importsMap)
-    .map(([caminho, url]) => {
-      const nomeArquivo = caminho.split("/").pop() || "tema";
-      const tema = normalizarTemaArquivo(nomeArquivo) || nomeArquivo;
+  textoPadrao = "Modelo disponível para personalização.",
+  pastaBase = null
+}) => {
+  const temasAgrupados = new Map();
 
-      return {
+  Object.entries(importsMap).forEach(([caminho, url]) => {
+    const caminhoNormalizado = caminho.replace(/\\/g, "/");
+    let nomeTema = "Tema";
+
+    if (pastaBase) {
+      const base = pastaBase.replace(/\\/g, "/").replace(/\/$/, "");
+      const relativo = caminhoNormalizado.startsWith(base)
+        ? caminhoNormalizado.slice(base.length + 1)
+        : caminhoNormalizado.split("/").slice(-2, -1)[0] || "Tema";
+
+      nomeTema = relativo ? relativo.split("/")[0] : "Tema";
+    } else {
+      const partes = caminhoNormalizado.split("/").filter(Boolean);
+      nomeTema = partes.length > 0 ? partes[partes.length - 2] || partes[partes.length - 1] : "Tema";
+    }
+
+    const tema = normalizarTemaArquivo(nomeTema) || nomeTema || "Tema";
+    const nomeProduto = gerarNomeProduto(caminhoNormalizado);
+
+    if (!temasAgrupados.has(tema)) {
+      temasAgrupados.set(tema, {
         tema,
         informacoesImportantes: textoPadrao,
-        imagens: [url]
-      };
-    })
-    .sort((a, b) => a.tema.localeCompare(b.tema, "pt-BR", { numeric: true }))
-});
+        imagens: []
+      });
+    }
+
+    const temaAtual = temasAgrupados.get(tema);
+    const jaExiste = temaAtual.imagens.some((imagem) => {
+      const urlImagem = typeof imagem === "string" ? imagem : imagem?.url;
+      return urlImagem === url;
+    });
+
+    if (!jaExiste) {
+      temaAtual.imagens.push({
+        nome: nomeProduto,
+        url,
+        codigo: nomeProduto
+      });
+    }
+  });
+
+  return {
+    nome,
+    temasBiblioteca: Array.from(temasAgrupados.values()).sort((a, b) =>
+      a.tema.localeCompare(b.tema, "pt-BR", { numeric: true })
+    )
+  };
+};
+
+const criarBibliotecasPorPastas = ({
+  importsMap,
+  pastaBase,
+  textoPadrao = "Modelo disponível para personalização."
+}) => {
+  const bibliotecasPorTema = new Map();
+
+  Object.entries(importsMap).forEach(([caminho, url]) => {
+    const caminhoNormalizado = caminho.replace(/\\/g, "/");
+    const base = pastaBase.replace(/\\/g, "/").replace(/\/$/, "");
+    const relativo = caminhoNormalizado.startsWith(base + "/")
+      ? caminhoNormalizado.slice(base.length + 1)
+      : caminhoNormalizado;
+
+    const nomePasta = (relativo.split("/").filter(Boolean)[0] || "Tema").trim();
+    const nomeBiblioteca = normalizarTemaArquivo(nomePasta) || nomePasta || "Tema";
+
+    if (!bibliotecasPorTema.has(nomeBiblioteca)) {
+      bibliotecasPorTema.set(nomeBiblioteca, {
+        nome: nomeBiblioteca,
+        temasBiblioteca: []
+      });
+    }
+
+    const bibliotecaAtual = bibliotecasPorTema.get(nomeBiblioteca);
+    const tema = nomeBiblioteca;
+    const nomeProduto = gerarNomeProduto(caminhoNormalizado);
+    const itemTema = bibliotecaAtual.temasBiblioteca.find((entry) => entry.tema === tema);
+
+    if (itemTema) {
+      const jaExiste = itemTema.imagens.some((imagem) => {
+        const urlImagem = typeof imagem === "string" ? imagem : imagem?.url;
+        return urlImagem === url;
+      });
+
+      if (!jaExiste) {
+        itemTema.imagens.push({
+          nome: nomeProduto,
+          url,
+          codigo: nomeProduto
+        });
+      }
+      return;
+    }
+
+    bibliotecaAtual.temasBiblioteca.push({
+      tema,
+      informacoesImportantes: textoPadrao,
+      imagens: [{
+        nome: nomeProduto,
+        url,
+        codigo: nomeProduto
+      }]
+    });
+  });
+
+  return Array.from(bibliotecasPorTema.values()).sort((a, b) =>
+    a.nome.localeCompare(b.nome, "pt-BR", { numeric: true })
+  );
+};
 
 const bibliotecasPorPasta = {
   PaperDollsColoridas: import.meta.glob("../../imagens/datas_com/Ferias/PaperDolls_coloridas/*", {
@@ -84,11 +190,11 @@ const bibliotecasPorPasta = {
     eager: true,
     import: "default"
   }),
-  PaperDollsPBKIT: import.meta.glob("../../imagens/datas_com/Ferias/Kit_PaperDolls_PB/*", {
+  PaperDollsPBKIT: import.meta.glob("../../imagens/datas_com/Ferias/Kit_PaperDolls_PB/**/*", {
     eager: true,
     import: "default"
   }),
-  PaperDollsColoridoKit: import.meta.glob("../../imagens/datas_com/Ferias/Kit_PaperDolls_colorido/*", {
+  PaperDollsColoridoKit: import.meta.glob("../../imagens/datas_com/Ferias/Kit_PaperDolls_colorido/**/*", {
     eager: true,
     import: "default"
   })
@@ -97,28 +203,27 @@ const bibliotecasPorPasta = {
 const bibliotecasModelosPaperDollsColoridas = [
   criarBibliotecaPorImports({
     nome: "PaperDolls Coloridas",
-    importsMap: bibliotecasPorPasta.PaperDollsColoridas
+    importsMap: bibliotecasPorPasta.PaperDollsColoridas,
+    pastaBase: "../../imagens/datas_com/Ferias/PaperDolls_coloridas"
   })
 ];
 
 const bibliotecasModelosPaperDollsPB = [
   criarBibliotecaPorImports({
     nome: "PaperDolls PB",
-    importsMap: bibliotecasPorPasta.PaperDollsPB
+    importsMap: bibliotecasPorPasta.PaperDollsPB,
+    pastaBase: "../../imagens/datas_com/Ferias/PaperDolls_PB"
   })
 ];
-const bibliotecasModelosPaperDollsPBKIT = [
-  criarBibliotecaPorImports({
-    nome: "PaperDolls PB KIT",
-    importsMap: bibliotecasPorPasta.PaperDollsPBKIT
-  })
-];
-const bibliotecasModelosPaperDollsColoridoKit = [
-  criarBibliotecaPorImports({
-    nome: "PaperDolls Colorido KIT",
-    importsMap: bibliotecasPorPasta.PaperDollsColoridoKit
-  })
-];
+const bibliotecasModelosPaperDollsPBKIT = criarBibliotecasPorPastas({
+  importsMap: bibliotecasPorPasta.PaperDollsPBKIT,
+  pastaBase: "../../imagens/datas_com/Ferias/Kit_PaperDolls_PB"
+});
+
+const bibliotecasModelosPaperDollsColoridoKit = criarBibliotecasPorPastas({
+  importsMap: bibliotecasPorPasta.PaperDollsColoridoKit,
+  pastaBase: "../../imagens/datas_com/Ferias/Kit_PaperDolls_colorido"
+});
 
 
 const bibliotecasModelosPaperDollsMultiPastas = [
@@ -1158,7 +1263,7 @@ export const categorias = [
               mostrarTemas: true,
               preco: "A partir de R$ 45,00",
               descricao: "Livro temático para férias escolares. Contem 6 temas diferentes para colorir, ideal para momentos de lazer.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/tema_1.jpeg",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_coloridas/1-Frutinhas.jpeg",
               colecao: "Férias Escolares",
               composicao: "Livro com ilustrações, para recortar e colar, ideal para momentos de lazer durante as férias.",
               temasBibliotecas: bibliotecasModelosPaperDollsColoridas
@@ -1169,7 +1274,7 @@ export const categorias = [
               mostrarTemas: true,
               preco: "A partir de R$ 45,00",
               descricao: "Livro temático para férias escolares.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/Tema_1.jpeg",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/PaperDolls_PB/1-Frutinhas.jpeg",
               colecao: "Férias Escolares",
               composicao: "Livro com ilustrações para colorir, recortar e montar, ideal para momentos de lazer durante as férias.",
               temasBibliotecas: bibliotecasModelosPaperDollsPB
@@ -1205,7 +1310,7 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/43.png",
               colecao: "Férias Escolares",
               composicao: "Kit com ilustrações para cortar e colar, 2 cenários e seus elementos com personagens e acessórios.",
-              temasBibliotecas: bibliotecasModelosPaperDollsPB
+              temasBibliotecas: bibliotecasModelosPaperDollsColoridoKit
             },
             {
               nome: "8 Kit Paper dolls + Boobie Goodies, Meninos",
