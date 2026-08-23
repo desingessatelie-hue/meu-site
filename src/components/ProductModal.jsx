@@ -334,7 +334,7 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
 
   const isCompactMobile = Boolean(compact);
   const whatsappLabel = isCompactMobile ? "WhatsApp" : "💬 Solicitar via WhatsApp";
-  const modelosLabel = isCompactMobile ? "Modelos" : "Modelos";
+  const modelosLabel = "Modelos";
 
   return (
     <div
@@ -389,9 +389,10 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
 
       {showBookThemesButton && (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", flex: compact ? 1 : "0 1 auto" }}>
-          {themeLinks[0] && (
+          {themeLinks.map((link, index) => (
             <a
-              href={themeLinks[0].href}
+              key={`${link.href}-${index}`}
+              href={link.href}
               style={{ textDecoration: "none", flex: compact ? 1 : "0 1 auto" }}
             >
               <button
@@ -406,13 +407,14 @@ function ModalActions({ produto, onClose, gerarLinkWhatsApp, compact, livrosTema
                   fontSize: isCompactMobile ? "12px" : "15px",
                   fontWeight: "600",
                   cursor: "pointer",
-                  whiteSpace: "nowrap"
+                  whiteSpace: "normal",
+                  lineHeight: 1.2
                 }}
               >
-                {modelosLabel}
+                {themeLinks.length > 1 ? link.label || `${modelosLabel} ${index + 1}` : modelosLabel}
               </button>
             </a>
-          )}
+          ))}
         </div>
       )}
     </div>

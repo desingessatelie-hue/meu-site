@@ -14,6 +14,7 @@ import { ProductModal } from "./components/ProductModal.jsx";
 import { BookThemesPage } from "./components/BookThemesPage.jsx";
 
 const BOOK_THEMES_ROUTE = "#/temas-livros";
+const CATEGORIES_ROUTE = "#/categorias";
 const HOME_ROUTE = "#/";
 const BOOK_THEMES_DEEP_STATE_KEY = "bookThemesDeepStateV1";
 const BOOK_THEMES_RETURN_MARKER = "bt_return";
@@ -83,8 +84,11 @@ const parseBookThemesStateFromHash = (hash) => {
   };
 };
 
-const getCurrentView = () =>
-  window.location.hash.startsWith(BOOK_THEMES_ROUTE) ? "book-themes" : "home";
+const getCurrentView = () => {
+  if (window.location.hash.startsWith(BOOK_THEMES_ROUTE)) return "book-themes";
+  if (window.location.hash.startsWith(CATEGORIES_ROUTE)) return "categories";
+  return "home";
+};
 
 export default function App() {
   const [currentView, setCurrentView] = useState(getCurrentView);
@@ -99,7 +103,6 @@ export default function App() {
   );
   const [produtoAtivo, setProdutoAtivo] = useState(null);
   const [showSobreModal, setShowSobreModal] = useState(false);
-  const [promocaoSlideByProduto, setPromocaoSlideByProduto] = useState({});
 
   const hydrateProdutoAtivo = (produto, fallbackCategoria = null, fallbackSubcategoria = null) => {
     const colecao =
@@ -174,6 +177,41 @@ export default function App() {
     return null;
   };
 
+  const produtosCatalogo = categorias.flatMap((cat) => [
+    ...(cat.subcategorias || []).flatMap((sub) =>
+      (sub.produtos || []).map((item) => ({
+        ...item,
+        categoria: cat.titulo,
+        subcategoria: sub.titulo
+      }))
+    ),
+    ...(cat.produtos || []).map((item) => ({ ...item, categoria: cat.titulo }))
+  ]);
+
+  const produtoCatalogoPorCodigo = new Map(
+    produtosCatalogo
+      .map((item) => {
+        const codigo = normalizeThemeProductId(
+          item?.codigoPromocao || item?.codigo || item?.temaProdutoId || item?.nome
+        );
+        return [codigo, item];
+      })
+      .filter(([codigo]) => Boolean(codigo))
+  );
+
+  const produtosEmPromocao = produtosCatalogo.filter((item) => {
+    const promocaoFlag =
+      item?.["Promoção"] ??
+      item?.["promoção"] ??
+      item?.Promocao ??
+      item?.promocao ??
+      item?.promo ??
+      false;
+    return Boolean(promocaoFlag);
+  });
+
+  const produtosExibicaoPromocao = produtosEmPromocao.slice(0, 5);
+
   const buildBookThemesHref = (produto, bibliotecaNome = null, produtoDestino = null) => {
     const params = new URLSearchParams();
 
@@ -222,24 +260,13 @@ export default function App() {
     if (!produto) return [];
 
     if (Array.isArray(produto.temasLinks) && produto.temasLinks.length > 0) {
-      const produtosCatalogo = categorias
-        .flatMap((cat) => [
-          ...(cat.subcategorias || []).flatMap((sub) =>
-            (sub.produtos || []).map((item) => ({
-              ...item,
-              categoria: cat.titulo,
-              subcategoria: sub.titulo
-            }))
-          ),
-          ...(cat.produtos || []).map((item) => ({ ...item, categoria: cat.titulo }))
-        ]);
-
       const links = [];
 
       produto.temasLinks.forEach((item, index) => {
         const nomeProduto = String(item?.produto || "").trim();
         const produtoId = String(item?.produtoId || item?.temaProdutoId || "").trim();
         const bibliotecaNome = String(item?.biblioteca || item?.nomeBiblioteca || "").trim();
+        const expandirBibliotecas = Boolean(item?.expandirBibliotecas);
 
         const produtoDestino =
           produtosCatalogo.find((entry) =>
@@ -264,22 +291,25 @@ export default function App() {
           return;
         }
 
-        const bibliotecasDestino =
-          Array.isArray(produtoDestino?.temasBibliotecas) && produtoDestino.temasBibliotecas.length > 0
-            ? produtoDestino.temasBibliotecas
-            : [];
+        if (expandirBibliotecas) {
+          const bibliotecasDestino =
+            Array.isArray(produtoDestino?.temasBibliotecas) &&
+            produtoDestino.temasBibliotecas.length > 0
+              ? produtoDestino.temasBibliotecas
+              : [];
 
-        if (bibliotecasDestino.length > 0) {
-          bibliotecasDestino.forEach((biblioteca, bibliotecaIndex) => {
-            const nomeBiblioteca = String(biblioteca?.nome || "").trim();
-            if (!nomeBiblioteca) return;
+          if (bibliotecasDestino.length > 0) {
+            bibliotecasDestino.forEach((biblioteca) => {
+              const nomeBiblioteca = String(biblioteca?.nome || "").trim();
+              if (!nomeBiblioteca) return;
 
-            links.push({
-              label: `Ver temas: ${nomeBiblioteca}`,
-              href: buildBookThemesHref(produto, nomeBiblioteca, produtoLink)
+              links.push({
+                label: `${nomeBiblioteca}`,
+                href: buildBookThemesHref(produto, nomeBiblioteca, produtoLink)
+              });
             });
-          });
-          return;
+            return;
+          }
         }
 
         const labelBase =
@@ -308,7 +338,7 @@ export default function App() {
         if (!nomeBiblioteca) return null;
 
         return {
-          label: `Ver temas: ${nomeBiblioteca}`,
+          label: `${nomeBiblioteca}`,
           href: buildBookThemesHref(produto, nomeBiblioteca)
         };
       })
@@ -362,7 +392,7 @@ export default function App() {
       const view = getCurrentView();
       setCurrentView(view);
 
-      if (view === "book-themes") {
+      if (view !== "home") {
         setProdutoAtivo(null);
         return;
       }
@@ -536,49 +566,6 @@ export default function App() {
       tipo: "Personalização",
       preco: "A partir de R$ 1,50",
       imagem:"https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Personalizacao/Personalizacao_01.png"
-    }
-  ];
-
-  const temaBibliotecasKitColorido =
-    categorias
-      .flatMap((cat) => cat.subcategorias || [])
-      .flatMap((sub) => sub.produtos || [])
-      .find((produto) => String(produto.nome || "").includes("4-Kit Paper dolls, A5 Colorido"))
-      ?.temasBibliotecas || [];
-
-  const temaBibliotecasKitPB =
-    categorias
-      .flatMap((cat) => cat.subcategorias || [])
-      .flatMap((sub) => sub.produtos || [])
-      .find((produto) =>
-        String(produto.nome || "").includes("5-Kit Paper dolls + Boobie goodies, A5 PB")
-      )?.temasBibliotecas || [];
-
-  const produtosPromocao = [
-    {
-      nome: "Kit Paper Dolls A5 ",
-      descricao: "Oferta especial para férias:  A Partir da segunda unidade apenas 4,50 cada ",
-      tipo: "Promocao",
-      mostrarTemas: true,
-      temasBibliotecas: [
-        ...temaBibliotecasKitColorido,
-        ...temaBibliotecasKitPB
-      ],
-      preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
-      imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
-      imagens: [
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Oferta_01.png"
-      ]
-    },
-    {
-      nome: "Livro de Colorir Boobie Goode A6",
-      descricao: "Promocao da semana com desenhos fofos e criativos.",
-      tipo: "Promocao",
-      preco: "A partir de R$ 15,00",
-      imagem:
-        "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/bobbie/Boobie_01.png"
     }
   ];
 
@@ -886,324 +873,140 @@ export default function App() {
     </section>
   );
 
-  const renderLancamentos = () => (
-    <section style={estilos.lancamentosSection}>
-      <div style={estilos.sectionHeader}>
-        <p
-          style={{
-            fontSize: "13px",
-            color: "#8b6b61",
-            textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            marginBottom: "6px"
-          }}
-        >
-          Destaque
-        </p>
-        <h2
-          style={{
-            fontSize: "28px",
-            color: "#5a3e36",
-            marginBottom: "8px"
-          }}
-        >
-          Lançamentos
-        </h2>
-        <p
-          style={{
-            maxWidth: "700px",
-            margin: "0 auto",
-            color: "#7a655a",
-            fontSize: "14px"
-          }}
-        >
-          Novidades artesanais direto da nossa papelaria para você.
-        </p>
-      </div>
+  const renderPromocoes = () => {
+    const produtosPromo = produtosExibicaoPromocao.slice(0, 5);
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "12px",
-          margin: "24px 0 16px 0"
-        }}
-      >
-        {[
-          { icon: "🚀", label: "Lançamentos quentes" },
-          { icon: "✨", label: "Novidades exclusivas" },
-          { icon: "🔥", label: "Oferta imperdível" }
-        ].map((item, index) => (
-          <span
-            key={index}
+    if (!produtosPromo.length) {
+      return null;
+    }
+
+    return (
+      <section id="home-promocoes" style={estilos.lancamentosSection}>
+        <div style={estilos.sectionHeader}>
+          <p
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "10px 14px",
-              borderRadius: "999px",
-              backgroundColor: "rgba(255, 242, 225, 0.9)",
+              fontSize: "13px",
               color: "#8b6b61",
-              fontSize: "14px",
-              fontWeight: 600,
-              border: "1px solid rgba(200,169,106,0.25)"
+              textTransform: "uppercase",
+              letterSpacing: "1.5px",
+              marginBottom: "6px"
             }}
           >
-            <span>{item.icon}</span>
-            {item.label}
-          </span>
-        ))}
-      </div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          gap: "24px"
-        }}
-      >
-        {produtosLancamentos.map((prod, i) => (
-          <div
-            key={i}
-            style={{ ...estilos.lancamentoCard, display: "flex", flexDirection: "column" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow = "0 22px 48px rgba(0,0,0,0.12)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
-            }}
-          >
-            <span
-              style={{ ...estilos.lancamentoBadge, cursor: "pointer" }}
-              onClick={() => {
-                navigateByTipo(prod.tipo);
-                setProdutoAtivo(null);
-                voltarAoTopo();
-              }}
-            >
-              {prod.tipo}
-            </span>
-            <div style={{ overflow: "hidden", borderRadius: "14px", cursor: "pointer" }} onClick={() => abrirProduto(prod)}>
-              <img
-                src={prod.imagem}
-                alt={prod.nome}
-                style={estilos.imagem}
-              />
-            </div>
-            <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px", cursor: "pointer" }} onClick={() => abrirProduto(prod)}>
-              {prod.nome}
-            </p>
-            {prod.descricao && (
-              <p
-                style={{
-                  color: "#8b6b61",
-                  fontSize: "14px",
-                  margin: "10px 0 0 0",
-                  lineHeight: 1.6
-                }}
-              >
-                {prod.descricao}
-              </p>
-            )}
-            <p
-              style={{
-                fontWeight: "bold",
-                color: "#c8a96a",
-                marginTop: "10px"
-              }}
-            >
-              {prod.preco}
-            </p>
-            <p
-              style={{
-                fontSize: "13px",
-                color: "#999",
-                marginTop: "6px",
-                cursor: "pointer"
-              }}
-              onClick={() => {
-                navigateByTipo(prod.tipo);
-                setProdutoAtivo(null);
-                voltarAoTopo();
-              }}
-            >
-              {prod.tipo}
-            </p>
-            <div style={{ flex: 1 }} />
-            <a
-              href={gerarLinkWhatsApp(prod.nome)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button style={{ ...estilos.botao, marginTop: "auto" }}>
-                Solicitar orçamento
-              </button>
-            </a>
-          </div>
-        ))}
-      </div>
-  </section>
-  );
-
-  const renderPromocoes = () => (
-    <section style={{ marginTop: "56px" }}>
-      <div style={estilos.sectionHeader}>
-        <p style={estilos.sectionTag}>Promoções</p>
-        <h2 style={estilos.sectionTitle}>Aproveite as ofertas</h2>
-      </div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "20px"
-        }}
-      >
-        {produtosPromocao.map((prod, index) => (
-          (() => {
-            const imagensPromo =
-              Array.isArray(prod.imagens) && prod.imagens.length > 0
-                ? prod.imagens.filter(Boolean)
-                : prod.imagem
-                ? [prod.imagem]
-                : [];
-            const totalImagens = imagensPromo.length;
-            const slideAtualRaw = promocaoSlideByProduto[prod.nome] || 0;
-            const slideAtual = totalImagens > 0 ? slideAtualRaw % totalImagens : 0;
-            const imagemAtual = totalImagens > 0 ? imagensPromo[slideAtual] : null;
-
-            return (
-          <div
-            key={`${prod.nome}-${index}`}
+            Promoção
+          </p>
+          <h2
             style={{
-              ...estilos.card,
-              cursor: "pointer",
-              background: "linear-gradient(180deg, #fffaf3 0%, #fff 100%)",
-              border: "1px solid rgba(200,169,106,0.28)"
+              fontSize: "28px",
+              color: "#5a3e36",
+              marginBottom: "8px"
             }}
-            onClick={() => abrirProduto(prod)}
           >
-            {imagemAtual && (
-              <div
+            Ofertas especiais
+          </h2>
+          <p
+            style={{
+              maxWidth: "700px",
+              margin: "0 auto",
+              color: "#7a655a",
+              fontSize: "14px"
+            }}
+          >
+            Produtos em destaque com preços especiais para aproveitar hoje mesmo.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "12px",
+            margin: "24px 0 16px 0"
+          }}
+        >
+          {[
+            { icon: "🔥", label: "Descontos exclusivos" },
+            { icon: "✨", label: "Itens selecionados" },
+            { icon: "💬", label: "Atendimento rápido" }
+          ].map((item, index) => (
+            <span
+              key={index}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 14px",
+                borderRadius: "999px",
+                backgroundColor: "rgba(255, 242, 225, 0.9)",
+                color: "#8b6b61",
+                fontSize: "14px",
+                fontWeight: 600,
+                border: "1px solid rgba(200,169,106,0.25)"
+              }}
+            >
+              <span>{item.icon}</span>
+              {item.label}
+            </span>
+          ))}
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "24px"
+          }}
+        >
+          {produtosPromo.map((produto, i) => (
+            <div
+              key={`${produto.nome}-${i}`}
+              style={{ ...estilos.lancamentoCard, display: "flex", flexDirection: "column" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-8px)";
+                e.currentTarget.style.boxShadow = "0 22px 48px rgba(0,0,0,0.12)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
+              }}
+            >
+              <span
                 style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginBottom: "6px"
+                  ...estilos.lancamentoBadge,
+                  background: "linear-gradient(135deg, #f7b8d8 0%, #f17fa3 100%)",
+                  color: "#fff",
+                  cursor: "pointer"
                 }}
+                onClick={() => abrirProduto(produto)}
               >
-                <div
+                Promoção
+              </span>
+
+              <div style={{ overflow: "hidden", borderRadius: "14px", cursor: "pointer" }} onClick={() => abrirProduto(produto)}>
+                <img
+                  src={produto.imagem || produto.imagens?.[0] || "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"}
+                  alt={produto.nome}
+                  style={estilos.imagem}
+                />
+              </div>
+
+              <p style={{ fontWeight: 600, marginTop: "16px", fontSize: "18px", cursor: "pointer" }} onClick={() => abrirProduto(produto)}>
+                {produto.nome}
+              </p>
+
+              {produto.descricao && (
+                <p
                   style={{
-                    position: "relative",
-                    width: "72%",
-                    maxWidth: "220px",
-                    minWidth: "140px",
-                    borderRadius: "14px",
-                    overflow: "hidden",
-                    border: "1px solid rgba(200,169,106,0.22)",
-                    backgroundColor: "#fff"
+                    color: "#8b6b61",
+                    fontSize: "14px",
+                    margin: "10px 0 0 0",
+                    lineHeight: 1.6
                   }}
                 >
-                  <img
-                    src={imagemAtual}
-                    alt={prod.nome}
-                    style={{
-                      width: "100%",
-                      height: "170px",
-                      objectFit: "contain",
-                      display: "block"
-                    }}
-                  />
+                  {produto.descricao}
+                </p>
+              )}
 
-                  {totalImagens > 1 && (
-                    <>
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          setPromocaoSlideByProduto((prev) => ({
-                            ...prev,
-                            [prod.nome]: (slideAtual - 1 + totalImagens) % totalImagens
-                          }));
-                        }}
-                        style={{
-                          position: "absolute",
-                          left: "6px",
-                          top: "50%",
-                          transform: "translateY(-50%)",
-                          width: "28px",
-                          height: "28px",
-                          borderRadius: "50%",
-                          border: "none",
-                          backgroundColor: "rgba(255,255,255,0.92)",
-                          cursor: "pointer",
-                          color: "#5a3e36",
-                          fontSize: "16px",
-                          lineHeight: 1
-                        }}
-                      >
-                        ‹
-                      </button>
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          setPromocaoSlideByProduto((prev) => ({
-                            ...prev,
-                            [prod.nome]: (slideAtual + 1) % totalImagens
-                          }));
-                        }}
-                        style={{
-                          position: "absolute",
-                          right: "6px",
-                          top: "50%",
-                          transform: "translateY(-50%)",
-                          width: "28px",
-                          height: "28px",
-                          borderRadius: "50%",
-                          border: "none",
-                          backgroundColor: "rgba(255,255,255,0.92)",
-                          cursor: "pointer",
-                          color: "#5a3e36",
-                          fontSize: "16px",
-                          lineHeight: 1
-                        }}
-                      >
-                        ›
-                      </button>
-                    </>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {totalImagens > 1 && (
-              <p style={{ margin: "0 0 8px 0", fontSize: "12px", color: "#8b6b61", textAlign: "center" }}>
-                Imagem {slideAtual + 1} de {totalImagens}
-              </p>
-            )}
-
-            <h3 style={{ marginTop: "16px" }}>{prod.nome}</h3>
-
-            {prod.descricao && (
-              <p
-                style={{
-                  color: "#8b6b61",
-                  fontSize: "14px",
-                  margin: "10px 0 0 0",
-                  lineHeight: 1.6
-                }}
-              >
-                {prod.descricao}
-              </p>
-            )}
-
-            {prod.preco && (
               <p
                 style={{
                   fontWeight: "bold",
@@ -1211,32 +1014,211 @@ export default function App() {
                   marginTop: "10px"
                 }}
               >
-                {prod.preco}
+                {produto.preco || "Consulte por WhatsApp"}
               </p>
-            )}
 
-            <div style={{ flex: 1 }} />
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "#999",
+                  marginTop: "6px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  if (produto.categoria) {
+                    setCategoriaAtiva(produto.categoria);
+                    if (produto.subcategoria) {
+                      setSubcategoriaAtiva(produto.subcategoria);
+                    }
+                  }
+                  setProdutoAtivo(null);
+                  voltarAoTopo();
+                }}
+              >
+                {produto.subcategoria ? `${produto.categoria} • ${produto.subcategoria}` : produto.categoria || "Coleção especial"}
+              </p>
 
-            <a
-              href={gerarLinkWhatsApp(prod.nome)}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button style={{ ...estilos.botao, marginTop: "auto" }}>
-                Solicitar promoção
-              </button>
-            </a>
+              <div style={{ flex: 1 }} />
+              <a
+                href={gerarLinkWhatsApp(produto.nome || "Quero saber mais deste produto em promoção")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button style={{ ...estilos.botao, marginTop: "auto" }}>
+                  Solicitar oferta
+                </button>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  };
+
+  const resolveProdutoPorCodigo = (codigoProduto) => {
+    if (!codigoProduto) return null;
+
+    const codigoNormalizado = normalizeThemeProductId(codigoProduto);
+    if (!codigoNormalizado) return null;
+
+    return produtoCatalogoPorCodigo.get(codigoNormalizado) || null;
+  };
+
+  const renderProdutoDestaque = ({
+    codigoProduto,
+    titulo = "Produto em destaque",
+    subtitulo = "Seleção especial",
+    textoBotao = "Solicitar informações",
+    ctaUrl = null,
+    fallbackImagem = null
+  }) => {
+    const produto = resolveProdutoPorCodigo(codigoProduto);
+    if (!produto) return null;
+
+    const imagemProduto =
+      produto.imagem ||
+      produto.imagens?.[0] ||
+      fallbackImagem ||
+      "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png";
+
+    const descricaoProduto =
+      produto.descricao || "Produto artesanal personalizado com atenção aos detalhes.";
+
+    const precoProduto = produto.preco || "Consulte pelo WhatsApp";
+
+    const categoriaLabel = produto.subcategoria
+      ? `${produto.categoria || "Produto"} • ${produto.subcategoria}`
+      : produto.categoria || "Produto artesanal";
+
+    const linkWhatsApp = ctaUrl || gerarLinkWhatsApp(produto.nome || "Quero saber mais sobre este produto!");
+
+    return (
+      <section id="home-produto-destaque" style={{ marginTop: "56px" }}>
+        <div style={estilos.sectionHeader}>
+          <p style={estilos.sectionTag}>Destaque</p>
+          <h2 style={estilos.sectionTitle}>{titulo}</h2>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr",
+            gap: "24px",
+            alignItems: "center",
+            background: "linear-gradient(135deg, #fffaf3 0%, #fff 100%)",
+            border: "1px solid rgba(200,169,106,0.25)",
+            borderRadius: "24px",
+            padding: isMobile ? "18px" : "28px",
+            boxShadow: "0 10px 30px rgba(90,62,54,0.08)"
+          }}
+        >
+          <div
+            style={{
+              overflow: "hidden",
+              borderRadius: "18px",
+              border: "1px solid rgba(200,169,106,0.2)",
+              cursor: "pointer"
+            }}
+            onClick={() => abrirProduto(produto)}
+          >
+            <img
+              src={imagemProduto}
+              alt={produto.nome}
+              style={{
+                width: "100%",
+                height: isMobile ? "220px" : "320px",
+                objectFit: "cover",
+                display: "block"
+              }}
+            />
           </div>
-            );
-          })()
-        ))}
-      </div>
-    </section>
-  );
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+            <span
+              style={{
+                width: "fit-content",
+                padding: "8px 12px",
+                borderRadius: "999px",
+                backgroundColor: "#f7e8cb",
+                color: "#8b6b61",
+                fontWeight: 700,
+                fontSize: "12px",
+                letterSpacing: "1px",
+                textTransform: "uppercase"
+              }}
+            >
+              {subtitulo}
+            </span>
+
+            <div>
+              <h3 style={{ margin: 0, color: "#5a3e36", fontSize: isMobile ? "24px" : "32px" }}>
+                {produto.nome}
+              </h3>
+              <p
+                style={{
+                  margin: "8px 0 0 0",
+                  color: "#8b6b61",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  letterSpacing: "0.4px",
+                  textTransform: "uppercase"
+                }}
+              >
+                {categoriaLabel}
+              </p>
+              <p
+                style={{
+                  margin: "12px 0 0 0",
+                  color: "#7a655a",
+                  fontSize: "15px",
+                  lineHeight: 1.8
+                }}
+              >
+                {descricaoProduto}
+              </p>
+            </div>
+
+            <p
+              style={{
+                fontWeight: "bold",
+                color: "#c8a96a",
+                margin: 0,
+                fontSize: "18px"
+              }}
+            >
+              {precoProduto}
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+              <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer">
+                <button style={{ ...estilos.botao, marginTop: 0 }}>
+                  {textoBotao}
+                </button>
+              </a>
+              <button
+                type="button"
+                style={{
+                  ...estilos.botao,
+                  background: "#fff",
+                  color: "#5a3e36",
+                  border: "1px solid rgba(200,169,106,0.35)",
+                  marginTop: 0
+                }}
+                onClick={() => abrirProduto(produto)}
+              >
+                Ver detalhes
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  };
 
   const renderSobre = () => (
     <section
+      id="home-sobre"
       style={{
         marginTop: "60px",
         marginBottom: "60px",
@@ -1592,6 +1574,28 @@ export default function App() {
     }
   };
 
+  const openCategoriesView = () => {
+    setCategoriaAtiva(null);
+    setSubcategoriaAtiva(null);
+    setBusca("");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.location.hash = CATEGORIES_ROUTE;
+  };
+
+  const openHomeView = () => {
+    setCategoriaAtiva(null);
+    setSubcategoriaAtiva(null);
+    window.location.hash = HOME_ROUTE;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToHomeSection = (sectionId) => {
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   if (currentView === "book-themes") {
     return (
       <BookThemesPage
@@ -1604,28 +1608,143 @@ export default function App() {
     );
   }
 
+  const isHomeView = currentView === "home";
+  const isCategoriesView = currentView === "categories";
+
   return (
     <div style={estilos.container}>
-      {!categoriaAtiva && <AppBanner isMobile={isMobile} />}
+      {!categoriaAtiva && isHomeView && <AppBanner isMobile={isMobile} />}
 
       {!categoriaAtiva && (
-        <div style={{ display: "flex", justifyContent: "center", margin: "30px 0 10px 0" }}>
-          <input
-            type="search"
-            placeholder="Buscar coleção, subcategoria ou produto..."
-            value={busca}
-            onChange={(event) => setBusca(event.target.value)}
-            style={estilos.searchInput}
-          />
-        </div>
+        <nav
+          style={{
+            position: "sticky",
+            top: "10px",
+            zIndex: 1100,
+            margin: "0 auto 20px auto",
+            maxWidth: "1120px",
+            padding: isMobile ? "10px" : "12px 16px",
+            borderRadius: "18px",
+            border: "1px solid rgba(200,169,106,0.35)",
+            background: "linear-gradient(120deg, rgba(255,250,243,0.95) 0%, rgba(247,238,226,0.95) 100%)",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 10px 30px rgba(90,62,54,0.12)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            flexWrap: "wrap"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: "8px",
+              flexWrap: "wrap",
+              justifyContent: isMobile ? "center" : "flex-start",
+              flex: 1
+            }}
+          >
+            {!isCategoriesView && (
+              <button
+                type="button"
+                onClick={openCategoriesView}
+                style={{
+                  border: "1px solid rgba(200,169,106,0.35)",
+                  backgroundColor: "#fff",
+                  color: "#6e5148",
+                  borderRadius: "999px",
+                  padding: isMobile ? "7px 12px" : "8px 14px",
+                  fontSize: isMobile ? "12px" : "13px",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                Categorias
+              </button>
+            )}
+
+            {!isHomeView && (
+              <button
+                type="button"
+                onClick={openHomeView}
+                style={{
+                  border: "1px solid rgba(200,169,106,0.35)",
+                  backgroundColor: "#fff",
+                  color: "#6e5148",
+                  borderRadius: "999px",
+                  padding: isMobile ? "7px 12px" : "8px 14px",
+                  fontSize: isMobile ? "12px" : "13px",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                Página Inicial
+              </button>
+            )}
+
+            {[
+              { label: "Promoções", id: "home-promocoes" },
+              { label: "Destaque", id: "home-produto-destaque" }
+            ].map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => {
+                  if (!isHomeView) {
+                    openHomeView();
+                    requestAnimationFrame(() => scrollToHomeSection(item.id));
+                    return;
+                  }
+                  scrollToHomeSection(item.id);
+                }}
+                style={{
+                  border: "1px solid rgba(200,169,106,0.35)",
+                  backgroundColor: "#fff7eb",
+                  color: "#6e5148",
+                  borderRadius: "999px",
+                  padding: isMobile ? "7px 12px" : "8px 14px",
+                  fontSize: isMobile ? "12px" : "13px",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+        </nav>
       )}
 
-      {!categoriaAtiva && busca.trim() ? (
-        renderSearchResults()
-      ) : (
+      {!categoriaAtiva && isHomeView && (
         <>
-          {!categoriaAtiva && (
-            <section style={{ marginTop: "50px" }}>
+          {renderPromocoes()}
+          {renderProdutoDestaque({
+            codigoProduto: "kit-promo-black-friday",
+            titulo: "Produto em destaque",
+            subtitulo: "Novo",
+            textoBotao: "Solicitar informações"
+          })}
+        </>
+      )}
+
+      {!categoriaAtiva && isCategoriesView && (
+        <>
+          <div style={{ display: "flex", justifyContent: "center", margin: "30px 0 10px 0" }}>
+            <input
+              type="search"
+              placeholder="Buscar coleção, subcategoria ou produto..."
+              value={busca}
+              onChange={(event) => setBusca(event.target.value)}
+              style={estilos.searchInput}
+            />
+          </div>
+
+          {busca.trim() ? (
+            renderSearchResults()
+          ) : (
+            <section id="home-categorias" style={{ marginTop: "50px" }}>
               <div style={estilos.sectionHeader}>
                 <p style={estilos.sectionTag}>Categorias</p>
                 <h2 style={estilos.sectionTitle}>Escolha a Coleção !</h2>
@@ -1648,13 +1767,28 @@ export default function App() {
             </section>
           )}
 
-          {!categoriaAtiva && renderPromocoes()}
-
-          {!categoriaAtiva && renderLancamentos()}
-
-          {!categoriaAtiva && renderSobre()}
           {renderSobreModal()}
         </>
+      )}
+
+      {categoriaAtiva && isHomeView && (
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+          <button
+            type="button"
+            onClick={openCategoriesView}
+            style={{
+              border: "1px solid #ddd",
+              backgroundColor: "#fff",
+              color: "#5a3e36",
+              borderRadius: "12px",
+              padding: "10px 14px",
+              cursor: "pointer",
+              fontWeight: 600
+            }}
+          >
+            Ir para tela de Categorias
+          </button>
+        </div>
       )}
 
       {categoriaSelecionada &&

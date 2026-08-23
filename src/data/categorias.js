@@ -258,6 +258,7 @@ export const categorias = [
               tempo_entrega: "5-7 dias úteis",
               tamanhos: ["15cm", "20cm", "23cm", "28cm", "30cm"],
               cores: ["#F69AB2", "#FFB6D9", "#C8A96A", "#5a3e36", "#FFFFFF"]
+              
             },
              {
               nome: "Topo de Bolo Floral1",
@@ -269,6 +270,7 @@ export const categorias = [
               tempo_entrega: "5-7 dias úteis",
               tamanhos: ["15cm", "18cm", "20cm", "23cm"],
               cores: ["#FFB6D9", "#F69AB2", "#FFFFFF", "#E8D7C3"]
+              
             },
              {
               nome: "Topo de Bolo Floral2",
@@ -276,6 +278,7 @@ export const categorias = [
               descricao: "Um modelo elegante e sofisticado, com flores artesanais, borboletas douradas e detalhes delicados que deixam o bolo ainda mais encantador. Indicado para Bolos de 23 ate 30 cm",
               preco: "A partir de R$ 27,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Tp_flor_03.png"
+              
             },
            
              {
@@ -284,6 +287,7 @@ export const categorias = [
               descricao: "Topo elegante em formato painel.(23 cm)",
               preco: "A partir de R$ 27,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Painel_01.png"
+              
             },
              {
               nome: "Topo de Personagem",
@@ -291,6 +295,7 @@ export const categorias = [
               descricao: "Topo elegante em formato painel com elementos e personagens.(23 cm)",
               preco: "A partir de R$ 27,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/festa/Topo_bolos/Painel_02.png"
+              
             },
 
 
@@ -1283,23 +1288,25 @@ export const categorias = [
               nome: "4-Kit Paper dolls, A5 Colorido",
               tipo: "Livro de Colorir",
               mostrarTemas: true,
-              preco: "A partir de R$ 5,00",
+              preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
               descricao: "Kit, de ilustrações para Cortar e Colar, ideal para momentos de lazer durante as férias.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/Capa_01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Capa_01.png",
               colecao: "Férias Escolares",
               composicao: "Kit com ilustrações para Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
-              temasBibliotecas: bibliotecasModelosPaperDollsColoridoKit
+              temasBibliotecas: bibliotecasModelosPaperDollsColoridoKit,
+              "Promoção": true
             },
             {
               nome: "5-Kit Paper dolls + Boobie goodies, A5 PB",
               tipo: "Livro de Colorir",
               mostrarTemas: true,
-              preco: "A partir de R$ 5,00",
+              preco: "Leve 1 por R$ 5,00 | Leve 2 por R$ 9,00",
               descricao: "Kit, de ilustrações para Pintar, Cortar e Colar, ideal para momentos de lazer durante as férias.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/54.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/54.png",
               colecao: "Férias Escolares",
               composicao: "Kit com ilustrações para Pintar, Cortar e Colar, 2 cenários e seus elementos e 2 bonecas com suas roupinhas, ideal para momentos de lazer durante as férias.",
-              temasBibliotecas: bibliotecasModelosPaperDollsPBKIT
+              temasBibliotecas: bibliotecasModelosPaperDollsPBKIT,
+              "Promoção": true
             },
             {
               nome: "6 Kit Paper dolls, Meninos",
@@ -1529,21 +1536,23 @@ export const categorias = [
               nome: "Agenda Personalizada Datada A5 ",
               tipo: "Agendas",
               mostrarTemas: true,
-              preco: "A partir de R$ 70,00",
+              preco: "Agenda R$ 70,00 || Kit Agenda R$ 80,00",
               descricao: "Agendas personalizadas com datas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Na compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.jpg",
-              temasBibliotecas: bibliotecasModelosAgendas
+              temasBibliotecas: bibliotecasModelosAgendas,
+              Promocao: true
             },
             {
               nome: "Agenda Personalizada Permanente A5",
               tipo: "Agendas",
               mostrarTemas: true,
-              preco: "A partir de R$ 70,00",
+              preco: "Agenda R$ 70,00 || Kit Agenda R$ 80,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_2.jpg",
-              temasBibliotecas: bibliotecasModelosAgendas
+              temasBibliotecas: bibliotecasModelosAgendas,
+              Promocao: true
             },
                         {
               nome: "Agenda Personalizada Datada A6",
