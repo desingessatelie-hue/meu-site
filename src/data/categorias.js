@@ -31,7 +31,7 @@ const criarBibliotecaAgendas = (nomeCategoria, importsMap) => ({
 
       return {
         tema,
-        informacoesImportantes: "Modelo disponível para personalização.",
+        informacoesImportantes: "Modelo disponível para Você.",
         imagens: [url]
       };
     })
@@ -65,7 +65,7 @@ const gerarNomeProduto = (caminho) => {
 const criarBibliotecaPorImports = ({
   nome,
   importsMap,
-  textoPadrao = "Modelo disponível para personalização.",
+  textoPadrao = "Modelo disponível para Você.",
   pastaBase = null
 }) => {
   const temasAgrupados = new Map();
@@ -123,7 +123,7 @@ const criarBibliotecaPorImports = ({
 const criarBibliotecasPorPastas = ({
   importsMap,
   pastaBase,
-  textoPadrao = "Modelo disponível para personalização."
+  textoPadrao = "Modelo disponível para Você."
 }) => {
   const bibliotecasPorTema = new Map();
 
@@ -253,6 +253,14 @@ const canetasThemesImports = {
   Apagaveis: import.meta.glob("../../imagens/Papelaria/Canetas/Apagaveis/*", {
     eager: true,
     import: "default"
+  }),
+  Mickey: import.meta.glob("../../imagens/Papelaria/Canetas/Mickey/*", {
+    eager: true,
+    import: "default"
+  }),
+  Lápis: import.meta.glob("../../imagens/Papelaria/Canetas/Lapis_ponteira/*", {
+    eager: true,
+    import: "default"
   })
 };
 
@@ -272,10 +280,22 @@ const bibliotecasModelosCanetas = {
     importsMap: canetasThemesImports.Joias,
     pastaBase: "../../imagens/Papelaria/Canetas/Joias"
   }),
+
+  Mickey: criarBibliotecaPorImports({
+    nome: "Canetas Mickey",
+    importsMap: canetasThemesImports.Mickey,
+    pastaBase: "../../imagens/Papelaria/Canetas/Mickey"
+  }),
+
   Apagaveis: criarBibliotecaPorImports({
     nome: "Canetas Apagáveis",
     importsMap: canetasThemesImports.Apagaveis,
     pastaBase: "../../imagens/Papelaria/Canetas/Apagaveis"
+  }),
+  Lápis: criarBibliotecaPorImports({
+    nome: "Lápis Temáticos",
+    importsMap: canetasThemesImports.Lápis,
+    pastaBase: "../../imagens/Papelaria/Canetas/Lapis_ponteira"
   })
 };
 
@@ -1719,10 +1739,10 @@ export const categorias = [
               tipo: "Canetas",
               mostrarTemas: true,
               descricao: "Canetas personalizadas com o tema capivara, perfeitas para presentear e decorar.",
-              preco: "A partir de R$ 8,50",
+              preco: " R$ 13,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Capivaras/Caneta_010.png",
               materiais: "Caneta com acabamento personalizado e design exclusivo.",
-              tempo_entrega: "3-5 dias úteis",
+              tempo_entrega: "à combinar",
               colecao: "Canetas Personalizadas",
               composicao: "Caneta personalizada com tema capivara.",
               temasBibliotecas: [bibliotecasModelosCanetas.Capivaras]
@@ -1732,10 +1752,10 @@ export const categorias = [
               tipo: "Canetas",
               mostrarTemas: true,
               descricao: "Coleção charmosa com personagens Hello Kitty em versões exclusivas.",
-              preco: "A partir de R$ 8,50",
+              preco: " R$ 13,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Hello_kitty/Caneta_003.png",
               materiais: "Caneta com acabamento personalizado e design delicado.",
-              tempo_entrega: "3-5 dias úteis",
+              tempo_entrega: "à combinar",
               colecao: "Canetas Personalizadas",
               composicao: "Caneta personalizada com personagens Hello Kitty.",
               temasBibliotecas: [bibliotecasModelosCanetas.HelloKitty]
@@ -1745,26 +1765,52 @@ export const categorias = [
               tipo: "Canetas",
               mostrarTemas: true,
               descricao: "Canetas elegantes com acabamento refinado para presentes especiais.",
-              preco: "A partir de R$ 9,50",
+              preco: " R$ 13,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Joias/Caneta_011.png",
               materiais: "Caneta com visual sofisticado e acabamento premium.",
-              tempo_entrega: "3-5 dias úteis",
+              tempo_entrega: "à combinar",
               colecao: "Canetas Personalizadas",
               composicao: "Caneta personalizada com estilo joias.",
               temasBibliotecas: [bibliotecasModelosCanetas.Joias]
+            },
+                        {
+              nome: "Canetas Mickey",
+              tipo: "Canetas",
+              mostrarTemas: true,
+              descricao: "Canetas elegantes com acabamento refinado para presentes especiais.",
+              preco: "R$ 15,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Mickey/Caneta_009.png",
+              materiais: "Caneta com visual sofisticado e acabamento premium.",
+              tempo_entrega: "à combinar",
+              colecao: "Canetas Personalizadas",
+              composicao: "Caneta personalizada com personagens Mickey.",
+              temasBibliotecas: [bibliotecasModelosCanetas.Mickey]
             },
             {
               nome: "Canetas Apagáveis",
               tipo: "Canetas",
               mostrarTemas: true,
               descricao: "Modelo funcional com acabamento delicado e praticidade no dia a dia.",
-              preco: "A partir de R$ 8,00",
+              preco: "R$ 8,00",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Apagaveis/Caneta_001.png",
               materiais: "Caneta apagável com design personalizado e visual diferenciado.",
-              tempo_entrega: "3-5 dias úteis",
+              tempo_entrega: "à combinar",
               colecao: "Canetas Personalizadas",
               composicao: "Caneta personalizada apagável.",
               temasBibliotecas: [bibliotecasModelosCanetas.Apagaveis]
+            },
+            {
+              nome: "Lápis Temáticos",
+              tipo: "Lápis",
+              mostrarTemas: true,
+              descricao: "Lápis com temas variados para diferentes ocasiões.",
+              preco: "R$ 7,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Lapis_ponteira/Canetas_01.png",
+              materiais: "Caneta com design temático e acabamento de qualidade.",
+              tempo_entrega: "à combinar",
+              colecao: "Lápis Personalizadas",
+              composicao: "Lápis personalizado com temas variados.",
+              temasBibliotecas: [bibliotecasModelosCanetas.Lápis]
             }
           ]
         },
