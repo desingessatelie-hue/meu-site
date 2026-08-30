@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Breadcrumb } from "./Breadcrumb.jsx";
 
 function ProductImageCarousel({ imagens, imagem, alt, estilos }) {
@@ -1338,28 +1338,75 @@ export function SubcategoriaProductsPanel({
         </>
       )}
 
-      {subcategoriaSelecionada.titulo === "Encadernação" && (
-        <>
-          {["Agendas", "Planners", "Cadernos", "Blocos A6"].map((tipo, idx) => {
-            const temProdutos = subcategoriaSelecionada.produtos.some((prod) => prod.tipo === tipo);
-            if (!temProdutos) return null;
+      {subcategoriaSelecionada.titulo === "Encadernação" && (() => {
+        const tiposDisponiveis = ["Agendas", "Planners", "Cadernos", "Blocos A6", "Acessórios"];
+        const sectionRefs = useRef({});
 
-            const emojis = {
-              Agendas: "📒",
-              Planners: "🗓️",
-              Cadernos: "📚",
-              "Blocos A6": "📝"
-            };
+        const tiposAtivos = tiposDisponiveis.filter((tipo) =>
+          subcategoriaSelecionada.produtos.some((prod) => prod.tipo === tipo)
+        );
 
-            const sectionDescriptions = {
-              Agendas: "Agendas personalizadas para organizar seu ano com estilo",
-              Planners: "Planners artesanais para planejar cada dia com carinho",
-              Cadernos: "Cadernos únicos, feitos sob medida para você",
-              "Blocos A6": "Blocos e cadernetas compactas da coleção artesanal"
-            };
+        const emojis = {
+          Agendas: "📒",
+          Planners: "🗓️",
+          Cadernos: "📚",
+          "Blocos A6": "📝",
+          Acessórios: "✨"
+        };
 
-            return (
-              <div key={tipo}>
+        const sectionDescriptions = {
+          Agendas: "Agendas personalizadas para organizar seu ano com estilo",
+          Planners: "Planners artesanais para planejar cada dia com carinho",
+          Cadernos: "Cadernos únicos, feitos sob medida para você",
+          "Blocos A6": "Blocos e cadernetas compactas da coleção artesanal",
+          Acessórios: "Clips adesivos, apliques, marcadores e marca-páginas para personalizar sua agenda"
+        };
+
+        return (
+          <>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "12px",
+                marginBottom: "30px"
+              }}
+            >
+              {tiposAtivos.map((tipo) => (
+                <button
+                  key={tipo}
+                  type="button"
+                  onClick={() => {
+                    sectionRefs.current[tipo]?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start"
+                    });
+                  }}
+                  style={{
+                    border: "1px solid #d6b88c",
+                    background: "#fffaf3",
+                    color: "#5a3e36",
+                    borderRadius: "999px",
+                    padding: "10px 18px",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                    boxShadow: "0 4px 12px rgba(200,169,106,0.12)"
+                  }}
+                >
+                  {emojis[tipo]} {tipo}
+                </button>
+              ))}
+            </div>
+
+            {tiposAtivos.map((tipo, idx) => (
+              <div
+                key={tipo}
+                ref={(el) => {
+                  if (el) sectionRefs.current[tipo] = el;
+                }}
+              >
                 <h2
                   style={{
                     marginTop: idx === 0 ? "0" : "50px",
@@ -1454,10 +1501,10 @@ export function SubcategoriaProductsPanel({
                     ))}
                 </div>
               </div>
-            );
-          })}
-        </>
-      )}
+            ))}
+          </>
+        );
+      })()}
     </div>
   );
 }

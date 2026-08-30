@@ -299,6 +299,57 @@ const bibliotecasModelosCanetas = {
   })
 };
 
+const encadernacaoAcessoriosImports = {
+  ClipsAdesivos: import.meta.glob("../../imagens/Papelaria/Encadernacao/Clips_magnetico/*", {
+    eager: true,
+    import: "default"
+  }),
+  Apliques: import.meta.glob("../../imagens/Papelaria/Encadernacao/Apliques/*", {
+    eager: true,
+    import: "default"
+  }),
+  MarcadoresMagneticos: import.meta.glob("../../imagens/Papelaria/Encadernacao/Clips_magnetico/*", {
+    eager: true,
+    import: "default"
+  }),
+  MarcaPaginas: import.meta.glob("../../imagens/Papelaria/Encadernacao/Marca_pagina/*", {
+    eager: true,
+    import: "default"
+  }),
+  Abas: import.meta.glob("../../imagens/Papelaria/Encadernacao/Abas/*", {
+    eager: true,
+    import: "default"
+  })
+};
+
+const bibliotecasModelosAcessoriosAgendas = {
+  ClipsAdesivos: criarBibliotecaPorImports({
+    nome: "Clips Adesivos",
+    importsMap: encadernacaoAcessoriosImports.ClipsAdesivos,
+    pastaBase: "../../imagens/Papelaria/Encadernacao/Clips_magnetico"
+  }),
+  Apliques: criarBibliotecaPorImports({
+    nome: "Apliques",
+    importsMap: encadernacaoAcessoriosImports.Apliques,
+    pastaBase: "../../imagens/Papelaria/Encadernacao/Apliques"
+  }),
+  MarcadoresMagneticos: criarBibliotecaPorImports({
+    nome: "Marcadores Magnéticos",
+    importsMap: encadernacaoAcessoriosImports.MarcadoresMagneticos,
+    pastaBase: "../../imagens/Papelaria/Encadernacao/Clips_magnetico"
+  }),
+  MarcaPaginas: criarBibliotecaPorImports({
+    nome: "Marca-Páginas",
+    importsMap: encadernacaoAcessoriosImports.MarcaPaginas,
+    pastaBase: "../../imagens/Papelaria/Encadernacao/Marca_pagina"
+  }),
+  Abas: criarBibliotecaPorImports({
+    nome: "Abas",
+    importsMap: encadernacaoAcessoriosImports.Abas,
+    pastaBase: "../../imagens/Papelaria/Encadernacao/Abas"
+  })  
+};
+
 export const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
@@ -1602,7 +1653,7 @@ export const categorias = [
               preco: "A partir de R$ 50,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo Clean.",
               informacoesImportantes: "Na compra do Kit Agenda por R$ 60,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
@@ -1612,7 +1663,7 @@ export const categorias = [
               preco: "A partir de R$ 50,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_2.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
             },
                         {
@@ -1622,7 +1673,7 @@ export const categorias = [
                preco: "A partir de R$ 100,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo Clean.",
               informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
             },
             {
@@ -1632,8 +1683,31 @@ export const categorias = [
                preco: "A partir de R$ 100,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_2.jpg",
               temasBibliotecas: bibliotecasModelosAgendas
+            },
+            {
+              nome: "Abas de Agendas",
+              tipo: "Acessórios",
+              mostrarTemas: true,
+              descricao: "Abas como nome dos meses para organizar e personalizar suas agendas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Abas/Aba_01.png",
+              temasBibliotecas: [
+                bibliotecasModelosAcessoriosAgendas.Abas
+              ]
+            },
+             {
+              nome: "Acessórios de agendas",
+              tipo: "Acessórios",
+              mostrarTemas: true,
+              descricao: "Clips adesivos, apliques, marcadores magnéticos e marca-páginas para personalizar suas agendas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Clips_magnetico/Clips_001.png",
+              temasBibliotecas: [
+                bibliotecasModelosAcessoriosAgendas.ClipsAdesivos,
+                bibliotecasModelosAcessoriosAgendas.Apliques,
+                bibliotecasModelosAcessoriosAgendas.MarcadoresMagneticos,
+                bibliotecasModelosAcessoriosAgendas.MarcaPaginas
+              ]
             },
             {
               nome: "Planner Diário",
