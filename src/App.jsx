@@ -481,7 +481,7 @@ export default function App() {
       setSubcategoriaAtiva("Dia dos Namorados");
       return;
     }
-    if (t.includes("bloco") || t.includes("blocos_a6") || t.includes("blocos a6") || t.includes("agenda") || t.includes("planner") || t.includes("caderno")) {
+    if (t.includes("bloco") || t.includes("blocos_a6") || t.includes("midori") || t.includes("midore") || t.includes("agenda") || t.includes("planner") || t.includes("caderno")) {
       setCategoriaAtiva("Papelaria Artesanal");
       setSubcategoriaAtiva("Encadernação");
       return;

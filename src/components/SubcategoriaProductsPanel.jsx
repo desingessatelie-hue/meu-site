@@ -1339,18 +1339,41 @@ export function SubcategoriaProductsPanel({
       )}
 
       {subcategoriaSelecionada.titulo === "Encadernação" && (() => {
-        const tiposDisponiveis = ["Agendas", "Planners", "Cadernos", "Blocos A6", "Acessórios"];
+        const tiposDisponiveis = ["Agendas", "Planners", "Cadernos", "Midori", "Acessórios"];
         const sectionRefs = useRef({});
 
+        const normalizarTipoEncadernacao = (tipo) => {
+          const valor = String(tipo || "").trim().toLowerCase();
+
+          if (
+            valor === "midore" ||
+            valor === "midori" ||
+            valor.includes("bloco a6") ||
+            valor.includes("blocos_a6") ||
+            valor.includes("blocos a6")
+          ) {
+            return "Midori";
+          }
+
+          if (valor.includes("agenda")) return "Agendas";
+          if (valor.includes("planner")) return "Planners";
+          if (valor.includes("caderno")) return "Cadernos";
+          if (valor.includes("acess")) return "Acessórios";
+
+          return String(tipo || "").trim();
+        };
+
         const tiposAtivos = tiposDisponiveis.filter((tipo) =>
-          subcategoriaSelecionada.produtos.some((prod) => prod.tipo === tipo)
+          subcategoriaSelecionada.produtos.some(
+            (prod) => normalizarTipoEncadernacao(prod.tipo) === tipo
+          )
         );
 
         const emojis = {
           Agendas: "📒",
           Planners: "🗓️",
           Cadernos: "📚",
-          "Blocos A6": "📝",
+          "Midori": "📝",
           Acessórios: "✨"
         };
 
@@ -1358,7 +1381,7 @@ export function SubcategoriaProductsPanel({
           Agendas: "Agendas personalizadas para organizar seu ano com estilo",
           Planners: "Planners artesanais para planejar cada dia com carinho",
           Cadernos: "Cadernos únicos, feitos sob medida para você",
-          "Blocos A6": "Blocos e cadernetas compactas da coleção artesanal",
+          "Midori": "Blocos e cadernetas compactas da coleção artesanal",
           Acessórios: "Clips adesivos, apliques, marcadores e marca-páginas para personalizar sua agenda"
         };
 
@@ -1432,7 +1455,7 @@ export function SubcategoriaProductsPanel({
 
                 <div style={estilos.grid}>
                   {subcategoriaSelecionada.produtos
-                    .filter((prod) => prod.tipo === tipo)
+                    .filter((prod) => normalizarTipoEncadernacao(prod.tipo) === tipo)
                     .map((prod, i) => (
                       <div
                         key={i}

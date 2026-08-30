@@ -1631,7 +1631,7 @@ export const categorias = [
               preco: "Agenda R$ 70,00 || Kit Agenda R$ 80,00",
               descricao: "Agendas personalizadas com datas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Na compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_1.jpg",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Agenda_1.jpg",
               temasBibliotecas: bibliotecasModelosAgendas,
               Promocao: true
             },
@@ -1642,7 +1642,7 @@ export const categorias = [
               preco: "Agenda R$ 70,00 || Kit Agenda R$ 80,00",
               descricao: "Agendas personalizadas, para organização diária, com capa e miolo customizáveis.",
               informacoesImportantes: "Agendas permanente. Não tem Calendários, e a gente seleciona qual dia da semana.\nNa compra do Kit Agenda por R$ 80,00 acompanha uma caneta, abas do mês e clipes magnéticos combinando com a agenda e muitas fofurices.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Agendas/Agenda_2.jpg",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Agenda_2.jpg",
               temasBibliotecas: bibliotecasModelosAgendas,
               Promocao: true
             },
@@ -1697,16 +1697,46 @@ export const categorias = [
               ]
             },
              {
-              nome: "Acessórios de agendas",
+              nome: "Clips Fofinhos",
               tipo: "Acessórios",
               mostrarTemas: true,
               descricao: "Clips adesivos, apliques, marcadores magnéticos e marca-páginas para personalizar suas agendas.",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Clips_magnetico/Clips_001.png",
               temasBibliotecas: [
                 bibliotecasModelosAcessoriosAgendas.ClipsAdesivos,
+              ]
+            },
+            {
+              nome: "Apliques",
+              tipo: "Acessórios",
+              mostrarTemas: true,
+              descricao: "Clips adesivos, apliques, marcadores magnéticos e marca-páginas para personalizar suas agendas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Clips_magnetico/Clips_001.png",
+              temasBibliotecas: [
+              
                 bibliotecasModelosAcessoriosAgendas.Apliques,
+              
+              ]
+            },
+            {
+              nome: "Marcadores Magneticos",
+              tipo: "Acessórios",
+              mostrarTemas: true,
+              descricao: "Marcadores magnéticos  para personalizar suas agendas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Clips_magnetico/Clips_001.png",
+              temasBibliotecas: [
                 bibliotecasModelosAcessoriosAgendas.MarcadoresMagneticos,
-                bibliotecasModelosAcessoriosAgendas.MarcaPaginas
+
+              ]
+            },
+            {
+              nome: "Marca Páginas",
+              tipo: "Acessórios",
+              mostrarTemas: true,
+              descricao: "Marca-páginas para personalizar suas agendas.",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Encadernacao/Clips_magnetico/Clips_001.png",
+              temasBibliotecas: [
+                              bibliotecasModelosAcessoriosAgendas.MarcaPaginas
               ]
             },
             {
