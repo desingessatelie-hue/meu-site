@@ -237,6 +237,48 @@ const bibliotecasModelosPaperDollsMultiPastas = [
   })
 ];
 
+const canetasThemesImports = {
+  Capivaras: import.meta.glob("../../imagens/Papelaria/Canetas/Capivaras/*", {
+    eager: true,
+    import: "default"
+  }),
+  HelloKitty: import.meta.glob("../../imagens/Papelaria/Canetas/Hello_kitty/*", {
+    eager: true,
+    import: "default"
+  }),
+  Joias: import.meta.glob("../../imagens/Papelaria/Canetas/Joias/*", {
+    eager: true,
+    import: "default"
+  }),
+  Apagaveis: import.meta.glob("../../imagens/Papelaria/Canetas/Apagaveis/*", {
+    eager: true,
+    import: "default"
+  })
+};
+
+const bibliotecasModelosCanetas = {
+  Capivaras: criarBibliotecaPorImports({
+    nome: "Canetas Capivaras",
+    importsMap: canetasThemesImports.Capivaras,
+    pastaBase: "../../imagens/Papelaria/Canetas/Capivaras"
+  }),
+  HelloKitty: criarBibliotecaPorImports({
+    nome: "Canetas HelloKitty",
+    importsMap: canetasThemesImports.HelloKitty,
+    pastaBase: "../../imagens/Papelaria/Canetas/Hello_kitty"
+  }),
+  Joias: criarBibliotecaPorImports({
+    nome: "Canetas Joias",
+    importsMap: canetasThemesImports.Joias,
+    pastaBase: "../../imagens/Papelaria/Canetas/Joias"
+  }),
+  Apagaveis: criarBibliotecaPorImports({
+    nome: "Canetas Apagáveis",
+    importsMap: canetasThemesImports.Apagaveis,
+    pastaBase: "../../imagens/Papelaria/Canetas/Apagaveis"
+  })
+};
+
 export const categorias = [
     {
       titulo: "Festas e Lembrancinhas",
@@ -1308,28 +1350,7 @@ export const categorias = [
               temasBibliotecas: bibliotecasModelosPaperDollsPBKIT,
               "Promoção": true
             },
-            {
-              nome: "6 Kit Paper dolls, Meninos",
-              tipo: "Livro Cortar e colar",
-              mostrarTemas: true,
-              preco: "A partir de R$ 5,00",
-              descricao: "Kit com ilustrações para cortar e colar, com temas de aventura para meninos.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_colorido/43.png",
-              colecao: "Férias Escolares",
-              composicao: "Kit com ilustrações para cortar e colar, 2 cenários e seus elementos com personagens e acessórios.",
-              temasBibliotecas: bibliotecasModelosPaperDollsColoridoKit
-            },
-            {
-              nome: "8 Kit Paper dolls + Boobie Goodies, Meninos",
-              tipo: "Livro de Colorir",
-              mostrarTemas: true,
-              preco: "A partir de R$ 5,00",
-              descricao: "Kit com ilustrações para cortar e colar, com temas de aventura para meninos.",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/datas_com/Ferias/Kit_PaperDolls_PB/64.png",
-              colecao: "Férias Escolares",
-              composicao: "Kit com ilustrações para cortar e colar, 2 cenários e seus elementos com personagens e acessórios.",
-              temasBibliotecas: bibliotecasModelosPaperDollsPB
-            },
+   
            
           ]
         },
@@ -1690,44 +1711,61 @@ export const categorias = [
         },
         {
           titulo: "Canetas Personalizadas",
-          descricao: "🖊️✨ Novidade!",
+          descricao: "🖊️✨ Canetas exclusivas para presentear com personalidade e charme.",
           imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas.png",
           produtos: [
             {
-              nome: "Lápis Personalizado Azul",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_01.png",
-              materiais: "Madeira, grafite HB, borracha natural",
+              nome: "Canetas Capivaras",
+              tipo: "Canetas",
+              mostrarTemas: true,
+              descricao: "Canetas personalizadas com o tema capivara, perfeitas para presentear e decorar.",
+              preco: "A partir de R$ 8,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Capivaras/Caneta_010.png",
+              materiais: "Caneta com acabamento personalizado e design exclusivo.",
               tempo_entrega: "3-5 dias úteis",
-              tamanhos: ["19cm (tamanho padrão)"],
-              cores: ["#1E88E5", "#E91E63", "#4CAF50", "#FF9800", "#9C27B0"]
+              colecao: "Canetas Personalizadas",
+              composicao: "Caneta personalizada com tema capivara.",
+              temasBibliotecas: [bibliotecasModelosCanetas.Capivaras]
             },
-                                    {
-              nome: "Lápis Personalizado Lilas",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_02.png"
+            {
+              nome: "Canetas HelloKitty",
+              tipo: "Canetas",
+              mostrarTemas: true,
+              descricao: "Coleção charmosa com personagens Hello Kitty em versões exclusivas.",
+              preco: "A partir de R$ 8,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Hello_kitty/Caneta_003.png",
+              materiais: "Caneta com acabamento personalizado e design delicado.",
+              tempo_entrega: "3-5 dias úteis",
+              colecao: "Canetas Personalizadas",
+              composicao: "Caneta personalizada com personagens Hello Kitty.",
+              temasBibliotecas: [bibliotecasModelosCanetas.HelloKitty]
             },
-                                    {
-              nome: "Lápis Personalizado Azul-2",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_03.png"
+            {
+              nome: "Canetas Joias",
+              tipo: "Canetas",
+              mostrarTemas: true,
+              descricao: "Canetas elegantes com acabamento refinado para presentes especiais.",
+              preco: "A partir de R$ 9,50",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Joias/Caneta_011.png",
+              materiais: "Caneta com visual sofisticado e acabamento premium.",
+              tempo_entrega: "3-5 dias úteis",
+              colecao: "Canetas Personalizadas",
+              composicao: "Caneta personalizada com estilo joias.",
+              temasBibliotecas: [bibliotecasModelosCanetas.Joias]
             },
-                                    {
-              nome: "Lápis Personalizado Verde",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_04.png"
-            },
-                                    {
-              nome: "Lápis Personalizado Amarelo",
-              descricao: "Coleção 🌸 Doce Jardim de Inverno,Lápis hb com ponteira ",
-              preco: "A partir de R$ 7,50",
-              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Canetas_05.png"
+            {
+              nome: "Canetas Apagáveis",
+              tipo: "Canetas",
+              mostrarTemas: true,
+              descricao: "Modelo funcional com acabamento delicado e praticidade no dia a dia.",
+              preco: "A partir de R$ 8,00",
+              imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Canetas/Apagaveis/Caneta_001.png",
+              materiais: "Caneta apagável com design personalizado e visual diferenciado.",
+              tempo_entrega: "3-5 dias úteis",
+              colecao: "Canetas Personalizadas",
+              composicao: "Caneta personalizada apagável.",
+              temasBibliotecas: [bibliotecasModelosCanetas.Apagaveis]
             }
-
           ]
         },
         {
