@@ -1,21 +1,21 @@
 const agendaThemesImports = {
-  Feminino: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Feminino/*", {
+  Feminino: import.meta.glob("../../imagens/Papelaria/Encadernacao/Temas/Feminino/*", {
     eager: true,
     import: "default"
   }),
-  Masculino: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Masculino/*", {
+  Masculino: import.meta.glob("../../imagens/Papelaria/Encadernacao/Temas/Masculino/*", {
     eager: true,
     import: "default"
   }),
-  Infantil: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Infantil/*", {
+  Infantil: import.meta.glob("../../imagens/Papelaria/Encadernacao/Temas/Infantil/*", {
     eager: true,
     import: "default"
   }),
-  Religioso: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Religioso/*", {
+  Religioso: import.meta.glob("../../imagens/Papelaria/Encadernacao/Temas/Religioso/*", {
     eager: true,
     import: "default"
   }),
-  Miolos: import.meta.glob("../../imagens/Papelaria/Agendas/Temas/Candy/*", {  
+  Miolos: import.meta.glob("../../imagens/Papelaria/Encadernacao/Temas/Candy/*", {  
     eager: true,  
     import: "default"
   })
@@ -1780,8 +1780,8 @@ export const categorias = [
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Const-01.png"
             },
             {
-              nome: "Caderneta A6 - Tucano",
-              tipo: "Blocos A6",
+              nome: "Midori - Tucano",
+              tipo: "Midori",
               descricao: "Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou apontador fofo ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_01.png",
@@ -1793,8 +1793,8 @@ export const categorias = [
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
-              nome: "Caderneta A6 - Capivara",
-              tipo: "Blocos A6",
+              nome: "Midori - Capivara",
+              tipo: "Midori",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_02.png",
@@ -1806,8 +1806,8 @@ export const categorias = [
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
-              nome: "Caderneta A6 - Menina Gato",
-              tipo: "Blocos A6",
+              nome: "Midori - Menina Gato",
+              tipo: "Midori",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_03.png",
@@ -1819,8 +1819,8 @@ export const categorias = [
               cores: ["#FF6B9D", "#FFD700", "#87CEEB", "#90EE90"]
             },
             {
-              nome: "Caderneta A6 - Floral Verde",
-              tipo: "Blocos A6",
+              nome: "Midori A6 - Floral Verde",
+              tipo: "Midori",
               descricao: "Coleção 🌸 Doce Jardim de Inverno,Monte seu kit Caderneta +Lapis com ponteira ou Borrachas Fofas ou Papontador fofo  ",
               preco: "A partir de R$ 14,50",
               imagem: "https://raw.githubusercontent.com/desingessatelie-hue/meu-site/main/imagens/Papelaria/Blocos_A6/Bloco_04.png",
